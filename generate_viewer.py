@@ -31,9 +31,6 @@ def generate_html(data, output_file='viewer.html'):
     timestamp = data.get('timestamp', '')
     total_results = data.get('total_results', len(places))
 
-    # Get API key from environment
-    api_key = os.getenv('GOOGLE_MAPS_API_KEY', 'YOUR_GOOGLE_MAPS_API_KEY')
-
     # Calculate statistics
     avg_rating = sum(p.get('rating', 0) for p in places if p.get('rating')) / len([p for p in places if p.get('rating')]) if places else 0
 
@@ -47,7 +44,6 @@ def generate_html(data, output_file='viewer.html'):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manhattan Specialty Grocery Stores - Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key={api_key}&libraries=marker"></script>
     <style>
         .store-card {{
             transition: all 0.3s ease;
@@ -96,9 +92,57 @@ def generate_html(data, output_file='viewer.html'):
             background-color: #3B82F6;
             color: white;
         }}
+        #apiKeyPrompt {{
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }}
+        #apiKeyPrompt.active {{
+            display: flex;
+        }}
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- API Key Prompt Modal -->
+    <div id="apiKeyPrompt">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">Google Maps API Key Required</h2>
+            <p class="text-gray-600 mb-4">To use the map view, please enter your Google Maps API key:</p>
+            <input
+                type="text"
+                id="apiKeyInput"
+                placeholder="Enter your API key..."
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+            <div class="flex gap-3">
+                <button
+                    onclick="saveApiKey()"
+                    class="flex-1 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium"
+                >
+                    Enter
+                </button>
+                <button
+                    onclick="skipApiKey()"
+                    class="flex-1 bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 font-medium"
+                >
+                    Skip
+                </button>
+            </div>
+            <p class="text-xs text-gray-500 mt-4">
+                Your API key is stored locally in your browser and never sent anywhere.
+                <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank" class="text-blue-600 hover:underline">
+                    Get a free API key
+                </a>
+            </p>
+        </div>
+    </div>
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4">
@@ -178,11 +222,91 @@ def generate_html(data, output_file='viewer.html'):
         let filteredStores = [...STORES_DATA];
         let map = null;
         let markers = [];
+        let mapsLoaded = false;
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {{
             renderStores(STORES_DATA);
         }});
+
+        // Save API key to localStorage and load Google Maps
+        function saveApiKey() {{
+            const apiKey = document.getElementById('apiKeyInput').value.trim();
+            if (!apiKey) {{
+                alert('Please enter an API key');
+                return;
+            }}
+
+            // Save to localStorage
+            localStorage.setItem('googleMapsApiKey', apiKey);
+
+            // Hide prompt
+            document.getElementById('apiKeyPrompt').classList.remove('active');
+
+            // Load Google Maps
+            loadGoogleMaps(apiKey);
+        }}
+
+        // Skip API key entry
+        function skipApiKey() {{
+            document.getElementById('apiKeyPrompt').classList.remove('active');
+
+            // Switch to map view but show message instead of map
+            const listView = document.getElementById('listView');
+            const mapView = document.getElementById('mapView');
+            const listTab = document.getElementById('listTab');
+            const mapTab = document.getElementById('mapTab');
+
+            listView.classList.add('hidden');
+            mapView.classList.remove('hidden');
+            listTab.classList.remove('active');
+            mapTab.classList.add('active');
+
+            // Show message in map container
+            document.getElementById('map').innerHTML = `
+                <div class="flex items-center justify-center h-full bg-gray-100 rounded-lg">
+                    <div class="text-center p-8">
+                        <h3 class="text-xl font-bold text-gray-700 mb-4">Map View Unavailable</h3>
+                        <p class="text-gray-600 mb-6">You skipped entering a Google Maps API key.</p>
+                        <p class="text-gray-600 mb-6">The map cannot be displayed, but you can still use the List View to browse all stores.</p>
+                        <button
+                            onclick="switchView('list')"
+                            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 mr-2"
+                        >
+                            Go to List View
+                        </button>
+                        <button
+                            onclick="document.getElementById('apiKeyPrompt').classList.add('active')"
+                            class="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-400"
+                        >
+                            Enter API Key
+                        </button>
+                    </div>
+                </div>
+            `;
+        }}
+
+        // Dynamically load Google Maps script
+        function loadGoogleMaps(apiKey) {{
+            if (mapsLoaded) {{
+                initMap();
+                return;
+            }}
+
+            const script = document.createElement('script');
+            script.src = `https://maps.googleapis.com/maps/api/js?key=${{apiKey}}&libraries=marker`;
+            script.async = true;
+            script.defer = true;
+            script.onload = function() {{
+                mapsLoaded = true;
+                initMap();
+            }};
+            script.onerror = function() {{
+                alert('Failed to load Google Maps. Please check your API key and try again.');
+                localStorage.removeItem('googleMapsApiKey');
+            }};
+            document.head.appendChild(script);
+        }}
 
         // Switch between views
         function switchView(view) {{
@@ -197,14 +321,25 @@ def generate_html(data, output_file='viewer.html'):
                 listTab.classList.add('active');
                 mapTab.classList.remove('active');
             }} else {{
+                // Check if we have an API key
+                const savedKey = localStorage.getItem('googleMapsApiKey');
+
+                if (!savedKey && !mapsLoaded) {{
+                    // Show API key prompt
+                    document.getElementById('apiKeyPrompt').classList.add('active');
+                    return;
+                }}
+
                 listView.classList.add('hidden');
                 mapView.classList.remove('hidden');
                 listTab.classList.remove('active');
                 mapTab.classList.add('active');
 
                 // Initialize map if not already done
-                if (!map) {{
+                if (!map && mapsLoaded) {{
                     initMap();
+                }} else if (!mapsLoaded && savedKey) {{
+                    loadGoogleMaps(savedKey);
                 }}
             }}
         }}
@@ -467,20 +602,14 @@ def main():
 
     output_file = generate_html(data)
 
-    # Check if API key was loaded
-    api_key = os.getenv('GOOGLE_MAPS_API_KEY')
-    if api_key and api_key != 'YOUR_GOOGLE_MAPS_API_KEY':
-        print(f"✓ Google Maps API key loaded from .env")
-    else:
-        print("⚠ Warning: Google Maps API key not found in .env file")
-        print("  The map view will not work without an API key.")
-        print("  Add GOOGLE_MAPS_API_KEY to your .env file or edit viewer.html manually.")
-
     # Open in browser
     print(f"\nOpening {output_file} in your default browser...")
     webbrowser.open('file://' + os.path.abspath(output_file))
 
     print("\n✓ Done! The viewer should open in your browser.")
+    print("\n📝 Note: When you click the Map View tab, you'll be prompted to enter")
+    print("   your Google Maps API key. It will be saved in your browser's localStorage.")
+    print("   The HTML file does NOT contain any API key - safe to share!")
 
     return 0
 
