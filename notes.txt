@@ -1,0 +1,90 @@
+Complete Field Mask Options
+
+Basic Tier - Place Details Essentials IDs Only
+'places.attributions'
+'places.id'
+'places.name'  # Resource name in format places/PLACE_ID
+'places.photos'
+
+Basic Tier - Place Details Essentials
+'places.addressComponents'
+'places.addressDescriptor'  # Experimental outside India
+'places.adrFormatAddress'
+'places.formattedAddress'
+'places.location'
+'places.plusCode'
+'places.postalAddress'
+'places.shortFormattedAddress'
+'places.types'
+'places.viewport'
+
+Advanced Tier - Place Details Pro
+'places.accessibilityOptions'
+'places.businessStatus'
+'places.containingPlaces'
+'places.displayName'
+'places.googleMapsLinks'
+'places.googleMapsUri'
+'places.iconBackgroundColor'
+'places.iconMaskBaseUri'
+'places.primaryType'
+'places.primaryTypeDisplayName'
+'places.pureServiceAreaBusiness'
+'places.subDestinations'
+'places.utcOffsetMinutes'
+
+Preferred Tier - Place Details Enterprise
+'places.currentOpeningHours'
+'places.currentSecondaryOpeningHours'
+'places.internationalPhoneNumber'
+'places.nationalPhoneNumber'
+'places.priceLevel'
+'places.priceRange'
+'places.rating'
+'places.regularOpeningHours'
+'places.regularSecondaryOpeningHours'
+'places.userRatingCount'
+'places.websiteUri'
+
+Preferred Tier - Place Details Enterprise + Atmosphere
+'places.allowsDogs'
+'places.curbsidePickup'
+'places.delivery'
+'places.dineIn'
+'places.editorialSummary'
+'places.evChargeAmenitySummary'
+'places.evChargeOptions'
+'places.fuelOptions'
+'places.generativeSummary'
+'places.goodForChildren'
+'places.goodForGroups'
+'places.goodForWatchingSports'
+'places.liveMusic'
+'places.menuForChildren'
+'places.neighborhoodSummary'
+'places.parkingOptions'
+'places.paymentOptions'
+'places.outdoorSeating'
+'places.reservable'
+'places.restroom'
+'places.reviews'
+'places.reviewSummary'
+'places.routingSummaries'
+'places.servesBeer'
+'places.servesBrunch'
+'places.servesBreakfast'
+'places.servesCocktails'
+'places.servesCoffee'
+'places.servesDessert'
+'places.servesDinner'
+'places.servesLunch'
+'places.servesVegetarianFood'
+'places.servesWine'
+'places.takeout'
+
+Current Fields in Script:
+
+Your script currently uses a good mix across tiers:
+Basic: id, formattedAddress, location, types
+Advanced: displayName, businessStatus, googleMapsUri
+Preferred: rating, userRatingCount, internationalPhoneNumber, websiteUri
