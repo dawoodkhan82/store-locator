@@ -23,7 +23,7 @@ def load_json_data(json_file):
         return json.load(f)
 
 
-def generate_html(data, output_file='viewer.html'):
+def generate_html(data, output_file='index.html'):
     """Generate the HTML viewer with embedded data."""
 
     # Extract places data

@@ -61,7 +61,7 @@ python generate_viewer.py
 ```
 
 This will:
-- Generate `viewer.html` with your data embedded
+- Generate `index.html` with your data embedded
 - Automatically open it in your default browser
 - **No API key embedded** - prompts for API key when clicking Map View
 - Safe to share publicly or commit to GitHub
@@ -129,7 +129,7 @@ Results are saved to: `manhattan_specialty_grocery_stores_YYYYMMDD_HHMMSS.json`
 
 ## Interactive Viewer
 
-The HTML viewer (`viewer.html`) provides an intuitive way to explore your results:
+The HTML viewer (`index.html`) provides an intuitive way to explore your results:
 
 ### Features
 
@@ -174,24 +174,19 @@ The viewer is safe to deploy publicly since it contains no API keys!
 
 ### Setup:
 
-1. **Rename the viewer:**
-   ```bash
-   mv viewer.html index.html
-   ```
-
-2. **Commit to GitHub:**
+1. **Commit to GitHub:**
    ```bash
    git add index.html
    git commit -m "Add grocery store viewer"
    git push
    ```
 
-3. **Enable GitHub Pages:**
+2. **Enable GitHub Pages:**
    - Go to your repo Settings → Pages
    - Select branch `main` and folder `/root`
    - Save
 
-4. **Share the URL:**
+3. **Share the URL:**
    - Your site: `https://yourusername.github.io/store-scraper/`
    - Visitors enter their own (free) Google Maps API key to use the map view
 
