@@ -61,12 +61,16 @@ python generate_viewer.py
 ```
 
 This will:
-- Automatically read your Google Maps API key from `.env`
-- Generate `viewer.html` with your data and API key embedded
+- Generate `viewer.html` with your data embedded
 - Automatically open it in your default browser
-- Provide both List View and Map View for exploring results
+- **No API key embedded** - prompts for API key when clicking Map View
+- Safe to share publicly or commit to GitHub
 
-**Note:** The script automatically uses the same Google Maps API key from your `.env` file, so the map view will work immediately!
+**How it works:**
+- List View works immediately (no API key needed)
+- When you click Map View, you'll be prompted to enter your Google Maps API key
+- The key is saved in your browser's localStorage (never in the HTML file)
+- Once entered, the key is remembered for future visits
 
 ## Manhattan Areas Covered
 
@@ -155,10 +159,49 @@ The HTML viewer (`viewer.html`) provides an intuitive way to explore your result
 ### Using the Viewer
 
 1. Generate with: `python generate_viewer.py`
-2. API key is automatically loaded from your `.env` file
-3. Opens automatically in your browser
-4. Both list and map views work immediately
-5. Fully self-contained - share the HTML file with anyone (they'll need internet for the map)
+2. Opens automatically in your browser
+3. **List View** works immediately - no setup needed
+4. **Map View** prompts for your Google Maps API key when clicked
+   - Click "Enter" and paste your key → Map loads with all store locations
+   - Click "Skip" → Opens Map View tab with a message (map disabled, data still accessible)
+   - Your key is saved in browser localStorage for future visits
+5. **Safe to share** - The HTML file contains NO API key
+6. **Safe for GitHub Pages** - Can be committed and deployed publicly
+
+## Deploying to GitHub Pages
+
+The viewer is safe to deploy publicly since it contains no API keys!
+
+### Setup:
+
+1. **Rename the viewer:**
+   ```bash
+   mv viewer.html index.html
+   ```
+
+2. **Commit to GitHub:**
+   ```bash
+   git add index.html
+   git commit -m "Add grocery store viewer"
+   git push
+   ```
+
+3. **Enable GitHub Pages:**
+   - Go to your repo Settings → Pages
+   - Select branch `main` and folder `/root`
+   - Save
+
+4. **Share the URL:**
+   - Your site: `https://yourusername.github.io/store-scraper/`
+   - Visitors enter their own (free) Google Maps API key to use the map view
+
+### What Gets Deployed:
+
+- ✅ `index.html` - Public viewer (NO API key)
+- ✅ All store data embedded in the HTML
+- ❌ `.env` - Protected by `.gitignore`
+- ❌ JSON files - Protected by `.gitignore`
+- ❌ Python scripts - Optional (can commit for others to use)
 
 ## Performance
 
