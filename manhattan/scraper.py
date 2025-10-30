@@ -10,6 +10,7 @@ API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
 API_ENDPOINT = 'https://places.googleapis.com/v1/places:searchText'
 
 FIELD_MASK = ','.join([
+    # Basic fields
     'places.id',
     'places.displayName',
     'places.formattedAddress',
@@ -20,7 +21,13 @@ FIELD_MASK = ','.join([
     'places.types',
     'places.googleMapsUri',
     'places.websiteUri',
-    'places.internationalPhoneNumber'
+    'places.internationalPhoneNumber',
+
+    # Enrichment fields (Preferred tier - higher cost)
+    'places.reviews',  # Up to 5 reviews with text, author, rating
+    'places.photos',  # Photo references and metadata
+    'places.editorialSummary',  # Concise editorial description
+    'places.generativeSummary'  # AI-generated summary from Gemini
 ])
 
 SEARCH_QUERIES = [

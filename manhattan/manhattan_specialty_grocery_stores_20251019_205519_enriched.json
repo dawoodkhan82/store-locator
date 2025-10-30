@@ -27,6 +27,19 @@
       "displayName": {
         "text": "Battery Park City Gourmet Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "American",
+          "Sandwiches",
+          "Burgers"
+        ],
+        "aboutText": "Battery Park City Gourmet Market offers a unique selection of gourmet foods and quick meals, perfect for those on the go in the TriBeCa area.",
+        "specialties": [
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -80,6 +93,21 @@
       "displayName": {
         "text": "City Acres Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "City Acres Market offers a unique grocery shopping experience with a focus on quality and convenience in urban settings.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/cityacresmarketnyc/",
+          "facebook": "https://www.facebook.com/cityacresmarket",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -114,6 +142,33 @@
       "displayName": {
         "text": "Open Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gourmet Foods",
+          "Prepared Foods",
+          "International Cuisine",
+          "Snacks",
+          "Beverages",
+          "Fresh Produce",
+          "Dairy",
+          "Bakery",
+          "Meats",
+          "Seafood"
+        ],
+        "aboutText": "Open Market offers a unique dining experience with culinary influences from around the globe, using fresh and local ingredients sourced sustainably.",
+        "specialties": [
+          "sustainable",
+          "local",
+          "gourmet",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/openmarketnyc",
+          "facebook": "https://www.facebook.com/113039237118407",
+          "twitter": "https://www.x.com/OpenMar54046656",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -166,6 +221,12 @@
       "displayName": {
         "text": "MarDona Speciality Foods",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -196,6 +257,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic, and sustainable products, setting it apart from regular grocery stores.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/wholefoods",
+          "facebook": "https://www.facebook.com/wholefoods",
+          "twitter": "https://twitter.com/wholefoods",
+          "tiktok": "https://www.tiktok.com/@wholefoods"
+        }
       }
     },
     {
@@ -224,6 +313,31 @@
       "displayName": {
         "text": "Jubilee Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Meat",
+          "Seafood",
+          "Grocery",
+          "Catering",
+          "Snacks",
+          "Desserts",
+          "Beverages",
+          "Organic Foods",
+          "Imported Goods"
+        ],
+        "aboutText": "Jubilee Marketplace has served the Financial District since 1999, offering fresh, organic, and sustainably sourced goods with fast, friendly service.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "gourmet",
+          "ethically sourced"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/jubileeMarket.nyc"
+        }
       }
     },
     {
@@ -282,6 +396,28 @@
       "displayName": {
         "text": "Eataly",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Pasta",
+          "Panettone",
+          "Gifts",
+          "Coffee & Tea",
+          "Meats",
+          "Oils & Vinegars",
+          "Bakery",
+          "Sweets & Snacks",
+          "Kitchen & Home",
+          "Canned Goods"
+        ],
+        "aboutText": "Eataly offers a unique Italian marketplace experience, combining a grocery store, restaurants, and cooking classes, all focused on high-quality, authentic Italian food.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "international",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -314,6 +450,32 @@
       "displayName": {
         "text": "Gansevoort Liberty Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bakery",
+          "Sushi",
+          "Noodle Soup",
+          "Tacos",
+          "Ceviche",
+          "Sandwiches",
+          "Cocktails",
+          "Breakfast",
+          "Seafood",
+          "Prepared Foods"
+        ],
+        "aboutText": "Located inside the Oculus at Westfield World Trade Center, Gansevoort Liberty Market offers a diverse range of flavorful dishes in a modern food hall setting.",
+        "specialties": [
+          "artisanal",
+          "international",
+          "prepared foods",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/gansevoortmarketnyc/",
+          "facebook": "https://www.facebook.com/gansevoortlibertymarket",
+          "twitter": "https://twitter.com/gansevoortmrkt?lang=en"
+        }
       }
     },
     {
@@ -339,6 +501,35 @@
       "displayName": {
         "text": "Smorgasburg WTC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Food",
+          "Beverages",
+          "Snacks",
+          "Local Flavors",
+          "Artisanal Products",
+          "Prepared Foods",
+          "International Cuisine",
+          "Vegan Options",
+          "Gourmet Items",
+          "Seasonal Offerings"
+        ],
+        "aboutText": "Smorgasburg is the largest weekly open-air food market in America, offering a vibrant selection of local vendors and unique culinary experiences.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "emerging brands",
+          "international",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "http://instagram.com/smorgasburg",
+          "facebook": "http://www.facebook.com/smorgasburg",
+          "twitter": "https://twitter.com/smorgasburg",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -365,6 +556,33 @@
       "displayName": {
         "text": "Number One Caviar Boutique & Tasting Room: Wall Street",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Caviar",
+          "Bottarga",
+          "Foie Gras",
+          "Smoked Salmon",
+          "Canned Seafood",
+          "Truffle Products",
+          "Pantry Items",
+          "Dining Experiences",
+          "Caviar Sets & Gifts",
+          "Sardines"
+        ],
+        "aboutText": "Number One Caviar Boutique offers a unique tasting experience with a focus on high-quality caviar and gourmet seafood, setting it apart from regular grocery stores.",
+        "specialties": [
+          "gourmet",
+          "artisanal",
+          "curated",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://instagram.com/wallstreetcaviar",
+          "facebook": "https://www.facebook.com/wallstreetcaviar",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -423,6 +641,27 @@
       "displayName": {
         "text": "West Bank Gourmet Deli in Battery Park",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Breakfast",
+          "Soups",
+          "Salads",
+          "Wraps",
+          "Paninis",
+          "Sandwiches",
+          "Pasta",
+          "Groceries",
+          "Snacks",
+          "Beverages"
+        ],
+        "aboutText": "West Bank Deli is a family-owned gourmet deli in the Financial District, known for its personalized service and a diverse menu that caters to the local community.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -449,6 +688,29 @@
       "displayName": {
         "text": "Happier Grocery",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Frozen Foods",
+          "Bakery",
+          "Meat",
+          "Seafood",
+          "Household Essentials"
+        ],
+        "aboutText": "Happier Grocery is dedicated to providing a curated selection of high-quality, sustainable products that promote a healthier lifestyle.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "artisanal",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -479,6 +741,29 @@
       "displayName": {
         "text": "Gourmet Garage of SOHO",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Frozen",
+          "Meat & Seafood",
+          "Prepared Meals",
+          "Health & Nutrition",
+          "Baby Food",
+          "Cleaning Supplies"
+        ],
+        "aboutText": "Gourmet Garage of SOHO offers a curated selection of gourmet and specialty foods, focusing on quality and unique products that elevate everyday meals.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "organic",
+          "international",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -508,6 +793,29 @@
       "displayName": {
         "text": "Mulberry Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Frozen Foods",
+          "Bakery",
+          "Meat",
+          "Seafood",
+          "Condiments"
+        ],
+        "aboutText": "Mulberry Market NYC offers a curated selection of high-quality, locally sourced products, emphasizing sustainability and community support.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "artisanal",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -566,6 +874,29 @@
       "displayName": {
         "text": "The Meadow - Mulberry St.",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Salt",
+          "Chocolate",
+          "Pantry",
+          "Gifts",
+          "Cocktail Kits",
+          "Seasoning Blends",
+          "Corporate Gifting",
+          "Home Chef Essentials",
+          "Salt Sets",
+          "Chocolate Bundles"
+        ],
+        "aboutText": "The Meadow offers a curated selection of unique salts and chocolates sourced from around the world, emphasizing quality and craftsmanship.",
+        "specialties": [
+          "artisanal",
+          "curated",
+          "gourmet",
+          "international",
+          "small-batch"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -593,6 +924,12 @@
       "displayName": {
         "text": "Spring Mart",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Welcome to Spring Mart, your go-to grocery store offering a diverse range of products in a friendly neighborhood setting.",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -619,6 +956,34 @@
       "displayName": {
         "text": "4th Street Food Co-Op",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bulk Dry Goods",
+          "Produce",
+          "Teas",
+          "Coffee",
+          "Spices",
+          "Personal Care Products",
+          "Cleaning Products",
+          "Snacks",
+          "Dairy",
+          "Pasta"
+        ],
+        "aboutText": "4th Street Food Co-op is dedicated to providing food for people, not for profit, with a focus on organic and sustainable products.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "small-batch",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/4thstreetfoodcoop/",
+          "facebook": "http://www.facebook.com/4thStreetFoodCoop",
+          "twitter": "http://twitter.com/4thstfoodcoop",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -649,6 +1014,33 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic, and sustainable products, setting it apart from regular grocery stores.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -677,6 +1069,31 @@
       "displayName": {
         "text": "Despaña",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Catering Platters",
+          "Prepared Foods",
+          "Cheese",
+          "Charcuterie",
+          "Olive Oil and Vinegars",
+          "Tinned Seafood",
+          "Gift Baskets",
+          "Sweets",
+          "Chips and Snacks",
+          "Spices and Sauces"
+        ],
+        "aboutText": "Despaña offers a unique selection of Spanish gourmet foods, showcasing the magic of Spanish cuisine through conservas, cured meats, and specialty cheeses.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/despananyc/",
+          "facebook": "https://www.facebook.com/profile.php?id=100063665617718"
+        }
       }
     },
     {
@@ -706,6 +1123,23 @@
       "displayName": {
         "text": "Morgenstern's BANANAS",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Soft Serve",
+          "Merchandise",
+          "Gift Cards"
+        ],
+        "aboutText": "Morgenstern's BANANAS offers a unique twist on soft serve ice cream with a variety of creative flavors, making it a fun destination for dessert lovers.",
+        "specialties": [
+          "vegan",
+          "artisanal",
+          "plant-based"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/morgensternsnyc/",
+          "facebook": "https://www.facebook.com/morgensternsnyc"
+        }
       }
     },
     {
@@ -731,6 +1165,31 @@
       "displayName": {
         "text": "The Corner Store",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Dinner",
+          "Starters",
+          "Salads",
+          "Entrees",
+          "Sides",
+          "Martinis",
+          "Drinks",
+          "Dessert"
+        ],
+        "aboutText": "The Corner Store is a classic American joint in SoHo, NYC, offering a nostalgic menu inspired by beloved dishes and a unique cocktail program.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "plant-based"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/thecornerstore",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -757,6 +1216,24 @@
       "displayName": {
         "text": "ENLY",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Candles",
+          "Beverages",
+          "Coffee",
+          "Latte",
+          "Desserts"
+        ],
+        "aboutText": "ENLY is a unique coffee shop in Nolita, NYC, offering one-of-a-kind signature drinks that provide an immersive experience.",
+        "specialties": [
+          "artisanal",
+          "local",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "http://instagram.com/enly_nyc"
+        }
       }
     },
     {
@@ -781,6 +1258,12 @@
       "displayName": {
         "text": "3NY",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "3NY is a unique grocery concept that focuses on providing a curated selection of products, aiming to enhance the shopping experience.",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -805,6 +1288,34 @@
       "displayName": {
         "text": "cutandcropped",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Italian Charms",
+          "Custom Engraved Jewelry",
+          "Clothing",
+          "Tops",
+          "Bottoms",
+          "Accessories",
+          "Stationary",
+          "Glass Cups",
+          "Taylor Items",
+          "Makeup & Self Care"
+        ],
+        "aboutText": "Cutandcropped offers a unique experience in creating custom Italian charm bracelets and personalized jewelry, making it a memorable destination in NYC.",
+        "specialties": [
+          "custom",
+          "engraved",
+          "artisanal",
+          "unique",
+          "personalized"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -834,6 +1345,33 @@
       "displayName": {
         "text": "Stick With Me",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bonbon Books",
+          "Confections",
+          "Gift Occasions",
+          "Fall Gatherings",
+          "Winter Holidays",
+          "Made Without Nuts",
+          "Chocolates",
+          "Artisanal Chocolates",
+          "Custom Orders",
+          "Fast In-Store Pickup"
+        ],
+        "aboutText": "Stick With Me specializes in handcrafted chocolates and unique gift experiences, ensuring each treat is made with care and creativity.",
+        "specialties": [
+          "artisanal",
+          "small-batch",
+          "handcrafted",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/swmsweets/",
+          "facebook": "https://www.facebook.com/swmsweets",
+          "twitter": "https://twitter.com/swmsweets",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -859,6 +1397,28 @@
       "displayName": {
         "text": "Astor Wines & Spirits",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Wines",
+          "Spirits",
+          "Saké",
+          "Champagne",
+          "Burgundy",
+          "Prosecco",
+          "Tequila",
+          "Single Malt Scotch",
+          "Bourbon",
+          "Rum"
+        ],
+        "aboutText": "Astor Wines & Spirits is an employee-owned company offering a vast selection of wines and spirits with free delivery across New York.",
+        "specialties": [
+          "employee-owned",
+          "curated",
+          "international",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -885,6 +1445,32 @@
       "displayName": {
         "text": "Pearl River Mart",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Wear + Care",
+          "Home + Décor",
+          "Food + Drink",
+          "Ceramics",
+          "Fashion",
+          "Personal Care",
+          "Kitchen + Cookware",
+          "Accessories",
+          "Children",
+          "Gifts"
+        ],
+        "aboutText": "Pearl River Mart is a beloved Asian emporium offering unique items imported from Asia and innovative merchandise designed by Asian Americans, symbolizing the multiculturalism of New York City.",
+        "specialties": [
+          "international",
+          "curated",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/pearlrivermart/",
+          "facebook": "https://www.facebook.com/PearlRiverMart?ref=br_tf",
+          "twitter": "",
+          "tiktok": "https://www.tiktok.com/@pearlrivermart?lang=en"
+        }
       }
     },
     {
@@ -912,6 +1498,27 @@
       "displayName": {
         "text": "Ground Support Cafe",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Classic Drinks",
+          "Specialty Drinks",
+          "Bakery",
+          "Breakfast",
+          "Lunch"
+        ],
+        "aboutText": "Since 2009, we’ve been serving exceptional coffee and thoughtful food with quality ingredients and warm service in SoHo.",
+        "specialties": [
+          "artisanal",
+          "local",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/groundsupportcafe/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -937,6 +1544,32 @@
       "displayName": {
         "text": "No.6",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Clothing",
+          "Footwear",
+          "Accessories",
+          "Outerwear",
+          "Clogs",
+          "Shoes",
+          "Bags",
+          "Jewelry",
+          "Fragrance & Body",
+          "Hair Accessories"
+        ],
+        "aboutText": "No.6 Store offers a curated selection of clothing and shoes, featuring both their house line and unique designers from around the world.",
+        "specialties": [
+          "curated",
+          "emerging brands",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": {},
+          "tiktok": {}
+        }
       }
     },
     {
@@ -989,6 +1622,12 @@
       "displayName": {
         "text": "M & O Market & Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -1016,6 +1655,15 @@
       "displayName": {
         "text": "MORTON WILLIAMS SUPERMARKETS",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Morton Williams Supermarkets offers a wide range of grocery items and is committed to providing quality products and exceptional service to its customers.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mortonwilliamssupermarkets/",
+          "facebook": "https://www.facebook.com/mortonwilliamssupermarkets/"
+        }
       }
     },
     {
@@ -1042,6 +1690,35 @@
       "displayName": {
         "text": "The Goods Mart NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Tea",
+          "Ramen",
+          "Vegan Snacks",
+          "Seafood",
+          "Craft Beverages",
+          "Organic Snacks",
+          "Gluten-Free Snacks",
+          "Earth-Friendly Snacks"
+        ],
+        "aboutText": "The Goods Mart NYC is your better-for-you snack shop, sparking snack discoveries with a focus on emerging brands and unique products.",
+        "specialties": [
+          "organic",
+          "vegan",
+          "emerging brands",
+          "sustainable",
+          "gluten-free",
+          "earth-friendly"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/thegoodsmart/",
+          "facebook": "https://www.facebook.com/thegoodsmart",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1078,6 +1755,12 @@
       "displayName": {
         "text": "Market On Prince",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Market On Prince offers a convenient 24-hour grocery shopping experience in the heart of New York City.",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -1127,6 +1810,22 @@
       "displayName": {
         "text": "Little Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Little Market NYC is a marketplace for small women-owned businesses, providing a platform for local artists to gain exposure and inspire the next generation of women creators.",
+        "specialties": [
+          "local",
+          "women-owned",
+          "emerging brands",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/littlemarketnyc/",
+          "facebook": "https://www.facebook.com/LittleMarketNYC",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1153,6 +1852,28 @@
       "displayName": {
         "text": "Café Integral",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Coffee",
+          "Espresso Blends",
+          "Cold Brew",
+          "Decaf",
+          "Chocolate Covered Beans"
+        ],
+        "aboutText": "Café Integral brings exceptional Nicaraguan coffees to the forefront of American coffee culture, focusing on a grower’s perspective and complete vertical integration.",
+        "specialties": [
+          "organic",
+          "artisanal",
+          "sustainable",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/cafeintegral/",
+          "facebook": "http://www.facebook.com/CafeIntegral",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1178,6 +1899,29 @@
       "displayName": {
         "text": "Eataly Soho",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Pasta",
+          "Panettone",
+          "Gifts",
+          "Coffee & Tea",
+          "Bakery",
+          "Oils & Vinegars",
+          "Meats",
+          "Sweets & Snacks",
+          "Canned Goods",
+          "Kitchen & Home"
+        ],
+        "aboutText": "Eataly Soho offers a unique Italian marketplace experience, combining a grocery store, restaurants, and cooking classes under one roof, celebrating the rich traditions of Italian cuisine.",
+        "specialties": [
+          "gourmet",
+          "artisanal",
+          "local",
+          "prepared foods",
+          "international"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1203,6 +1947,17 @@
       "displayName": {
         "text": "Sartiano's",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/sartianos/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1227,6 +1982,28 @@
       "displayName": {
         "text": "Crave NYU",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Beverages",
+          "Breakfast",
+          "Burgers",
+          "Sandwiches",
+          "Bowls",
+          "Snacks",
+          "Coffee",
+          "Vending",
+          "Catering",
+          "Desserts"
+        ],
+        "aboutText": "Crave NYU offers a diverse dining experience with hand-smashed burgers and globally inspired bowls, all while supporting community initiatives.",
+        "specialties": [
+          "plant-based",
+          "sustainable",
+          "local",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1254,6 +2031,22 @@
       "displayName": {
         "text": "Space Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Paninis",
+          "Bagels",
+          "Salads",
+          "Sandwiches",
+          "Wraps",
+          "Beverages"
+        ],
+        "aboutText": "Space Market offers a diverse menu for breakfast and dinner, providing quick bites and delicious meals for takeout or delivery.",
+        "specialties": [
+          "prepared foods",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1280,6 +2073,29 @@
       "displayName": {
         "text": "Gourmet Garage of Hudson St.",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Frozen",
+          "Meat & Seafood",
+          "Prepared Meals",
+          "Health & Nutrition",
+          "Baby Food",
+          "Cleaning Supplies"
+        ],
+        "aboutText": "Gourmet Garage of Hudson St. offers a curated selection of gourmet and specialty foods, focusing on quality and unique products that elevate everyday meals.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "organic",
+          "international",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1308,6 +2124,33 @@
       "displayName": {
         "text": "Citarella Gourmet Market - West Village",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Seafood",
+          "Fish",
+          "Shellfish & Mollusks",
+          "Caviar",
+          "Smoked Fish",
+          "Prepared & Pantry",
+          "Gifts & Specialties",
+          "Kits & Packages",
+          "Essential Ingredients",
+          "Interesting Delicacies"
+        ],
+        "aboutText": "Citarella Gourmet Market offers an exquisite selection of fresh seafood and gourmet ingredients, crafted with the finest quality and sourced from trusted suppliers.",
+        "specialties": [
+          "gourmet",
+          "artisanal",
+          "prepared foods",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://www.citarella.com/",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1336,6 +2179,29 @@
       "displayName": {
         "text": "Brooklyn Fare",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Meat",
+          "Seafood",
+          "Bakery",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Frozen Foods",
+          "Household Items"
+        ],
+        "aboutText": "Brooklyn Fare offers a unique grocery experience with a focus on high-quality, fresh ingredients and a curated selection of gourmet products.",
+        "specialties": [
+          "organic",
+          "local",
+          "artisanal",
+          "gourmet",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1366,6 +2232,31 @@
       "displayName": {
         "text": "Greenwich Village Farm",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Beers",
+          "Beverages",
+          "Snacks",
+          "Dairy",
+          "Ice Cream",
+          "Groceries - Food",
+          "Groceries - Non Food",
+          "Health and Beauty",
+          "Party Supplies",
+          "Pharmacy"
+        ],
+        "aboutText": "Greenwich Village Farm offers a diverse selection of local and specialty products, focusing on quality and unique finds that cater to the community's needs.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "curated",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://instagram.com/",
+          "facebook": "https://facebook.com/"
+        }
       }
     },
     {
@@ -1394,6 +2285,29 @@
       "displayName": {
         "text": "LifeThyme Natural Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Health Foods",
+          "Produce",
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Frozen Foods",
+          "Vitamins",
+          "Supplements",
+          "Personal Care",
+          "Household"
+        ],
+        "aboutText": "LifeThyme Natural Market is dedicated to providing high-quality natural and organic products, focusing on health and wellness for our community.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "natural",
+          "health-focused"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1423,6 +2337,34 @@
       "displayName": {
         "text": "Pop Up Grocer",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Pantry Staples",
+          "Wellness",
+          "Collectible Merch",
+          "Limited-Edition Boxes",
+          "Café Items",
+          "Gourmet Foods",
+          "Prepared Foods"
+        ],
+        "aboutText": "Pop Up Grocer is a unique grocery store and café that focuses on discovering new, better-for-you products from independent producers.",
+        "specialties": [
+          "curated",
+          "emerging brands",
+          "local",
+          "artisanal",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/popup.grocer/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": "https://www.tiktok.com/@popup.grocer"
+        }
       }
     },
     {
@@ -1449,6 +2391,24 @@
       "displayName": {
         "text": "Village Square Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Salads",
+          "Breakfast",
+          "Smoothies",
+          "Catering"
+        ],
+        "aboutText": "Village Square Market offers fresh, made-to-order meals crafted with care, providing nourishing food with big flavor in the heart of New York City.",
+        "specialties": [
+          "fresh",
+          "made-to-order",
+          "hearty",
+          "gourmet",
+          "crafted with care"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1500,6 +2460,30 @@
       "displayName": {
         "text": "Heavenly Market & Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Catering",
+          "Sandwiches",
+          "Salads",
+          "Wraps",
+          "Smoothies",
+          "Breakfast",
+          "Burgers",
+          "Paninis",
+          "Soups",
+          "Daily Specials"
+        ],
+        "aboutText": "Heavenly Market & Cafe is a culinary haven in NYC, offering fresh, locally sourced food options and an inviting atmosphere for food enthusiasts.",
+        "specialties": [
+          "organic",
+          "local",
+          "gourmet",
+          "prepared foods",
+          "vegetarian",
+          "gluten-free"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1527,6 +2511,31 @@
       "displayName": {
         "text": "Gristedes",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Fresh Meats",
+          "Produce",
+          "Dairy Products",
+          "Baked Goods",
+          "Frozen Foods",
+          "Gourmet Foods",
+          "Nonfood Items",
+          "Catering",
+          "Gift Cards",
+          "Weekly Specials"
+        ],
+        "aboutText": "Gristedes Supermarkets has been feeding New Yorkers for over 100 years, offering the best products at the lowest prices in town.",
+        "specialties": [
+          "gourmet",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/gristedes/",
+          "facebook": "https://www.facebook.com/Gristedes/",
+          "twitter": "https://x.com/gristedes",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1553,6 +2562,17 @@
       "displayName": {
         "text": "Bonberi Mart",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/bonberimart/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1662,6 +2682,30 @@
       "displayName": {
         "text": "D'Agostino Grocery Store",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Full Service Deli",
+          "Meat",
+          "Fresh Produce",
+          "Dairy",
+          "Frozen Food",
+          "Seafood",
+          "Fresh Sushi",
+          "Catering"
+        ],
+        "aboutText": "D'Agostino Grocery Store offers a high-quality shopping experience with dedicated personal shoppers and a commitment to freshness and quality.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/dagostinosupermarket/",
+          "facebook": "https://www.facebook.com/yourdagnyc",
+          "twitter": "https://twitter.com/yourdagnyc",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -1767,6 +2811,23 @@
       "displayName": {
         "text": "Faicco’s Italian Specialties",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Beverages",
+          "Sides",
+          "Catering",
+          "Takeout"
+        ],
+        "aboutText": "Faicco's Italian Specialties is a beloved Italian deli in NYC, known for its authentic sandwiches and rich flavors, serving the community since 1900.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1818,6 +2879,29 @@
       "displayName": {
         "text": "Sidestein Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Produce",
+          "Dairy",
+          "Frozen Foods",
+          "Bakery",
+          "Meat",
+          "Seafood",
+          "Condiments"
+        ],
+        "aboutText": "Sidestein Market offers a unique selection of fresh and local products, focusing on quality and sustainability to serve the community.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "organic",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1843,6 +2927,28 @@
       "displayName": {
         "text": "The Locavore Variety Store",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Food & Beverage",
+          "Health & Beauty",
+          "Clothing",
+          "Bookshelf",
+          "Electronics & Appliances",
+          "Arts & Crafts",
+          "Home",
+          "Music",
+          "Plants & Flowers",
+          "Recreation"
+        ],
+        "aboutText": "The Locavore Variety Store connects shoppers with over 14,000 independently owned businesses in NYC, promoting local and sustainable shopping.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "curated",
+          "emerging brands"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1897,6 +3003,29 @@
       "displayName": {
         "text": "Abingdon Square Greenmarket",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Vegetables",
+          "Fruits",
+          "Seafood",
+          "Dairy",
+          "Baked Goods",
+          "Juices",
+          "Flowers",
+          "Eggs",
+          "Grains",
+          "Specialty Foods"
+        ],
+        "aboutText": "The Abingdon Square Greenmarket has been connecting local farms with the Greenwich Village community since 1994, offering fresh, seasonal produce and artisanal goods.",
+        "specialties": [
+          "local",
+          "organic",
+          "sustainable",
+          "farm-to-table",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1921,6 +3050,22 @@
       "displayName": {
         "text": "Artisanal Cornucopia",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Household",
+          "Jewelry",
+          "AC Collection",
+          "Books"
+        ],
+        "aboutText": "Artisanal Cornucopia offers a feast for the eyes and soul with thoughtfully made items from global artisans, inspiring a community that cherishes unique craftsmanship.",
+        "specialties": [
+          "artisanal",
+          "curated",
+          "emerging brands",
+          "international"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -1947,6 +3092,17 @@
       "displayName": {
         "text": "Westside Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Our mission is simple: to become your favorite neighborhood food market and caterer of choice by offering the highest quality foods and hard-to-find products supported by friendly, personalized, efficient service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2054,6 +3210,32 @@
       "displayName": {
         "text": "Union Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bakery",
+          "Charcuterie",
+          "Coffee & Tea",
+          "Cheese & Dairy",
+          "Grocery",
+          "Meat & Poultry",
+          "Prepared Food",
+          "Produce",
+          "Seafood"
+        ],
+        "aboutText": "Union Market is your neighborhood source for fine foods, offering a curated selection of quality products across multiple locations in Brooklyn and Manhattan.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "https://instagram.com/unionmarket",
+          "facebook": "https://www.facebook.com/pages/Union-Market/153877749635",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2085,6 +3267,12 @@
       "displayName": {
         "text": "Village Farm Grocery",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -2116,6 +3304,33 @@
       "displayName": {
         "text": "Key Food Urban Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bakery",
+          "Deli",
+          "Catering",
+          "Prepared Foods",
+          "Grocery",
+          "Pharmacy",
+          "Liquor",
+          "Beverages",
+          "Snacks",
+          "Produce"
+        ],
+        "aboutText": "Key Food Urban Marketplace offers a diverse selection of groceries and specialty items, focusing on community needs and convenience.",
+        "specialties": [
+          "local",
+          "organic",
+          "prepared foods",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/keyfood",
+          "facebook": "https://www.facebook.com/keyfood",
+          "twitter": "https://twitter.com/keyfood",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2251,6 +3466,32 @@
       "displayName": {
         "text": "Corner Grocers",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Prepared Food",
+          "Electronics & Office",
+          "Food & Pantry",
+          "Candy & Chocolate",
+          "Health Care",
+          "Breads & Bakery",
+          "Beverages",
+          "Pet",
+          "Fresh Food",
+          "Snacks"
+        ],
+        "aboutText": "Corner Grocers offers a diverse selection of groceries and essentials, ensuring convenience and quality for every customer.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/ubereats",
+          "facebook": "https://www.facebook.com/ubereats",
+          "twitter": "https://www.twitter.com/ubereats",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2310,6 +3551,12 @@
       "displayName": {
         "text": "Broadway Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -2387,6 +3634,12 @@
       "displayName": {
         "text": "Sweet Village Market Place",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -2410,6 +3663,27 @@
       "displayName": {
         "text": "Epicurean Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Breakfast",
+          "Lunch",
+          "Snacks",
+          "Beverages",
+          "Coffee",
+          "Sandwiches",
+          "Wraps",
+          "Salads",
+          "Pasta",
+          "Desserts"
+        ],
+        "aboutText": "At Epicurean Market, we are obsessed with sandwiches and offer a variety of delicious food options for pickup and delivery.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -2462,6 +3736,17 @@
       "displayName": {
         "text": "Manhattan Market Place",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/manahattanmarketplace?igsh=ZW9jOXU2OXlhcXNi&utm_sourc=qr",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2513,6 +3798,36 @@
       "displayName": {
         "text": "Live Live & Organic",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Organic Beauty",
+          "Skincare",
+          "Food & Superfoods",
+          "Supplements",
+          "Vegan Products",
+          "Gluten-Free Products",
+          "Raw Snacks",
+          "Essential Oils",
+          "Body & Bath",
+          "Nuts & Seeds"
+        ],
+        "aboutText": "Live Live & Organic is a purity-centric vegetarian boutique offering gluten-free, vegan, and raw food options, curated for your health journey.",
+        "specialties": [
+          "organic",
+          "vegan",
+          "gluten-free",
+          "raw",
+          "plant-based",
+          "sustainable",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://facebook.com/live-live-organic",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2588,6 +3903,17 @@
       "displayName": {
         "text": "Westside Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Our mission is simple: to become your favorite neighborhood food market and caterer of choice by offering the highest quality foods and hard-to-find products supported by friendly, personalized, efficient service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2615,6 +3941,21 @@
       "displayName": {
         "text": "Gourmet Square Organic Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Burgers",
+          "Smoothies",
+          "Coffee",
+          "Sandwiches"
+        ],
+        "aboutText": "Gourmet Square Organic Market is your neighborhood hub for fresh, wholesome, and delicious food, offering handcrafted gourmet options made with the finest ingredients.",
+        "specialties": [
+          "organic",
+          "gourmet",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -2643,6 +3984,30 @@
       "displayName": {
         "text": "Fairway Market of Chelsea",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Frozen",
+          "Bakery",
+          "Meat & Seafood",
+          "Canned Foods",
+          "Health & Nutrition",
+          "International Foods"
+        ],
+        "aboutText": "Fairway Market of Chelsea offers a diverse selection of high-quality groceries, focusing on fresh produce and unique specialty items.",
+        "specialties": [
+          "organic",
+          "local",
+          "artisanal",
+          "sustainable",
+          "prepared foods",
+          "international"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -2701,6 +4066,28 @@
       "displayName": {
         "text": "Kalustyan's",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Cooking Utensils & Books",
+          "Drinks & Beverages",
+          "Health & Wellness",
+          "Herbal & Beauty Products",
+          "Instant Meals & Seafoods",
+          "Snack & Confectioneries",
+          "Rice, Grain, Pasta & Noodles",
+          "Fruits, Vegetables, Nuts & Legumes",
+          "Spices, Seasonings & Condiments",
+          "Oils, Ghee & Vinegars"
+        ],
+        "aboutText": "Kalustyan's offers a diverse selection of authentic spices and specialty foods, catering to both culinary enthusiasts and professional chefs with over 70 years of excellence.",
+        "specialties": [
+          "international",
+          "gourmet",
+          "artisanal",
+          "curated"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -2731,6 +4118,30 @@
       "displayName": {
         "text": "Elm Wellness",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Pharmacy Services",
+          "Organic Grocery",
+          "Vitamins",
+          "Health Foods",
+          "Prepared Foods",
+          "Snacks",
+          "Beverages",
+          "Produce",
+          "Dairy",
+          "Personal Care"
+        ],
+        "aboutText": "Elm Drugs + Elm Wellness is a unique retail experience combining an organic grocery, vitamin market, and traditional pharmacy, promoting a healthy lifestyle in the community.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/elmwellness/"
+        }
       }
     },
     {
@@ -2761,6 +4172,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic, and responsibly sourced products, setting it apart from conventional grocery stores.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://www.facebook.com/wholefoods",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2837,6 +4276,17 @@
       "displayName": {
         "text": "Westside Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Our mission is simple: to become your favorite neighborhood food market and caterer of choice by offering the highest quality foods and hard-to-find products supported by friendly, personalized, efficient service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2864,6 +4314,33 @@
       "displayName": {
         "text": "Pearl River Mart Foods",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Wear + Care",
+          "Home + Décor",
+          "Food + Drink",
+          "Gifts",
+          "Ceramics",
+          "Personal Care",
+          "Kitchen + Cookware",
+          "Dinnerware",
+          "Snacks + Candy",
+          "Asian Cooking"
+        ],
+        "aboutText": "Founded in 1971, Pearl River Mart is a beloved Asian emporium offering unique items imported from Asia and innovative merchandise designed by Asian Americans.",
+        "specialties": [
+          "international",
+          "curated",
+          "gourmet",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/pearlrivermart/",
+          "facebook": "https://www.facebook.com/PearlRiverMart?ref=br_tf",
+          "twitter": "",
+          "tiktok": "https://www.tiktok.com/@pearlrivermart?lang=en"
+        }
       }
     },
     {
@@ -2894,6 +4371,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic products while promoting sustainable and responsible sourcing.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/wholefoods",
+          "facebook": "https://www.facebook.com/wholefoods",
+          "twitter": "https://twitter.com/wholefoods",
+          "tiktok": "https://www.tiktok.com/@wholefoods"
+        }
       }
     },
     {
@@ -2918,6 +4423,27 @@
       "displayName": {
         "text": "Dover Street Market New York",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "New Items",
+          "Comme des Garçons",
+          "Spaces",
+          "Rose Bakery",
+          "Floor Guide"
+        ],
+        "aboutText": "Dover Street Market New York is a unique retail space that combines fashion, art, and food, offering a curated selection of products from emerging brands and established designers.",
+        "specialties": [
+          "curated",
+          "emerging brands",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/doverstreetmarketnewyork/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -2996,6 +4522,12 @@
       "displayName": {
         "text": "Heavenly Finest Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -3027,6 +4559,27 @@
       "displayName": {
         "text": "Healthy Choice Gourmet Deli & Pizza",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Pizza",
+          "Breakfast",
+          "Salads",
+          "Soups",
+          "Beverages",
+          "Smoothies",
+          "Juices",
+          "Catering",
+          "Desserts"
+        ],
+        "aboutText": "Healthy Choice Gourmet Deli & Pizza offers a diverse menu with a focus on quality ingredients and local favorites, making it a beloved spot in New York.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3050,6 +4603,34 @@
       "displayName": {
         "text": "Market 57",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Indian Cuisine",
+          "Japanese Cuisine",
+          "Seafood",
+          "Hot Dogs",
+          "Mexican Cuisine",
+          "Korean Cuisine",
+          "Mediterranean Cuisine",
+          "Cajun Cuisine",
+          "Dim Sum",
+          "Craft Beer"
+        ],
+        "aboutText": "Market 57 is a new dining destination on the Hudson River, committed to celebrating New York City’s local, independent food culture and supporting minority- and women-owned businesses.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "artisanal",
+          "small-batch",
+          "gourmet",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/pier57.nyc/",
+          "facebook": "https://www.facebook.com/pier57nyc/"
+        }
       }
     },
     {
@@ -3077,6 +4658,35 @@
       "displayName": {
         "text": "Artists & Fleas Market Chelsea",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Art",
+          "Design",
+          "Fashion",
+          "Vintage Clothing",
+          "Crafts",
+          "Home Goods",
+          "Jewelry",
+          "Accessories",
+          "Local Goods",
+          "Sustainable Products"
+        ],
+        "aboutText": "Artists & Fleas provides a platform for merchants to turn their crafts into businesses while offering shoppers unique, original, and meaningful products.",
+        "specialties": [
+          "local",
+          "curated",
+          "sustainable",
+          "artisanal",
+          "vintage",
+          "emerging brands"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/artistsandfleas/",
+          "facebook": "https://www.facebook.com/artistsandfleas",
+          "twitter": "",
+          "tiktok": "https://www.tiktok.com/@artistsandfleas"
+        }
       }
     },
     {
@@ -3100,6 +4710,34 @@
       "displayName": {
         "text": "Chelsea Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Food and Beverage",
+          "Arts and Culture",
+          "Shopping and Services",
+          "Groceries",
+          "Snacks",
+          "Dine-in Experience",
+          "Seasonal Flavors",
+          "Prepared Foods",
+          "Local Products",
+          "Charity Events"
+        ],
+        "aboutText": "Chelsea Market is a vibrant food hall and shopping destination that brings together local vendors and artisans, creating a unique community experience centered around food.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "sustainable",
+          "gourmet",
+          "prepared foods",
+          "emerging brands"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/chelseamarketny",
+          "facebook": "https://www.facebook.com/ChelseaMarket/",
+          "twitter": "https://twitter.com/ChelseaMarketNY"
+        }
       }
     },
     {
@@ -3126,6 +4764,25 @@
       "displayName": {
         "text": "Chelsea Fine Food",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Salads",
+          "Sandwiches",
+          "Wraps",
+          "Breakfast",
+          "Lunch",
+          "Dinner",
+          "Catering"
+        ],
+        "aboutText": "Chelsea Fine Food offers a delightful blend of international and local flavors in the heart of NYC, focusing on fresh, high-quality ingredients.",
+        "specialties": [
+          "local",
+          "international",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3158,6 +4815,28 @@
       "displayName": {
         "text": "Eataly NYC Flatiron",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Pasta",
+          "Panettone",
+          "Gifts",
+          "Coffee & Tea",
+          "Bakery",
+          "Oils & Vinegars",
+          "Meats",
+          "Sweets & Snacks",
+          "Kitchen & Home",
+          "Canned Goods"
+        ],
+        "aboutText": "Eataly NYC Flatiron offers a unique Italian marketplace experience, combining a grocery store, restaurants, and cooking classes under one roof.",
+        "specialties": [
+          "gourmet",
+          "artisanal",
+          "international",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3186,6 +4865,32 @@
       "displayName": {
         "text": "L'Arte del Gelato",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gelato",
+          "Monthly Flavors",
+          "Seasonal Flavor",
+          "Other Treats",
+          "Party Cart",
+          "Weddings",
+          "Cool Box",
+          "Party Pack",
+          "Pints",
+          "Gift Cards"
+        ],
+        "aboutText": "We create the same emotions for our customers to enjoy the intense flavors of the Sicilian tradition, bringing joy through our artisanal gelato.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/lartedelgelato/",
+          "facebook": "https://www.facebook.com/lartedelgelato",
+          "twitter": "https://twitter.com/lartedelgelato",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -3212,6 +4917,31 @@
       "displayName": {
         "text": "Buon'Italia",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Pantry",
+          "Pastas, Rice & Grains",
+          "Oils & Vinegars",
+          "Sweets, Treats & Snacks",
+          "Cheese & Charcuterie",
+          "Truffles",
+          "Seafood",
+          "Vegetables",
+          "Baking Essentials",
+          "Beverages"
+        ],
+        "aboutText": "Buon'Italia offers an authentic taste of Italy with a wide selection of high-quality Italian products, making it a unique destination for gourmet grocery shopping.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/buonitalia/",
+          "facebook": "https://www.facebook.com/buonitalianyc",
+          "twitter": "https://twitter.com/Buonitalia_"
+        }
       }
     },
     {
@@ -3238,6 +4968,17 @@
       "displayName": {
         "text": "ALF Bakery",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/alfbakery/?hl=en",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -3264,6 +5005,29 @@
       "displayName": {
         "text": "Saxelby Cheesemongers",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Cheese",
+          "Butter",
+          "Charcuterie",
+          "Crackers",
+          "Condiments",
+          "Gifts",
+          "Tools & Accessories",
+          "Monthly Cheese Club",
+          "Cooking Cheese",
+          "Pantry"
+        ],
+        "aboutText": "Saxelby Cheesemongers specializes in artisan cheeses and curated dairy products, offering a unique selection from small American farms.",
+        "specialties": [
+          "artisanal",
+          "local",
+          "gourmet",
+          "small-batch",
+          "curated"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3313,6 +5077,28 @@
       "displayName": {
         "text": "Eat Offbeat",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Catering",
+          "Events",
+          "Provisions",
+          "Gifts",
+          "Culinary Experiences"
+        ],
+        "aboutText": "Eat Offbeat celebrates the culinary talents of NYC's top refugee and immigrant chefs, offering a unique dining experience with diverse cuisines.",
+        "specialties": [
+          "artisanal",
+          "international",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/eatoffbeat/?hl=en",
+          "facebook": "https://www.facebook.com/eatoffbeat",
+          "twitter": "https://x.com/eatoffbeat",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -3415,6 +5201,12 @@
       "displayName": {
         "text": "City Gourmet Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -3443,6 +5235,12 @@
       "displayName": {
         "text": "Westerly Natural Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -3476,6 +5274,30 @@
       "displayName": {
         "text": "Gastro Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Acai Bowls",
+          "Salads",
+          "Burgers",
+          "Snacks",
+          "Drinks",
+          "Groceries",
+          "Sandwiches",
+          "Yogurt",
+          "Ice Cream",
+          "Pastries"
+        ],
+        "aboutText": "A refined market serving an eclectic array of groceries, meals, beer, wine, and drinks located in the heart of Midtown, offering comfort and warmth.",
+        "specialties": [
+          "curated",
+          "trendy",
+          "classic",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/gastromarketnyc/?hl=en"
+        }
       }
     },
     {
@@ -3504,6 +5326,21 @@
       "displayName": {
         "text": "Ernest Klein & Co's Gourmet Food",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gourmet Foods",
+          "Deli & Prepared Foods",
+          "Catering",
+          "Corporate Accounts & Services"
+        ],
+        "aboutText": "Ernest Klein & Co's Gourmet Food offers a unique selection of gourmet and prepared foods, providing exceptional service in a welcoming environment.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "catering"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3532,6 +5369,12 @@
       "displayName": {
         "text": "WEST MARKET",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -3560,6 +5403,29 @@
       "displayName": {
         "text": "Brooklyn Fare",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Beverages",
+          "Snacks",
+          "Health Foods",
+          "Bakery",
+          "Meat",
+          "Seafood",
+          "Frozen Foods",
+          "Household Items"
+        ],
+        "aboutText": "Brooklyn Fare offers a unique grocery shopping experience with a focus on high-quality, fresh ingredients and a curated selection of gourmet products.",
+        "specialties": [
+          "organic",
+          "local",
+          "artisanal",
+          "gourmet",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3612,6 +5478,28 @@
       "displayName": {
         "text": "The Food Emporium",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Catering",
+          "Prepared Foods",
+          "Grocery",
+          "Produce",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Frozen Foods",
+          "Bakery"
+        ],
+        "aboutText": "The Food Emporium is your local grocery store for healthy living, offering a wide variety of products and in-house chef prepared meals.",
+        "specialties": [
+          "local",
+          "prepared foods",
+          "gourmet",
+          "catering"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3640,6 +5528,12 @@
       "displayName": {
         "text": "Superior Gourmet Marketplace ٥٥٥",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -3749,6 +5643,28 @@
       "displayName": {
         "text": "Sunac Natural Market | Midtown west Deli | Supermarket",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bakery",
+          "Catering",
+          "Chocolate",
+          "Coffee",
+          "Deli",
+          "Flowers",
+          "Frozen",
+          "Grocery",
+          "Produce",
+          "Protein"
+        ],
+        "aboutText": "Sunac Natural Market offers a diverse selection of fresh and quality products, focusing on natural and healthy options for the community.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3785,6 +5701,29 @@
       "displayName": {
         "text": "Amish Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Catering",
+          "Groceries",
+          "Holiday Menu",
+          "Take Out",
+          "Prepared Foods",
+          "Gourmet Dishes",
+          "Celebration Cakes",
+          "Gift Cards"
+        ],
+        "aboutText": "Amish Market has been a neighborhood staple in Hell’s Kitchen for over three decades, offering exceptional quality and a culinary experience that feels both local and world-class.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "artisanal",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/amishmarket",
+          "facebook": "https://www.facebook.com/people/Amish-Market-West/100063899556826/"
+        }
       }
     },
     {
@@ -3812,6 +5751,17 @@
       "displayName": {
         "text": "Ideal Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Ideal Marketplace offers a unique shopping experience with a focus on quality groceries and weekly deals, making it a go-to destination for fresh food and savings.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/idealsupermarkets/",
+          "facebook": "https://www.facebook.com/idealsupermarkets/",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -3839,6 +5789,30 @@
       "displayName": {
         "text": "Sunrise Market Place",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Salads",
+          "Burgers",
+          "Breakfast Items",
+          "Prepared Meals",
+          "Deli Items",
+          "Artisanal Goods",
+          "Gourmet Foods",
+          "Baked Goods",
+          "Fresh Produce"
+        ],
+        "aboutText": "Sunrise Market Place offers a marketplace-style dining experience with diverse food stations, known for fresh ingredients and a variety of options.",
+        "specialties": [
+          "fresh",
+          "locally sourced",
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3895,6 +5869,24 @@
       "displayName": {
         "text": "Clinton Fruit Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bodega",
+          "Breakfast",
+          "Deli",
+          "Healthy",
+          "Salads",
+          "Sandwiches",
+          "Smoothies",
+          "Juices"
+        ],
+        "aboutText": "Clinton Fruit Market offers a diverse menu of fresh and delicious food options, perfect for a quick bite or a satisfying meal in New York.",
+        "specialties": [
+          "healthy",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -3954,6 +5946,12 @@
       "displayName": {
         "text": "The Market @ Mercedes House",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -3981,6 +5979,17 @@
       "displayName": {
         "text": "River Food Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "River Food Market offers fresh delicacies with free delivery up to 2 miles, supporting local restaurants by providing direct orders.",
+        "specialties": [
+          "local",
+          "fresh",
+          "delivery",
+          "pickup"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4008,6 +6017,28 @@
       "displayName": {
         "text": "5 Brothers Gourmet Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Breakfast",
+          "Deli",
+          "Dinner",
+          "Lunch Specials",
+          "Beverages",
+          "Snacks",
+          "Sandwiches",
+          "Gourmet",
+          "Takeout",
+          "Delivery"
+        ],
+        "aboutText": "5 Brothers Gourmet Market offers a diverse menu with fresh, delicious meals available for takeout or delivery, catering to the needs of the local community.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "late night",
+          "affordable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4038,6 +6069,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic products while promoting sustainable practices and community engagement.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://www.facebook.com/wholefoods",
+          "twitter": "https://twitter.com/wholefoods",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -4064,6 +6123,24 @@
       "displayName": {
         "text": "H-Yard Gourmet Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Deli",
+          "Sandwiches",
+          "Breakfast",
+          "Lunch Specials",
+          "Alcohol",
+          "Takeout",
+          "Delivery"
+        ],
+        "aboutText": "H-Yard Gourmet Deli is a leading deli in New York, offering a wide range of delicious meals and 24-hour service for convenience.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "24 hours"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4118,6 +6195,21 @@
       "displayName": {
         "text": "Frame Gourmet Eatery",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gourmet Food",
+          "Catering",
+          "Prepared Foods"
+        ],
+        "aboutText": "Café FRAME offers freshly prepared gourmet food crafted with love, creating a space that nourishes both aesthetic and gastronomic sensibilities.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "local",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4178,6 +6270,35 @@
       "displayName": {
         "text": "Closiist",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Accessories",
+          "Clothes",
+          "Beauty & Personal Care",
+          "Home",
+          "Kids",
+          "Pet Supplies",
+          "Wellness & Care",
+          "Sustainable Living",
+          "Food",
+          "Gardening"
+        ],
+        "aboutText": "Clozist is a climate-first marketplace dedicated to helping you build a sustainable life with a curated selection of eco-friendly products.",
+        "specialties": [
+          "sustainable",
+          "local",
+          "eco-friendly",
+          "zero-waste",
+          "ethical",
+          "climate-friendly"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -4201,6 +6322,12 @@
       "displayName": {
         "text": "Turnstyle Underground Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -4264,6 +6391,33 @@
       "displayName": {
         "text": "Heaven on 7th Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Burgers",
+          "Sandwiches",
+          "Coffee",
+          "Teas",
+          "Bakery",
+          "Pizza",
+          "Drinks",
+          "Catering",
+          "Fast Food",
+          "Breakfast"
+        ],
+        "aboutText": "Heaven on 7th Marketplace offers a unique casual dining experience with made-to-order burgers, sandwiches, and a variety of drinks, perfect for any occasion.",
+        "specialties": [
+          "made to order",
+          "casual",
+          "gourmet",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/h07_marketplace",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -4290,6 +6444,28 @@
       "displayName": {
         "text": "Westfield Market Place",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Beverages",
+          "Breakfast",
+          "Deli",
+          "Sandwiches",
+          "Dessert",
+          "Dinner",
+          "Lunch Specials",
+          "Smoothies and Juices",
+          "Grocery",
+          "Takeout"
+        ],
+        "aboutText": "Westfield Market Place is a New York-style deli in Midtown West, offering a variety of fresh comfort food and grocery essentials.",
+        "specialties": [
+          "fresh",
+          "comfort food",
+          "grocery",
+          "American"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4314,6 +6490,28 @@
       "displayName": {
         "text": "Artisans of New York",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Ikebana",
+          "Blown Glass",
+          "Jewelry",
+          "Wall Art",
+          "Candle Sticks",
+          "Menorahs",
+          "Oil Lights",
+          "Coasters",
+          "Bowls",
+          "Custom Works"
+        ],
+        "aboutText": "Artisans of New York offers a unique collection of glass art and jewelry, showcasing the creativity and vibrance of New York City through the works of talented regional artists.",
+        "specialties": [
+          "artisanal",
+          "curated",
+          "local",
+          "unique designs"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4352,6 +6550,28 @@
       "displayName": {
         "text": "Vanderbilt Market - Bars & Eateries",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Mexican",
+          "Asian",
+          "Burgers",
+          "Deli",
+          "Sushi",
+          "Pizza",
+          "Coffee",
+          "Greek",
+          "Acai Bowls",
+          "Indian"
+        ],
+        "aboutText": "Vanderbilt Market is a culinary destination in Manhattan offering over 15 diverse food options and a vibrant atmosphere, perfect for any occasion.",
+        "specialties": [
+          "international",
+          "gourmet",
+          "prepared foods",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4375,6 +6595,34 @@
       "displayName": {
         "text": "Grand Central Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gourmet Foods",
+          "Prepared Foods",
+          "Local Ingredients",
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Artisanal Products",
+          "Gift Items",
+          "International Foods"
+        ],
+        "aboutText": "Grand Central Market offers a European-style gourmet shopping experience with 100% local vendors providing fresh ingredients and prepared foods.",
+        "specialties": [
+          "local",
+          "gourmet",
+          "prepared foods",
+          "artisanal",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/grandcentralnyc/",
+          "facebook": "https://www.facebook.com/GrandCentralTerminal/",
+          "twitter": "https://twitter.com/GrandCentralNYC",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -4402,6 +6650,29 @@
       "displayName": {
         "text": "Murray's Cheese - Grand Central",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Cheese",
+          "Meat",
+          "Groceries",
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Prepared Foods",
+          "Artisanal Foods",
+          "Gourmet Foods",
+          "Specialty Items"
+        ],
+        "aboutText": "Murray's Cheese is a world-renowned specialty food destination offering the finest selection of cheese, meat, and groceries, with expert guidance and a focus on quality.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "curated",
+          "local",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4427,6 +6698,23 @@
       "displayName": {
         "text": "The Porch at Bryant Park",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Beverages",
+          "Cocktails",
+          "Light Food Fare",
+          "Whiskey",
+          "Craft Beers"
+        ],
+        "aboutText": "The Porch at Bryant Park offers a serene outdoor escape with a relaxed atmosphere, perfect for gatherings or romantic moments under the stars.",
+        "specialties": [
+          "alfresco",
+          "craft beers",
+          "whiskey selection",
+          "light food fare"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4462,6 +6750,29 @@
       "displayName": {
         "text": "Bagel Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bagels",
+          "Catering",
+          "Breakfast Sandwiches",
+          "Lunch Options",
+          "Beverages",
+          "Snacks",
+          "Platters",
+          "Sustainable Options",
+          "Vegan Options",
+          "Specialty Items"
+        ],
+        "aboutText": "Bagel Market offers fresh, authentic bagels crafted with love and a commitment to sustainability, bringing the heart of New York to every bite.",
+        "specialties": [
+          "artisanal",
+          "sustainable",
+          "local",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4486,6 +6797,28 @@
       "displayName": {
         "text": "Lisa's Dumplings",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Dumplings",
+          "Noodles",
+          "Sauces",
+          "Snacks",
+          "Beverages",
+          "Frozen Foods",
+          "Appetizers",
+          "Soups",
+          "Condiments",
+          "Desserts"
+        ],
+        "aboutText": "Lisa's Dumplings specializes in authentic, handmade dumplings and Asian cuisine, offering a unique taste experience that stands out from typical grocery stores.",
+        "specialties": [
+          "artisanal",
+          "local",
+          "prepared foods",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4511,6 +6844,27 @@
       "displayName": {
         "text": "Bien Cuit",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bakery",
+          "Meat & Cheese",
+          "Coffee & Tea",
+          "Gifts",
+          "Pantry",
+          "Baking Supplies",
+          "Tinned Seafood",
+          "Snacks",
+          "Cookies & Bars",
+          "Cakes & Tarts"
+        ],
+        "aboutText": "Bien Cuit, meaning 'well done' in French, focuses on small-batch, hand-shaped baking, delivering artisanal bread and pastries daily in Brooklyn.",
+        "specialties": [
+          "artisanal",
+          "small-batch",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4537,6 +6891,34 @@
       "displayName": {
         "text": "Ermina’s by Westside Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bakery",
+          "Beverages",
+          "Butcher",
+          "Catering",
+          "Cheeses",
+          "Coffee",
+          "Dairy",
+          "Deli",
+          "Frozen Foods",
+          "Produce"
+        ],
+        "aboutText": "Ermina’s Market continues the family tradition of offering the best in farm-fresh produce, high-quality dairy, and fine imported cheese, all paired with exceptional personal service.",
+        "specialties": [
+          "organic",
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/erminasmarketnyc/",
+          "facebook": "https://www.facebook.com/profile.php?id=61571513352858",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -4587,6 +6969,21 @@
       "displayName": {
         "text": "Ideal Cheese Shop",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Cheeses",
+          "Meats",
+          "Pantry",
+          "Gifts"
+        ],
+        "aboutText": "Ideal Cheese Shop has been providing a curated selection of the world's best cheeses since 1954, offering an enhanced shopping experience.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "international"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4614,6 +7011,22 @@
       "displayName": {
         "text": "Kips Bay Gourmet Market Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Deli Sandwiches",
+          "Paninis",
+          "Breakfast",
+          "Catering",
+          "Takeout"
+        ],
+        "aboutText": "Kips Bay Market Gourmet Deli offers fresh ingredients and bold flavors, providing a true New York City deli experience for quick bites and catering needs.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4641,6 +7054,15 @@
       "displayName": {
         "text": "Morton Williams Supermarkets",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Morton Williams Supermarkets offers a wide range of grocery items and is known for its commitment to quality and customer service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mortonwilliamssupermarkets/",
+          "facebook": "https://www.facebook.com/mortonwilliamssupermarkets/"
+        }
       }
     },
     {
@@ -4726,6 +7148,29 @@
       "displayName": {
         "text": "Amish Market East",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Pizza",
+          "Prepared Foods",
+          "Salads",
+          "Sushi",
+          "Breakfast Bar",
+          "Grocery",
+          "Pastries",
+          "Meat",
+          "Coffee"
+        ],
+        "aboutText": "We bring the best to New York City with a curated selection of quality products from artisan farms and international suppliers, along with in-house prepared meals.",
+        "specialties": [
+          "artisanal",
+          "curated",
+          "prepared foods",
+          "gourmet",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4785,6 +7230,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic, and responsibly sourced products, setting it apart from regular grocery stores.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/wholefoods",
+          "facebook": "https://www.facebook.com/wholefoods",
+          "twitter": "https://twitter.com/wholefoods",
+          "tiktok": "https://www.tiktok.com/@wholefoods"
+        }
       }
     },
     {
@@ -4847,6 +7320,31 @@
       "displayName": {
         "text": "Central Market New York",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Snacks",
+          "Beverages",
+          "Breakfast",
+          "Catering",
+          "Salads",
+          "Pastries",
+          "Grab-and-Go",
+          "Hot Sandwiches",
+          "Cold Sandwiches"
+        ],
+        "aboutText": "Central Market New York is a sandwich-centric haven offering handcrafted sandwiches and a full breakfast menu, celebrating over three decades of culinary tradition.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": ""
+        }
       }
     },
     {
@@ -4873,6 +7371,29 @@
       "displayName": {
         "text": "Eli's Farm to Table",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gift Baskets",
+          "Bread",
+          "Butcher",
+          "Fish & Cheese",
+          "Essentials",
+          "Coffee & Breakfast Treats",
+          "Snacks",
+          "Sweets",
+          "E.A.T. Gifts",
+          "Wine"
+        ],
+        "aboutText": "Eli's Farm to Table emphasizes seasonal, organic, and sustainable practices, showcasing local produce in the bustling Grand Central Market.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "farm-to-table",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4899,6 +7420,27 @@
       "displayName": {
         "text": "NY GRILL AND DELI",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Specialty Sandwiches",
+          "Hot Salads",
+          "Cold Salads",
+          "Breakfast Dishes",
+          "Quesadillas",
+          "Bagels",
+          "Omelettes",
+          "Grilled Sandwiches",
+          "Catering",
+          "Online Ordering"
+        ],
+        "aboutText": "NY Grill & Deli offers a vibrant blend of New York City's culinary heritage with modern twists, providing an authentic dining experience in the heart of the city.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4927,6 +7469,27 @@
       "displayName": {
         "text": "Dainobu",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Groceries",
+          "Snacks",
+          "Beverages",
+          "Health & Beauty",
+          "Household",
+          "Prepared Foods",
+          "Fresh & Chilled",
+          "Frozen Foods",
+          "Dairy",
+          "Produce"
+        ],
+        "aboutText": "Dainobu offers a unique selection of Japanese groceries and specialty items, providing a taste of Japan in New York City.",
+        "specialties": [
+          "international",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -4954,6 +7517,16 @@
       "displayName": {
         "text": "Bread & Butter",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Enjoy the best Deli in New York, supporting local restaurants by ordering direct and not through 3rd party platforms.",
+        "specialties": [
+          "local",
+          "deli",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5033,6 +7606,29 @@
       "displayName": {
         "text": "Fairway Market of 74th Street",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Frozen Foods",
+          "Bakery",
+          "Meat & Seafood",
+          "Canned Foods",
+          "Health & Nutrition",
+          "International Foods"
+        ],
+        "aboutText": "Fairway Market of 74th Street offers a diverse selection of high-quality groceries, focusing on fresh produce and unique specialty items that cater to various dietary needs.",
+        "specialties": [
+          "organic",
+          "vegan",
+          "kosher",
+          "prepared foods",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5060,6 +7656,34 @@
       "displayName": {
         "text": "Hudson Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Pasta",
+          "Artisan Foods",
+          "Sauces",
+          "Local Honeys",
+          "Prepared Foods",
+          "Snacks",
+          "Beverages",
+          "Catering Services"
+        ],
+        "aboutText": "Hudson Market is a farm-to-table marketplace that connects urban dwellers with locally sourced seasonal produce and artisan food products.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "farm-to-table",
+          "curated",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/explore/locations/1890131634361554/hudson-market/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5094,6 +7718,26 @@
       "displayName": {
         "text": "Mast Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Pantry",
+          "Coffee",
+          "Chocolate",
+          "Gift Cards"
+        ],
+        "aboutText": "Mast Market is a community hub in Bedford, offering ethically sourced products and a rich history as a local market.",
+        "specialties": [
+          "organic",
+          "ethically sourced",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mastmarket/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5121,6 +7765,28 @@
       "displayName": {
         "text": "Zingone Brothers",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Grocery",
+          "Household Products",
+          "Dairy",
+          "Beverages",
+          "Snacks",
+          "Bakery",
+          "Meat",
+          "Seafood",
+          "Frozen Foods"
+        ],
+        "aboutText": "Zingone Brothers is a family-owned grocery store offering fresh produce and a wide assortment of grocery products, creating a warm, community-focused shopping experience.",
+        "specialties": [
+          "local",
+          "family-owned",
+          "fresh produce",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5147,6 +7813,12 @@
       "displayName": {
         "text": "75TH ORGANIC DELI",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -5177,6 +7849,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic, and sustainable products, setting itself apart from regular grocery stores with a focus on health and community.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://instagram.com/wholefoods",
+          "facebook": "https://facebook.com/wholefoods",
+          "twitter": "https://twitter.com/wholefoods",
+          "tiktok": "https://tiktok.com/@wholefoods"
+        }
       }
     },
     {
@@ -5203,6 +7903,32 @@
       "displayName": {
         "text": "67 Gourmet® - Artisan Cheese, Charcuterie & Provisions",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Antipasti",
+          "Charcuterie",
+          "Cheese & Dairy",
+          "Condiments",
+          "Olive Oil",
+          "Pasta",
+          "Spices & Specialty Ingredients",
+          "Sweet Treats",
+          "Gift Baskets",
+          "Cheese of the Month Club"
+        ],
+        "aboutText": "At 67Gourmet, we believe in the transformative power of deliciousness through a spectacular collection of artisan cheeses and small producer cured meats.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "curated",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/67wine/",
+          "facebook": "https://www.facebook.com/67Wine",
+          "twitter": "https://twitter.com/67wine"
+        }
       }
     },
     {
@@ -5256,6 +7982,12 @@
       "displayName": {
         "text": "Hungry & Healthy Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -5282,6 +8014,27 @@
       "displayName": {
         "text": "Space Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Breakfast",
+          "Sandwiches",
+          "Deli",
+          "Omelettes",
+          "Snacks",
+          "Beverages",
+          "Takeout",
+          "Delivery",
+          "Late Night",
+          "Lunch Specials"
+        ],
+        "aboutText": "Space Market is a New York City supermarket and deli offering a wide range of delicious meals for takeout or delivery, catering to cravings any time of day.",
+        "specialties": [
+          "local",
+          "prepared foods",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5308,6 +8061,29 @@
       "displayName": {
         "text": "Citarella",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Seafood",
+          "Fish",
+          "Shellfish & Mollusks",
+          "Caviar",
+          "Smoked Fish",
+          "Prepared & Pantry",
+          "Kits & Packages",
+          "Gifts & Specialties",
+          "Interesting Delicacies",
+          "Ready to Cook"
+        ],
+        "aboutText": "Citarella is dedicated to providing the finest, fresh seafood delivered nationwide, ensuring quality and taste with every bite.",
+        "specialties": [
+          "gourmet",
+          "fresh",
+          "never frozen",
+          "artisanal",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5364,6 +8140,29 @@
       "displayName": {
         "text": "Gourmet Garage of West 66th",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Frozen",
+          "Meat & Seafood",
+          "Prepared Meals",
+          "Bakery",
+          "Canned & Packaged Foods",
+          "Health & Nutrition"
+        ],
+        "aboutText": "Gourmet Garage of West 66th offers a curated selection of gourmet and specialty foods, focusing on quality and unique flavors to enhance your culinary experience.",
+        "specialties": [
+          "gourmet",
+          "organic",
+          "prepared foods",
+          "international",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5391,6 +8190,31 @@
       "displayName": {
         "text": "Gristedes",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Fresh Meats",
+          "Produce",
+          "Dairy Products",
+          "Baked Goods",
+          "Frozen Foods",
+          "Gourmet Foods",
+          "Nonfood Items",
+          "Catering",
+          "Gift Cards",
+          "Weekly Specials"
+        ],
+        "aboutText": "Gristedes Supermarkets has been feeding New Yorkers for over 100 years, offering the best products at the lowest prices in town.",
+        "specialties": [
+          "gourmet",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/gristedes/",
+          "facebook": "https://www.facebook.com/Gristedes/",
+          "twitter": "https://x.com/gristedes",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5419,6 +8243,29 @@
       "displayName": {
         "text": "Brooklyn Fare",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Meat",
+          "Seafood",
+          "Bakery",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Frozen Foods",
+          "Household Items"
+        ],
+        "aboutText": "Brooklyn Fare offers a unique grocery shopping experience with a focus on high-quality, fresh ingredients and a curated selection of gourmet products.",
+        "specialties": [
+          "organic",
+          "local",
+          "artisanal",
+          "gourmet",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5447,6 +8294,29 @@
       "displayName": {
         "text": "Jubilee Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Grocery",
+          "Produce",
+          "Dairy",
+          "Beverages",
+          "Snacks",
+          "Health Foods",
+          "Frozen Foods",
+          "Bakery",
+          "Meat",
+          "Seafood"
+        ],
+        "aboutText": "Jubilee Marketplace offers a unique shopping experience with a focus on fresh groceries and same-day delivery options.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5473,6 +8343,31 @@
       "displayName": {
         "text": "Morton Williams",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Prepared Foods",
+          "Gourmet",
+          "International",
+          "Organic",
+          "Artisanal"
+        ],
+        "aboutText": "Morton Williams Supermarkets is dedicated to providing high-quality products and exceptional service, making grocery shopping a delightful experience.",
+        "specialties": [
+          "organic",
+          "gourmet",
+          "prepared foods",
+          "artisanal"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mortonwilliamssupermarkets/",
+          "facebook": "https://www.facebook.com/mortonwilliamssupermarkets/"
+        }
       }
     },
     {
@@ -5498,6 +8393,28 @@
       "displayName": {
         "text": "Gourmet Square - Mini Market & Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Smoothies",
+          "Quesadillas",
+          "Paninis",
+          "Deli",
+          "Prepared Foods",
+          "Gourmet Foods",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Artisanal"
+        ],
+        "aboutText": "Gourmet Square offers a unique blend of fresh deli items and gourmet prepared foods, focusing on quality and flavor.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "artisanal",
+          "local"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5527,6 +8444,28 @@
       "displayName": {
         "text": "Zabar's",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gifts",
+          "Coffee & Tea",
+          "Smoked Fish & Caviar",
+          "Bagels & Bakery",
+          "Deli",
+          "Cheese",
+          "Pantry",
+          "Housewares",
+          "Catering",
+          "Kosher"
+        ],
+        "aboutText": "Zabar's has been a family-owned business for over 90 years, offering exceptional food, service, and a unique selection of artisanal products.",
+        "specialties": [
+          "kosher",
+          "artisanal",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5579,6 +8518,31 @@
       "displayName": {
         "text": "MORTON WILLIAMS SUPERMARKETS",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Beverages",
+          "Snacks",
+          "Health Foods",
+          "Bakery",
+          "Meat",
+          "Seafood",
+          "Frozen Foods",
+          "Canned Goods"
+        ],
+        "aboutText": "Morton Williams Supermarkets is dedicated to providing high-quality products and exceptional service, making grocery shopping a delightful experience.",
+        "specialties": [
+          "local",
+          "gourmet",
+          "prepared foods",
+          "organic"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mortonwilliamssupermarkets/",
+          "facebook": "https://www.facebook.com/mortonwilliamssupermarkets/"
+        }
       }
     },
     {
@@ -5605,6 +8569,33 @@
       "displayName": {
         "text": "Urbani Truffles USA Inc",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Fresh Truffles",
+          "Caviar",
+          "Pantry",
+          "Oil & Salt",
+          "Pasta",
+          "Sauce",
+          "Dairy",
+          "Mushrooms",
+          "Honey & Sweet",
+          "Snacks"
+        ],
+        "aboutText": "Urbani Truffles USA Inc specializes in delivering premium truffles and gourmet products from Italy, ensuring freshness and quality in every order.",
+        "specialties": [
+          "gourmet",
+          "artisanal",
+          "international",
+          "fresh"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/urbanitruffles/",
+          "facebook": "https://www.facebook.com/UrbaniTruffles",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5686,6 +8677,34 @@
       "displayName": {
         "text": "Grand Bazaar NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "art",
+          "fashion",
+          "vintage",
+          "collectibles",
+          "jewelry",
+          "antiques",
+          "global treasures",
+          "furniture",
+          "food",
+          "home decor"
+        ],
+        "aboutText": "Grand Bazaar NYC is a curated weekly market that supports local artisans and benefits public schools, offering a unique shopping experience every Sunday.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "curated",
+          "vintage",
+          "one-of-a-kind",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/grandbazaarnyc/",
+          "facebook": "https://www.facebook.com/GrandBazaarNYC/",
+          "twitter": "https://twitter.com/grandbazaarnyc"
+        }
       }
     },
     {
@@ -5711,6 +8730,33 @@
       "displayName": {
         "text": "Harry's Table by Cipriani",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Cooking Classes",
+          "Private Events",
+          "Catering",
+          "Delivery",
+          "Menus",
+          "Heritage Products",
+          "Market Goods",
+          "Beverages",
+          "Prepared Foods",
+          "Gourmet Foods"
+        ],
+        "aboutText": "Harry's Table by Cipriani offers a unique journey through the tastes of Italy in a stylish environment, focusing on quality and customer choice.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/ciprianiharrystable/",
+          "facebook": "https://www.facebook.com/harrystablebycipriani",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5737,6 +8783,17 @@
       "displayName": {
         "text": "Westside Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Our mission is simple: to become your favorite neighborhood food market and caterer of choice by offering the highest quality foods and hard-to-find products supported by friendly, personalized, efficient service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/westside_market_nyc",
+          "facebook": "https://www.facebook.com/westside.market.nyc",
+          "twitter": "",
+          "tiktok": "https://www.tiktok.com/@westside_market_nyc"
+        }
       }
     },
     {
@@ -5773,6 +8830,32 @@
       "displayName": {
         "text": "Freshy's Deli & Grocery",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Prepared Food",
+          "Beverages",
+          "Snacks",
+          "Candy & Chocolate",
+          "Household",
+          "Personal Care",
+          "Baby & Toddler",
+          "Food & Pantry",
+          "Frozen",
+          "Breads & Bakery"
+        ],
+        "aboutText": "Freshy's Deli & Grocery offers a diverse selection of groceries and prepared foods, ensuring convenience and quality for every customer.",
+        "specialties": [
+          "local",
+          "prepared foods",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/ubereats",
+          "facebook": "https://www.facebook.com/ubereats",
+          "twitter": "https://www.twitter.com/ubereats",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5826,6 +8909,29 @@
       "displayName": {
         "text": "Lalu Deli Grocery",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Wraps",
+          "Hot Meals",
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Grocery",
+          "Prepared Foods",
+          "Local Favorites"
+        ],
+        "aboutText": "Lalu Deli & Grocery is your neighborhood spot for fresh flavors and unforgettable meals, dedicated to quality and care in every bite.",
+        "specialties": [
+          "fresh",
+          "local",
+          "artisanal",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -5853,6 +8959,33 @@
       "displayName": {
         "text": "The Health Nuts West Side Uptown 99th and Broadway",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Organic Deli",
+          "Juice Bar",
+          "Vitamins",
+          "Nutritional Supplements",
+          "Health Foods",
+          "Soups",
+          "Sandwiches",
+          "Salads",
+          "Wraps",
+          "Healthy Snacks"
+        ],
+        "aboutText": "The Health Nuts has been serving New York for 46 years, offering a wide range of natural and organic foods, vitamins, and health products at affordable prices.",
+        "specialties": [
+          "organic",
+          "natural",
+          "affordable",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://www.facebook.com/The-Health-Nuts-East-Side-Uptown-63rd-and-2nd-775365556128623/",
+          "twitter": "https://twitter.com/the_healthnuts",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5883,6 +9016,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic, and sustainable products, setting itself apart from regular grocery stores with a focus on health and community.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://instagram.com/wholefoods",
+          "facebook": "https://facebook.com/wholefoods",
+          "twitter": "https://twitter.com/wholefoods",
+          "tiktok": "https://tiktok.com/@wholefoods"
+        }
       }
     },
     {
@@ -5908,6 +9069,34 @@
       "displayName": {
         "text": "Whole Foods Wine Store",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Wine Store offers a unique selection of organic and responsibly sourced products, emphasizing quality and sustainability.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "responsibly farmed",
+          "local",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://www.facebook.com/WholeFoodsMarket",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -5959,6 +9148,17 @@
       "displayName": {
         "text": "Westside Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Our mission is simple: to become your favorite neighborhood food market and caterer of choice by offering the highest quality foods and hard-to-find products supported by friendly, personalized, efficient service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/westside_market_nyc",
+          "facebook": "https://www.facebook.com/westside.market.nyc",
+          "twitter": "",
+          "tiktok": "https://www.tiktok.com/@westside_market_nyc"
+        }
       }
     },
     {
@@ -6040,6 +9240,33 @@
       "displayName": {
         "text": "Barzini's",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Baked Goods",
+          "Beverages",
+          "Dairy",
+          "Frozen Foods",
+          "Meat",
+          "Produce",
+          "Snacks",
+          "Sweets",
+          "Condiments",
+          "Prepared Foods"
+        ],
+        "aboutText": "Barzini's offers a unique selection of gourmet items and fresh produce, serving the Upper West Side since 1983 with 24/7 service.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "local",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.grocery.com%2Fstores%2Fbarzinis%2F&t=Barzini%E2%80%99s",
+          "twitter": "https://x.com/intent/post?url=https%3A%2F%2Fwww.grocery.com%2Fstores%2Fbarzinis%2F&text=Barzini%E2%80%99s",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6099,6 +9326,29 @@
       "displayName": {
         "text": "The Kosher Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Prepared Foods",
+          "Meats & Poultry",
+          "Fish",
+          "Deli",
+          "Bakery",
+          "Dairy",
+          "Groceries",
+          "Frozen Foods",
+          "Catering",
+          "Snacks"
+        ],
+        "aboutText": "The Kosher Marketplace offers a wide selection of high-quality kosher foods, including prepared meals, fresh meats, and gourmet products, all with a focus on sustainability and exceptional service.",
+        "specialties": [
+          "kosher",
+          "sustainable",
+          "prepared foods",
+          "gourmet",
+          "organic"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6122,6 +9372,31 @@
       "displayName": {
         "text": "Down to Earth Morningside Park Farmers Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Prepared Foods",
+          "Artisanal Foods",
+          "Crafts",
+          "Local Goods",
+          "Sustainable Products"
+        ],
+        "aboutText": "Down to Earth Farmers Markets connects local farmers and foodmakers, fostering community and supporting small-scale agriculture in New York.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "artisanal",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mcgolrickparkfarmersmarket",
+          "facebook": "https://www.facebook.com/mcgolrickparkfarmersmarket"
+        }
       }
     },
     {
@@ -6159,6 +9434,12 @@
       "displayName": {
         "text": "109 spicay gourmet deli inc",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -6187,6 +9468,27 @@
       "displayName": {
         "text": "H Mart",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Vegetables",
+          "Fruits",
+          "Seafood",
+          "Meat/Eggs",
+          "Dairy",
+          "Snacks & Bakery",
+          "Noodles/Condiments/Canned Goods",
+          "Health & Personal Care",
+          "Home & Kitchen Supplies",
+          "Kimchi"
+        ],
+        "aboutText": "H Mart offers a diverse selection of Asian groceries, focusing on fresh produce and authentic ingredients to bring the flavors of Asia to your home.",
+        "specialties": [
+          "international",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6239,6 +9541,21 @@
       "displayName": {
         "text": "D'Agostino at 91st Street",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "D'Agostino offers a unique grocery shopping experience with a focus on quality and convenience, providing online delivery and pickup options.",
+        "specialties": [
+          "local",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/dagostinosupermarket/",
+          "facebook": "https://www.facebook.com/yourdagnyc",
+          "twitter": "https://twitter.com/yourdagnyc",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6292,6 +9609,33 @@
       "displayName": {
         "text": "Hudson & Charles",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Meats",
+          "Vegetables",
+          "Sandwiches",
+          "Bone Broth",
+          "Pantry Items",
+          "Ready to Heat & Eat",
+          "Sausage & Charcuterie",
+          "Cheese",
+          "Organic Spices",
+          "Local Beer & Ciders"
+        ],
+        "aboutText": "Hudson & Charles is dedicated to providing locally raised, sustainable, and grass-fed meats, ensuring the highest quality products with complete honesty and transparency.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "grass-fed",
+          "organic",
+          "humanely raised",
+          "curated"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/hudson_charles/",
+          "facebook": "https://www.facebook.com/hudsoncharlesnyc/"
+        }
       }
     },
     {
@@ -6322,6 +9666,28 @@
       "displayName": {
         "text": "Key Food Supermarkets",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy",
+          "Meat",
+          "Bakery",
+          "Frozen Foods",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Household Items",
+          "Personal Care"
+        ],
+        "aboutText": "Key Food Supermarkets is dedicated to providing fresh, quality products at competitive prices while supporting local communities.",
+        "specialties": [
+          "local",
+          "organic",
+          "sustainable",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6374,6 +9740,34 @@
       "displayName": {
         "text": "Citarella Gourmet Market - Upper East Side",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Seafood",
+          "Fish",
+          "Shellfish & Mollusks",
+          "Caviar",
+          "Smoked Fish",
+          "Prepared & Pantry",
+          "Gifts & Specialties",
+          "Kits & Packages",
+          "Essential Ingredients",
+          "Interesting Delicacies"
+        ],
+        "aboutText": "Citarella Gourmet Market offers an exquisite selection of fresh seafood and gourmet foods, emphasizing quality and exceptional service in a neighborhood market setting.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "artisanal",
+          "sustainable",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://www.citarella.com/",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6401,6 +9795,27 @@
       "displayName": {
         "text": "Green Gourmet",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Smoothies",
+          "Wraps",
+          "Burgers",
+          "Sandwiches",
+          "Breakfast",
+          "Deli",
+          "Healthy",
+          "Salads",
+          "Juices",
+          "Sushi"
+        ],
+        "aboutText": "Green Gourmet offers a diverse menu of delicious meals and quick bites, focusing on quality ingredients and excellent customer service.",
+        "specialties": [
+          "gourmet",
+          "healthy",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6427,6 +9842,34 @@
       "displayName": {
         "text": "Agata & Valentina",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Dairy",
+          "Produce",
+          "Prepared Foods",
+          "Catering",
+          "Snacks",
+          "Beverages",
+          "Meat",
+          "Grocery",
+          "Frozen Foods",
+          "Gift Baskets"
+        ],
+        "aboutText": "At Agata & Valentina, we pride ourselves on providing the highest quality fine foods and impeccable service, offering some of the most competitive pricing in town.",
+        "specialties": [
+          "organic",
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "gluten-free"
+        ],
+        "socialLinks": {
+          "instagram": "http://instagram.com/agata.valentina",
+          "facebook": "https://www.facebook.com/Agataandvalentina",
+          "twitter": "https://twitter.com/agatavalentina",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6457,6 +9900,29 @@
       "displayName": {
         "text": "East Side Grocery",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Beverages",
+          "Snacks",
+          "Dairy",
+          "Frozen Food",
+          "Groceries - Food",
+          "Groceries - Non Food",
+          "Health and Beauty",
+          "Party Supplies",
+          "Fruits and Vegetables",
+          "Alcohol"
+        ],
+        "aboutText": "East Side Grocery offers a diverse selection of products, focusing on unique and specialty items that cater to a variety of dietary preferences.",
+        "specialties": [
+          "organic",
+          "local",
+          "artisanal",
+          "curated",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6491,6 +9957,29 @@
       "displayName": {
         "text": "Butterfield Market - Lexington",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Bakery",
+          "Grocery",
+          "Prepared Foods",
+          "Deli and Cheese",
+          "Butcher and Seafood",
+          "Vegetables",
+          "Gifts",
+          "Catering",
+          "Flower Shop",
+          "Beverages"
+        ],
+        "aboutText": "Butterfield Market offers a unique shopping experience with a focus on quality, local products, and exceptional customer service.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "sustainable"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6526,6 +10015,34 @@
       "displayName": {
         "text": "Grace's Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gourmet Food",
+          "Prepared Foods",
+          "Catering",
+          "Wine",
+          "Cheese",
+          "Bakery",
+          "Deli",
+          "Produce",
+          "Meat",
+          "Gift Baskets"
+        ],
+        "aboutText": "Since 1985, Grace's Marketplace has redefined food shopping into a family experience, offering gourmet food and exceptional service.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "artisanal",
+          "local",
+          "family recipes"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/gracesmarketplace/",
+          "facebook": "https://www.facebook.com/gracesmarketplace",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6552,6 +10069,27 @@
       "displayName": {
         "text": "East Side Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Deli",
+          "Grocery",
+          "Catering",
+          "Sandwiches",
+          "Burgers",
+          "Salads",
+          "Breakfast",
+          "Omelettes",
+          "Burritos",
+          "Pancakes"
+        ],
+        "aboutText": "East Side Market is your one-stop gourmet deli and grocery, offering a variety of delicious sandwiches, burgers, and fresh juices, all crafted with the finest ingredients.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "artisanal"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6578,6 +10116,33 @@
       "displayName": {
         "text": "Agata & Valentina",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Dairy",
+          "Produce",
+          "Prepared Foods",
+          "Catering",
+          "Snacks",
+          "Beverages",
+          "Meat",
+          "Grocery",
+          "Frozen Foods",
+          "Gift Baskets"
+        ],
+        "aboutText": "At Agata & Valentina, we pride ourselves on providing the highest quality fine foods and impeccable service, offering some of the most competitive pricing in New York City.",
+        "specialties": [
+          "organic",
+          "artisanal",
+          "gourmet",
+          "prepared foods",
+          "local"
+        ],
+        "socialLinks": {
+          "instagram": "http://instagram.com/agata.valentina",
+          "facebook": "https://www.facebook.com/Agataandvalentina",
+          "twitter": "https://twitter.com/agatavalentina"
+        }
       }
     },
     {
@@ -6604,6 +10169,12 @@
       "displayName": {
         "text": "Ouri's Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -6706,6 +10277,29 @@
       "displayName": {
         "text": "A Matter of Health NYC, Inc",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Grocery",
+          "Produce",
+          "Dairy",
+          "Health Foods",
+          "Vitamins",
+          "Beauty",
+          "Snacks",
+          "Beverages",
+          "Frozen Foods",
+          "Household Items"
+        ],
+        "aboutText": "A Matter of Health NYC, Inc focuses on providing fresh groceries and health products with an emphasis on customer service and community engagement.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "gourmet",
+          "plant-based"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -6733,6 +10327,30 @@
       "displayName": {
         "text": "D'Agostino at 80th & York",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Full Service Deli",
+          "Meat",
+          "Fresh Produce",
+          "Dairy",
+          "Frozen Food",
+          "Seafood",
+          "Fresh Sushi",
+          "Catering"
+        ],
+        "aboutText": "D'Agostino offers a unique online shopping experience that mirrors their in-store service, ensuring high-quality products and personal shopper assistance.",
+        "specialties": [
+          "fresh",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/dagostinosupermarket/",
+          "facebook": "https://www.facebook.com/yourdagnyc",
+          "twitter": "https://twitter.com/yourdagnyc",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6807,6 +10425,32 @@
       "displayName": {
         "text": "Schaller & Weber",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sausages",
+          "Pâtés & Spreads",
+          "Grab and Go",
+          "Salami & Landjäger",
+          "Delicatessen",
+          "Cold Cuts",
+          "Bacon",
+          "Charcuterie",
+          "Condiments",
+          "European Grocery"
+        ],
+        "aboutText": "Schaller & Weber offers authentic German meats and sausages, combining old-world craftsmanship with modern culinary excellence in New York City.",
+        "specialties": [
+          "artisanal",
+          "gourmet",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/schallerweber/",
+          "facebook": "https://www.facebook.com/SchallerWeber",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6833,6 +10477,33 @@
       "displayName": {
         "text": "Noz Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Seafood",
+          "Sushi",
+          "Sashimi",
+          "Japanese Accoutrements",
+          "Prepared Foods",
+          "Omakase",
+          "Hand Rolls",
+          "Dining",
+          "Takeout",
+          "Private Events"
+        ],
+        "aboutText": "Noz Market offers high-end seafood and Edomae cuisine in an intimate setting, featuring a hand roll bar and a focus on quality and seasonal offerings.",
+        "specialties": [
+          "gourmet",
+          "prepared foods",
+          "artisanal",
+          "international"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/nozmarketnyc/",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6860,6 +10531,15 @@
       "displayName": {
         "text": "MORTON WILLIAMS SUPERMARKETS",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Morton Williams Supermarkets offers a wide range of grocery items and is committed to providing quality products and exceptional service to its customers.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mortonwilliamssupermarkets/",
+          "facebook": "https://www.facebook.com/mortonwilliamssupermarkets/"
+        }
       }
     },
     {
@@ -6936,6 +10616,17 @@
       "displayName": {
         "text": "Westside Market NYC",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Our mission is simple: to become your favorite neighborhood food market and caterer of choice by offering the highest quality foods and hard-to-find products supported by friendly, personalized, efficient service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -6964,6 +10655,30 @@
       "displayName": {
         "text": "Fairway Market of 86th Street",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Frozen Foods",
+          "Meat & Seafood",
+          "Bakery",
+          "Canned Foods",
+          "Health & Nutrition",
+          "Baby Products"
+        ],
+        "aboutText": "Fairway Market of 86th Street offers a diverse selection of high-quality groceries, focusing on fresh produce and specialty items that cater to various dietary needs.",
+        "specialties": [
+          "organic",
+          "vegan",
+          "gluten free",
+          "kosher",
+          "prepared foods",
+          "plant-based"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7019,6 +10734,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic products while promoting sustainable practices and community engagement.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/wholefoods",
+          "facebook": "https://www.facebook.com/wholefoods",
+          "twitter": "https://twitter.com/wholefoods",
+          "tiktok": "https://www.tiktok.com/@wholefoods"
+        }
       }
     },
     {
@@ -7103,6 +10846,15 @@
       "displayName": {
         "text": "Morton Williams Supermarkets",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Morton Williams Supermarkets offers a wide range of grocery items and is known for its commitment to quality and customer service.",
+        "specialties": [],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/mortonwilliamssupermarkets/",
+          "facebook": "https://www.facebook.com/mortonwilliamssupermarkets/"
+        }
       }
     },
     {
@@ -7129,6 +10881,27 @@
       "displayName": {
         "text": "Eastville marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Wraps",
+          "Salads",
+          "Deli Items",
+          "Hot Entrees",
+          "Baked Goods",
+          "Breakfast Items",
+          "Healthy Options",
+          "Snacks",
+          "Catering"
+        ],
+        "aboutText": "Eastville Market Place offers a marketplace-style dining experience with diverse food stations catering to every taste, known for its fresh ingredients and variety.",
+        "specialties": [
+          "fresh ingredients",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7155,6 +10928,24 @@
       "displayName": {
         "text": "Gentile’s Fine Food",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Prepared Foods",
+          "Meat",
+          "Grocery",
+          "Wine"
+        ],
+        "aboutText": "Gentile's Fine Foods has been a staple in Manhattan since 1927, offering exceptional service and the finest quality produce, hand-picked daily for freshness.",
+        "specialties": [
+          "organic",
+          "local",
+          "artisanal",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7182,6 +10973,24 @@
       "displayName": {
         "text": "Heavenly Finest Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Gourmet Sandwiches",
+          "Cheeses",
+          "Charcuterie",
+          "Salads",
+          "Soups",
+          "Breakfast Items",
+          "Wraps",
+          "Daily Specials"
+        ],
+        "aboutText": "Heavenly Market offers a delightful array of fresh and delicious food options, celebrating the diverse culinary tapestry of New York City.",
+        "specialties": [
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7282,6 +11091,24 @@
       "displayName": {
         "text": "1st Avenue Gourmet & Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Sandwiches",
+          "Breakfast",
+          "Salads",
+          "Wraps",
+          "Omelettes",
+          "Snacks",
+          "Catering"
+        ],
+        "aboutText": "1st Avenue Gourmet & Deli offers a culinary haven with a diverse menu of delicious sandwiches and snacks, emphasizing quality ingredients and a family-owned atmosphere.",
+        "specialties": [
+          "gourmet",
+          "artisanal",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7334,6 +11161,12 @@
       "displayName": {
         "text": "Madison Fare",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -7385,6 +11218,27 @@
       "displayName": {
         "text": "Prestige Marketplace Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Grocery Items",
+          "Snacks",
+          "Beverages",
+          "Prepared Foods",
+          "Sandwiches",
+          "Breakfast Platters",
+          "Salads",
+          "Appetizers",
+          "Deli Classics",
+          "Catering"
+        ],
+        "aboutText": "Prestige Marketplace is a convenience store and deli offering a variety of grocery items and prepared foods, catering to the needs of the local community.",
+        "specialties": [
+          "local",
+          "prepared foods",
+          "gourmet"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7415,6 +11269,32 @@
       "displayName": {
         "text": "Associated Fresh Market of 7th Avenue",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Frozen Foods",
+          "Condiments",
+          "Health Foods",
+          "Bakery",
+          "Canned Goods",
+          "Meat",
+          "Produce"
+        ],
+        "aboutText": "Associated Fresh Market of 7th Avenue offers a diverse selection of grocery items, focusing on quality and customer satisfaction.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "gourmet"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/associatedspmkt/",
+          "facebook": "https://www.facebook.com/AssociatedSupermarkets",
+          "twitter": "https://twitter.com/AssociatedSpmkt",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -7495,6 +11375,34 @@
       "displayName": {
         "text": "Whole Foods Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Produce",
+          "Dairy & Eggs",
+          "Meat",
+          "Prepared Foods",
+          "Pantry Essentials",
+          "Bread, Rolls & Bakery",
+          "Body Care",
+          "Supplements",
+          "Frozen Foods",
+          "Snacks, Chips, Salsas & Dips"
+        ],
+        "aboutText": "Whole Foods Market is dedicated to providing high-quality, organic, and sustainable products, setting itself apart from regular grocery stores with a focus on health and community.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "local",
+          "prepared foods",
+          "farm-to-table"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/wholefoods",
+          "facebook": "https://www.facebook.com/wholefoods",
+          "twitter": "https://www.twitter.com/wholefoods",
+          "tiktok": "https://www.tiktok.com/@wholefoods"
+        }
       }
     },
     {
@@ -7527,6 +11435,28 @@
       "displayName": {
         "text": "Food Universe Marketplace",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Groceries",
+          "Produce",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Prepared Foods",
+          "Frozen Foods",
+          "Bakery",
+          "Meat"
+        ],
+        "aboutText": "Food Universe Marketplace offers a wide selection of groceries with a focus on quality and customer satisfaction, ensuring a great shopping experience.",
+        "specialties": [
+          "local",
+          "organic",
+          "sustainable",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7578,6 +11508,28 @@
       "displayName": {
         "text": "Foodtown",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Grocery",
+          "Produce",
+          "Dairy",
+          "Meat",
+          "Frozen Food",
+          "Full service deli"
+        ],
+        "aboutText": "For 70 years, Foodtown has proudly served communities with a mission to deliver the freshest quality products and the friendliest service.",
+        "specialties": [
+          "local",
+          "fresh",
+          "friendly service"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/foodtownsupermarkets/",
+          "facebook": "https://www.facebook.com/FoodtownSupermarkets",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -7629,6 +11581,28 @@
       "displayName": {
         "text": "Harlem Fresh Market by Key Food",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Groceries",
+          "Produce",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Prepared Foods",
+          "Frozen Foods",
+          "Bakery",
+          "Meat"
+        ],
+        "aboutText": "Harlem Fresh Market by Key Food offers a diverse selection of groceries with a focus on community and quality, ensuring the best shopping experience.",
+        "specialties": [
+          "local",
+          "organic",
+          "sustainable",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -7703,6 +11677,30 @@
       "displayName": {
         "text": "LINCOLN MARKET",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Organic",
+          "Conventional",
+          "Snacks",
+          "Beverages",
+          "Dairy",
+          "Produce",
+          "Prepared Foods",
+          "Gourmet",
+          "Catering",
+          "Health Foods"
+        ],
+        "aboutText": "Lincoln Market is known for fair pricing, high-quality products, and a great mix of organic and conventional items.",
+        "specialties": [
+          "organic",
+          "conventional",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "https://instagram.com/lincolnmaketny"
+        }
       }
     },
     {
@@ -7729,6 +11727,12 @@
       "displayName": {
         "text": "H&H Organic Deli & Grill",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -7761,6 +11765,29 @@
       "displayName": {
         "text": "Foodtown of East Harlem",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Grocery",
+          "Produce",
+          "Dairy",
+          "Meat",
+          "Seafood",
+          "Frozen Food",
+          "Full service deli"
+        ],
+        "aboutText": "For 70 years, Foodtown has proudly served communities with the freshest quality products and the friendliest service.",
+        "specialties": [
+          "local",
+          "fresh",
+          "friendly service"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/foodtownsupermarkets/",
+          "facebook": "https://www.facebook.com/FoodtownSupermarkets",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -7865,6 +11892,23 @@
       "displayName": {
         "text": "Healthy Choice",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Salads",
+          "Smoothies",
+          "Food Market",
+          "Catering"
+        ],
+        "aboutText": "Healthy Choice offers a wide selection of products and ingredients to support a healthy, clean, and positive lifestyle, along with a new catering division for events.",
+        "specialties": [
+          "organic",
+          "sustainable",
+          "prepared foods"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/healthychoice.nyc"
+        }
       }
     },
     {
@@ -7891,6 +11935,12 @@
       "displayName": {
         "text": "Mom's Food Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "",
+        "specialties": [],
+        "socialLinks": {}
       }
     },
     {
@@ -8046,6 +12096,34 @@
       "displayName": {
         "text": "City Fresh Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Fruits",
+          "Vegetables",
+          "Meats",
+          "Seafood",
+          "Dairy",
+          "Snacks",
+          "Beverages",
+          "Prepared Foods",
+          "Organic Products",
+          "Specialty Items"
+        ],
+        "aboutText": "City Fresh Market is dedicated to providing high quality and freshness in every product, with a focus on customer satisfaction and community engagement.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "fresh",
+          "high quality"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "https://facebook.com/mycityfreshmarket",
+          "twitter": "https://twitter.com/mycityfreshmarket",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -8072,6 +12150,27 @@
       "displayName": {
         "text": "NYC Gourmet Deli",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Breakfast",
+          "Coffee and Tea",
+          "Dessert",
+          "Dinner",
+          "Fresh Fruits",
+          "Grill",
+          "Halal",
+          "Hamburgers",
+          "Lunch Specials",
+          "Smoothies and Juices"
+        ],
+        "aboutText": "Sam Gourmet Deli offers a diverse menu with a focus on fresh ingredients and quick service, making it a go-to spot for delicious deli cuisine in New York.",
+        "specialties": [
+          "halal",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
       }
     },
     {
@@ -8124,6 +12223,29 @@
       "displayName": {
         "text": "Harlem Hops",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [
+          "Drinks",
+          "Catering",
+          "Events",
+          "Parties",
+          "Merch",
+          "Food"
+        ],
+        "aboutText": "Harlem Hops is Manhattan's first 100% African American owned craft beer bar, offering a unique selection of local brews and a vibrant atmosphere.",
+        "specialties": [
+          "local",
+          "artisanal",
+          "curated",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/harlemhops",
+          "facebook": "https://www.facebook.com/107630426281165",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
@@ -8147,6 +12269,21 @@
       "displayName": {
         "text": "Malcolm Shabazz Harlem Market",
         "languageCode": "en"
+      },
+      "enrichment": {
+        "productCategories": [],
+        "aboutText": "Malcolm Shabazz Harlem Market is a community-focused grocery store that offers a unique selection of products reflecting the culture and needs of the Harlem community.",
+        "specialties": [
+          "local",
+          "sustainable",
+          "community-focused"
+        ],
+        "socialLinks": {
+          "instagram": "",
+          "facebook": "http://www.facebook.com/malcolmshabazzharlem",
+          "twitter": "",
+          "tiktok": ""
+        }
       }
     },
     {
