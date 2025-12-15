@@ -6,7 +6,11 @@
       "Bash(source venv/bin/activate)",
       "Bash(pip install:*)",
       "Bash(python enrich_websites.py:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(do if [ -f \"$file\" ])",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(git lfs:*)"
     ],
     "deny": [],
     "ask": []
