@@ -27,40 +27,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
 
-
-# Chain stores to exclude (CPG brands often in these, but not specialty/independent stores)
-EXCLUDED_CHAINS = [
-    'Whole Foods',
-    'Whole Foods Market',
-    'Stop & Shop',
-    'Target',
-    'Walmart',
-    'Kroger',
-    'Safeway',
-    'Albertsons',
-    'Publix',
-    'Publix Super Market'
-]
-
-
-def should_exclude_store(store_name):
-    """
-    Check if store should be excluded based on chain filter list.
-
-    Args:
-        store_name (str): Name of the store to check
-
-    Returns:
-        bool: True if store should be excluded, False otherwise
-    """
-    if not store_name:
-        return False
-
-    store_name_lower = store_name.lower()
-    for chain in EXCLUDED_CHAINS:
-        if chain.lower() in store_name_lower:
-            return True
-    return False
+from excluded_chains import EXCLUDED_CHAINS, should_exclude_store
 
 
 def extract_pear_vendor_id(page_source):

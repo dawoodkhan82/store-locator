@@ -1,0 +1,4928 @@
+{
+  "source_file": "all_stores/raw/doosra.json",
+  "enriched_at": "2025-12-27T17:22:58.907090",
+  "total_stores": 32,
+  "enriched_count": 30,
+  "not_found_count": 2,
+  "stores": [
+    {
+      "id": 35935330,
+      "name": "Parket & Scott",
+      "latitude": "30.35478101",
+      "longitude": "-97.72883000",
+      "address_line_1": "2113 West Anderson Lane",
+      "address_line_2": "Suite B",
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78757",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 483,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Shipley Do-Nuts",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Texas",
+          "county": "Travis County",
+          "city": "Austin",
+          "postcode": "78757",
+          "district": "Wooten",
+          "street": "West Anderson Lane",
+          "housenumber": "2113",
+          "iso3166_2": "US-TX",
+          "lon": -97.728766,
+          "lat": 30.3548047,
+          "state_code": "TX",
+          "result_type": "amenity",
+          "formatted": "Shipley Do-Nuts, 2113 West Anderson Lane, Austin, TX 78757, United States of America",
+          "address_line1": "Shipley Do-Nuts",
+          "address_line2": "2113 West Anderson Lane, Austin, TX 78757, United States of America",
+          "category": "catering.fast_food",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "8624973C+WF",
+          "plus_code_short": "973C+WF, 78757 Austin, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 5.02532463949153,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51f31b261aa46e58c05993f7167bd45a3e40f00103f901063a8e9c00000000c0020192030f536869706c657920446f2d4e757473"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.728766,
+            30.3548047
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Shipley Do-Nuts",
+                "categories": [
+                  "catering",
+                  "catering.fast_food"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Shipley Do-Nuts",
+                    "osm_id": 2626566662,
+                    "amenity": "fast_food",
+                    "osm_type": "n"
+                  }
+                },
+                "housenumber": "2113",
+                "street": "West Anderson Lane",
+                "city": "Austin",
+                "county": "Travis County",
+                "state": "Texas",
+                "postcode": "78757",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Shipley Do-Nuts, 2113 West Anderson Lane, Austin, TX 78757, United States of America",
+                "address_line1": "Shipley Do-Nuts",
+                "address_line2": "2113 West Anderson Lane, Austin, TX 78757, United States of America",
+                "lat": 30.3548047,
+                "lon": -97.728766,
+                "iso3166_2": "US-TX",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "place_id": "51f31b261aa46e58c059ecb7157bd45a3e40f00103f901063a8e9c0000000092030f536869706c657920446f2d4e757473"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -97.728766,
+                  30.3548047
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 60710496,
+      "name": "Local Foods - Rice Village",
+      "latitude": "29.71951502",
+      "longitude": "-95.41637908",
+      "address_line_1": "2424 Dunstan Road",
+      "address_line_2": null,
+      "city": "Houston",
+      "state": "TX",
+      "postal_code": "77005",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 426,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Kelvin Arms",
+          "old_name": "Kelvin Arms",
+          "other_names": {
+            "old_name": "Kelvin Arms"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Texas",
+          "county": "Harris County",
+          "city": "Houston",
+          "postcode": "77005",
+          "district": "Southampton Extension",
+          "suburb": "University Place",
+          "street": "Dunstan Road",
+          "housenumber": "2424",
+          "iso3166_2": "US-TX",
+          "lon": -95.4163115,
+          "lat": 29.7195056,
+          "state_code": "TX",
+          "result_type": "amenity",
+          "formatted": "Kelvin Arms, 2424 Dunstan Road, Houston, TX 77005, United States of America",
+          "address_line1": "Kelvin Arms",
+          "address_line2": "2424 Dunstan Road, Houston, TX 77005, United States of America",
+          "category": "commercial",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "76X6PH9M+RF",
+          "plus_code_short": "PH9M+RF, 77005 Houston, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 6.287651755803504,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51b85cfdd8a4da57c059f349dd8431b83d40f00103f901738d84d200000000c0020192030b4b656c76696e2041726d73"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.4163115,
+            29.7195056
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name_other": {
+                  "old_name": "Kelvin Arms"
+                },
+                "commercial": {
+                  "type": "vacant"
+                },
+                "categories": [
+                  "commercial"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "shop": "vacant",
+                    "osm_id": 3531902323,
+                    "old_name": "Kelvin Arms",
+                    "osm_type": "n"
+                  }
+                },
+                "housenumber": "2424",
+                "street": "Dunstan Road",
+                "city": "Houston",
+                "county": "Harris County",
+                "state": "Texas",
+                "postcode": "77005",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Kelvin Arms, 2424 Dunstan Road, Houston, TX 77005, United States of America",
+                "address_line1": "Kelvin Arms",
+                "address_line2": "2424 Dunstan Road, Houston, TX 77005, United States of America",
+                "lat": 29.7195056,
+                "lon": -95.4163115,
+                "iso3166_2": "US-TX",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "place_id": "51b85cfdd8a4da57c0592c48dc8431b83d40f00103f901738d84d200000000"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -95.4163115,
+                  29.7195056
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 36692024,
+      "name": "Monsoon Market",
+      "latitude": "33.48876463",
+      "longitude": "-112.06550281",
+      "address_line_1": "3508 N 7th St #140",
+      "address_line_2": null,
+      "city": "Phoenix",
+      "state": "AZ",
+      "postal_code": "85014",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 452,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Urban Beans",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Arizona",
+          "county": "Maricopa County",
+          "city": "Phoenix",
+          "postcode": "85014",
+          "suburb": "Encanto",
+          "street": "North 7th Street",
+          "housenumber": "3508",
+          "iso3166_2": "US-AZ",
+          "lon": -112.065347,
+          "lat": 33.488584,
+          "state_code": "AZ",
+          "result_type": "amenity",
+          "formatted": "Urban Beans, 3508 North 7th Street, Phoenix, AZ 85014, United States of America",
+          "address_line1": "Urban Beans",
+          "address_line2": "3508 North 7th Street, Phoenix, AZ 85014, United States of America",
+          "category": "commercial.food_and_drink.coffee_and_tea",
+          "timezone": {
+            "name": "America/Phoenix",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MST"
+          },
+          "plus_code": "8559FWQM+CV",
+          "plus_code_short": "FWQM+CV, 85014 Phoenix, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.709434359212319,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5112f92ea52e045cc059a8aca6eb89be4040f00103f901b169a7e701000000c0020192030b557262616e204265616e73"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -112.065347,
+            33.488584
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://urbanbeans.com",
+                "opening_hours": "Mo-Su 09:30-17:30",
+                "name": "Urban Beans",
+                "contact": {
+                  "phone": "+1 602 5952244"
+                },
+                "commercial": {
+                  "type": "coffee"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.food_and_drink",
+                  "commercial.food_and_drink.coffee_and_tea",
+                  "vegan",
+                  "vegan.only"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Urban Beans",
+                    "shop": "coffee",
+                    "osm_id": 8181475761,
+                    "osm_type": "n",
+                    "addr:city": "Phoenix",
+                    "addr:state": "AZ",
+                    "diet:vegan": "only",
+                    "addr:street": "North 7th Street",
+                    "addr:country": "US",
+                    "addr:postcode": 85014,
+                    "contact:phone": "+1 602 5952244",
+                    "opening_hours": "Mo-Su 09:30-17:30",
+                    "contact:website": "https://urbanbeans.com",
+                    "addr:housenumber": 3508
+                  }
+                },
+                "housenumber": "3508",
+                "street": "North 7th Street",
+                "city": "Phoenix",
+                "county": "Maricopa County",
+                "state": "Arizona",
+                "postcode": "85014",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Urban Beans, 3508 North 7th Street, Phoenix, AZ 85014, United States of America",
+                "address_line1": "Urban Beans",
+                "address_line2": "3508 North 7th Street, Phoenix, AZ 85014, United States of America",
+                "lat": 33.488584,
+                "lon": -112.065347,
+                "iso3166_2": "US-AZ",
+                "timezone": {
+                  "name": "America/Phoenix",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MST"
+                },
+                "place_id": "5112f92ea52e045cc05945cba5eb89be4040f00103f901b169a7e70100000092030b557262616e204265616e73"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -112.065347,
+                  33.488584
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 26187115,
+      "name": "Spicewalla - Asheville",
+      "latitude": "35.59554799",
+      "longitude": "-82.55662602",
+      "address_line_1": "1 Page Ave Suite 147",
+      "address_line_2": null,
+      "city": "Ashevilla",
+      "state": "NC",
+      "postal_code": "28801",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 435,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "1",
+          "street": "Page Avenue",
+          "country": "United States",
+          "county": "Buncombe County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "28801",
+          "state": "North Carolina",
+          "state_code": "NC",
+          "county_code": "BO",
+          "city": "Asheville",
+          "lon": -82.556635,
+          "lat": 35.595574,
+          "result_type": "building",
+          "formatted": "1 Page Avenue, Asheville, NC 28801, United States of America",
+          "address_line1": "1 Page Avenue",
+          "address_line2": "Asheville, NC 28801, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "867VHCWV+68",
+          "plus_code_short": "WV+68 Asheville, Buncombe County, United States",
+          "iso3166_2": "US-NC",
+          "rank": {
+            "popularity": 5.403212787143435,
+            "confidence": 0.72,
+            "confidence_city_level": 0.7999999999999999,
+            "confidence_street_level": 0.7999999999999999,
+            "confidence_building_level": 0.7999999999999999,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51c63368e89fa354c059882cd2c43bcc4140c00203e203466f70656e6164647265737365733a616464726573733a75732f6e632f7374617465776964652d6164647265737365732d73746174653a33623734363930613066346238363931"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.556635,
+            35.595574
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "1",
+                "street": "Page Avenue",
+                "country": "United States",
+                "county": "Buncombe County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/nc/statewide-addresses-state:3b74690a0f4b8691",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "28801",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "North Carolina",
+                "state_code": "NC",
+                "county_code": "BO",
+                "city": "Asheville",
+                "lon": -82.556635,
+                "lat": 35.595574,
+                "feature_type": "details",
+                "formatted": "1 Page Avenue, Asheville, NC 28801, United States of America",
+                "address_line1": "1 Page Avenue",
+                "address_line2": "Asheville, NC 28801, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-NC"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -82.556635,
+                  35.595574
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 100769061,
+      "name": "Nanny Goat Market: RTP",
+      "latitude": "35.89307081",
+      "longitude": "-78.86283822",
+      "address_line_1": "3151 Elion Dr",
+      "address_line_2": null,
+      "city": "Research Triangle Park",
+      "state": "NC",
+      "postal_code": "27709",
+      "country": "USA",
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 472,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "3151",
+          "street": "Elion Drive",
+          "country": "United States",
+          "county": "Durham County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "27703",
+          "state": "North Carolina",
+          "state_code": "NC",
+          "county_code": "DH",
+          "city": "Durham",
+          "lon": -78.862838,
+          "lat": 35.893071,
+          "result_type": "building",
+          "formatted": "3151 Elion Drive, Durham, NC 27703, United States of America",
+          "address_line1": "3151 Elion Drive",
+          "address_line2": "Durham, NC 27703, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "8773V4VP+6V",
+          "plus_code_short": "V4VP+6V, 27703 Durham, United States",
+          "iso3166_2": "US-NC",
+          "rank": {
+            "popularity": 2.840307983579911,
+            "confidence": 0,
+            "confidence_city_level": 0,
+            "confidence_street_level": 0,
+            "confidence_building_level": 0,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51bfefdfbc38b753c059c500892650f24140c00203e203446f70656e6164647265737365733a616464726573733a75732f6e632f64757268616d2d6164647265737365732d636f756e74793a36356438663935363033396563633530"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.862838,
+            35.893071
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "3151",
+                "street": "Elion Drive",
+                "country": "United States",
+                "county": "Durham County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/nc/durham-addresses-county:65d8f956039ecc50",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "27703",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "North Carolina",
+                "state_code": "NC",
+                "county_code": "DH",
+                "city": "Durham",
+                "lon": -78.862838,
+                "lat": 35.893071,
+                "feature_type": "details",
+                "formatted": "3151 Elion Drive, Durham, NC 27703, United States of America",
+                "address_line1": "3151 Elion Drive",
+                "address_line2": "Durham, NC 27703, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-NC"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -78.862838,
+                  35.893071
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 41604552,
+      "name": "Elaichi Co.",
+      "latitude": "37.86985701",
+      "longitude": "-122.26645902",
+      "address_line_1": "2161 Allston Way",
+      "address_line_2": "Suite C",
+      "city": "Berkeley",
+      "state": "CA",
+      "postal_code": "94704",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 370,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Elaichi Co.",
+          "old_name": "One Plus",
+          "other_names": {
+            "old_name": "One Plus"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "California",
+          "county": "Alameda County",
+          "city": "Berkeley",
+          "postcode": "94704",
+          "district": "Downtown Berkeley",
+          "street": "Allston Way",
+          "housenumber": "2161",
+          "iso3166_2": "US-CA",
+          "lon": -122.266555,
+          "lat": 37.8696982,
+          "state_code": "CA",
+          "result_type": "amenity",
+          "formatted": "Elaichi Co., 2161 Allston Way, Berkeley, CA 94704, United States of America",
+          "address_line1": "Elaichi Co.",
+          "address_line2": "2161 Allston Way, Berkeley, CA 94704, United States of America",
+          "category": "catering.cafe",
+          "timezone": {
+            "name": "America/Los_Angeles",
+            "offset_STD": "-08:00",
+            "offset_STD_seconds": -28800,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "PST",
+            "abbreviation_DST": "PDT"
+          },
+          "plus_code": "849VVP9M+V9",
+          "plus_code_short": "9M+V9, 94704 Berkeley, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 6.6966478647376295,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5175e5b33c0f915ec059ee31474552ef4240f00103f90194b101d201000000c0020192030b456c616963686920436f2e"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.266555,
+            37.8696982
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.elaichico.com/",
+                "name": "Elaichi Co.",
+                "name_other": {
+                  "old_name": "One Plus"
+                },
+                "facilities": {
+                  "wheelchair": true
+                },
+                "payment_options": {
+                  "cash": false,
+                  "credit_cards": true
+                },
+                "catering": {
+                  "cuisine": "tea;coffee_shop"
+                },
+                "categories": [
+                  "catering",
+                  "catering.cafe",
+                  "catering.cafe.coffee",
+                  "catering.cafe.coffee_shop",
+                  "catering.cafe.tea",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Elaichi Co.",
+                    "osm_id": 7818293652,
+                    "amenity": "cafe",
+                    "cuisine": "tea;coffee_shop",
+                    "website": "https://www.elaichico.com/",
+                    "old_name": "One Plus",
+                    "osm_type": "n",
+                    "addr:unit": "C",
+                    "check_date": "2025-05-07",
+                    "wheelchair": "yes",
+                    "addr:street": "Allston Way",
+                    "payment:cash": "no",
+                    "addr:housenumber": 2161,
+                    "payment:credit_cards": "yes"
+                  }
+                },
+                "housenumber": "2161",
+                "street": "Allston Way",
+                "city": "Berkeley",
+                "county": "Alameda County",
+                "state": "California",
+                "postcode": "94704",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Elaichi Co., 2161 Allston Way, Berkeley, CA 94704, United States of America",
+                "address_line1": "Elaichi Co.",
+                "address_line2": "2161 Allston Way, Berkeley, CA 94704, United States of America",
+                "lat": 37.8696982,
+                "lon": -122.266555,
+                "iso3166_2": "US-CA",
+                "timezone": {
+                  "name": "America/Los_Angeles",
+                  "offset_STD": "-08:00",
+                  "offset_STD_seconds": -28800,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "PST",
+                  "abbreviation_DST": "PDT"
+                },
+                "place_id": "5173e5b33c0f915ec059fe1d474552ef4240f00103f90194b101d20100000092030b456c616963686920436f2e"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.266555,
+                  37.8696982
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 58592486,
+      "name": "Pyarful",
+      "latitude": "37.79798851",
+      "longitude": "-122.42802278",
+      "address_line_1": "1739b Union St",
+      "address_line_2": null,
+      "city": "San Francisco",
+      "state": "CA",
+      "postal_code": "94123",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 362,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Mason Street & Union Street",
+          "other_names": {
+            "short_name": "Union"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "California",
+          "city": "San Francisco",
+          "postcode": "94133",
+          "suburb": "North Beach",
+          "street": "Union Street",
+          "iso3166_2": "US-CA",
+          "lon": -122.427868,
+          "lat": 37.7978098,
+          "state_code": "CA",
+          "housenumber": "1739",
+          "result_type": "amenity",
+          "formatted": "Mason Street & Union Street, 1739 Union Street, San Francisco, CA 94133, United States of America",
+          "address_line1": "Mason Street & Union Street",
+          "address_line2": "1739 Union Street, San Francisco, CA 94133, United States of America",
+          "category": "public_transport.tram",
+          "timezone": {
+            "name": "America/Los_Angeles",
+            "offset_STD": "-08:00",
+            "offset_STD_seconds": -28800,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "PST",
+            "abbreviation_DST": "PDT"
+          },
+          "plus_code": "849VQHXC+4V",
+          "plus_code_short": "QHXC+4V San Francisco, California, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 6.47542832699889,
+            "confidence": 0.855,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 0.95,
+            "match_type": "full_match"
+          },
+          "place_id": "5151c07630629b5ec059d3b6aba11ee64240c0020192031b4d61736f6e20537472656574202620556e696f6e20537472656574e203266f70656e6164647265737365733a616464726573733a65316639623235353234353336383765"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.427868,
+            37.7978098
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": []
+        }
+      }
+    },
+    {
+      "id": 100653078,
+      "name": "Riverwards Produce - Fishtown",
+      "latitude": "39.97808600",
+      "longitude": "-75.12996603",
+      "address_line_1": "2200 E Norris St #1906",
+      "address_line_2": null,
+      "city": "Philadelphia",
+      "state": "PA",
+      "postal_code": "19125",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 493,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Riverwards Produce",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Pennsylvania",
+          "county": "Philadelphia County",
+          "city": "Philadelphia",
+          "postcode": "19125",
+          "district": "Fishtown",
+          "suburb": "River Wards",
+          "street": "East Norris Street",
+          "housenumber": "2200",
+          "iso3166_2": "US-PA",
+          "lon": -75.12994080522273,
+          "lat": 39.978086,
+          "state_code": "PA",
+          "result_type": "amenity",
+          "formatted": "Riverwards Produce, 2200 East Norris Street, Philadelphia, PA 19125, United States of America",
+          "address_line1": "Riverwards Produce",
+          "address_line2": "2200 East Norris Street, Philadelphia, PA 19125, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87F6XVHC+62",
+          "plus_code_short": "XVHC+62, 19125 Philadelphia, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 6.315023589822695,
+            "confidence": 0.8088235294117647,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "513e363df350c852c05975560bec31fd4340f00102f9014ae09d4800000000c00201920312526976657277617264732050726f64756365"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.12994080522273,
+            39.978086
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Riverwards Produce",
+                "facilities": {
+                  "wheelchair": true,
+                  "wheelchair_details": {
+                    "condition": "limited"
+                  }
+                },
+                "payment_options": {
+                  "credit_cards": true
+                },
+                "building": {
+                  "height": 18.89
+                },
+                "commercial": {
+                  "type": "supermarket",
+                  "organic": true
+                },
+                "categories": [
+                  "building",
+                  "building.commercial",
+                  "commercial",
+                  "commercial.supermarket",
+                  "vegan",
+                  "vegetarian",
+                  "wheelchair",
+                  "wheelchair.limited"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Riverwards Produce",
+                    "shop": "supermarket",
+                    "height": 18.89,
+                    "osm_id": 1218306122,
+                    "organic": "yes",
+                    "building": "yes",
+                    "osm_type": "w",
+                    "addr:city": "Philadelphia",
+                    "addr:unit": 4,
+                    "addr:state": "PA",
+                    "diet:dairy": "yes",
+                    "diet:vegan": "yes",
+                    "wheelchair": "limited",
+                    "addr:street": "East Norris Street",
+                    "addr:postcode": 19125,
+                    "diet:vegetarian": "yes",
+                    "addr:housenumber": 2200,
+                    "payment:credit_cards": "yes"
+                  }
+                },
+                "housenumber": "2200",
+                "street": "East Norris Street",
+                "city": "Philadelphia",
+                "county": "Philadelphia County",
+                "state": "Pennsylvania",
+                "postcode": "19125",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Riverwards Produce, 2200 East Norris Street, Philadelphia, PA 19125, United States of America",
+                "address_line1": "Riverwards Produce",
+                "address_line2": "2200 East Norris Street, Philadelphia, PA 19125, United States of America",
+                "lat": 39.978086,
+                "lon": -75.12994080522273,
+                "iso3166_2": "US-PA",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "513e363df350c852c059c6e70bec31fd4340f00102f9014ae09d4800000000920312526976657277617264732050726f64756365"
+              },
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -75.130129,
+                      39.9780212
+                    ],
+                    [
+                      -75.1300131,
+                      39.9779579
+                    ],
+                    [
+                      -75.1299206,
+                      39.978058
+                    ],
+                    [
+                      -75.1298754,
+                      39.9780334
+                    ],
+                    [
+                      -75.1298543,
+                      39.9780562
+                    ],
+                    [
+                      -75.1298448,
+                      39.978051
+                    ],
+                    [
+                      -75.1297866,
+                      39.978114
+                    ],
+                    [
+                      -75.1297781,
+                      39.9781232
+                    ],
+                    [
+                      -75.1299486,
+                      39.9782165
+                    ],
+                    [
+                      -75.130129,
+                      39.9780212
+                    ]
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 100653079,
+      "name": "Riverwards Produce - Old City",
+      "latitude": "39.95358972",
+      "longitude": "-75.14414024",
+      "address_line_1": "146 N Bread St",
+      "address_line_2": null,
+      "city": "Philadelphia",
+      "state": "PA",
+      "postal_code": "19106",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 491,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Pennsylvania",
+          "county": "Philadelphia County",
+          "city": "Philadelphia",
+          "postcode": "19106",
+          "suburb": "Center City",
+          "street": "North Bread Street",
+          "housenumber": "146",
+          "iso3166_2": "US-PA",
+          "lon": -75.14404607142856,
+          "lat": 39.95351664285714,
+          "state_code": "PA",
+          "result_type": "building",
+          "formatted": "146 North Bread Street, Philadelphia, PA 19106, United States of America",
+          "address_line1": "146 North Bread Street",
+          "address_line2": "Philadelphia, PA 19106, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87F6XV34+C9",
+          "plus_code_short": "XV34+C9, 19106 Philadelphia, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.2404048853067575,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51ca79030d38c952c059aea156d50cfa4340f00102f901d878e54800000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.14404607142856,
+            39.95351664285714
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "North Bread Street",
+                "way": {
+                  "oneway": true,
+                  "lanes": 1,
+                  "surface": "cobblestone"
+                },
+                "categories": [
+                  "highway",
+                  "highway.residential"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "North Bread Street",
+                    "lanes": 1,
+                    "oneway": "yes",
+                    "osm_id": 1222998232,
+                    "highway": "residential",
+                    "surface": "cobblestone",
+                    "z_order": 330,
+                    "osm_type": "w"
+                  }
+                },
+                "street": "North Bread Street",
+                "city": "Philadelphia",
+                "county": "Philadelphia County",
+                "state": "Pennsylvania",
+                "postcode": "19106",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "North Bread Street, Philadelphia, PA 19106, United States of America",
+                "address_line1": "North Bread Street",
+                "address_line2": "Philadelphia, PA 19106, United States of America",
+                "lat": 39.953636264115445,
+                "lon": -75.14392196658397,
+                "iso3166_2": "US-PA",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51a85d5d5f35c952c059e71eacec16fa4340f00102f901d878e548000000009203124e6f72746820427265616420537472656574"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -75.1439737,
+                    39.9533741
+                  ],
+                  [
+                    -75.1439697,
+                    39.9534079
+                  ],
+                  [
+                    -75.1438826,
+                    39.9538246
+                  ],
+                  [
+                    -75.1438784,
+                    39.9538446
+                  ],
+                  [
+                    -75.1438666,
+                    39.9538978
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 45565557,
+      "name": "Here Here Market",
+      "latitude": "41.88836402",
+      "longitude": "-87.63525603",
+      "address_line_1": "222 West Merchandise Mart Plaza #1212",
+      "address_line_2": null,
+      "city": "Chicago",
+      "state": "IL",
+      "postal_code": "60654",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 469,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Dunkin'",
+          "ref": "330650",
+          "other_names": {
+            "ref": "330650",
+            "alt_name": "Dunkin' Donuts"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Illinois",
+          "county": "Cook County",
+          "city": "Chicago",
+          "postcode": "60654",
+          "district": "River North",
+          "suburb": "Near North Side",
+          "street": "West Merchandise Mart Plaza",
+          "housenumber": "222",
+          "iso3166_2": "US-IL",
+          "lon": -87.6344597,
+          "lat": 41.8885815,
+          "state_code": "IL",
+          "result_type": "amenity",
+          "formatted": "Dunkin', 222 West Merchandise Mart Plaza, Chicago, IL 60654, United States of America",
+          "address_line1": "Dunkin'",
+          "address_line2": "222 West Merchandise Mart Plaza, Chicago, IL 60654, United States of America",
+          "category": "catering.fast_food",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "86HJV9Q8+C6",
+          "plus_code_short": "V9Q8+C6 Chicago, Cook County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.7249471747572604,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "515188dbfc9ae855c059522ae109bdf14440f00103f901fe6da68700000000c0020192030744756e6b696e27"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6344597,
+            41.8885815
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://locations.dunkindonuts.com/en/il/chicago/22-merchandise-mart-plz/330650",
+                "opening_hours": "Mo-Fr 05:00-19:00; Sa-Su 06:00-19:00",
+                "brand": "Dunkin'",
+                "brand_details": {
+                  "wikidata": "Q847743"
+                },
+                "name": "Dunkin'",
+                "name_other": {
+                  "alt_name": "Dunkin' Donuts"
+                },
+                "ref": 330650,
+                "contact": {
+                  "phone": "+1 312-222-1196"
+                },
+                "facilities": {
+                  "takeaway": true
+                },
+                "catering": {
+                  "cuisine": "donut;coffee_shop"
+                },
+                "categories": [
+                  "catering",
+                  "catering.fast_food"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "ref": 330650,
+                    "name": "Dunkin'",
+                    "brand": "Dunkin'",
+                    "phone": "+1 312-222-1196",
+                    "osm_id": 2275831294,
+                    "amenity": "fast_food",
+                    "cuisine": "donut;coffee_shop",
+                    "website": "https://locations.dunkindonuts.com/en/il/chicago/22-merchandise-mart-plz/330650",
+                    "alt_name": "Dunkin' Donuts",
+                    "osm_type": "n",
+                    "takeaway": "yes",
+                    "addr:city": "Chicago",
+                    "addr:state": "IL",
+                    "addr:street": "West Merchandise Mart Plaza",
+                    "addr:postcode": 60654,
+                    "drive_through": "no",
+                    "opening_hours": "Mo-Fr 05:00-19:00; Sa-Su 06:00-19:00",
+                    "brand:wikidata": "Q847743",
+                    "addr:housenumber": 222
+                  }
+                },
+                "housenumber": "222",
+                "street": "West Merchandise Mart Plaza",
+                "city": "Chicago",
+                "county": "Cook County",
+                "state": "Illinois",
+                "postcode": "60654",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Dunkin', 222 West Merchandise Mart Plaza, Chicago, IL 60654, United States of America",
+                "address_line1": "Dunkin'",
+                "address_line2": "222 West Merchandise Mart Plaza, Chicago, IL 60654, United States of America",
+                "lat": 41.8885815,
+                "lon": -87.6344597,
+                "iso3166_2": "US-IL",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "place_id": "515088dbfc9ae855c059f030e209bdf14440f00103f901fe6da6870000000092030744756e6b696e27"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -87.6344597,
+                  41.8885815
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 45565550,
+      "name": "Southport Grocery and Cafe",
+      "latitude": "41.94674200",
+      "longitude": "-87.66436596",
+      "address_line_1": "3552 N Southport Ave",
+      "address_line_2": null,
+      "city": "Chicago",
+      "state": "IL",
+      "postal_code": "60657",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 472,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Southport Grocery & Cafe",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Illinois",
+          "county": "Cook County",
+          "city": "Chicago",
+          "postcode": "60657",
+          "district": "Wrigleyville",
+          "suburb": "Lake View Township",
+          "street": "North Southport Avenue",
+          "housenumber": "3552",
+          "iso3166_2": "US-IL",
+          "lon": -87.6642858,
+          "lat": 41.9467598,
+          "state_code": "IL",
+          "result_type": "amenity",
+          "formatted": "Southport Grocery & Cafe, 3552 North Southport Avenue, Chicago, IL 60657, United States of America",
+          "address_line1": "Southport Grocery & Cafe",
+          "address_line2": "3552 North Southport Avenue, Chicago, IL 60657, United States of America",
+          "category": "catering.restaurant",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "86HJW8WP+P7",
+          "plus_code_short": "W8WP+P7 Chicago, Cook County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 6.624787879123584,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "519f8c96a883ea55c0597115d56c2ff94440f00103f9019b27d27801000000c00201920318536f757468706f72742047726f6365727920262043616665"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6642858,
+            41.9467598
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://southportgrocery.com/",
+                "opening_hours": "Mo-Su 08:00-14:30",
+                "name": "Southport Grocery & Cafe",
+                "contact": {
+                  "phone": "+1-773-665-0100"
+                },
+                "categories": [
+                  "catering",
+                  "catering.restaurant"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Southport Grocery & Cafe",
+                    "phone": "+1-773-665-0100",
+                    "osm_id": 6322005915,
+                    "amenity": "restaurant",
+                    "website": "https://southportgrocery.com/",
+                    "osm_type": "n",
+                    "addr:city": "Chicago",
+                    "addr:state": "IL",
+                    "addr:street": "North Southport Avenue",
+                    "addr:postcode": 60657,
+                    "opening_hours": "Mo-Su 08:00-14:30",
+                    "addr:housenumber": 3552
+                  }
+                },
+                "housenumber": "3552",
+                "street": "North Southport Avenue",
+                "city": "Chicago",
+                "county": "Cook County",
+                "state": "Illinois",
+                "postcode": "60657",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Southport Grocery & Cafe, 3552 North Southport Avenue, Chicago, IL 60657, United States of America",
+                "address_line1": "Southport Grocery & Cafe",
+                "address_line2": "3552 North Southport Avenue, Chicago, IL 60657, United States of America",
+                "lat": 41.9467598,
+                "lon": -87.6642858,
+                "iso3166_2": "US-IL",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "place_id": "519e8c96a883ea55c0598e1ed66c2ff94440f00103f9019b27d27801000000920318536f757468706f72742047726f6365727920262043616665"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -87.6642858,
+                  41.9467598
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 41601438,
+      "name": "Swadesi Cafe",
+      "latitude": "41.87726500",
+      "longitude": "-87.64293704",
+      "address_line_1": "328 S Jefferson St #120",
+      "address_line_2": null,
+      "city": "Chicago",
+      "state": "IL",
+      "postal_code": "60661",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 469,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Swadesi Cafe",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Illinois",
+          "county": "Cook County",
+          "city": "Chicago",
+          "municipality": "West Chicago Township",
+          "postcode": "60661",
+          "district": "West Loop Gate",
+          "suburb": "Near West Side",
+          "street": "South Jefferson Street",
+          "housenumber": "328",
+          "iso3166_2": "US-IL",
+          "lon": -87.6427944,
+          "lat": 41.8771477,
+          "state_code": "IL",
+          "result_type": "amenity",
+          "formatted": "Swadesi Cafe, 328 South Jefferson Street, Chicago, IL 60661, United States of America",
+          "address_line1": "Swadesi Cafe",
+          "address_line2": "328 South Jefferson Street, Chicago, IL 60661, United States of America",
+          "category": "catering.cafe",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "86HJV9G4+VV",
+          "plus_code_short": "V9G4+VV Chicago, Cook County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.647321654279633,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5153831f8b23e955c0597da1366046f04440f00103f901f05ca07701000000c0020192030c537761646573692043616665"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6427944,
+            41.8771477
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.swadesicafe.com/",
+                "opening_hours": "08:00-16:00",
+                "name": "Swadesi Cafe",
+                "contact": {
+                  "phone": "+1-708-553-6350"
+                },
+                "facilities": {
+                  "internet_access": true,
+                  "wheelchair": true
+                },
+                "payment_options": {
+                  "cash": true,
+                  "debit_cards": true,
+                  "credit_cards": true
+                },
+                "catering": {
+                  "cuisine": "indian"
+                },
+                "categories": [
+                  "catering",
+                  "catering.cafe",
+                  "internet_access",
+                  "internet_access.for_customers",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Swadesi Cafe",
+                    "phone": "+1-708-553-6350",
+                    "osm_id": 6301965552,
+                    "amenity": "cafe",
+                    "cuisine": "indian",
+                    "website": "https://www.swadesicafe.com/",
+                    "osm_type": "n",
+                    "addr:city": "Chicago",
+                    "addr:unit": 120,
+                    "addr:state": "IL",
+                    "check_date": "2024-10-25",
+                    "wheelchair": "yes",
+                    "addr:street": "South Jefferson Street",
+                    "payment:cash": "yes",
+                    "addr:postcode": 60661,
+                    "opening_hours": "08:00-16:00",
+                    "internet_access": "wlan",
+                    "addr:housenumber": 328,
+                    "internet_access:fee": "customers",
+                    "payment:debit_cards": "yes",
+                    "payment:credit_cards": "yes"
+                  }
+                },
+                "housenumber": "328",
+                "street": "South Jefferson Street",
+                "city": "Chicago",
+                "county": "Cook County",
+                "state": "Illinois",
+                "postcode": "60661",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Swadesi Cafe, 328 South Jefferson Street, Chicago, IL 60661, United States of America",
+                "address_line1": "Swadesi Cafe",
+                "address_line2": "328 South Jefferson Street, Chicago, IL 60661, United States of America",
+                "lat": 41.8771477,
+                "lon": -87.6427944,
+                "iso3166_2": "US-IL",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "place_id": "5152831f8b23e955c0599da7376046f04440f00103f901f05ca0770100000092030c537761646573692043616665"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -87.6427944,
+                  41.8771477
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 100652140,
+      "name": "Baked True North",
+      "latitude": "40.54902901",
+      "longitude": "-80.03729197",
+      "address_line_1": "1137 Perry Hwy",
+      "address_line_2": null,
+      "city": "Pittsburgh",
+      "state": "PA",
+      "postal_code": "15237",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 353,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "1137",
+          "street": "Perry Highway",
+          "country": "United States",
+          "county": "Allegheny County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "15237",
+          "state": "Pennsylvania",
+          "state_code": "PA",
+          "county_code": "AL",
+          "district": "Ross Township",
+          "city": "Pittsburgh",
+          "lon": -80.037295,
+          "lat": 40.549019,
+          "result_type": "building",
+          "formatted": "1137 Perry Highway, Pittsburgh, PA 15237, United States of America",
+          "address_line1": "1137 Perry Highway",
+          "address_line2": "Pittsburgh, PA 15237, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "86GXGXX7+J3",
+          "plus_code_short": "GXX7+J3 Pittsburgh, Allegheny County, United States",
+          "iso3166_2": "US-PA",
+          "rank": {
+            "popularity": 3.3078058503991374,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "517a53910a630254c059faf02c4146464440c00203e203476f70656e6164647265737365733a616464726573733a75732f70612f616c6c656768656e792d6164647265737365732d636f756e74793a34343233326334336130346235313632"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.037295,
+            40.549019
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "1137",
+                "street": "Perry Highway",
+                "country": "United States",
+                "county": "Allegheny County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/pa/allegheny-addresses-county:44232c43a04b5162",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "15237",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Pennsylvania",
+                "state_code": "PA",
+                "county_code": "AL",
+                "district": "Ross Township",
+                "city": "Pittsburgh",
+                "lon": -80.037295,
+                "lat": 40.549019,
+                "feature_type": "details",
+                "formatted": "1137 Perry Highway, Pittsburgh, PA 15237, United States of America",
+                "address_line1": "1137 Perry Highway",
+                "address_line2": "Pittsburgh, PA 15237, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-PA"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -80.037295,
+                  40.549019
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 100653076,
+      "name": "Gingham Market",
+      "latitude": "41.47766531",
+      "longitude": "-81.81504343",
+      "address_line_1": "17000 Madison Ave",
+      "address_line_2": null,
+      "city": "Lakewood",
+      "state": "OH",
+      "postal_code": "44107",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 384,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Ohio",
+          "county": "Cuyahoga County",
+          "city": "Lakewood",
+          "postcode": "44107",
+          "district": "Traymore Estates",
+          "street": "Madison Avenue",
+          "housenumber": "17000",
+          "iso3166_2": "US-OH",
+          "lon": -81.815078,
+          "lat": 41.477598,
+          "state_code": "OH",
+          "result_type": "building",
+          "county_code": "CUY",
+          "formatted": "17000 Madison Avenue, Lakewood, OH 44107, United States of America",
+          "address_line1": "17000 Madison Avenue",
+          "address_line2": "Lakewood, OH 44107, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "86HWF5HM+2X",
+          "plus_code_short": "F5HM+2X, 44107 Lakewood, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.711932870658466,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "511a6cea3c2a7454c059485167ee21bd4440f00102f90145ef4e5100000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.815078,
+            41.477598
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Madison Avenue",
+                "restrictions": {
+                  "max_speed": "25 mph"
+                },
+                "way": {
+                  "lit": true,
+                  "lanes": 3,
+                  "surface": "asphalt"
+                },
+                "categories": [
+                  "highway",
+                  "highway.secondary"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "lit": "yes",
+                    "name": "Madison Avenue",
+                    "lanes": 3,
+                    "osm_id": 1364127557,
+                    "highway": "secondary",
+                    "surface": "asphalt",
+                    "z_order": 350,
+                    "cycleway": "lane",
+                    "maxspeed": "25 mph",
+                    "osm_type": "w",
+                    "sidewalk": "both",
+                    "parking:both": "lane",
+                    "cycleway:both": "lane",
+                    "lanes:forward": 1,
+                    "lanes:backward": 1,
+                    "cycleway:buffer": "no",
+                    "lanes:both_ways": 1,
+                    "cycleway:both:buffer": "no",
+                    "turn:lanes:both_ways": "left",
+                    "parking:both:orientation": "parallel"
+                  }
+                },
+                "street": "Madison Avenue",
+                "city": "Lakewood",
+                "county": "Cuyahoga County",
+                "state": "Ohio",
+                "postcode": "44107",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Madison Avenue, Lakewood, OH 44107, United States of America",
+                "address_line1": "Madison Avenue",
+                "address_line2": "Lakewood, OH 44107, United States of America",
+                "lat": 41.47750635678677,
+                "lon": -81.81438480079524,
+                "iso3166_2": "US-OH",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51a2fec412207454c059257eeaf81ebd4440f00102f90145ef4e510000000092030e4d616469736f6e204176656e7565"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -81.812898,
+                    41.477479
+                  ],
+                  [
+                    -81.8129893,
+                    41.4774807
+                  ],
+                  [
+                    -81.8135083,
+                    41.4774902
+                  ],
+                  [
+                    -81.8138655,
+                    41.4774968
+                  ],
+                  [
+                    -81.8139644,
+                    41.4774986
+                  ],
+                  [
+                    -81.8144576,
+                    41.4775077
+                  ],
+                  [
+                    -81.8149149,
+                    41.4775162
+                  ],
+                  [
+                    -81.8156319,
+                    41.4775294
+                  ],
+                  [
+                    -81.8158716,
+                    41.4775338
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 25333920,
+      "name": "The Goods Mart",
+      "latitude": "40.72074060",
+      "longitude": "-73.99825970",
+      "address_line_1": "189 Lafayette Street",
+      "address_line_2": null,
+      "city": "NY",
+      "state": "NY",
+      "postal_code": "10013",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 100,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 460,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10013",
+          "district": "Manhattan",
+          "neighbourhood": "Little Italy",
+          "street": "Lafayette Street",
+          "housenumber": "189",
+          "iso3166_2": "US-NY",
+          "lon": -73.998293,
+          "lat": 40.7207282,
+          "state_code": "NY",
+          "result_type": "building",
+          "suburb": "SoHo",
+          "formatted": "189 Lafayette Street, New York, NY 10013, United States of America",
+          "address_line1": "189 Lafayette Street",
+          "address_line2": "New York, NY 10013, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8P2C2+7M",
+          "plus_code_short": "C2+7M New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 8.615793062435909,
+            "confidence": 0.2571428571428571,
+            "confidence_city_level": 0.2857142857142857,
+            "confidence_street_level": 0.2857142857142857,
+            "confidence_building_level": 0.2857142857142857,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51d9b45208e47f52c059092758d2405c4440f00103f90196e3d39700000000c00203e2034c6f70656e6164647265737365733a616464726573733a75732f6e792f636974795f6f665f6e65775f796f726b2d6164647265737365732d636974793a30353132383362643661353633643734"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.998293,
+            40.7207282
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "categories": [],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "osm_id": 2547245974,
+                    "osm_type": "n",
+                    "addr:street": "Lafayette Street",
+                    "addr:postcode": 10013,
+                    "addr:housenumber": 189
+                  }
+                },
+                "housenumber": "189",
+                "street": "Lafayette Street",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10013",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "189 Lafayette Street, New York, NY 10013, United States of America",
+                "address_line1": "189 Lafayette Street",
+                "address_line2": "New York, NY 10013, United States of America",
+                "lat": 40.7207282,
+                "lon": -73.998293,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51d8b45208e47f52c059d2ec58d2405c4440f00103f90196e3d39700000000"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.998293,
+                  40.7207282
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 25333917,
+      "name": "Walter Stewart's Market",
+      "latitude": "41.14615399",
+      "longitude": "-73.49813596",
+      "address_line_1": "229 Elm Street",
+      "address_line_2": null,
+      "city": "New Canaan",
+      "state": "CT",
+      "postal_code": "06840",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 100,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 499,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Walter Stewart's Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Connecticut",
+          "county": "Western Connecticut Planning Region",
+          "city": "New Canaan",
+          "postcode": "06840",
+          "street": "Elm Street",
+          "housenumber": "229",
+          "iso3166_2": "US-CT",
+          "lon": -73.4979902,
+          "lat": 41.1461287,
+          "state_code": "CT",
+          "result_type": "amenity",
+          "formatted": "Walter Stewart's Market, 229 Elm Street, New Canaan, CT 06840, United States of America",
+          "address_line1": "Walter Stewart's Market",
+          "address_line2": "229 Elm Street, New Canaan, CT 06840, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87H84GW2+FR",
+          "plus_code_short": "W2+FR, 06840 New Canaan, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 3.629937877652221,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51a0ae4912df5f52c059e5c06158b4924440f00103f90144fa1f7300000000c0020192031757616c74657220537465776172742773204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.4979902,
+            41.1461287
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "http://stewartsmarket.com/",
+                "name": "Walter Stewart's Market",
+                "commercial": {
+                  "type": "supermarket"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.supermarket"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Walter Stewart's Market",
+                    "shop": "supermarket",
+                    "osm_id": 1931475524,
+                    "website": "http://stewartsmarket.com/",
+                    "osm_type": "n",
+                    "addr:state": "CT",
+                    "addr:street": "Elm St",
+                    "addr:postcode": "06840",
+                    "addr:housenumber": 229
+                  }
+                },
+                "housenumber": "229",
+                "street": "Elm Street",
+                "city": "New Canaan",
+                "county": "Western Connecticut Planning Region",
+                "state": "Connecticut",
+                "postcode": "06840",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Walter Stewart's Market, 229 Elm Street, New Canaan, CT 06840, United States of America",
+                "address_line1": "Walter Stewart's Market",
+                "address_line2": "229 Elm Street, New Canaan, CT 06840, United States of America",
+                "lat": 41.1461287,
+                "lon": -73.4979902,
+                "iso3166_2": "US-CT",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51a0ae4912df5f52c05946a16258b4924440f00103f90144fa1f730000000092031757616c74657220537465776172742773204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.4979902,
+                  41.1461287
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 32426715,
+      "name": "Alpen Pantry",
+      "latitude": "41.03210154",
+      "longitude": "-73.56684994",
+      "address_line_1": "23 Arcadia Rd",
+      "address_line_2": "",
+      "city": "Old Greenwich",
+      "state": "CT",
+      "postal_code": "06870",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 491,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Connecticut",
+          "county": "Western Connecticut Planning Region",
+          "city": "Greenwich",
+          "village": "Old Greenwich",
+          "postcode": "06870",
+          "street": "Arcadia Road",
+          "housenumber": "23",
+          "iso3166_2": "US-CT",
+          "lon": -73.56680572038867,
+          "lat": 41.03209807006303,
+          "state_code": "CT",
+          "result_type": "building",
+          "formatted": "23 Arcadia Road, Old Greenwich, Greenwich, CT 06870, United States of America",
+          "address_line1": "23 Arcadia Road",
+          "address_line2": "Old Greenwich, Greenwich, CT 06870, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87H82CJM+R7",
+          "plus_code_short": "2CJM+R7, 06870 Greenwich, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.378999513470884,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "515310808b466452c059bc9720ca1b844440f00102f9017c359b0000000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.56680572038867,
+            41.03209807006303
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Arcadia Road",
+                "way": {
+                  "oneway": false,
+                  "surface": "asphalt"
+                },
+                "categories": [
+                  "highway",
+                  "highway.residential"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Arcadia Road",
+                    "oneway": "no",
+                    "osm_id": 10171772,
+                    "highway": "residential",
+                    "surface": "asphalt",
+                    "z_order": 330,
+                    "osm_type": "w"
+                  }
+                },
+                "street": "Arcadia Road",
+                "city": "Greenwich",
+                "county": "Western Connecticut Planning Region",
+                "state": "Connecticut",
+                "postcode": "06870",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Arcadia Road, Greenwich, CT 06870, United States of America",
+                "address_line1": "Arcadia Road",
+                "address_line2": "Greenwich, CT 06870, United States of America",
+                "lat": 41.03221993623868,
+                "lon": -73.56643005995134,
+                "iso3166_2": "US-CT",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "5150638c59406452c0595bfb4ecc1f844440f00102f9017c359b000000000092030c4172636164696120526f6164"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -73.564842,
+                    41.0324332
+                  ],
+                  [
+                    -73.5663696,
+                    41.0322302
+                  ],
+                  [
+                    -73.5664276,
+                    41.0322204
+                  ],
+                  [
+                    -73.5664642,
+                    41.0322135
+                  ],
+                  [
+                    -73.5671599,
+                    41.0321288
+                  ],
+                  [
+                    -73.5675804,
+                    41.0320787
+                  ],
+                  [
+                    -73.5677851,
+                    41.0320567
+                  ],
+                  [
+                    -73.5679031,
+                    41.0320355
+                  ],
+                  [
+                    -73.568017,
+                    41.0320065
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 60710497,
+      "name": "Desi Galli",
+      "latitude": "40.72741205",
+      "longitude": "-73.97977604",
+      "address_line_1": "172 Avenue B",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10009",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 461,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10009",
+          "district": "Manhattan",
+          "neighbourhood": "Manhattan Community Board 3",
+          "street": "Avenue B",
+          "housenumber": "172",
+          "iso3166_2": "US-NY",
+          "lon": -73.97978004999999,
+          "lat": 40.72738475,
+          "state_code": "NY",
+          "suburb": "East Village",
+          "result_type": "building",
+          "formatted": "172 Avenue B, New York, NY 10009, United States of America",
+          "address_line1": "172 Avenue B",
+          "address_line2": "New York, NY 10009, United States of America",
+          "category": "building.residential",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8P2GC+X3",
+          "plus_code_short": "P2GC+X3 New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.843602540085664,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "517c0162b7b47e52c059f86d88f11a5d4440f00102f901be79e10e00000000c00203e203236f70656e7374726565746d61703a616464726573733a7761792f323439363537373930"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.97978004999999,
+            40.72738475
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "building": {
+                  "type": "apartments",
+                  "height": 21.4
+                },
+                "categories": [
+                  "building",
+                  "building.residential"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "height": 21.4,
+                    "osm_id": 249657790,
+                    "building": "apartments",
+                    "osm_type": "w",
+                    "addr:street": "Avenue B",
+                    "addr:postcode": 10009,
+                    "addr:housenumber": 172
+                  }
+                },
+                "housenumber": "172",
+                "street": "Avenue B",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10009",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "172 Avenue B, New York, NY 10009, United States of America",
+                "address_line1": "172 Avenue B",
+                "address_line2": "New York, NY 10009, United States of America",
+                "lat": 40.72738475,
+                "lon": -73.97978004999999,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "517c0162b7b47e52c059323489f11a5d4440f00102f901be79e10e00000000"
+              },
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -73.9799058,
+                      40.7274005
+                    ],
+                    [
+                      -73.9796953,
+                      40.7273123
+                    ],
+                    [
+                      -73.9796543,
+                      40.727369
+                    ],
+                    [
+                      -73.9798648,
+                      40.7274572
+                    ],
+                    [
+                      -73.9799058,
+                      40.7274005
+                    ]
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 45565546,
+      "name": "Fontainhas",
+      "latitude": "40.70411768",
+      "longitude": "-73.98666410",
+      "address_line_1": "28 Jay St",
+      "address_line_2": null,
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11201",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 460,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "28 Liberty",
+          "old_name": "One Chase Manhattan Plaza",
+          "other_names": {
+            "old_name": "One Chase Manhattan Plaza"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10005",
+          "district": "Manhattan",
+          "neighbourhood": "Financial District",
+          "street": "Liberty Street",
+          "housenumber": "28",
+          "iso3166_2": "US-NY",
+          "lon": -74.00898179042723,
+          "lat": 40.70784945,
+          "state_code": "NY",
+          "suburb": "Financial District",
+          "result_type": "amenity",
+          "formatted": "28 Liberty Street, New York, NY 10005, United States of America",
+          "address_line1": "28 Liberty Street",
+          "address_line2": "New York, NY 10005, United States of America",
+          "category": "building.office",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G7PX5R+4C",
+          "plus_code_short": "5R+4C New York, New York County, United States",
+          "rank": {
+            "importance": 0.44109153047066063,
+            "popularity": 8.615793062435909,
+            "confidence": 0,
+            "confidence_city_level": 0,
+            "confidence_street_level": 0,
+            "confidence_building_level": 0,
+            "match_type": "inner_part"
+          },
+          "place_id": "513f095c28938052c059ec1e8fcf9a5a4440f00102f9011e4da91000000000c0020192030a3238204c696265727479e203216f70656e7374726565746d61703a76656e75653a7761792f323739353330373832"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.00898179042723,
+            40.70784945
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://28liberty.com/",
+                "name": "28 Liberty",
+                "name_other": {
+                  "old_name": "One Chase Manhattan Plaza"
+                },
+                "wiki_and_media": {
+                  "wikidata": "Q1050074",
+                  "wikipedia": "en:28 Liberty Street"
+                },
+                "building": {
+                  "levels": 60,
+                  "type": "office",
+                  "start_date": 1961,
+                  "height": 248
+                },
+                "categories": [
+                  "building",
+                  "building.office"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "28 Liberty",
+                    "height": 248,
+                    "osm_id": 279530782,
+                    "website": "https://28liberty.com/",
+                    "building": "office",
+                    "old_name": "One Chase Manhattan Plaza",
+                    "osm_type": "w",
+                    "wikidata": "Q1050074",
+                    "addr:city": "New York",
+                    "architect": "Skidmore, Owings and Merrill",
+                    "max_level": 59,
+                    "min_level": -5,
+                    "wikipedia": "en:28 Liberty Street",
+                    "start_date": 1961,
+                    "addr:street": "Liberty Street",
+                    "addr:postcode": 10005,
+                    "building:levels": 60,
+                    "addr:housenumber": 28
+                  }
+                },
+                "housenumber": "28",
+                "street": "Liberty Street",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10005",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "28 Liberty Street, New York, NY 10005, United States of America",
+                "address_line1": "28 Liberty Street",
+                "address_line2": "New York, NY 10005, United States of America",
+                "lat": 40.70784945,
+                "lon": -74.00898179042723,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "513e095c28938052c059dce38fcf9a5a4440f00102f9011e4da9100000000092030a3238204c696265727479"
+              },
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -74.0094941,
+                      40.7079887
+                    ],
+                    [
+                      -74.0094741,
+                      40.7079758
+                    ],
+                    [
+                      -74.0094825,
+                      40.7079684
+                    ],
+                    [
+                      -74.0094743,
+                      40.7079631
+                    ],
+                    [
+                      -74.009466,
+                      40.7079705
+                    ],
+                    [
+                      -74.0093936,
+                      40.7079236
+                    ],
+                    [
+                      -74.009402,
+                      40.7079162
+                    ],
+                    [
+                      -74.0093938,
+                      40.7079109
+                    ],
+                    [
+                      -74.0093855,
+                      40.7079183
+                    ],
+                    [
+                      -74.0093129,
+                      40.7078713
+                    ],
+                    [
+                      -74.0093213,
+                      40.7078639
+                    ],
+                    [
+                      -74.0093132,
+                      40.7078586
+                    ],
+                    [
+                      -74.0093048,
+                      40.707866
+                    ],
+                    [
+                      -74.0092324,
+                      40.7078191
+                    ],
+                    [
+                      -74.0092408,
+                      40.7078116
+                    ],
+                    [
+                      -74.0092326,
+                      40.7078064
+                    ],
+                    [
+                      -74.0092242,
+                      40.7078138
+                    ],
+                    [
+                      -74.0091518,
+                      40.7077669
+                    ],
+                    [
+                      -74.0091602,
+                      40.7077595
+                    ],
+                    [
+                      -74.009152,
+                      40.7077542
+                    ],
+                    [
+                      -74.0091437,
+                      40.7077616
+                    ],
+                    [
+                      -74.0090713,
+                      40.7077147
+                    ],
+                    [
+                      -74.0090796,
+                      40.7077073
+                    ],
+                    [
+                      -74.0090715,
+                      40.707702
+                    ],
+                    [
+                      -74.0090631,
+                      40.7077094
+                    ],
+                    [
+                      -74.0089907,
+                      40.7076624
+                    ],
+                    [
+                      -74.008999,
+                      40.707655
+                    ],
+                    [
+                      -74.0089909,
+                      40.7076497
+                    ],
+                    [
+                      -74.0089825,
+                      40.7076572
+                    ],
+                    [
+                      -74.0089101,
+                      40.7076102
+                    ],
+                    [
+                      -74.0089184,
+                      40.7076029
+                    ],
+                    [
+                      -74.0089103,
+                      40.7075976
+                    ],
+                    [
+                      -74.008902,
+                      40.707605
+                    ],
+                    [
+                      -74.0088295,
+                      40.707558
+                    ],
+                    [
+                      -74.0088379,
+                      40.7075506
+                    ],
+                    [
+                      -74.0088297,
+                      40.7075453
+                    ],
+                    [
+                      -74.0088214,
+                      40.7075527
+                    ],
+                    [
+                      -74.0087489,
+                      40.7075057
+                    ],
+                    [
+                      -74.0087573,
+                      40.7074983
+                    ],
+                    [
+                      -74.0087491,
+                      40.7074931
+                    ],
+                    [
+                      -74.0087408,
+                      40.7075005
+                    ],
+                    [
+                      -74.0087208,
+                      40.7074876
+                    ],
+                    [
+                      -74.0084696,
+                      40.7077103
+                    ],
+                    [
+                      -74.0084896,
+                      40.7077233
+                    ],
+                    [
+                      -74.0084813,
+                      40.7077307
+                    ],
+                    [
+                      -74.0084894,
+                      40.7077359
+                    ],
+                    [
+                      -74.0084978,
+                      40.7077285
+                    ],
+                    [
+                      -74.0085701,
+                      40.7077754
+                    ],
+                    [
+                      -74.0085618,
+                      40.7077828
+                    ],
+                    [
+                      -74.0085699,
+                      40.7077881
+                    ],
+                    [
+                      -74.0085783,
+                      40.7077807
+                    ],
+                    [
+                      -74.0086507,
+                      40.7078276
+                    ],
+                    [
+                      -74.0086423,
+                      40.707835
+                    ],
+                    [
+                      -74.0086505,
+                      40.7078403
+                    ],
+                    [
+                      -74.0086588,
+                      40.7078329
+                    ],
+                    [
+                      -74.0087313,
+                      40.7078799
+                    ],
+                    [
+                      -74.0087229,
+                      40.7078873
+                    ],
+                    [
+                      -74.0087311,
+                      40.7078926
+                    ],
+                    [
+                      -74.0087395,
+                      40.7078852
+                    ],
+                    [
+                      -74.0088119,
+                      40.7079321
+                    ],
+                    [
+                      -74.0088036,
+                      40.7079395
+                    ],
+                    [
+                      -74.0088117,
+                      40.7079448
+                    ],
+                    [
+                      -74.00882,
+                      40.7079374
+                    ],
+                    [
+                      -74.0088924,
+                      40.7079843
+                    ],
+                    [
+                      -74.0088841,
+                      40.7079917
+                    ],
+                    [
+                      -74.0088922,
+                      40.707997
+                    ],
+                    [
+                      -74.0089006,
+                      40.7079896
+                    ],
+                    [
+                      -74.0089731,
+                      40.7080366
+                    ],
+                    [
+                      -74.0089646,
+                      40.7080441
+                    ],
+                    [
+                      -74.0089728,
+                      40.7080493
+                    ],
+                    [
+                      -74.0089812,
+                      40.7080419
+                    ],
+                    [
+                      -74.0090535,
+                      40.7080887
+                    ],
+                    [
+                      -74.0090451,
+                      40.7080962
+                    ],
+                    [
+                      -74.0090533,
+                      40.7081015
+                    ],
+                    [
+                      -74.0090617,
+                      40.708094
+                    ],
+                    [
+                      -74.0091342,
+                      40.7081411
+                    ],
+                    [
+                      -74.0091259,
+                      40.7081484
+                    ],
+                    [
+                      -74.0091341,
+                      40.7081537
+                    ],
+                    [
+                      -74.0091424,
+                      40.7081463
+                    ],
+                    [
+                      -74.0092148,
+                      40.7081932
+                    ],
+                    [
+                      -74.0092064,
+                      40.7082006
+                    ],
+                    [
+                      -74.0092146,
+                      40.7082059
+                    ],
+                    [
+                      -74.0092229,
+                      40.7081985
+                    ],
+                    [
+                      -74.0092429,
+                      40.7082115
+                    ],
+                    [
+                      -74.0094941,
+                      40.7079887
+                    ]
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 100652139,
+      "name": "Fonty's Deli & Dukaan",
+      "latitude": "40.73385094",
+      "longitude": "-74.00066785",
+      "address_line_1": "20 Christopher St",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 461,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "city": "New York",
+          "postcode": "10303",
+          "district": "Staten Island",
+          "neighbourhood": "Arlington",
+          "street": "Christopher Street",
+          "housenumber": "20",
+          "iso3166_2": "US-NY",
+          "lon": -74.16285246153846,
+          "lat": 40.63646484615384,
+          "state_code": "NY",
+          "result_type": "building",
+          "formatted": "20 Christopher Street, New York, NY 10303, United States of America",
+          "address_line1": "20 Christopher Street",
+          "address_line2": "New York, NY 10303, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G7JRPP+HV",
+          "plus_code_short": "JRPP+HV New York, New York, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 5.6161058593231905,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "515f18bb2c6c8a52c05968a419ae77514440f00102f901d93b570000000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.16285246153846,
+            40.63646484615384
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Christopher Street",
+                "categories": [
+                  "highway",
+                  "highway.residential"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Christopher Street",
+                    "osm_id": 5716953,
+                    "highway": "residential",
+                    "z_order": 330,
+                    "osm_type": "w"
+                  }
+                },
+                "street": "Christopher Street",
+                "city": "New York",
+                "state": "New York",
+                "postcode": "10303",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Christopher Street, New York, NY 10303, United States of America",
+                "address_line1": "Christopher Street",
+                "address_line2": "New York, NY 10303, United States of America",
+                "lat": 40.63657037177192,
+                "lon": -74.16360987758979,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51e013eb54798a52c0596f491a2b7b514440f00102f901d93b5700000000009203124368726973746f7068657220537472656574"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -74.1621605,
+                    40.6365334
+                  ],
+                  [
+                    -74.1623266,
+                    40.6365459
+                  ],
+                  [
+                    -74.1623944,
+                    40.636551
+                  ],
+                  [
+                    -74.1624766,
+                    40.636551
+                  ],
+                  [
+                    -74.1634198,
+                    40.6365668
+                  ],
+                  [
+                    -74.1634829,
+                    40.6365679
+                  ],
+                  [
+                    -74.1635572,
+                    40.6365693
+                  ],
+                  [
+                    -74.1636555,
+                    40.6365713
+                  ],
+                  [
+                    -74.1637132,
+                    40.6365725
+                  ],
+                  [
+                    -74.1649401,
+                    40.6365814
+                  ],
+                  [
+                    -74.1649844,
+                    40.6365824
+                  ],
+                  [
+                    -74.16506,
+                    40.636584
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 45565541,
+      "name": "Happier Grocery",
+      "latitude": "40.72122688",
+      "longitude": "-74.00415900",
+      "address_line_1": "365 Canal St",
+      "address_line_2": null,
+      "city": "NY",
+      "state": "NY",
+      "postal_code": "10013",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 460,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "365",
+          "street": "Canal Street",
+          "country": "United States",
+          "county": "New York County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "10013",
+          "state": "New York",
+          "state_code": "NY",
+          "city": "New York",
+          "district": "Manhattan",
+          "suburb": "SoHo",
+          "lon": -74.004158,
+          "lat": 40.721219,
+          "result_type": "building",
+          "formatted": "365 Canal Street, New York, NY 10013, United States of America",
+          "address_line1": "365 Canal Street",
+          "address_line2": "New York, NY 10013, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G7PXCW+F8",
+          "plus_code_short": "CW+F8 New York, New York County, United States",
+          "iso3166_2": "US-NY",
+          "rank": {
+            "popularity": 8.615793062435909,
+            "confidence": 0.2571428571428571,
+            "confidence_city_level": 0.2857142857142857,
+            "confidence_street_level": 0.2857142857142857,
+            "confidence_building_level": 0.2857142857142857,
+            "match_type": "match_by_building"
+          },
+          "place_id": "511381ea1f448052c0597d2079e7505c4440c00203e2034c6f70656e6164647265737365733a616464726573733a75732f6e792f636974795f6f665f6e65775f796f726b2d6164647265737365732d636974793a65313532303736346537653533653933"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.004158,
+            40.721219
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "365",
+                "street": "Canal Street",
+                "country": "United States",
+                "county": "New York County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ny/city_of_new_york-addresses-city:e1520764e7e53e93",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "10013",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "New York",
+                "state_code": "NY",
+                "city": "New York",
+                "district": "Manhattan",
+                "suburb": "SoHo",
+                "lon": -74.004158,
+                "lat": 40.721219,
+                "feature_type": "details",
+                "formatted": "365 Canal Street, New York, NY 10013, United States of America",
+                "address_line1": "365 Canal Street",
+                "address_line2": "New York, NY 10013, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-NY"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -74.004158,
+                  40.721219
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 60710500,
+      "name": "Hudson News / Queens Beat",
+      "latitude": "40.64356640",
+      "longitude": "-73.78212370",
+      "address_line_1": "John F Kennedy Airport",
+      "address_line_2": "Terminal & Terminal 4",
+      "city": "Queens",
+      "state": "11430",
+      "postal_code": "NY",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 465,
+      "distance_units": "mi"
+    },
+    {
+      "id": 104101742,
+      "name": "Jubilee Marketplace",
+      "latitude": "40.73212272",
+      "longitude": "-73.95981538",
+      "address_line_1": "145 West Street",
+      "address_line_2": null,
+      "city": "Brooklyn",
+      "state": "11222",
+      "postal_code": "NY",
+      "country": "USA",
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 462,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "145",
+          "street": "South 263rd Street West",
+          "country": "United States",
+          "county": "Sedgwick County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "67050",
+          "state": "Kansas",
+          "state_code": "KS",
+          "county_code": "SG",
+          "district": "Garden Plain Township",
+          "city": "Garden Plain",
+          "lon": -97.644396,
+          "lat": 37.685559,
+          "result_type": "building",
+          "formatted": "145 South 263rd Street West, Garden Plain, KS 67050, United States of America",
+          "address_line1": "145 South 263rd Street West",
+          "address_line2": "Garden Plain, KS 67050, United States of America",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "8694M9P4+66",
+          "iso3166_2": "US-KS",
+          "rank": {
+            "popularity": 2.4044889455492444,
+            "confidence": 0.413343,
+            "confidence_city_level": 0.567,
+            "confidence_street_level": 0.45927,
+            "confidence_building_level": 0.45927,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51166bb8c83d6958c0593e3db665c0d74240c00203e2034b6f70656e6164647265737365733a616464726573733a75732f6b732f636974795f6f665f776963686974612d6164647265737365732d636974793a66623164373061623862343736656230"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.644396,
+            37.685559
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "145",
+                "street": "South 263rd Street West",
+                "country": "United States",
+                "county": "Sedgwick County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ks/city_of_wichita-addresses-city:fb1d70ab8b476eb0",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "67050",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Kansas",
+                "state_code": "KS",
+                "county_code": "SG",
+                "district": "Garden Plain Township",
+                "city": "Garden Plain",
+                "lon": -97.644396,
+                "lat": 37.685559,
+                "feature_type": "details",
+                "formatted": "145 South 263rd Street West, Garden Plain, KS 67050, United States of America",
+                "address_line1": "145 South 263rd Street West",
+                "address_line2": "Garden Plain, KS 67050, United States of America",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "iso3166_2": "US-KS"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -97.644396,
+                  37.685559
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 26318817,
+      "name": "Palmer's Market",
+      "latitude": "41.06989502",
+      "longitude": "-73.49606203",
+      "address_line_1": "264 Heights Road",
+      "address_line_2": null,
+      "city": "Darien",
+      "state": "CT",
+      "postal_code": "06820",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 496,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Connecticut",
+          "county": "Western Connecticut Planning Region",
+          "city": "Darien",
+          "village": "Noroton Heights",
+          "postcode": "06820",
+          "street": "Heights Road",
+          "housenumber": "264",
+          "iso3166_2": "US-CT",
+          "lon": -73.496065,
+          "lat": 41.0699065,
+          "state_code": "CT",
+          "result_type": "building",
+          "formatted": "264 Heights Road, Darien, CT 06820, United States of America",
+          "address_line1": "264 Heights Road",
+          "address_line2": "Darien, CT 06820, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87H83G93+XH",
+          "plus_code_short": "3G93+XH, 06820 Darien, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.0385724966838,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "512dec6987bf5f52c05990a339b2f2884440f00103f901242dbbea01000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.496065,
+            41.0699065
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "categories": [],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "osm_id": 8233102628,
+                    "osm_type": "n",
+                    "addr:city": "Darien",
+                    "addr:state": "CT",
+                    "addr:street": "Heights Road",
+                    "addr:postcode": "06820",
+                    "addr:housenumber": 264
+                  }
+                },
+                "housenumber": "264",
+                "street": "Heights Road",
+                "city": "Darien",
+                "county": "Western Connecticut Planning Region",
+                "state": "Connecticut",
+                "postcode": "06820",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "264 Heights Road, Darien, CT 06820, United States of America",
+                "address_line1": "264 Heights Road",
+                "address_line2": "Darien, CT 06820, United States of America",
+                "lat": 41.0699065,
+                "lon": -73.496065,
+                "iso3166_2": "US-CT",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "512dec6987bf5f52c059677f3ab2f2884440f00103f901242dbbea01000000"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.496065,
+                  41.0699065
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 100776807,
+      "name": "Pearl River Mart",
+      "latitude": "40.70639799",
+      "longitude": "-73.95247602",
+      "address_line_1": "452 Broadway",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10013",
+      "country": "USA",
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 461,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Pearl River Mart",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10013",
+          "district": "Manhattan",
+          "suburb": "SoHo",
+          "street": "Broadway",
+          "housenumber": "452",
+          "iso3166_2": "US-NY",
+          "lon": -74.0007941,
+          "lat": 40.7204665,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Pearl River Mart, 452 Broadway, New York, NY 10013, United States of America",
+          "address_line1": "Pearl River Mart",
+          "address_line2": "452 Broadway, New York, NY 10013, United States of America",
+          "category": "commercial.department_store",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G7PXCX+5M",
+          "plus_code_short": "CX+5M New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 8.615793062435909,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51e761b2020d8052c0598aae0b3f385c4440f00103f901170b4c9800000000c00201920310506561726c205269766572204d617274"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.0007941,
+            40.7204665
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.pearlriver.com/",
+                "opening_hours": "Mo-Su 11:00-19:00",
+                "description": "Chinese and other Asian imports",
+                "name": "Pearl River Mart",
+                "contact": {
+                  "phone": "+1-212-431-4770"
+                },
+                "facilities": {
+                  "wheelchair": true
+                },
+                "commercial": {
+                  "type": "department_store"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.department_store",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Pearl River Mart",
+                    "shop": "department_store",
+                    "phone": "+1-212-431-4770",
+                    "osm_id": 2555120407,
+                    "website": "https://www.pearlriver.com/",
+                    "osm_type": "n",
+                    "wheelchair": "yes",
+                    "addr:street": "Broadway",
+                    "description": "Chinese and other Asian imports",
+                    "addr:postcode": 10013,
+                    "opening_hours": "Mo-Su 11:00-19:00",
+                    "addr:housenumber": 452
+                  }
+                },
+                "housenumber": "452",
+                "street": "Broadway",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10013",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Pearl River Mart, 452 Broadway, New York, NY 10013, United States of America",
+                "address_line1": "Pearl River Mart",
+                "address_line2": "452 Broadway, New York, NY 10013, United States of America",
+                "lat": 40.7204665,
+                "lon": -74.0007941,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51e661b2020d8052c05950740c3f385c4440f00103f901170b4c9800000000920310506561726c205269766572204d617274"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -74.0007941,
+                  40.7204665
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 39693036,
+      "name": "Pearl River Mart Foods",
+      "latitude": "40.74258000",
+      "longitude": "-74.00606300",
+      "address_line_1": "Chelsea Market, Lower Level",
+      "address_line_2": "75 9th Ave",
+      "city": "NY",
+      "state": "NY",
+      "postal_code": "10011",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 461,
+      "distance_units": "mi"
+    },
+    {
+      "id": 100785427,
+      "name": "Snacks & Design",
+      "latitude": "40.83125201",
+      "longitude": "-73.69430870",
+      "address_line_1": "189 Main St",
+      "address_line_2": null,
+      "city": "Port Washington",
+      "state": "NY",
+      "postal_code": "11050",
+      "country": "USA",
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 477,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "Nassau County",
+          "city": "Port Washington",
+          "municipality": "Town of North Hempstead",
+          "postcode": "11050",
+          "street": "Main Street",
+          "housenumber": "189",
+          "iso3166_2": "US-NY",
+          "lon": -73.6943074,
+          "lat": 40.8312431,
+          "state_code": "NY",
+          "result_type": "building",
+          "formatted": "189 Main Street, Port Washington, NY 11050, United States of America",
+          "address_line1": "189 Main Street",
+          "address_line2": "Port Washington, NY 11050, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8R8J4+F7",
+          "plus_code_short": "J4+F7, 11050 Port Washington, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.882761773562644,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51bb174e886f6c52c05949c3842c666a4440f00103f901944a890b02000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.6943074,
+            40.8312431
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "categories": [],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "osm_id": 8783481492,
+                    "osm_type": "n",
+                    "addr:city": "Port Washington",
+                    "addr:state": "NY",
+                    "addr:street": "Main Street",
+                    "addr:postcode": 11050,
+                    "addr:housenumber": 189,
+                    "nysgissam:review": "existing element's addr:housenumber has different addr:housenumber",
+                    "nysgissam:nysaddresspointid": "NASS281584"
+                  }
+                },
+                "housenumber": "189",
+                "street": "Main Street",
+                "city": "Port Washington",
+                "county": "Nassau County",
+                "state": "New York",
+                "postcode": "11050",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "189 Main Street, Port Washington, NY 11050, United States of America",
+                "address_line1": "189 Main Street",
+                "address_line2": "Port Washington, NY 11050, United States of America",
+                "lat": 40.8312431,
+                "lon": -73.6943074,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51bb174e886f6c52c0594290852c666a4440f00103f901944a890b02000000"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.6943074,
+                  40.8312431
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 33788993,
+      "name": "Atticus Market",
+      "latitude": "41.32134901",
+      "longitude": "-72.91190599",
+      "address_line_1": "771 Orange St ",
+      "address_line_2": null,
+      "city": "New Haven",
+      "state": "CT",
+      "postal_code": "06511",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 429,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Atticus Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Connecticut",
+          "county": "New Haven",
+          "city": "New Haven",
+          "postcode": "06511",
+          "district": "Whitney Avenue Historic District",
+          "suburb": "Fair Haven",
+          "street": "Orange Street",
+          "housenumber": "771",
+          "iso3166_2": "US-CT",
+          "lon": -72.9119478,
+          "lat": 41.3213634,
+          "state_code": "CT",
+          "result_type": "amenity",
+          "formatted": "Atticus Market, 771 Orange Street, New Haven, CT 06511, United States of America",
+          "address_line1": "Atticus Market",
+          "address_line2": "771 Orange Street, New Haven, CT 06511, United States of America",
+          "category": "commercial.convenience",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87H983CQ+G6",
+          "plus_code_short": "83CQ+G6, 06511 New Haven, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.3280812399590705,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "512f2a4e5a5d3a52c059d190966f22a94440f00103f901c5680e1c00000000c0020192030e41747469637573204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.9119478,
+            41.3213634
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "opening_hours": "Mo-Su 08:00-19:00",
+                "name": "Atticus Market",
+                "commercial": {
+                  "type": "convenience"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.convenience"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Atticus Market",
+                    "shop": "convenience",
+                    "osm_id": 470706373,
+                    "osm_type": "n",
+                    "addr:city": "New Haven",
+                    "addr:state": "CT",
+                    "addr:street": "Orange Street",
+                    "addr:postcode": "06511",
+                    "opening_hours": "Mo-Su 08:00-19:00",
+                    "addr:housenumber": 771
+                  }
+                },
+                "housenumber": "771",
+                "street": "Orange Street",
+                "city": "New Haven",
+                "county": "New Haven",
+                "state": "Connecticut",
+                "postcode": "06511",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Atticus Market, 771 Orange Street, New Haven, CT 06511, United States of America",
+                "address_line1": "Atticus Market",
+                "address_line2": "771 Orange Street, New Haven, CT 06511, United States of America",
+                "lat": 41.3213634,
+                "lon": -72.9119478,
+                "iso3166_2": "US-CT",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "512f2a4e5a5d3a52c0593c7b976f22a94440f00103f901c5680e1c0000000092030e41747469637573204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -72.9119478,
+                  41.3213634
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 45565543,
+      "name": "Nature's Way Health Foods",
+      "latitude": "41.19929501",
+      "longitude": "-73.13051197",
+      "address_line_1": "922 Barnum Avenue Cutoff",
+      "address_line_2": null,
+      "city": "Stratford",
+      "state": "CT",
+      "postal_code": "06614",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 415,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Connecticut",
+          "county": "Greater Bridgeport Planning Region",
+          "city": "Stratford",
+          "postcode": "06614",
+          "street": "Barnum Avenue Cutoff",
+          "housenumber": "922",
+          "iso3166_2": "US-CT",
+          "lon": -73.1306565,
+          "lat": 41.1993562,
+          "state_code": "CT",
+          "result_type": "building",
+          "formatted": "922 Barnum Avenue Cutoff, Stratford, CT 06614, United States of America",
+          "address_line1": "922 Barnum Avenue Cutoff",
+          "address_line2": "Stratford, CT 06614, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87H85VX9+PP",
+          "plus_code_short": "X9+PP, 06614 Stratford, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 3.63736616057694,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51a1a014ad5c4852c0599ea0038184994440f00103f901045db70102000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.1306565,
+            41.1993562
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "categories": [],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "osm_id": 8618728708,
+                    "osm_type": "n",
+                    "addr:city": "Stratford",
+                    "addr:state": "CT",
+                    "addr:street": "Barnum Avenue Cut-Off",
+                    "addr:postcode": "06614",
+                    "addr:housenumber": 922
+                  }
+                },
+                "housenumber": "922",
+                "street": "Barnum Avenue Cutoff",
+                "city": "Stratford",
+                "county": "Greater Bridgeport Planning Region",
+                "state": "Connecticut",
+                "postcode": "06614",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "922 Barnum Avenue Cutoff, Stratford, CT 06614, United States of America",
+                "address_line1": "922 Barnum Avenue Cutoff",
+                "address_line2": "Stratford, CT 06614, United States of America",
+                "lat": 41.1993562,
+                "lon": -73.1306565,
+                "iso3166_2": "US-CT",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51a1a014ad5c4852c0591b84048184994440f00103f901045db70102000000"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.1306565,
+                  41.1993562
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 60710499,
+      "name": "New Lebanon Farmers Market",
+      "latitude": "42.46662360",
+      "longitude": "-73.39269279",
+      "address_line_1": "528 Route 20",
+      "address_line_2": null,
+      "city": "New Lebanon",
+      "state": "NY",
+      "postal_code": "12125",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 487,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "528",
+          "street": "Route 20",
+          "country": "United States",
+          "county": "Columbia County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "12125",
+          "state": "New York",
+          "state_code": "NY",
+          "county_code": "CU",
+          "district": "New Lebanon",
+          "city": "New Lebanon",
+          "lon": -73.392691,
+          "lat": 42.466615,
+          "result_type": "building",
+          "formatted": "528 Route 20, New Lebanon, NY 12125, United States of America",
+          "address_line1": "528 Route 20",
+          "address_line2": "New Lebanon, NY 12125, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87J8FJ84+JW",
+          "iso3166_2": "US-NY",
+          "rank": {
+            "popularity": 2.2025393999530514,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51bf9b6ed9215952c0595969520aba3b4540c00203e203466f70656e6164647265737365733a616464726573733a75732f6e792f7374617465776964652d6164647265737365732d73746174653a63613864626635303364343030383866"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.392691,
+            42.466615
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "528",
+                "street": "Route 20",
+                "country": "United States",
+                "county": "Columbia County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ny/statewide-addresses-state:ca8dbf503d40088f",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "12125",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "New York",
+                "state_code": "NY",
+                "county_code": "CU",
+                "district": "New Lebanon",
+                "city": "New Lebanon",
+                "lon": -73.392691,
+                "lat": 42.466615,
+                "feature_type": "details",
+                "formatted": "528 Route 20, New Lebanon, NY 12125, United States of America",
+                "address_line1": "528 Route 20",
+                "address_line2": "New Lebanon, NY 12125, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-NY"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.392691,
+                  42.466615
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 25333929,
+      "name": "Provisions on State",
+      "latitude": "41.31553901",
+      "longitude": "-72.90953701",
+      "address_line_1": "981 State St",
+      "address_line_2": null,
+      "city": "New Haven",
+      "state": "CT",
+      "postal_code": "06511",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 428,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Connecticut",
+          "county": "New Haven",
+          "city": "New Haven",
+          "hamlet": "Barnesville",
+          "postcode": "06511",
+          "district": "Upper State Street Historic District",
+          "street": "State Street",
+          "housenumber": "981",
+          "iso3166_2": "US-CT",
+          "lon": -72.9095495,
+          "lat": 41.3155557,
+          "state_code": "CT",
+          "result_type": "building",
+          "formatted": "981 State Street, New Haven, CT 06511, United States of America",
+          "address_line1": "981 State Street",
+          "address_line2": "New Haven, CT 06511, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87H9838R+65",
+          "plus_code_short": "838R+65, 06511 New Haven, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.481566202809878,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51f6251b0f363a52c0597fc8112164a84440f00103f901c7fef11802000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -72.9095495,
+            41.3155557
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "categories": [],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "osm_id": 9008447175,
+                    "osm_type": "n",
+                    "addr:city": "New Haven",
+                    "addr:state": "CT",
+                    "addr:street": "State Street",
+                    "addr:postcode": "06511",
+                    "addr:housenumber": 981
+                  }
+                },
+                "housenumber": "981",
+                "street": "State Street",
+                "city": "New Haven",
+                "county": "New Haven",
+                "state": "Connecticut",
+                "postcode": "06511",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "981 State Street, New Haven, CT 06511, United States of America",
+                "address_line1": "981 State Street",
+                "address_line2": "New Haven, CT 06511, United States of America",
+                "lat": 41.3155557,
+                "lon": -72.9095495,
+                "iso3166_2": "US-CT",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51f6251b0f363a52c05995b2122164a84440f00103f901c7fef11802000000"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -72.9095495,
+                  41.3155557
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 30834826,
+      "name": "The Mixed Pantry",
+      "latitude": "47.61305901",
+      "longitude": "-122.34658297",
+      "address_line_1": "2233 1st Ave",
+      "address_line_2": null,
+      "city": "Seattle",
+      "state": "WA",
+      "postal_code": "98121",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 409,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "2233",
+          "street": "1st Avenue",
+          "country": "United States",
+          "county": "King County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "98121",
+          "state": "Washington",
+          "state_code": "WA",
+          "county_code": "KN",
+          "city": "Seattle",
+          "suburb": "Belltown",
+          "lon": -122.346599,
+          "lat": 47.613047,
+          "result_type": "building",
+          "formatted": "2233 1st Avenue, Seattle, WA 98121, United States of America",
+          "address_line1": "2233 1st Avenue",
+          "address_line2": "Seattle, WA 98121, United States of America",
+          "timezone": {
+            "name": "America/Los_Angeles",
+            "offset_STD": "-08:00",
+            "offset_STD_seconds": -28800,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "PST",
+            "abbreviation_DST": "PDT"
+          },
+          "plus_code": "84VVJM73+69",
+          "plus_code_short": "73+69 Seattle, King County, United States",
+          "iso3166_2": "US-WA",
+          "rank": {
+            "popularity": 6.453403613446509,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51e27492ad2e965ec05999f4f75278ce4740c00203e2034b6f70656e6164647265737365733a616464726573733a75732f77612f636974795f6f665f73656174746c652d6164647265737365732d636974793a30366132623561383161623662636563"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.346599,
+            47.613047
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "2233",
+                "street": "1st Avenue",
+                "country": "United States",
+                "county": "King County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/wa/city_of_seattle-addresses-city:06a2b5a81ab6bcec",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "98121",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Washington",
+                "state_code": "WA",
+                "county_code": "KN",
+                "city": "Seattle",
+                "suburb": "Belltown",
+                "lon": -122.346599,
+                "lat": 47.613047,
+                "feature_type": "details",
+                "formatted": "2233 1st Avenue, Seattle, WA 98121, United States of America",
+                "address_line1": "2233 1st Avenue",
+                "address_line2": "Seattle, WA 98121, United States of America",
+                "timezone": {
+                  "name": "America/Los_Angeles",
+                  "offset_STD": "-08:00",
+                  "offset_STD_seconds": -28800,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "PST",
+                  "abbreviation_DST": "PDT"
+                },
+                "iso3166_2": "US-WA"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.346599,
+                  47.613047
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

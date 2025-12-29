@@ -10,7 +10,8 @@
       "Bash(do if [ -f \"$file\" ])",
       "Bash(fi)",
       "Bash(done)",
-      "Bash(git lfs:*)"
+      "Bash(git lfs:*)",
+      "Bash(# Extract knox URL pattern from the script curl -s \"\"https://lets.shop/productFirstSnippet.js?id=destini-locator\"\" --compressed)"
     ],
     "deny": [],
     "ask": []

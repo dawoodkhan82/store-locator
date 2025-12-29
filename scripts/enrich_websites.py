@@ -35,6 +35,40 @@ MAX_HTML_LENGTH = 100000  # Limit HTML content sent to OpenAI (to manage tokens)
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
+def get_store_website(store):
+    """
+    Extract website URL from store data, checking multiple possible locations.
+
+    Args:
+        store (dict): Store data object
+
+    Returns:
+        str: Website URL or None if not found
+    """
+    # Direct fields
+    if store.get('websiteUri'):
+        return store['websiteUri']
+    if store.get('website'):
+        return store['website']
+    if store.get('url'):
+        return store['url']
+
+    # Nested google_places
+    if store.get('google_places', {}).get('websiteUri'):
+        return store['google_places']['websiteUri']
+
+    # Geoapify place_details - website is in features[].properties.website
+    geoapify = store.get('geoapify', {})
+    place_details = geoapify.get('place_details', {})
+    features = place_details.get('features', [])
+    for feature in features:
+        props = feature.get('properties', {})
+        if props.get('website'):
+            return props['website']
+
+    return None
+
+
 def scrape_website_html(url, store_name):
     """
     Fetch and extract clean HTML content from a website.
@@ -228,14 +262,11 @@ def enrich_stores(input_file, output_file, limit=None):
 
     print(f"Found {total} stores")
 
-    # Count stores with websites - handle both data structures
+    # Count stores with websites - handle multiple data structures
     stores_with_websites = []
     for p in places:
-        # Manhattan stores: websiteUri at top level
-        if p.get('websiteUri'):
-            stores_with_websites.append(p)
-        # Stockist stores: websiteUri in google_places nested object
-        elif p.get('google_places', {}).get('websiteUri'):
+        website = get_store_website(p)
+        if website:
             stores_with_websites.append(p)
 
     print(f"Stores with websites: {len(stores_with_websites)}")
@@ -249,16 +280,15 @@ def enrich_stores(input_file, output_file, limit=None):
     skipped_count = 0
 
     for idx, place in enumerate(places, 1):
-        # Handle both data structures
-        if 'websiteUri' in place:
-            # Manhattan stores: websiteUri and displayName at top level
-            website = place.get('websiteUri')
-            store_name = place.get('displayName', {}).get('text', 'Unknown')
-        else:
-            # Stockist stores: websiteUri in google_places nested object
-            google_places = place.get('google_places', {})
-            website = google_places.get('websiteUri')
-            store_name = google_places.get('displayName', {}).get('text', place.get('name', 'Unknown'))
+        # Get website URL using helper function
+        website = get_store_website(place)
+        # Get store name from various possible fields
+        store_name = (
+            place.get('displayName', {}).get('text') or
+            place.get('name') or
+            place.get('google_places', {}).get('displayName', {}).get('text') or
+            'Unknown'
+        )
 
         if website and (not limit or enriched_count < limit):
             print(f"\n[{enriched_count + 1}/{len(stores_with_websites) if limit else len(stores_with_websites)}] {store_name}")
@@ -362,7 +392,10 @@ def main():
     # Estimate time and cost
     with open(input_file, 'r') as f:
         data = json.load(f)
-        stores_with_websites = len([p for p in data.get('places', []) if p.get('websiteUri')])
+        # Support both 'places' and 'stores' keys
+        items = data.get('places', []) or data.get('stores', [])
+        # Count stores with websites using helper function
+        stores_with_websites = len([p for p in items if get_store_website(p)])
 
     if limit:
         stores_to_process = min(limit, stores_with_websites)

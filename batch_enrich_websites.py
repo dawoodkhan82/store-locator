@@ -14,13 +14,20 @@ import sys
 from pathlib import Path
 
 # Directories
-RAW_DIR = Path("all_stores/raw")
+PLACES_DIR = Path("all_stores/places_enriched")
 WEBSITE_ENRICHED_DIR = Path("all_stores/website_enriched")
 ENRICH_SCRIPT = Path("scripts/enrich_websites.py")
 
 def get_brand_name(filename):
-    """Extract brand name from filename (remove .json extension)"""
-    return filename.replace('.json', '')
+    """Extract brand name from filename (remove suffixes like _geoapify.json, _google.json, etc.)"""
+    name = filename.replace('.json', '')
+    # Remove common suffixes from places_enriched filenames
+    suffixes = ['_geoapify', '_google', '_places', '_enriched']
+    for suffix in suffixes:
+        if name.endswith(suffix):
+            name = name[:-len(suffix)]
+            break
+    return name
 
 def is_already_enriched(brand_name):
     """Check if brand has already been website enriched"""
@@ -28,6 +35,8 @@ def is_already_enriched(brand_name):
     possible_names = [
         f"{brand_name}_website_enriched.json",
         f"{brand_name}_enriched.json",
+        f"{brand_name}_geoapify.json",
+        f"{brand_name}_google.json",
         f"{brand_name}.json"
     ]
 
@@ -40,8 +49,8 @@ def main():
     """Process all raw JSON files through website enrichment"""
 
     # Check if directories exist
-    if not RAW_DIR.exists():
-        print(f"❌ Error: Raw directory not found: {RAW_DIR}")
+    if not PLACES_DIR.exists():
+        print(f"❌ Error: Raw directory not found: {PLACES_DIR}")
         sys.exit(1)
 
     if not ENRICH_SCRIPT.exists():
@@ -52,10 +61,10 @@ def main():
     WEBSITE_ENRICHED_DIR.mkdir(parents=True, exist_ok=True)
 
     # Get all raw JSON files
-    raw_files = sorted(RAW_DIR.glob("*.json"))
+    raw_files = sorted(PLACES_DIR.glob("*.json"))
 
     if not raw_files:
-        print(f"❌ No JSON files found in {RAW_DIR}")
+        print(f"❌ No JSON files found in {PLACES_DIR}")
         sys.exit(1)
 
     print("=" * 80)

@@ -1,7 +1,7 @@
 {
   "source_url": "https://eatjoonfoods.com/pages/store-locator",
   "scraped_at": "2025-11-25T03:23:21.184889",
-  "total_stores": 431,
+  "total_stores": 430,
   "stores": [
     {
       "id": "loc_p7pm89rk",
@@ -3541,27 +3541,6 @@
       "city": "San Juan Capistrano",
       "state": "CA",
       "postal_code": "92675",
-      "country": null,
-      "full_address": null,
-      "phone": null,
-      "website": null,
-      "email": null,
-      "description": null,
-      "image_url": null,
-      "priority": 0,
-      "filters": [],
-      "custom_fields": []
-    },
-    {
-      "id": "loc_5z6wexjn",
-      "name": "International Food Bazaar",
-      "latitude": "37.27213100",
-      "longitude": "-121.93362300",
-      "address_line_1": "2052 Curtner Ave",
-      "address_line_2": null,
-      "city": "San Jose",
-      "state": "CA",
-      "postal_code": "95124",
       "country": null,
       "full_address": null,
       "phone": null,
