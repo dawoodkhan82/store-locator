@@ -142,15 +142,52 @@ def extract_country_state(store):
     return country, state
 
 
+def is_usa_store(store):
+    """
+    Check if a store is located in the United States.
+
+    Args:
+        store (dict): Store data
+
+    Returns:
+        bool: True if store is in USA, False otherwise
+    """
+    country = store.get('country')
+
+    # Check if country is explicitly United States
+    if country == 'United States':
+        return True
+
+    # Check if country is unknown but has a valid US state code
+    if country in (None, 'Unknown') and store.get('state_code'):
+        # Valid 2-letter US state codes
+        us_states = {
+            'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
+            'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
+            'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
+            'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+            'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
+            'DC', 'PR', 'VI', 'GU', 'AS', 'MP'  # Include territories
+        }
+        if store['state_code'].upper() in us_states:
+            return True
+
+    return False
+
+
 def extract_stores(data, source_file):
     """Extract stores array from JSON data and add source brand and enrichment info."""
     # Handle different formats
     if isinstance(data, dict):
         stores = data.get('stores') or data.get('places') or []
+        # Get scraped_at from the file metadata (prefer scraped_at, fall back to enriched_at)
+        scraped_at = data.get('scraped_at') or data.get('enriched_at')
     elif isinstance(data, list):
         stores = data
+        scraped_at = None
     else:
         stores = []
+        scraped_at = None
 
     # Extract brand name from filename
     brand_name = get_brand_name(source_file)
@@ -161,6 +198,10 @@ def extract_stores(data, source_file):
             store['brand'] = brand_name
         if not store.get('source'):
             store['source'] = brand_name
+
+        # Add scraped_at date if available
+        if scraped_at and not store.get('scraped_at'):
+            store['scraped_at'] = scraped_at
 
         # Detect and add enrichment sources
         enrichment_sources = detect_enrichment_sources(store, source_file)
@@ -285,6 +326,14 @@ def merge_stores(existing_store, new_store):
     if len(all_brands) > 0:
         base_store['brand'] = sorted(list(all_brands))[0]
 
+    # Keep the earliest scraped_at date
+    existing_date = existing_store.get('scraped_at')
+    new_date = new_store.get('scraped_at')
+    if existing_date and new_date:
+        base_store['scraped_at'] = min(existing_date, new_date)
+    elif new_date:
+        base_store['scraped_at'] = new_date
+
     return base_store
 
 
@@ -385,9 +434,19 @@ def main():
     print(f"\n✓ Places enriched: {stats['places_enriched']} stores")
 
     # Convert map to list
-    all_stores = list(store_map.values())
+    all_stores_unfiltered = list(store_map.values())
+
+    # Filter to USA stores only
+    print("\n3. Filtering to USA stores only...")
+    print("-" * 80)
+    all_stores = [store for store in all_stores_unfiltered if is_usa_store(store)]
+    non_usa_count = len(all_stores_unfiltered) - len(all_stores)
+    print(f"  Removed {non_usa_count} non-USA stores")
+    print(f"  Keeping {len(all_stores)} USA stores")
+
     stats['unique_locations'] = len(all_stores)
     stats['total'] = len(all_stores)
+    stats['non_usa_filtered'] = non_usa_count
 
     # Count enrichment stats
     enrichment_counts = {
@@ -408,13 +467,15 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Save combined data
-    print("\n3. Saving combined data...")
+    print("\n4. Saving combined data...")
     print("-" * 80)
 
     combined_data = {
         'metadata': {
             'combined_at': datetime.now().isoformat(),
             'total_stores': stats['total'],
+            'usa_only': True,
+            'non_usa_filtered': stats['non_usa_filtered'],
             'website_enriched_stores': stats['website_enriched'],
             'places_enriched_stores': stats['places_enriched'],
             'files_processed': stats['files_processed'],
@@ -447,8 +508,9 @@ def main():
     print(f"{'─'*80}")
     print(f"Total stores loaded:         {stats['website_enriched'] + stats['places_enriched']:,}")
     print(f"Duplicates merged:           {stats['duplicates_merged']:,}")
+    print(f"Non-USA stores filtered:     {stats['non_usa_filtered']:,}")
     print(f"{'─'*80}")
-    print(f"Unique locations:            {stats['unique_locations']:,}")
+    print(f"Final USA stores:            {stats['unique_locations']:,}")
     print(f"\nEnrichment breakdown:")
     print(f"  - Geoapify:      {enrichment_counts['geoapify']:,} stores")
     print(f"  - Google Places: {enrichment_counts['google_places']:,} stores")

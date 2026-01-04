@@ -27,7 +27,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
 
-from excluded_chains import EXCLUDED_CHAINS, should_exclude_store
+from excluded_chains import should_exclude_store
+from usa_filter import filter_usa_stores
 
 
 def extract_storemapper_id(page_source):
@@ -403,10 +404,14 @@ def scrape_storemapper_stores(url, output_file='storemapper_stores_raw.json', wa
 
             excluded_count = stores_before_filter - stores_after_filter
             if excluded_count > 0:
-                print(f"  ✓ Filtered out {excluded_count} stores from chains: {', '.join(EXCLUDED_CHAINS)}")
-                print(f"  → {stores_after_filter} stores remaining for enrichment")
+                print(f"  ✓ Filtered out {excluded_count} stores from chains")
+                print(f"  → {stores_after_filter} stores remaining")
             else:
                 print(f"  → No stores matched exclusion filters")
+
+        # Filter to USA stores only
+        if stores_data:
+            stores_data = filter_usa_stores(stores_data)
 
     except Exception as e:
         print(f"\n✗ Error: {str(e)}")

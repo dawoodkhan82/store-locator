@@ -11,7 +11,8 @@
       "Bash(fi)",
       "Bash(done)",
       "Bash(git lfs:*)",
-      "Bash(# Extract knox URL pattern from the script curl -s \"\"https://lets.shop/productFirstSnippet.js?id=destini-locator\"\" --compressed)"
+      "Bash(# Extract knox URL pattern from the script curl -s \"\"https://lets.shop/productFirstSnippet.js?id=destini-locator\"\" --compressed)",
+      "Bash(chmod:*)"
     ],
     "deny": [],
     "ask": []

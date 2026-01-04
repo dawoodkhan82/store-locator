@@ -20,7 +20,8 @@ import re
 import requests
 from datetime import datetime
 
-from excluded_chains import EXCLUDED_CHAINS, should_exclude_store
+from excluded_chains import should_exclude_store
+from usa_filter import filter_usa_stores
 
 
 def extract_storerocket_id(url):
@@ -159,10 +160,13 @@ def scrape_storerocket_stores(url, output_file='storerocket_stores_raw.json'):
 
     excluded_count = stores_before_filter - stores_after_filter
     if excluded_count > 0:
-        print(f"  ✓ Filtered out {excluded_count} stores from chains: {', '.join(EXCLUDED_CHAINS)}")
+        print(f"  ✓ Filtered out {excluded_count} stores from chains")
         print(f"  → {stores_after_filter} stores remaining")
     else:
         print(f"  → No stores matched exclusion filters")
+
+    # Step 4: Filter to USA stores only
+    stores_data = filter_usa_stores(stores_data)
 
     # Prepare output
     result = {

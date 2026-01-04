@@ -53,12 +53,48 @@
             border-bottom: 1px solid rgba(55, 53, 47, 0.09);
         }
 
+        /* Sticky first column */
+        th:first-child,
+        td:first-child {
+            position: sticky;
+            left: 0;
+            background-color: inherit;
+            z-index: 5;
+        }
+
+        th:first-child {
+            background-color: #f7f6f3;
+            z-index: 15; /* Higher than other headers and sticky column */
+        }
+
+        td:first-child {
+            background-color: #ffffff;
+        }
+
+        .store-row:hover td:first-child {
+            background-color: rgba(55, 53, 47, 0.08);
+        }
+
+        /* Add shadow to indicate scroll */
+        th:first-child::after,
+        td:first-child::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -8px;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(to right, rgba(0,0,0,0.06), transparent);
+            pointer-events: none;
+        }
+
         .table-container {
             border: 1px solid rgba(55, 53, 47, 0.16);
             border-radius: 3px;
-            overflow-x: auto;
+            overflow: auto;
             background-color: #ffffff;
             -webkit-overflow-scrolling: touch;
+            max-height: calc(100vh - 280px);
         }
 
         /* Responsive table */
@@ -270,10 +306,10 @@
 
                 <!-- Filter Options -->
                 <div class="filter-row" style="display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-start;">
-                    <!-- Location Filter (Country + US States) -->
+                    <!-- Region Filter (US Regions with nested States) -->
                     <div style="position: relative;">
                         <button id="locationFilterButton" onclick="toggleLocationFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
-                            <span id="locationFilterLabel">Location</span>
+                            <span id="locationFilterLabel">Region</span>
                             <span style="margin-left: 8px;">▼</span>
                         </button>
                         <div id="locationFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 400px; overflow-y: auto; min-width: 250px; z-index: 1000;">
@@ -320,9 +356,40 @@
                         </div>
                     </div>
 
+                    <!-- Store Size Filter -->
+                    <div style="position: relative;">
+                        <button id="sizeFilterButton" onclick="toggleSizeFilter()" style="min-width: 140px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
+                            <span id="sizeFilterLabel">Store Size</span>
+                            <span style="margin-left: 8px;">▼</span>
+                        </button>
+                        <div id="sizeFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 200px; z-index: 1000;">
+                            <div style="padding: 8px;">
+                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
+                                    <input type="radio" name="sizeFilter" value="all" onchange="filterStores()" style="margin-right: 8px;" checked>
+                                    All stores
+                                </label>
+                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
+                                    <input type="radio" name="sizeFilter" value="single" onchange="filterStores()" style="margin-right: 8px;">
+                                    1 location
+                                </label>
+                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
+                                    <input type="radio" name="sizeFilter" value="min5" onchange="filterStores()" style="margin-right: 8px;">
+                                    ≥5 locations
+                                </label>
+                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
+                                    <input type="radio" name="sizeFilter" value="min10" onchange="filterStores()" style="margin-right: 8px;">
+                                    ≥10 locations
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                     <button onclick="clearFilters()" style="padding: 6px 12px; font-size: 14px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: white; color: rgba(55, 53, 47, 0.65); cursor: pointer; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='white'">
                         Clear All
                     </button>
+
+                    <!-- Filtered Results Count -->
+                    <span id="filteredResultsCount" style="font-size: 14px; color: rgba(55, 53, 47, 0.65); margin-left: 8px; padding: 6px 0;"></span>
                 </div>
 
                 <!-- Active Filters Display -->
@@ -429,32 +496,162 @@
     </div>
 
     <script>
-        let STORES_DATA = [];
+        let STORES_DATA = [];  // Raw stores data (all individual locations)
+        let GROUPED_STORES = []; // Stores grouped by name (for display)
         let filteredStores = [];
         let currentPage = 1;
         const STORES_PER_PAGE = 1000;
 
+        // Normalize store name for grouping - removes location-specific suffixes
+        function normalizeStoreName(name) {
+            if (!name) return 'Unknown';
+
+            let normalized = name.trim();
+
+            // Remove store numbers like "#3011", "# 123", "#123"
+            normalized = normalized.replace(/\s*#\s*\d+\s*$/, '');
+
+            // Remove location suffixes after dash/hyphen: "Store – Location" or "Store - Location"
+            // But keep if the dash is in the middle of a compound name
+            normalized = normalized.replace(/\s*[–—-]\s*[A-Z][a-zA-Z\s]+(?:\s*\([^)]+\))?$/, '');
+
+            // Remove parenthetical location info at the end: "Store (Downtown)", "Store (Coming Soon)"
+            normalized = normalized.replace(/\s*\([^)]+\)\s*$/, '');
+
+            // Remove trailing "Store", "Location", or numbers
+            normalized = normalized.replace(/\s+(Store|Location)\s*\d*\s*$/i, '');
+
+            // Remove trailing Roman numerals (I, II, III, IV, V, etc.)
+            normalized = normalized.replace(/\s+(I{1,3}|IV|V|VI{0,3}|IX|X)$/i, '');
+
+            // Clean up any remaining whitespace
+            normalized = normalized.trim();
+
+            // Normalize case for comparison (title case)
+            normalized = normalized.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+
+            return normalized || name.trim();
+        }
+
+        // Group stores by name - stores with same name become one record with multiple locations
+        function groupStoresByName(stores) {
+            const storeGroups = new Map();
+
+            stores.forEach(store => {
+                const rawName = (store.name || store.displayName?.text || 'Unknown').trim();
+                const normalizedName = normalizeStoreName(rawName);
+
+                if (!storeGroups.has(normalizedName)) {
+                    // First occurrence - create group with this store as primary
+                    storeGroups.set(normalizedName, {
+                        ...store,
+                        name: normalizedName,  // Use normalized name for display
+                        originalName: rawName,  // Keep original for reference
+                        locations: [store],
+                        locationCount: 1
+                    });
+                } else {
+                    // Add to existing group
+                    const group = storeGroups.get(normalizedName);
+                    group.locations.push(store);
+                    group.locationCount = group.locations.length;
+
+                    // Merge brands from all locations
+                    if (store.brands && Array.isArray(store.brands)) {
+                        const existingBrands = new Set(group.brands || []);
+                        store.brands.forEach(b => existingBrands.add(b));
+                        group.brands = [...existingBrands];
+                    }
+
+                    // Merge enrichment data
+                    if (store.enrichment) {
+                        if (!group.enrichment) group.enrichment = {};
+
+                        // Merge product categories
+                        const cats = new Set(group.enrichment.productCategories || []);
+                        (store.enrichment.productCategories || []).forEach(c => cats.add(c));
+                        group.enrichment.productCategories = [...cats];
+
+                        // Merge specialties
+                        const specs = new Set(group.enrichment.specialties || []);
+                        (store.enrichment.specialties || []).forEach(s => specs.add(s));
+                        group.enrichment.specialties = [...specs];
+
+                        // Merge social links (prefer non-empty)
+                        if (!group.enrichment.socialLinks) group.enrichment.socialLinks = {};
+                        const social = store.enrichment.socialLinks || {};
+                        Object.keys(social).forEach(key => {
+                            if (social[key] && !group.enrichment.socialLinks[key]) {
+                                group.enrichment.socialLinks[key] = social[key];
+                            }
+                        });
+                    }
+
+                    // Merge data_enriched sources
+                    if (store.data_enriched) {
+                        const sources = new Set(group.data_enriched || []);
+                        store.data_enriched.forEach(s => sources.add(s));
+                        group.data_enriched = [...sources];
+                    }
+                }
+            });
+
+            return Array.from(storeGroups.values());
+        }
+
+        // Determine data URL based on environment
+        function getDataUrl() {
+            const isGitHubPages = window.location.hostname.includes('github.io');
+            const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
+            if (isLocalhost || !isGitHubPages) {
+                // Local development - use local file
+                return 'all_stores/combined/combined.json';
+            } else {
+                // GitHub Pages - use GitHub Releases
+                // Format: https://github.com/OWNER/REPO/releases/download/TAG/FILE
+                return 'https://github.com/dawoodkhan82/store-locator/releases/download/data-latest/combined.json';
+            }
+        }
+
         // Load data from combined.json
         document.addEventListener('DOMContentLoaded', async function() {
             try {
-                const response = await fetch('all_stores/combined/combined.json');
+                const dataUrl = getDataUrl();
+                console.log('Loading data from:', dataUrl);
+
+                const response = await fetch(dataUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
                 const data = await response.json();
-                
+
                 STORES_DATA = data.stores || [];
-                filteredStores = [...STORES_DATA];
+                GROUPED_STORES = groupStoresByName(STORES_DATA);
+                filteredStores = [...GROUPED_STORES];
 
                 document.getElementById('loadingState').style.display = 'none';
                 document.getElementById('mainContent').style.display = 'block';
-                document.getElementById('storeCount').textContent = STORES_DATA.length.toLocaleString();
+
+                // Show unique store count (grouped) and total locations
+                const uniqueCount = GROUPED_STORES.length;
+                const totalLocations = STORES_DATA.length;
+                document.getElementById('storeCount').textContent = uniqueCount.toLocaleString();
+                document.getElementById('storeCount').title = `${totalLocations.toLocaleString()} total locations`;
 
                 // Populate filter dropdowns
                 populateFilters();
 
-                renderStores(STORES_DATA);
+                renderStores(GROUPED_STORES);
             } catch (error) {
+                console.error('Error loading data:', error);
                 document.getElementById('loadingState').innerHTML = `
                     <p style="color: #dc2626;">Error loading data: ${error.message}</p>
-                    <p style="color: rgba(55, 53, 47, 0.65); font-size: 14px;">Make sure combined.json exists in all_stores/combined/</p>
+                    <p style="color: rgba(55, 53, 47, 0.65); font-size: 14px;">
+                        ${window.location.hostname.includes('github.io')
+                            ? 'Make sure the data release exists at: github.com/dawoodkhan82/store-locator/releases'
+                            : 'Make sure combined.json exists in all_stores/combined/'}
+                    </p>
                 `;
             }
         });
@@ -829,6 +1026,7 @@
                 const address = getStoreAddress(store) || 'No address';
                 const phone = getStorePhone(store);
                 const website = getStoreWebsite(store);
+                const locationCount = store.locationCount || 1;
 
                 const enrichment = store.enrichment || {};
                 const productCategories = enrichment.productCategories || [];
@@ -877,10 +1075,20 @@
                     `);
                 }
 
+                // Location count badge
+                const locationBadge = locationCount > 1
+                    ? `<span style="background-color: rgba(120, 85, 195, 0.15); color: rgb(80, 50, 150); padding: 1px 6px; border-radius: 10px; font-size: 11px; font-weight: 500; margin-left: 6px; white-space: nowrap;">${locationCount} locations</span>`
+                    : '';
+
                 return `
                     <tr class="store-row" onclick="showStoreDetailsByIndex(${actualIndex})">
                         <td style="font-weight: 500;">${name}</td>
-                        <td style="color: rgba(55, 53, 47, 0.65);">${address.substring(0, 50)}${address.length > 50 ? '...' : ''}</td>
+                        <td style="color: rgba(55, 53, 47, 0.65);">
+                            <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                                <span>${address.substring(0, 40)}${address.length > 40 ? '...' : ''}</span>
+                                ${locationBadge}
+                            </div>
+                        </td>
                         <td>
                             <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                                 ${uniqueBrands.length > 0 ? uniqueBrands.map(b => `<span class="tag" style="background-color: rgba(46, 170, 220, 0.15); color: rgb(24, 51, 71); padding: 1px 6px; border-radius: 3px; font-size: 12px; font-weight: 400; display: inline-block; white-space: nowrap;">${b}</span>`).join('') : '-'}
@@ -968,6 +1176,51 @@
             const specialties = enrichment.specialties || [];
             const socialLinks = enrichment.socialLinks || {};
 
+            // Check for multiple locations
+            const locations = store.locations || [store];
+            const locationCount = locations.length;
+            const hasMultipleLocations = locationCount > 1;
+
+            // Build locations section
+            let locationsHtml = '';
+            if (hasMultipleLocations) {
+                locationsHtml = `
+                    <div>
+                        <div style="color: rgba(55, 53, 47, 0.45); font-size: 12px; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+                            LOCATIONS
+                            <span style="background-color: rgba(120, 85, 195, 0.15); color: rgb(80, 50, 150); padding: 1px 6px; border-radius: 10px; font-size: 11px; font-weight: 500;">${locationCount}</span>
+                        </div>
+                        <div style="color: rgb(55, 53, 47);">
+                            <div style="margin-bottom: 8px;">${address}</div>
+                            <button onclick="toggleLocationsExpand()" id="locationsToggleBtn" style="background: none; border: 1px solid rgba(55, 53, 47, 0.2); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; color: rgba(55, 53, 47, 0.65); transition: all 0.2s;" onmouseover="this.style.borderColor='rgba(55, 53, 47, 0.4)'" onmouseout="this.style.borderColor='rgba(55, 53, 47, 0.2)'">
+                                Show all ${locationCount} locations ▼
+                            </button>
+                            <div id="allLocationsContainer" style="display: none; margin-top: 10px; max-height: 200px; overflow-y: auto; border: 1px solid rgba(55, 53, 47, 0.1); border-radius: 6px;">
+                                ${locations.map((loc, idx) => {
+                                    const locAddress = getStoreAddress(loc) || 'No address';
+                                    const locPhone = getStorePhone(loc);
+                                    const city = loc.city || loc.geoapify?.geocoding?.city || '';
+                                    const state = loc.state || loc.geoapify?.geocoding?.state_code || '';
+                                    return `
+                                        <div style="padding: 10px; border-bottom: 1px solid rgba(55, 53, 47, 0.06); ${idx === locations.length - 1 ? 'border-bottom: none;' : ''}">
+                                            <div style="font-size: 13px; color: rgb(55, 53, 47);">${locAddress}</div>
+                                            ${locPhone && locPhone !== '-' ? `<div style="font-size: 12px; color: rgba(55, 53, 47, 0.5); margin-top: 2px;">${locPhone}</div>` : ''}
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                locationsHtml = `
+                    <div>
+                        <div style="color: rgba(55, 53, 47, 0.45); font-size: 12px; margin-bottom: 4px;">ADDRESS</div>
+                        <div style="color: rgb(55, 53, 47);">${address}</div>
+                    </div>
+                `;
+            }
+
             const modalContent = `
                 <h2 style="font-size: 18px; font-weight: 600; color: rgb(55, 53, 47); margin: 0 0 20px 0;">${name}</h2>
 
@@ -979,10 +1232,7 @@
                     </div>
                     ` : ''}
 
-                    <div>
-                        <div style="color: rgba(55, 53, 47, 0.45); font-size: 12px; margin-bottom: 4px;">ADDRESS</div>
-                        <div style="color: rgb(55, 53, 47);">${address}</div>
-                    </div>
+                    ${locationsHtml}
 
                     ${phone && phone !== '-' ? `
                     <div>
@@ -1062,6 +1312,19 @@
         function closeModal(event) {
             if (!event || event.target.id === 'storeModal') {
                 document.getElementById('storeModal').classList.remove('active');
+            }
+        }
+
+        function toggleLocationsExpand() {
+            const container = document.getElementById('allLocationsContainer');
+            const btn = document.getElementById('locationsToggleBtn');
+
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                btn.innerHTML = btn.innerHTML.replace('Show all', 'Hide').replace('▼', '▲');
+            } else {
+                container.style.display = 'none';
+                btn.innerHTML = btn.innerHTML.replace('Hide', 'Show all').replace('▲', '▼');
             }
         }
 
@@ -1167,16 +1430,41 @@
             return null;
         }
 
-        // Global variable to store country/state mapping
-        let countryStateMap = {};
-        let countryCounts = [];
+        // US Regions mapping
+        const US_REGIONS = {
+            'Northeast': ['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT'],
+            'Mid-Atlantic / South Atlantic': ['DE', 'FL', 'GA', 'MD', 'NC', 'SC', 'VA', 'DC', 'WV'],
+            'Midwest': ['IL', 'IN', 'IA', 'KS', 'MI', 'MN', 'MO', 'NE', 'ND', 'OH', 'SD', 'WI'],
+            'South Central': ['AL', 'AR', 'KY', 'LA', 'MS', 'OK', 'TN', 'TX'],
+            'Mountain': ['AZ', 'CO', 'ID', 'MT', 'NM', 'NV', 'UT', 'WY'],
+            'Pacific / West Coast': ['AK', 'CA', 'HI', 'OR', 'WA']
+        };
+
+        // Reverse mapping: state -> region
+        const STATE_TO_REGION = {};
+        Object.entries(US_REGIONS).forEach(([region, states]) => {
+            states.forEach(state => {
+                STATE_TO_REGION[state] = region;
+            });
+        });
+
+        // Global variable to store region/state counts
+        let regionCounts = {};
+        let stateCounts = {};
 
         function populateFilters() {
-            // Populate brand, country, and state filters
+            // Populate brand and region/state filters
+            // Uses GROUPED_STORES to count unique stores (not locations)
             const brands = new Set();
-            countryStateMap = {};  // country -> Set of states
+            regionCounts = {};
+            stateCounts = {};
 
-            STORES_DATA.forEach(store => {
+            // Initialize region counts
+            Object.keys(US_REGIONS).forEach(region => {
+                regionCounts[region] = 0;
+            });
+
+            GROUPED_STORES.forEach(store => {
                 // Extract brands array or individual fields
                 if (store.brands && Array.isArray(store.brands)) {
                     store.brands.forEach(b => brands.add(b));
@@ -1185,18 +1473,26 @@
                     if (store.source) brands.add(store.source);
                 }
 
-                // Extract country and state from store
-                const country = store.country || 'Unknown';
-                const address = getStoreAddress(store);
-                const state = store.state_code || extractState(store, address);
+                // For grouped stores, count in all states/regions where they have locations
+                const locations = store.locations || [store];
+                const statesForStore = new Set();
 
-                // Build country -> states mapping
-                if (!countryStateMap[country]) {
-                    countryStateMap[country] = new Set();
-                }
-                if (state) {
-                    countryStateMap[country].add(state);
-                }
+                locations.forEach(loc => {
+                    const locAddress = getStoreAddress(loc);
+                    const state = loc.state_code || loc.state || extractState(loc, locAddress);
+                    if (state) {
+                        statesForStore.add(state);
+                    }
+                });
+
+                // Count each unique state once per store
+                statesForStore.forEach(state => {
+                    stateCounts[state] = (stateCounts[state] || 0) + 1;
+                    const region = STATE_TO_REGION[state];
+                    if (region) {
+                        regionCounts[region]++;
+                    }
+                });
             });
 
             // Populate brand checkboxes
@@ -1220,23 +1516,7 @@
                 brandCheckboxes.appendChild(label);
             });
 
-            // Build country counts for location filter
-            countryCounts = Object.entries(countryStateMap).map(([country, states]) => {
-                let count = 0;
-                STORES_DATA.forEach(store => {
-                    if ((store.country || 'Unknown') === country) count++;
-                });
-                return { country, count, stateCount: states.size };
-            });
-
-            // Sort: United States first, then by count descending
-            countryCounts.sort((a, b) => {
-                if (a.country === 'United States') return -1;
-                if (b.country === 'United States') return 1;
-                return b.count - a.count;
-            });
-
-            // Populate location checkboxes
+            // Populate location (regions) checkboxes
             populateLocationFilter();
         }
 
@@ -1244,93 +1524,101 @@
             const locationCheckboxes = document.getElementById('locationCheckboxes');
             locationCheckboxes.innerHTML = '';
 
-            countryCounts.forEach(({ country, count }) => {
-                // Create country container
-                const countryContainer = document.createElement('div');
-                countryContainer.style.marginBottom = '4px';
+            // Sort regions by count descending
+            const sortedRegions = Object.keys(US_REGIONS).sort((a, b) => {
+                return (regionCounts[b] || 0) - (regionCounts[a] || 0);
+            });
 
-                // Create country checkbox label
-                const countryLabel = document.createElement('label');
-                countryLabel.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s; font-weight: 500;';
-                countryLabel.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
-                countryLabel.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+            sortedRegions.forEach(region => {
+                const count = regionCounts[region] || 0;
+                const states = US_REGIONS[region];
 
-                const countryCheckbox = document.createElement('input');
-                countryCheckbox.type = 'checkbox';
-                countryCheckbox.value = country;
-                countryCheckbox.dataset.type = 'country';
-                countryCheckbox.style.marginRight = '8px';
+                // Create region container
+                const regionContainer = document.createElement('div');
+                regionContainer.style.marginBottom = '4px';
+                regionContainer.dataset.region = region;
 
-                // For US, add expand/collapse and state checkboxes
-                if (country === 'United States') {
-                    countryCheckbox.onchange = function() {
-                        onUSCheckboxChange(this.checked);
+                // Create region header with checkbox and expand button
+                const regionHeader = document.createElement('div');
+                regionHeader.style.cssText = 'display: flex; align-items: center; padding: 6px; font-size: 14px; border-radius: 3px; transition: background 0.1s; font-weight: 500;';
+                regionHeader.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                regionHeader.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                // Region checkbox
+                const regionCheckbox = document.createElement('input');
+                regionCheckbox.type = 'checkbox';
+                regionCheckbox.dataset.type = 'region';
+                regionCheckbox.dataset.region = region;
+                regionCheckbox.style.cssText = 'margin-right: 6px; cursor: pointer;';
+                regionCheckbox.onchange = function(e) {
+                    e.stopPropagation();
+                    onRegionCheckboxChange(region, this.checked);
+                };
+
+                const expandBtn = document.createElement('span');
+                expandBtn.className = 'region-expand-btn';
+                expandBtn.textContent = '▶';
+                expandBtn.style.cssText = 'cursor: pointer; font-size: 10px; color: rgba(55, 53, 47, 0.5); padding: 4px; margin-right: 4px;';
+                expandBtn.onclick = function(e) {
+                    e.stopPropagation();
+                    toggleRegion(region);
+                };
+
+                const regionText = document.createElement('span');
+                regionText.textContent = `${region} (${count.toLocaleString()})`;
+                regionText.style.cssText = 'flex: 1; cursor: pointer;';
+                regionText.onclick = function(e) {
+                    e.stopPropagation();
+                    toggleRegion(region);
+                };
+
+                regionHeader.appendChild(regionCheckbox);
+                regionHeader.appendChild(expandBtn);
+                regionHeader.appendChild(regionText);
+
+                // Create states container (hidden by default)
+                const statesContainer = document.createElement('div');
+                statesContainer.className = 'region-states-container';
+                statesContainer.dataset.region = region;
+                statesContainer.style.cssText = 'display: none; margin-left: 20px; border-left: 2px solid rgba(55, 53, 47, 0.1); padding-left: 8px;';
+
+                // Add states for this region
+                states.forEach(state => {
+                    const stateCount = stateCounts[state] || 0;
+                    const stateLabel = document.createElement('label');
+                    stateLabel.style.cssText = 'display: flex; align-items: center; padding: 4px 6px; cursor: pointer; font-size: 13px; border-radius: 3px; transition: background 0.1s;';
+                    stateLabel.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                    stateLabel.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                    const stateCheckbox = document.createElement('input');
+                    stateCheckbox.type = 'checkbox';
+                    stateCheckbox.value = state;
+                    stateCheckbox.dataset.type = 'state';
+                    stateCheckbox.dataset.region = region;
+                    stateCheckbox.style.marginRight = '6px';
+                    stateCheckbox.onchange = function() {
+                        updateRegionCheckbox(region);
+                        filterStores();
                     };
 
-                    const countryText = document.createElement('span');
-                    countryText.textContent = `${country} (${count.toLocaleString()})`;
-                    countryText.style.flex = '1';
+                    const stateText = document.createTextNode(`${state} (${stateCount.toLocaleString()})`);
 
-                    const expandBtn = document.createElement('span');
-                    expandBtn.id = 'usExpandBtn';
-                    expandBtn.textContent = '▶';
-                    expandBtn.style.cssText = 'cursor: pointer; font-size: 10px; color: rgba(55, 53, 47, 0.5); padding: 4px;';
-                    expandBtn.onclick = function(e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        toggleUSStates();
-                    };
+                    stateLabel.appendChild(stateCheckbox);
+                    stateLabel.appendChild(stateText);
+                    statesContainer.appendChild(stateLabel);
+                });
 
-                    countryLabel.appendChild(countryCheckbox);
-                    countryLabel.appendChild(countryText);
-                    countryLabel.appendChild(expandBtn);
-
-                    // Create US states container (hidden by default)
-                    const statesContainer = document.createElement('div');
-                    statesContainer.id = 'usStatesContainer';
-                    statesContainer.style.cssText = 'display: none; margin-left: 24px; border-left: 2px solid rgba(55, 53, 47, 0.1); padding-left: 8px; max-height: 200px; overflow-y: auto;';
-
-                    // Add US states
-                    const usStates = Array.from(countryStateMap['United States'] || []).sort();
-                    usStates.forEach(state => {
-                        const stateLabel = document.createElement('label');
-                        stateLabel.style.cssText = 'display: flex; align-items: center; padding: 4px 6px; cursor: pointer; font-size: 13px; border-radius: 3px; transition: background 0.1s;';
-                        stateLabel.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
-                        stateLabel.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
-
-                        const stateCheckbox = document.createElement('input');
-                        stateCheckbox.type = 'checkbox';
-                        stateCheckbox.value = state;
-                        stateCheckbox.dataset.type = 'state';
-                        stateCheckbox.dataset.country = 'United States';
-                        stateCheckbox.style.marginRight = '6px';
-                        stateCheckbox.onchange = filterStores;
-
-                        const stateText = document.createTextNode(state);
-
-                        stateLabel.appendChild(stateCheckbox);
-                        stateLabel.appendChild(stateText);
-                        statesContainer.appendChild(stateLabel);
-                    });
-
-                    countryContainer.appendChild(countryLabel);
-                    countryContainer.appendChild(statesContainer);
-                } else {
-                    // Regular country checkbox
-                    countryCheckbox.onchange = filterStores;
-                    const countryText = document.createTextNode(`${country} (${count.toLocaleString()})`);
-                    countryLabel.appendChild(countryCheckbox);
-                    countryLabel.appendChild(countryText);
-                    countryContainer.appendChild(countryLabel);
-                }
-
-                locationCheckboxes.appendChild(countryContainer);
+                regionContainer.appendChild(regionHeader);
+                regionContainer.appendChild(statesContainer);
+                locationCheckboxes.appendChild(regionContainer);
             });
         }
 
-        function toggleUSStates() {
-            const container = document.getElementById('usStatesContainer');
-            const btn = document.getElementById('usExpandBtn');
+        function toggleRegion(region) {
+            const container = document.querySelector(`.region-states-container[data-region="${region}"]`);
+            const header = container.previousElementSibling;
+            const btn = header.querySelector('.region-expand-btn');
+
             if (container.style.display === 'none') {
                 container.style.display = 'block';
                 btn.textContent = '▼';
@@ -1340,32 +1628,55 @@
             }
         }
 
-        function onUSCheckboxChange(isChecked) {
-            const container = document.getElementById('usStatesContainer');
-            const btn = document.getElementById('usExpandBtn');
+        function onRegionCheckboxChange(region, isChecked) {
+            const container = document.querySelector(`.region-states-container[data-region="${region}"]`);
+            const btn = container.previousElementSibling.querySelector('.region-expand-btn');
 
             if (isChecked) {
-                // Expand states when US is checked
+                // Expand states when region is checked
                 container.style.display = 'block';
                 btn.textContent = '▼';
             }
 
-            // Uncheck all state checkboxes when US checkbox changes
-            document.querySelectorAll('#usStatesContainer input[type="checkbox"]').forEach(cb => {
-                cb.checked = false;
+            // Check/uncheck all state checkboxes in this region
+            container.querySelectorAll('input[type="checkbox"][data-type="state"]').forEach(cb => {
+                cb.checked = isChecked;
             });
 
             filterStores();
+        }
+
+        function updateRegionCheckbox(region) {
+            // Update region checkbox based on state of child state checkboxes
+            const regionCheckbox = document.querySelector(`input[data-type="region"][data-region="${region}"]`);
+            const stateCheckboxes = document.querySelectorAll(`input[data-type="state"][data-region="${region}"]`);
+
+            if (!regionCheckbox || stateCheckboxes.length === 0) return;
+
+            const checkedCount = Array.from(stateCheckboxes).filter(cb => cb.checked).length;
+
+            if (checkedCount === 0) {
+                regionCheckbox.checked = false;
+                regionCheckbox.indeterminate = false;
+            } else if (checkedCount === stateCheckboxes.length) {
+                regionCheckbox.checked = true;
+                regionCheckbox.indeterminate = false;
+            } else {
+                regionCheckbox.checked = false;
+                regionCheckbox.indeterminate = true;
+            }
         }
 
         function toggleLocationFilter() {
             const dropdown = document.getElementById('locationFilterDropdown');
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
+            const sizeDropdown = document.getElementById('sizeFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             socialDropdown.style.display = 'none';
+            sizeDropdown.style.display = 'none';
 
             // Toggle location dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -1375,10 +1686,12 @@
             const dropdown = document.getElementById('brandFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
+            const sizeDropdown = document.getElementById('sizeFilterDropdown');
 
             // Close other dropdowns
             socialDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
+            sizeDropdown.style.display = 'none';
 
             // Toggle brand dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -1388,12 +1701,29 @@
             const dropdown = document.getElementById('socialFilterDropdown');
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
+            const sizeDropdown = document.getElementById('sizeFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
+            sizeDropdown.style.display = 'none';
 
             // Toggle social dropdown
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleSizeFilter() {
+            const dropdown = document.getElementById('sizeFilterDropdown');
+            const brandDropdown = document.getElementById('brandFilterDropdown');
+            const locationDropdown = document.getElementById('locationFilterDropdown');
+            const socialDropdown = document.getElementById('socialFilterDropdown');
+
+            // Close other dropdowns
+            brandDropdown.style.display = 'none';
+            locationDropdown.style.display = 'none';
+            socialDropdown.style.display = 'none';
+
+            // Toggle size dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
@@ -1405,6 +1735,8 @@
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const locationButton = document.getElementById('locationFilterButton');
             const locationDropdown = document.getElementById('locationFilterDropdown');
+            const sizeButton = document.getElementById('sizeFilterButton');
+            const sizeDropdown = document.getElementById('sizeFilterDropdown');
 
             if (!brandButton.contains(event.target) && !brandDropdown.contains(event.target)) {
                 brandDropdown.style.display = 'none';
@@ -1417,17 +1749,17 @@
             if (!locationButton.contains(event.target) && !locationDropdown.contains(event.target)) {
                 locationDropdown.style.display = 'none';
             }
+
+            if (!sizeButton.contains(event.target) && !sizeDropdown.contains(event.target)) {
+                sizeDropdown.style.display = 'none';
+            }
         });
 
         function filterStores() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
-            // Get selected countries from location filter
-            const selectedCountries = Array.from(document.querySelectorAll('#locationCheckboxes input[data-type="country"]:checked'))
-                .map(cb => cb.value);
-
-            // Get selected US states
-            const selectedStates = Array.from(document.querySelectorAll('#usStatesContainer input:checked'))
+            // Get selected states from location filter (now organized by regions)
+            const selectedStates = Array.from(document.querySelectorAll('#locationCheckboxes input[data-type="state"]:checked'))
                 .map(cb => cb.value);
 
             // Get selected brands
@@ -1438,10 +1770,12 @@
             const selectedSocial = Array.from(document.querySelectorAll('#socialFilterDropdown input:checked'))
                 .map(cb => cb.value);
 
-            filteredStores = STORES_DATA.filter(store => {
+            // Get selected size filter
+            const selectedSize = document.querySelector('#sizeFilterDropdown input[name="sizeFilter"]:checked')?.value || 'all';
+
+            filteredStores = GROUPED_STORES.filter(store => {
                 const name = (store.displayName?.text || store.name || '').toLowerCase();
                 const address = getStoreAddress(store);
-                const storeCountry = store.country || 'Unknown';
                 const storeState = store.state_code || extractState(store, address);
 
                 const enrichment = store.enrichment || {};
@@ -1456,17 +1790,15 @@
                     categories.includes(searchTerm) ||
                     specialties.includes(searchTerm);
 
-                // Location filter logic:
-                // - If states are selected, only show stores in those states (ignores country checkbox)
-                // - If only countries are selected, show stores in those countries
-                // - If nothing selected, show all
+                // Location filter: match selected states (check any location for grouped stores)
                 let matchesLocation = true;
                 if (selectedStates.length > 0) {
-                    // States take priority - only match specific states
-                    matchesLocation = storeCountry === 'United States' && selectedStates.includes(storeState);
-                } else if (selectedCountries.length > 0) {
-                    // Match any selected country
-                    matchesLocation = selectedCountries.includes(storeCountry);
+                    const locations = store.locations || [store];
+                    matchesLocation = locations.some(loc => {
+                        const locAddress = getStoreAddress(loc);
+                        const locState = loc.state_code || loc.state || extractState(loc, locAddress);
+                        return selectedStates.includes(locState);
+                    });
                 }
 
                 // Brand filter (OR logic - match ANY selected brand)
@@ -1490,31 +1822,60 @@
                     });
                 }
 
-                return matchesSearch && matchesLocation && matchesBrand && matchesSocial;
+                // Size filter (number of locations)
+                let matchesSize = true;
+                const locationCount = store.locationCount || 1;
+                if (selectedSize === 'single') {
+                    matchesSize = locationCount === 1;
+                } else if (selectedSize === 'min5') {
+                    matchesSize = locationCount >= 5;
+                } else if (selectedSize === 'min10') {
+                    matchesSize = locationCount >= 10;
+                }
+
+                return matchesSearch && matchesLocation && matchesBrand && matchesSocial && matchesSize;
             });
 
             // Update button labels
-            updateFilterLabels(selectedBrands, selectedSocial, selectedCountries, selectedStates);
+            updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize);
 
             // Update active filter tags
-            updateActiveFilterTags(selectedBrands, selectedSocial, selectedCountries, selectedStates);
+            updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize);
+
+            // Update filtered results count
+            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize);
 
             currentPage = 1; // Reset to first page when filtering
             sortStores();
         }
 
-        function updateFilterLabels(selectedBrands, selectedSocial, selectedCountries, selectedStates) {
+        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize) {
+            const countEl = document.getElementById('filteredResultsCount');
+            const hasFilters = searchTerm || selectedStates.length > 0 ||
+                              selectedBrands.length > 0 || selectedSocial.length > 0 ||
+                              (selectedSize && selectedSize !== 'all');
+
+            if (hasFilters) {
+                countEl.textContent = `${filteredStores.length.toLocaleString()} of ${GROUPED_STORES.length.toLocaleString()} stores`;
+                countEl.style.display = 'inline';
+            } else {
+                countEl.textContent = '';
+                countEl.style.display = 'none';
+            }
+        }
+
+        function updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize) {
             const brandLabel = document.getElementById('brandFilterLabel');
             const socialLabel = document.getElementById('socialFilterLabel');
             const locationLabel = document.getElementById('locationFilterLabel');
+            const sizeLabel = document.getElementById('sizeFilterLabel');
 
-            // Update location label
-            const locationCount = selectedCountries.length + selectedStates.length;
-            if (locationCount > 0) {
-                locationLabel.textContent = `Location (${locationCount})`;
+            // Update location label (now counts states only)
+            if (selectedStates.length > 0) {
+                locationLabel.textContent = `Region (${selectedStates.length})`;
                 locationLabel.style.fontWeight = '600';
             } else {
-                locationLabel.textContent = 'Location';
+                locationLabel.textContent = 'Region';
                 locationLabel.style.fontWeight = 'normal';
             }
 
@@ -1535,14 +1896,30 @@
                 socialLabel.textContent = 'Social Media';
                 socialLabel.style.fontWeight = 'normal';
             }
+
+            // Update size label
+            const sizeLabels = {
+                'all': 'Store Size',
+                'single': '1 Location',
+                'min5': '≥5 Locations',
+                'min10': '≥10 Locations'
+            };
+            if (selectedSize && selectedSize !== 'all') {
+                sizeLabel.textContent = sizeLabels[selectedSize] || 'Store Size';
+                sizeLabel.style.fontWeight = '600';
+            } else {
+                sizeLabel.textContent = 'Store Size';
+                sizeLabel.style.fontWeight = 'normal';
+            }
         }
 
-        function updateActiveFilterTags(selectedBrands, selectedSocial, selectedCountries, selectedStates) {
+        function updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize) {
             const container = document.getElementById('activeFiltersContainer');
             const tagsDiv = document.getElementById('activeFilterTags');
             tagsDiv.innerHTML = '';
 
-            const hasFilters = selectedBrands.length > 0 || selectedSocial.length > 0 || selectedCountries.length > 0 || selectedStates.length > 0;
+            const hasFilters = selectedBrands.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
+                              (selectedSize && selectedSize !== 'all');
 
             if (!hasFilters) {
                 container.style.display = 'none';
@@ -1551,26 +1928,10 @@
 
             container.style.display = 'flex';
 
-            // Add country tags
-            selectedCountries.forEach(country => {
-                const tag = createFilterTag(country, () => {
-                    const checkbox = document.querySelector(`#locationCheckboxes input[data-type="country"][value="${country}"]`);
-                    if (checkbox) {
-                        checkbox.checked = false;
-                        if (country === 'United States') {
-                            // Also uncheck all US states
-                            document.querySelectorAll('#usStatesContainer input').forEach(cb => cb.checked = false);
-                        }
-                    }
-                    filterStores();
-                });
-                tagsDiv.appendChild(tag);
-            });
-
             // Add state tags
             selectedStates.forEach(state => {
                 const tag = createFilterTag(state, () => {
-                    const checkbox = document.querySelector(`#usStatesContainer input[value="${state}"]`);
+                    const checkbox = document.querySelector(`#locationCheckboxes input[data-type="state"][value="${state}"]`);
                     if (checkbox) checkbox.checked = false;
                     filterStores();
                 });
@@ -1597,6 +1958,21 @@
                 });
                 tagsDiv.appendChild(tag);
             });
+
+            // Add size tag
+            if (selectedSize && selectedSize !== 'all') {
+                const sizeLabels = {
+                    'single': '1 Location',
+                    'min5': '≥5 Locations',
+                    'min10': '≥10 Locations'
+                };
+                const tag = createFilterTag(sizeLabels[selectedSize], () => {
+                    const allRadio = document.querySelector('#sizeFilterDropdown input[value="all"]');
+                    if (allRadio) allRadio.checked = true;
+                    filterStores();
+                });
+                tagsDiv.appendChild(tag);
+            }
         }
 
         function createFilterTag(text, onRemove) {
@@ -1620,21 +1996,29 @@
         function clearFilters() {
             document.getElementById('searchInput').value = '';
 
-            // Uncheck all location checkboxes (countries and states)
-            document.querySelectorAll('#locationCheckboxes input').forEach(cb => cb.checked = false);
-            document.querySelectorAll('#usStatesContainer input').forEach(cb => cb.checked = false);
+            // Uncheck all location (state and region) checkboxes
+            document.querySelectorAll('#locationCheckboxes input[data-type="state"]').forEach(cb => cb.checked = false);
+            document.querySelectorAll('#locationCheckboxes input[data-type="region"]').forEach(cb => {
+                cb.checked = false;
+                cb.indeterminate = false;
+            });
 
-            // Collapse US states
-            const usStatesContainer = document.getElementById('usStatesContainer');
-            const usExpandBtn = document.getElementById('usExpandBtn');
-            if (usStatesContainer) usStatesContainer.style.display = 'none';
-            if (usExpandBtn) usExpandBtn.textContent = '▶';
+            // Collapse all regions
+            document.querySelectorAll('.region-states-container').forEach(container => {
+                container.style.display = 'none';
+                const btn = container.previousElementSibling?.querySelector('.region-expand-btn');
+                if (btn) btn.textContent = '▶';
+            });
 
             // Uncheck all brand checkboxes
             document.querySelectorAll('#brandCheckboxes input').forEach(cb => cb.checked = false);
 
             // Uncheck all social checkboxes
             document.querySelectorAll('#socialFilterDropdown input').forEach(cb => cb.checked = false);
+
+            // Reset size filter to 'all'
+            const allSizeRadio = document.querySelector('#sizeFilterDropdown input[value="all"]');
+            if (allSizeRadio) allSizeRadio.checked = true;
 
             filterStores();
         }
