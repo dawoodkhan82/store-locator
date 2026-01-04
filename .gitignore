@@ -20,3 +20,7 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Large data files (hosted via GitHub Releases instead)
+all_stores/combined/combined.json
+combined.json
