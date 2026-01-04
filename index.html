@@ -608,9 +608,9 @@
                 // Local development - use local file
                 return 'all_stores/combined/combined.json';
             } else {
-                // GitHub Pages - use GitHub Releases
-                // Format: https://github.com/OWNER/REPO/releases/download/TAG/FILE
-                return 'https://github.com/dawoodkhan82/store-locator/releases/download/data-latest/combined.json';
+                // GitHub Pages - use jsDelivr CDN which supports CORS
+                // jsDelivr can serve GitHub release assets with proper CORS headers
+                return 'https://cdn.jsdelivr.net/gh/dawoodkhan82/store-locator@data-latest/combined.json';
             }
         }
 
