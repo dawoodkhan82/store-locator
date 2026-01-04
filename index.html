@@ -608,9 +608,8 @@
                 // Local development - use local file
                 return 'all_stores/combined/combined.json';
             } else {
-                // GitHub Pages - use jsDelivr CDN which supports CORS
-                // jsDelivr can serve GitHub release assets with proper CORS headers
-                return 'https://cdn.jsdelivr.net/gh/dawoodkhan82/store-locator@data-latest/combined.json';
+                // Production - use Cloudflare R2 bucket (has CORS support)
+                return 'https://pub-d99370c7254e4d15a17f3ee6c25072ca.r2.dev/combined.json';
             }
         }
 
