@@ -5,11 +5,13 @@ Combine All Store Data
 This script combines store data with the following priority:
 1. Use website_enriched files (OpenAI enriched) if available
 2. Fall back to places_enriched files (Geoapify/Google Places enriched)
+3. Fall back to raw files (scraped store data without enrichment)
 
 Each store gets a 'data_enriched' field tracking which sources were used:
 - 'geoapify' - enriched with Geoapify Places API
 - 'google_places' - enriched with Google Places API
 - 'openai' - website scraped and analyzed with OpenAI
+- [] (empty) - raw scraped data with no enrichment
 
 Output: all_stores/combined/combined.json
 """
@@ -22,6 +24,7 @@ from datetime import datetime
 # Directories
 WEBSITE_ENRICHED_DIR = Path('all_stores/website_enriched')
 PLACES_ENRICHED_DIR = Path('all_stores/places_enriched')
+RAW_DIR = Path('all_stores/raw')
 OUTPUT_DIR = Path('all_stores/combined')
 OUTPUT_FILE = OUTPUT_DIR / 'combined.json'
 
@@ -114,9 +117,9 @@ def extract_country_state(store):
             country = 'United States'
             state = store['state'].upper()
 
-    # From address parsing
+    # From address parsing (including raw file format)
     if not country:
-        addr = store.get('formattedAddress', '') or store.get('address_line_1', '') or ''
+        addr = store.get('formattedAddress', '') or store.get('full_address', '') or store.get('address_line_1', '') or ''
         if addr:
             if 'USA' in addr or 'United States' in addr:
                 country = 'United States'
@@ -347,6 +350,7 @@ def main():
     stats = {
         'website_enriched': 0,
         'places_enriched': 0,
+        'raw': 0,
         'total': 0,
         'files_processed': 0,
         'files_skipped': 0,
@@ -433,11 +437,60 @@ def main():
 
     print(f"\n✓ Places enriched: {stats['places_enriched']} stores")
 
+    # Get list of brands that have places enrichment
+    places_enriched_brands = set()
+    if PLACES_ENRICHED_DIR.exists():
+        for f in PLACES_ENRICHED_DIR.glob('*.json'):
+            brand = get_brand_name(f.name)
+            places_enriched_brands.add(brand)
+
+    # Process raw files (for brands not in website_enriched or places_enriched)
+    print("\n3. Processing raw stores (fallback for non-enriched brands)...")
+    print("-" * 80)
+
+    if RAW_DIR.exists():
+        raw_files = sorted(RAW_DIR.glob('*.json'))
+
+        for file_path in raw_files:
+            brand = get_brand_name(file_path.name)
+
+            if brand in website_enriched_brands:
+                print(f"\n⏭️  Skipping {file_path.name} (already have website enriched version)")
+                stats['files_skipped'] += 1
+                continue
+
+            if brand in places_enriched_brands:
+                print(f"\n⏭️  Skipping {file_path.name} (already have places enriched version)")
+                stats['files_skipped'] += 1
+                continue
+
+            print(f"\nProcessing: {file_path.name}")
+
+            data = load_json_file(file_path)
+            if data:
+                stores = extract_stores(data, file_path.name)
+
+                for store in stores:
+                    key = get_store_key(store)
+
+                    if key in store_map:
+                        store_map[key] = merge_stores(store_map[key], store)
+                        stats['duplicates_merged'] += 1
+                    else:
+                        store_map[key] = store
+
+                stats['raw'] += len(stores)
+                stats['files_processed'] += 1
+    else:
+        print(f"  ⚠ Directory not found: {RAW_DIR}")
+
+    print(f"\n✓ Raw: {stats['raw']} stores")
+
     # Convert map to list
     all_stores_unfiltered = list(store_map.values())
 
     # Filter to USA stores only
-    print("\n3. Filtering to USA stores only...")
+    print("\n4. Filtering to USA stores only...")
     print("-" * 80)
     all_stores = [store for store in all_stores_unfiltered if is_usa_store(store)]
     non_usa_count = len(all_stores_unfiltered) - len(all_stores)
@@ -467,7 +520,7 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Save combined data
-    print("\n4. Saving combined data...")
+    print("\n5. Saving combined data...")
     print("-" * 80)
 
     combined_data = {
@@ -478,12 +531,14 @@ def main():
             'non_usa_filtered': stats['non_usa_filtered'],
             'website_enriched_stores': stats['website_enriched'],
             'places_enriched_stores': stats['places_enriched'],
+            'raw_stores': stats['raw'],
             'files_processed': stats['files_processed'],
             'files_skipped': stats['files_skipped'],
             'enrichment_counts': enrichment_counts,
             'sources': {
                 'website_enriched_dir': str(WEBSITE_ENRICHED_DIR),
-                'places_enriched_dir': str(PLACES_ENRICHED_DIR)
+                'places_enriched_dir': str(PLACES_ENRICHED_DIR),
+                'raw_dir': str(RAW_DIR)
             }
         },
         'stores': all_stores
@@ -505,8 +560,9 @@ def main():
     print("="*80)
     print(f"Website enriched stores:     {stats['website_enriched']:,}")
     print(f"Places enriched stores:      {stats['places_enriched']:,}")
+    print(f"Raw stores:                  {stats['raw']:,}")
     print(f"{'─'*80}")
-    print(f"Total stores loaded:         {stats['website_enriched'] + stats['places_enriched']:,}")
+    print(f"Total stores loaded:         {stats['website_enriched'] + stats['places_enriched'] + stats['raw']:,}")
     print(f"Duplicates merged:           {stats['duplicates_merged']:,}")
     print(f"Non-USA stores filtered:     {stats['non_usa_filtered']:,}")
     print(f"{'─'*80}")
