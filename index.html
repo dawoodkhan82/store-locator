@@ -323,7 +323,7 @@
                             <span id="brandFilterLabel">Brands</span>
                             <span style="margin-left: 8px;">▼</span>
                         </button>
-                        <div id="brandFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 300px; overflow-y: auto; min-width: 200px; z-index: 1000;">
+                        <div id="brandFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 400px; overflow-y: auto; min-width: 280px; z-index: 1000;">
                             <div id="brandCheckboxes" style="padding: 8px;"></div>
                         </div>
                     </div>
@@ -1439,6 +1439,83 @@
             'Pacific / West Coast': ['AK', 'CA', 'HI', 'OR', 'WA']
         };
 
+        const BRAND_CATEGORIES = {
+            'Candy & Sweets': [
+                'bon_bon_swedish_candy',
+                'behave',
+                'blobs',
+                'whims',
+                'hormbles_chormbles',
+                'flings'
+            ],
+            'Snacks (Chips, Puffs, Crunchy)': [
+                'masa_chips',
+                'evies_snacks',
+                'stellar_snacks',
+                'bjorn_qorn',
+                'cauli_puffs',
+                'glonuts',
+                'pistakio'
+            ],
+            'Protein & Functional Snacks': [
+                'chomps',
+                'btr_bar',
+                'the_only_bean',
+                'bezi'
+            ],
+            'Beverages (Tea, Coffee, Functional Drinks)': [
+                'clevr_blends',
+                'everyday_dose',
+                'rishi_tea',
+                'transcendence_coffee',
+                'neuro_gum',
+                'culture_pop',
+                'joon'
+            ],
+            'Condiments, Sauces & Pickles': [
+                'hot_girl_pickles',
+                'stuzzi',
+                'zabs_hot_sauce',
+                'fly_by_jing',
+                'shuug'
+            ],
+            'Cooking Oils, Spices & Pantry Staples': [
+                'loisa',
+                'diaspora_co',
+                'spice_walla',
+                'brightland',
+                'graza',
+                'yolele'
+            ],
+            'Frozen / Prepared Foods': [
+                'a_dozen_cousins',
+                'narra',
+                'rooted_fare'
+            ],
+            'Fermented, Gut Health & Superfoods': [
+                'coconut_cult',
+                'alice_mushrooms'
+            ],
+            'Ethnic / Global Snacks & Ingredients': [
+                'chikka_chikka',
+                'droosh',
+                'doosra',
+                'floura'
+            ],
+            'Specialty': [
+                'one_trick_pony',
+                'fish_wife'
+            ]
+        };
+
+        // Reverse mapping: brand -> category
+        const BRAND_TO_CATEGORY = {};
+        Object.entries(BRAND_CATEGORIES).forEach(([category, brands]) => {
+            brands.forEach(brand => {
+                BRAND_TO_CATEGORY[brand] = category;
+            });
+        });
+
         // Reverse mapping: state -> region
         const STATE_TO_REGION = {};
         Object.entries(US_REGIONS).forEach(([region, states]) => {
@@ -1494,26 +1571,175 @@
                 });
             });
 
-            // Populate brand checkboxes
+            // Populate brand checkboxes with categories
             const brandCheckboxes = document.getElementById('brandCheckboxes');
-            Array.from(brands).sort().forEach(brand => {
-                const label = document.createElement('label');
-                label.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
-                label.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
-                label.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+            brandCheckboxes.innerHTML = '';
 
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.value = brand;
-                checkbox.onchange = filterStores;
-                checkbox.style.marginRight = '8px';
+            // Track which brands exist in our data
+            const availableBrands = brands;
 
-                const text = document.createTextNode(brand.replace(/_/g, ' '));
+            Object.entries(BRAND_CATEGORIES).forEach(([category, categoryBrands]) => {
+                // Filter to only brands that exist in the data
+                const existingBrands = categoryBrands.filter(brand => availableBrands.has(brand));
 
-                label.appendChild(checkbox);
-                label.appendChild(text);
-                brandCheckboxes.appendChild(label);
+                // Skip categories with no available brands
+                if (existingBrands.length === 0) return;
+
+                // Create category container
+                const categoryContainer = document.createElement('div');
+                categoryContainer.style.marginBottom = '4px';
+                categoryContainer.dataset.category = category;
+
+                // Create category header with checkbox and expand button
+                const categoryHeader = document.createElement('div');
+                categoryHeader.style.cssText = 'display: flex; align-items: center; padding: 6px; font-size: 14px; border-radius: 3px; transition: background 0.1s; font-weight: 500;';
+                categoryHeader.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                categoryHeader.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                // Category checkbox
+                const categoryCheckbox = document.createElement('input');
+                categoryCheckbox.type = 'checkbox';
+                categoryCheckbox.dataset.type = 'category';
+                categoryCheckbox.dataset.category = category;
+                categoryCheckbox.style.cssText = 'margin-right: 6px; cursor: pointer;';
+                categoryCheckbox.onchange = function(e) {
+                    e.stopPropagation();
+                    onCategoryCheckboxChange(category, this.checked);
+                };
+
+                const expandBtn = document.createElement('span');
+                expandBtn.className = 'category-expand-btn';
+                expandBtn.textContent = '▶';
+                expandBtn.style.cssText = 'cursor: pointer; font-size: 10px; color: rgba(55, 53, 47, 0.5); padding: 4px; margin-right: 4px;';
+                expandBtn.onclick = function(e) {
+                    e.stopPropagation();
+                    toggleBrandCategory(category);
+                };
+
+                const categoryText = document.createElement('span');
+                categoryText.textContent = category;
+                categoryText.style.cssText = 'flex: 1; cursor: pointer;';
+                categoryText.onclick = function(e) {
+                    e.stopPropagation();
+                    toggleBrandCategory(category);
+                };
+
+                categoryHeader.appendChild(categoryCheckbox);
+                categoryHeader.appendChild(expandBtn);
+                categoryHeader.appendChild(categoryText);
+
+                // Create brands container (hidden by default)
+                const brandsContainer = document.createElement('div');
+                brandsContainer.className = 'category-brands-container';
+                brandsContainer.dataset.category = category;
+                brandsContainer.style.cssText = 'display: none; margin-left: 20px; border-left: 2px solid rgba(55, 53, 47, 0.1); padding-left: 8px;';
+
+                // Add brands for this category
+                existingBrands.forEach(brand => {
+                    const brandLabel = document.createElement('label');
+                    brandLabel.style.cssText = 'display: flex; align-items: center; padding: 4px 6px; cursor: pointer; font-size: 13px; border-radius: 3px; transition: background 0.1s;';
+                    brandLabel.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                    brandLabel.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                    const brandCheckbox = document.createElement('input');
+                    brandCheckbox.type = 'checkbox';
+                    brandCheckbox.value = brand;
+                    brandCheckbox.dataset.type = 'brand';
+                    brandCheckbox.dataset.category = category;
+                    brandCheckbox.style.marginRight = '6px';
+                    brandCheckbox.onchange = function() {
+                        updateCategoryCheckbox(category);
+                        filterStores();
+                    };
+
+                    const brandText = document.createTextNode(brand.replace(/_/g, ' '));
+
+                    brandLabel.appendChild(brandCheckbox);
+                    brandLabel.appendChild(brandText);
+                    brandsContainer.appendChild(brandLabel);
+                });
+
+                categoryContainer.appendChild(categoryHeader);
+                categoryContainer.appendChild(brandsContainer);
+                brandCheckboxes.appendChild(categoryContainer);
             });
+
+            // Add uncategorized brands at the bottom
+            const uncategorizedBrands = Array.from(availableBrands).filter(brand => !BRAND_TO_CATEGORY[brand]).sort();
+            if (uncategorizedBrands.length > 0) {
+                const uncatContainer = document.createElement('div');
+                uncatContainer.style.marginBottom = '4px';
+                uncatContainer.dataset.category = 'Uncategorized';
+
+                const uncatHeader = document.createElement('div');
+                uncatHeader.style.cssText = 'display: flex; align-items: center; padding: 6px; font-size: 14px; border-radius: 3px; transition: background 0.1s; font-weight: 500;';
+                uncatHeader.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                uncatHeader.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                const uncatCheckbox = document.createElement('input');
+                uncatCheckbox.type = 'checkbox';
+                uncatCheckbox.dataset.type = 'category';
+                uncatCheckbox.dataset.category = 'Uncategorized';
+                uncatCheckbox.style.cssText = 'margin-right: 6px; cursor: pointer;';
+                uncatCheckbox.onchange = function(e) {
+                    e.stopPropagation();
+                    onCategoryCheckboxChange('Uncategorized', this.checked);
+                };
+
+                const uncatExpandBtn = document.createElement('span');
+                uncatExpandBtn.className = 'category-expand-btn';
+                uncatExpandBtn.textContent = '▶';
+                uncatExpandBtn.style.cssText = 'cursor: pointer; font-size: 10px; color: rgba(55, 53, 47, 0.5); padding: 4px; margin-right: 4px;';
+                uncatExpandBtn.onclick = function(e) {
+                    e.stopPropagation();
+                    toggleBrandCategory('Uncategorized');
+                };
+
+                const uncatText = document.createElement('span');
+                uncatText.textContent = 'Uncategorized';
+                uncatText.style.cssText = 'flex: 1; cursor: pointer;';
+                uncatText.onclick = function(e) {
+                    e.stopPropagation();
+                    toggleBrandCategory('Uncategorized');
+                };
+
+                uncatHeader.appendChild(uncatCheckbox);
+                uncatHeader.appendChild(uncatExpandBtn);
+                uncatHeader.appendChild(uncatText);
+
+                const uncatBrandsContainer = document.createElement('div');
+                uncatBrandsContainer.className = 'category-brands-container';
+                uncatBrandsContainer.dataset.category = 'Uncategorized';
+                uncatBrandsContainer.style.cssText = 'display: none; margin-left: 20px; border-left: 2px solid rgba(55, 53, 47, 0.1); padding-left: 8px;';
+
+                uncategorizedBrands.forEach(brand => {
+                    const brandLabel = document.createElement('label');
+                    brandLabel.style.cssText = 'display: flex; align-items: center; padding: 4px 6px; cursor: pointer; font-size: 13px; border-radius: 3px; transition: background 0.1s;';
+                    brandLabel.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                    brandLabel.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                    const brandCheckbox = document.createElement('input');
+                    brandCheckbox.type = 'checkbox';
+                    brandCheckbox.value = brand;
+                    brandCheckbox.dataset.type = 'brand';
+                    brandCheckbox.dataset.category = 'Uncategorized';
+                    brandCheckbox.style.marginRight = '6px';
+                    brandCheckbox.onchange = function() {
+                        updateCategoryCheckbox('Uncategorized');
+                        filterStores();
+                    };
+
+                    const brandText = document.createTextNode(brand.replace(/_/g, ' '));
+
+                    brandLabel.appendChild(brandCheckbox);
+                    brandLabel.appendChild(brandText);
+                    uncatBrandsContainer.appendChild(brandLabel);
+                });
+
+                uncatContainer.appendChild(uncatHeader);
+                uncatContainer.appendChild(uncatBrandsContainer);
+                brandCheckboxes.appendChild(uncatContainer);
+            }
 
             // Populate location (regions) checkboxes
             populateLocationFilter();
@@ -1666,6 +1892,59 @@
             }
         }
 
+        function toggleBrandCategory(category) {
+            const container = document.querySelector(`.category-brands-container[data-category="${category}"]`);
+            const header = container.previousElementSibling;
+            const btn = header.querySelector('.category-expand-btn');
+
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                btn.textContent = '▼';
+            } else {
+                container.style.display = 'none';
+                btn.textContent = '▶';
+            }
+        }
+
+        function onCategoryCheckboxChange(category, isChecked) {
+            const container = document.querySelector(`.category-brands-container[data-category="${category}"]`);
+            const btn = container.previousElementSibling.querySelector('.category-expand-btn');
+
+            if (isChecked) {
+                // Expand brands when category is checked
+                container.style.display = 'block';
+                btn.textContent = '▼';
+            }
+
+            // Check/uncheck all brand checkboxes in this category
+            container.querySelectorAll('input[type="checkbox"][data-type="brand"]').forEach(cb => {
+                cb.checked = isChecked;
+            });
+
+            filterStores();
+        }
+
+        function updateCategoryCheckbox(category) {
+            // Update category checkbox based on state of child brand checkboxes
+            const categoryCheckbox = document.querySelector(`input[data-type="category"][data-category="${category}"]`);
+            const brandCheckboxes = document.querySelectorAll(`input[data-type="brand"][data-category="${category}"]`);
+
+            if (!categoryCheckbox || brandCheckboxes.length === 0) return;
+
+            const checkedCount = Array.from(brandCheckboxes).filter(cb => cb.checked).length;
+
+            if (checkedCount === 0) {
+                categoryCheckbox.checked = false;
+                categoryCheckbox.indeterminate = false;
+            } else if (checkedCount === brandCheckboxes.length) {
+                categoryCheckbox.checked = true;
+                categoryCheckbox.indeterminate = false;
+            } else {
+                categoryCheckbox.checked = false;
+                categoryCheckbox.indeterminate = true;
+            }
+        }
+
         function toggleLocationFilter() {
             const dropdown = document.getElementById('locationFilterDropdown');
             const brandDropdown = document.getElementById('brandFilterDropdown');
@@ -1761,8 +2040,8 @@
             const selectedStates = Array.from(document.querySelectorAll('#locationCheckboxes input[data-type="state"]:checked'))
                 .map(cb => cb.value);
 
-            // Get selected brands
-            const selectedBrands = Array.from(document.querySelectorAll('#brandCheckboxes input:checked'))
+            // Get selected brands (only brand checkboxes, not category checkboxes)
+            const selectedBrands = Array.from(document.querySelectorAll('#brandCheckboxes input[data-type="brand"]:checked'))
                 .map(cb => cb.value);
 
             // Get selected social filters
@@ -1941,7 +2220,11 @@
             selectedBrands.forEach(brand => {
                 const tag = createFilterTag(brand.replace(/_/g, ' '), () => {
                     const checkbox = document.querySelector(`#brandCheckboxes input[value="${brand}"]`);
-                    if (checkbox) checkbox.checked = false;
+                    if (checkbox) {
+                        checkbox.checked = false;
+                        const category = checkbox.dataset.category;
+                        if (category) updateCategoryCheckbox(category);
+                    }
                     filterStores();
                 });
                 tagsDiv.appendChild(tag);
@@ -2009,8 +2292,18 @@
                 if (btn) btn.textContent = '▶';
             });
 
-            // Uncheck all brand checkboxes
-            document.querySelectorAll('#brandCheckboxes input').forEach(cb => cb.checked = false);
+            // Uncheck all brand checkboxes and reset category states
+            document.querySelectorAll('#brandCheckboxes input').forEach(cb => {
+                cb.checked = false;
+                cb.indeterminate = false;
+            });
+
+            // Collapse all brand categories
+            document.querySelectorAll('.category-brands-container').forEach(container => {
+                container.style.display = 'none';
+                const btn = container.previousElementSibling?.querySelector('.category-expand-btn');
+                if (btn) btn.textContent = '▶';
+            });
 
             // Uncheck all social checkboxes
             document.querySelectorAll('#socialFilterDropdown input').forEach(cb => cb.checked = false);
