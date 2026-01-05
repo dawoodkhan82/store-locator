@@ -46,6 +46,39 @@
             z-index: 10;
         }
 
+        .th-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+        }
+
+        .hide-col-btn {
+            opacity: 0;
+            background: none;
+            border: none;
+            color: rgba(55, 53, 47, 0.4);
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: opacity 0.15s, background-color 0.15s, color 0.15s;
+        }
+
+        th:hover .hide-col-btn {
+            opacity: 1;
+        }
+
+        .hide-col-btn:hover {
+            background-color: rgba(55, 53, 47, 0.08);
+            color: rgba(55, 53, 47, 0.65);
+        }
+
+        .column-hidden {
+            display: none !important;
+        }
+
         td {
             padding: 6px 8px;
             color: rgb(55, 53, 47);
@@ -388,6 +421,17 @@
                         Clear All
                     </button>
 
+                    <!-- Columns Visibility Toggle -->
+                    <div style="position: relative; margin-left: 16px; border-left: 1px solid rgba(55, 53, 47, 0.16); padding-left: 16px;">
+                        <button id="columnsFilterButton" onclick="toggleColumnsFilter()" style="min-width: 100px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
+                            <span id="columnsFilterLabel">Columns</span>
+                            <span style="margin-left: 8px;">▼</span>
+                        </button>
+                        <div id="columnsFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 180px; z-index: 1000;">
+                            <div id="columnsCheckboxes" style="padding: 8px;"></div>
+                        </div>
+                    </div>
+
                     <!-- Filtered Results Count -->
                     <span id="filteredResultsCount" style="font-size: 14px; color: rgba(55, 53, 47, 0.65); margin-left: 8px; padding: 6px 0;"></span>
                 </div>
@@ -405,16 +449,17 @@
             <div class="table-container">
                 <table id="storeTable">
                     <thead>
-                        <tr>
-                            <th>Store Name</th>
-                            <th>Address</th>
-                            <th>Brands</th>
-                            <th>Categories</th>
-                            <th>Specialties</th>
-                            <th>Data Enriched</th>
-                            <th>Website</th>
-                            <th>Phone</th>
-                            <th>Social</th>
+                        <tr id="tableHeaderRow">
+                            <th data-column="name">Store Name</th>
+                            <th data-column="address"><span class="th-content">Address<button class="hide-col-btn" onclick="hideColumn('address')" title="Hide column">×</button></span></th>
+                            <th data-column="brands"><span class="th-content">Brands<button class="hide-col-btn" onclick="hideColumn('brands')" title="Hide column">×</button></span></th>
+                            <th data-column="categories"><span class="th-content">Categories<button class="hide-col-btn" onclick="hideColumn('categories')" title="Hide column">×</button></span></th>
+                            <th data-column="specialties"><span class="th-content">Specialties<button class="hide-col-btn" onclick="hideColumn('specialties')" title="Hide column">×</button></span></th>
+                            <th data-column="dataEnriched"><span class="th-content">Data Enriched<button class="hide-col-btn" onclick="hideColumn('dataEnriched')" title="Hide column">×</button></span></th>
+                            <th data-column="website"><span class="th-content">Website<button class="hide-col-btn" onclick="hideColumn('website')" title="Hide column">×</button></span></th>
+                            <th data-column="phone"><span class="th-content">Phone<button class="hide-col-btn" onclick="hideColumn('phone')" title="Hide column">×</button></span></th>
+                            <th data-column="social"><span class="th-content">Social<button class="hide-col-btn" onclick="hideColumn('social')" title="Hide column">×</button></span></th>
+                            <th data-column="scraped"><span class="th-content">Scraped<button class="hide-col-btn" onclick="hideColumn('scraped')" title="Hide column">×</button></span></th>
                         </tr>
                     </thead>
                     <tbody id="storeTableBody">
@@ -501,6 +546,21 @@
         let filteredStores = [];
         let currentPage = 1;
         const STORES_PER_PAGE = 1000;
+
+        // Column visibility state
+        const TABLE_COLUMNS = [
+            { id: 'name', label: 'Store Name', hideable: false },
+            { id: 'address', label: 'Address', hideable: true },
+            { id: 'brands', label: 'Brands', hideable: true },
+            { id: 'categories', label: 'Categories', hideable: true },
+            { id: 'specialties', label: 'Specialties', hideable: true },
+            { id: 'dataEnriched', label: 'Data Enriched', hideable: true },
+            { id: 'website', label: 'Website', hideable: true },
+            { id: 'phone', label: 'Phone', hideable: true },
+            { id: 'social', label: 'Social', hideable: true },
+            { id: 'scraped', label: 'Scraped', hideable: true }
+        ];
+        let hiddenColumns = new Set();
 
         // Normalize store name for grouping - removes location-specific suffixes
         function normalizeStoreName(name) {
@@ -640,6 +700,7 @@
 
                 // Populate filter dropdowns
                 populateFilters();
+                populateColumnsFilter();
 
                 renderStores(GROUPED_STORES);
             } catch (error) {
@@ -1081,31 +1142,31 @@
 
                 return `
                     <tr class="store-row" onclick="showStoreDetailsByIndex(${actualIndex})">
-                        <td style="font-weight: 500;">${name}</td>
-                        <td style="color: rgba(55, 53, 47, 0.65);">
+                        <td data-column="name" style="font-weight: 500;">${name}</td>
+                        <td data-column="address" class="${hiddenColumns.has('address') ? 'column-hidden' : ''}" style="color: rgba(55, 53, 47, 0.65);">
                             <div style="display: flex; align-items: center; flex-wrap: wrap;">
                                 <span>${address.substring(0, 40)}${address.length > 40 ? '...' : ''}</span>
                                 ${locationBadge}
                             </div>
                         </td>
-                        <td>
+                        <td data-column="brands" class="${hiddenColumns.has('brands') ? 'column-hidden' : ''}">
                             <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                                 ${uniqueBrands.length > 0 ? uniqueBrands.map(b => `<span class="tag" style="background-color: rgba(46, 170, 220, 0.15); color: rgb(24, 51, 71); padding: 1px 6px; border-radius: 3px; font-size: 12px; font-weight: 400; display: inline-block; white-space: nowrap;">${b}</span>`).join('') : '-'}
                             </div>
                         </td>
-                        <td>
+                        <td data-column="categories" class="${hiddenColumns.has('categories') ? 'column-hidden' : ''}">
                             <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                                 ${productCategories.slice(0, 3).map(c => `<span class="tag tag-blue">${c}</span>`).join('')}
                                 ${productCategories.length > 3 ? `<span style="font-size: 12px; color: rgba(55, 53, 47, 0.4);">+${productCategories.length - 3}</span>` : ''}
                             </div>
                         </td>
-                        <td>
+                        <td data-column="specialties" class="${hiddenColumns.has('specialties') ? 'column-hidden' : ''}">
                             <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                                 ${specialties.slice(0, 3).map(s => `<span class="tag tag-green">${s}</span>`).join('')}
                                 ${specialties.length > 3 ? `<span style="font-size: 12px; color: rgba(55, 53, 47, 0.4);">+${specialties.length - 3}</span>` : ''}
                             </div>
                         </td>
-                        <td>
+                        <td data-column="dataEnriched" class="${hiddenColumns.has('dataEnriched') ? 'column-hidden' : ''}">
                             <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                                 ${(store.data_enriched || []).map(source => {
                                     const colors = {
@@ -1123,14 +1184,17 @@
                                 }).join('') || '<span style="color: rgba(55, 53, 47, 0.4);">-</span>'}
                             </div>
                         </td>
-                        <td>
+                        <td data-column="website" class="${hiddenColumns.has('website') ? 'column-hidden' : ''}">
                             ${website ? `<a href="${website}" target="_blank" style="color: rgb(46, 170, 220); text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'" onclick="event.stopPropagation()">Link ↗</a>` : '-'}
                         </td>
-                        <td style="color: rgba(55, 53, 47, 0.65);">${phone}</td>
-                        <td>
+                        <td data-column="phone" class="${hiddenColumns.has('phone') ? 'column-hidden' : ''}" style="color: rgba(55, 53, 47, 0.65);">${phone}</td>
+                        <td data-column="social" class="${hiddenColumns.has('social') ? 'column-hidden' : ''}">
                             <div style="display: flex; gap: 6px; align-items: center;">
                                 ${socialLinksHtml.length > 0 ? socialLinksHtml.join('') : '<span style="color: rgba(55, 53, 47, 0.4);">-</span>'}
                             </div>
+                        </td>
+                        <td data-column="scraped" class="${hiddenColumns.has('scraped') ? 'column-hidden' : ''}" style="color: rgba(55, 53, 47, 0.65); font-size: 12px; white-space: nowrap;">
+                            ${store.scraped_at ? formatScrapedDate(store.scraped_at) : '-'}
                         </td>
                     </tr>
                 `;
@@ -1403,6 +1467,21 @@
             }
 
             return '-';
+        }
+
+        function formatScrapedDate(dateStr) {
+            if (!dateStr) return '-';
+            try {
+                const date = new Date(dateStr);
+                // Format as "Jan 5, 2026"
+                return date.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            } catch (e) {
+                return '-';
+            }
         }
 
         function extractState(store, address) {
@@ -1950,11 +2029,13 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             socialDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
+            columnsDropdown.style.display = 'none';
 
             // Toggle location dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -1965,11 +2046,13 @@
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             socialDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
+            columnsDropdown.style.display = 'none';
 
             // Toggle brand dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -1980,11 +2063,13 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
+            columnsDropdown.style.display = 'none';
 
             // Toggle social dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -1995,14 +2080,126 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
+            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             socialDropdown.style.display = 'none';
+            columnsDropdown.style.display = 'none';
 
             // Toggle size dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleColumnsFilter() {
+            const dropdown = document.getElementById('columnsFilterDropdown');
+            const brandDropdown = document.getElementById('brandFilterDropdown');
+            const locationDropdown = document.getElementById('locationFilterDropdown');
+            const socialDropdown = document.getElementById('socialFilterDropdown');
+            const sizeDropdown = document.getElementById('sizeFilterDropdown');
+
+            // Close other dropdowns
+            brandDropdown.style.display = 'none';
+            locationDropdown.style.display = 'none';
+            socialDropdown.style.display = 'none';
+            sizeDropdown.style.display = 'none';
+
+            // Toggle columns dropdown
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function populateColumnsFilter() {
+            const container = document.getElementById('columnsCheckboxes');
+            container.innerHTML = '';
+
+            TABLE_COLUMNS.forEach(col => {
+                if (!col.hideable) return; // Skip non-hideable columns like Store Name
+
+                const label = document.createElement('label');
+                label.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
+                label.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                label.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = !hiddenColumns.has(col.id);
+                checkbox.dataset.column = col.id;
+                checkbox.style.marginRight = '8px';
+                checkbox.onchange = function() {
+                    toggleColumnVisibility(col.id, this.checked);
+                };
+
+                const text = document.createTextNode(col.label);
+
+                label.appendChild(checkbox);
+                label.appendChild(text);
+                container.appendChild(label);
+            });
+        }
+
+        function hideColumn(columnId) {
+            hiddenColumns.add(columnId);
+            applyColumnVisibility();
+            updateColumnsFilterCheckboxes();
+            updateColumnsLabel();
+        }
+
+        function showColumn(columnId) {
+            hiddenColumns.delete(columnId);
+            applyColumnVisibility();
+            updateColumnsFilterCheckboxes();
+            updateColumnsLabel();
+        }
+
+        function toggleColumnVisibility(columnId, isVisible) {
+            if (isVisible) {
+                hiddenColumns.delete(columnId);
+            } else {
+                hiddenColumns.add(columnId);
+            }
+            applyColumnVisibility();
+            updateColumnsLabel();
+        }
+
+        function applyColumnVisibility() {
+            // Apply to header cells
+            document.querySelectorAll('#tableHeaderRow th[data-column]').forEach(th => {
+                const columnId = th.dataset.column;
+                if (hiddenColumns.has(columnId)) {
+                    th.classList.add('column-hidden');
+                } else {
+                    th.classList.remove('column-hidden');
+                }
+            });
+
+            // Apply to body cells
+            document.querySelectorAll('#storeTableBody td[data-column]').forEach(td => {
+                const columnId = td.dataset.column;
+                if (hiddenColumns.has(columnId)) {
+                    td.classList.add('column-hidden');
+                } else {
+                    td.classList.remove('column-hidden');
+                }
+            });
+        }
+
+        function updateColumnsFilterCheckboxes() {
+            document.querySelectorAll('#columnsCheckboxes input[data-column]').forEach(cb => {
+                cb.checked = !hiddenColumns.has(cb.dataset.column);
+            });
+        }
+
+        function updateColumnsLabel() {
+            const label = document.getElementById('columnsFilterLabel');
+            const hiddenCount = hiddenColumns.size;
+            if (hiddenCount > 0) {
+                label.textContent = `Columns (${TABLE_COLUMNS.filter(c => c.hideable).length - hiddenCount}/${TABLE_COLUMNS.filter(c => c.hideable).length})`;
+                label.style.fontWeight = '600';
+            } else {
+                label.textContent = 'Columns';
+                label.style.fontWeight = 'normal';
+            }
         }
 
         // Close dropdowns when clicking outside
@@ -2015,6 +2212,8 @@
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeButton = document.getElementById('sizeFilterButton');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const columnsButton = document.getElementById('columnsFilterButton');
+            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             if (!brandButton.contains(event.target) && !brandDropdown.contains(event.target)) {
                 brandDropdown.style.display = 'none';
@@ -2030,6 +2229,10 @@
 
             if (!sizeButton.contains(event.target) && !sizeDropdown.contains(event.target)) {
                 sizeDropdown.style.display = 'none';
+            }
+
+            if (!columnsButton.contains(event.target) && !columnsDropdown.contains(event.target)) {
+                columnsDropdown.style.display = 'none';
             }
         });
 

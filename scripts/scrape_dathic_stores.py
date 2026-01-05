@@ -235,13 +235,22 @@ def scrape_dathic_stores(url_or_org_id, output_file=None, include_chains=False):
     else:
         stores = usa_stores
 
+    # Build output with metadata
+    from datetime import datetime
+    output_data = {
+        "source_url": url_or_org_id if not str(url_or_org_id).isdigit() else f"dathic_org_{org_id}",
+        "scraped_at": datetime.now().isoformat(),
+        "total_stores": len(stores),
+        "stores": stores
+    }
+
     # Save to file if specified
     if output_file:
         with open(output_file, 'w') as f:
-            json.dump(stores, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"Saved to {output_file}")
 
-    return stores
+    return output_data
 
 
 if __name__ == "__main__":
