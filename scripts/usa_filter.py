@@ -43,6 +43,8 @@ def is_usa_store(store):
     address = (
         store.get('address', '') or
         store.get('address_line_1', '') or
+        store.get('streetaddress', '') or
+        store.get('street_address', '') or
         store.get('full_address', '') or
         store.get('formattedAddress', '') or
         ''

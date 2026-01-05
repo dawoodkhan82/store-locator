@@ -69,6 +69,13 @@ def extract_storepoint_id(page_source):
     if match:
         return match.group(1)
 
+    # Pattern 5: Look for StorepointWidget constructor call
+    # e.g., new StorepointWidget('1687e3499434ea', '#storepoint-widget', {})
+    pattern5 = r'StorepointWidget\s*\(\s*["\']([a-zA-Z0-9]+)["\']'
+    match = re.search(pattern5, page_source)
+    if match:
+        return match.group(1)
+
     return None
 
 

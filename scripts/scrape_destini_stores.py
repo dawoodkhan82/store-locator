@@ -389,31 +389,60 @@ def scrape_destini_stores(url, output_file='destini_stores_raw.json', wait_time=
                 # Skip malformed log entries
                 pass
 
-        # If we found knox POST data, fetch all stores from AWS Lambda endpoint
+        # If we found knox POST data, fetch all stores from AWS Lambda endpoint using grid search
         if knox_post_data and not stores_data:
-            print(f"\n→ Fetching all stores from knox endpoint...")
+            print(f"\n→ Fetching all stores from knox endpoint using grid search...")
             try:
                 post_params = json.loads(knox_post_data)
-                # Modify to get all stores
-                post_params['params']['distance'] = 10000  # Very large distance
-                post_params['params']['maxStores'] = 10000  # Maximum stores
-                post_params['params']['latitude'] = 39.8283  # Center of US
-                post_params['params']['longitude'] = -98.5795
 
-                response = requests.post(
-                    'https://hlc7l6v5w6.execute-api.us-west-2.amazonaws.com/prod/knox',
-                    json=post_params,
-                    headers={'Content-Type': 'application/json', 'Accept': 'application/json'},
-                    timeout=30
-                )
+                # Grid search across US with 200 mile radius queries
+                grid_points = []
+                for lat in range(25, 50, 4):  # 4 degree spacing
+                    for lon in range(-123, -68, 5):  # 5 degree spacing
+                        grid_points.append((lat, lon))
+                # Add Alaska, Hawaii
+                grid_points.extend([(61, -150), (21.5, -158)])
 
-                if response.status_code == 200:
-                    data = response.json()
-                    if 'data' in data and isinstance(data['data'], list):
-                        stores_data.extend(data['data'])
-                        print(f"  ✓ Fetched {len(data['data'])} stores from knox endpoint")
-                else:
-                    print(f"  ✗ Knox endpoint returned {response.status_code}")
+                all_stores = {}  # Use dict for deduplication
+                total_points = len(grid_points)
+
+                for idx, (lat, lon) in enumerate(grid_points, 1):
+                    post_params['params']['distance'] = 200  # 200 miles
+                    post_params['params']['maxStores'] = 500
+                    post_params['params']['latitude'] = lat
+                    post_params['params']['longitude'] = lon
+
+                    try:
+                        response = requests.post(
+                            'https://hlc7l6v5w6.execute-api.us-west-2.amazonaws.com/prod/knox',
+                            json=post_params,
+                            headers={'Content-Type': 'application/json', 'Accept': 'application/json'},
+                            timeout=60
+                        )
+
+                        if response.status_code == 200:
+                            data = response.json()
+                            if 'data' in data and isinstance(data['data'], list):
+                                new_stores = 0
+                                for store in data['data']:
+                                    store_id = store.get('id') or store.get('storeId') or f"{store.get('name', '')}_{store.get('city', '')}"
+                                    if store_id not in all_stores:
+                                        all_stores[store_id] = store
+                                        new_stores += 1
+                                print(f"  [{idx:3}/{total_points}] ({lat}, {lon}) - {len(data['data'])} stores ({new_stores} new) | Total: {len(all_stores)}")
+                        else:
+                            print(f"  [{idx:3}/{total_points}] ({lat}, {lon}) - HTTP {response.status_code}")
+
+                        time.sleep(0.3)  # Rate limiting
+
+                    except requests.exceptions.Timeout:
+                        print(f"  [{idx:3}/{total_points}] ({lat}, {lon}) - Timeout")
+                    except Exception as e:
+                        print(f"  [{idx:3}/{total_points}] ({lat}, {lon}) - Error: {str(e)[:50]}")
+
+                stores_data.extend(list(all_stores.values()))
+                print(f"  ✓ Fetched {len(all_stores)} total unique stores from knox endpoint")
+
             except Exception as e:
                 print(f"  ✗ Error fetching from knox: {str(e)[:100]}")
 

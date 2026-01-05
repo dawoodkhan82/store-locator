@@ -32,6 +32,7 @@ SCRAPERS = {
     'storemapper': 'scripts/scrape_storemapper_stores.py',
     'destini': 'scripts/scrape_destini_stores.py',
     'pearcommerce': 'scripts/scrape_pearcommerce_stores.py',
+    'gotoaisle': 'scripts/scrape_gotoaisle_stores.py',
 }
 
 # Detection patterns for each platform
@@ -69,6 +70,12 @@ PLATFORM_PATTERNS = {
         r'pearcommerce\.com',
         r'pear-commerce',
         r'pearWidget',
+    ],
+    'gotoaisle': [
+        r'gotoaisle\.com',
+        r'cdn\.gotoaisle\.com',
+        r'discover\.gotoaisle\.com',
+        r'storeLocatorLoader\.js',
     ],
 }
 

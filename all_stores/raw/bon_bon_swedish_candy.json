@@ -1,6 +1,6 @@
 {
   "source_url": "https://bonbonnyc.com/pages/locations/#bonbon-near-you",
-  "scraped_at": "2026-01-03T21:47:52.843915",
+  "scraped_at": "2026-01-04T20:52:08.954885",
   "total_stores": 193,
   "stores": [
     {
@@ -2876,15 +2876,73 @@
       "distance_units": "mi"
     },
     {
-      "id": "loc_eq7z8kvv",
-      "name": "Hi Mango 2",
-      "latitude": "40.70910667",
-      "longitude": "-73.81863121",
-      "address_line_1": "137-75 Queens Blvd",
+      "id": "loc_mg2nzqxv",
+      "name": "AreteEducation",
+      "latitude": "40.79009668",
+      "longitude": "-73.97807121",
+      "address_line_1": "315 West 87th Street",
       "address_line_2": "",
-      "city": "Queens",
+      "city": "New York",
       "state": "NY",
-      "postal_code": "11430",
+      "postal_code": "10024",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 0.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_xgyzrqn6",
+      "name": "560 NY MINI MARKET",
+      "latitude": "40.78856683",
+      "longitude": "-73.97451212",
+      "address_line_1": "560 Amsterdam Ave",
+      "address_line_2": "GROUND FL",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10024",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 0.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_wgqkx87x",
+      "name": "Zabars",
+      "latitude": "40.78476682",
+      "longitude": "-73.97971212",
+      "address_line_1": "2245 Broadway",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10024",
       "country": "USA",
       "full_address": null,
       "phone": "",
@@ -2905,18 +2963,511 @@
       "distance_units": "mi"
     },
     {
-      "id": "loc_kkwnemzq",
-      "name": "Elly's Place (Sunrise Market)",
-      "latitude": "40.71076670",
-      "longitude": "-73.85211210",
-      "address_line_1": "100-31 Metropolitan Avenue",
-      "address_line_2": "1st. Fl. Store",
-      "city": "FOREST HILLS",
+      "id": "loc_kkwne92q",
+      "name": "Pretige Marketplace FD ",
+      "latitude": "40.80528100",
+      "longitude": "-73.95497600",
+      "address_line_1": "2171 Frderick Douglass blvd",
+      "address_line_2": "",
+      "city": "New York",
       "state": "NY",
-      "postal_code": "11375",
+      "postal_code": "10026",
       "country": "USA",
       "full_address": null,
       "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 1.2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_kkwnem2q",
+      "name": "PLATINUM CONVENIENCE",
+      "latitude": "40.78106682",
+      "longitude": "-73.98081212",
+      "address_line_1": "2144 Broadway",
+      "address_line_2": "Frnt 1",
+      "city": "New York ",
+      "state": "NY ",
+      "postal_code": "10023",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 1.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vze9jm",
+      "name": "75 Organic Deli & Market",
+      "latitude": "40.78026681",
+      "longitude": "-73.98011212",
+      "address_line_1": "313 Amsterdam Ave",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10023",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 1.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_nxe82mv5",
+      "name": "CARNEGIE MARKET",
+      "latitude": "40.78666825",
+      "longitude": "-73.95191212",
+      "address_line_1": "1245 Park Ave",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10128",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 1.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grnmy",
+      "name": "Columbus Farm",
+      "latitude": "40.77667600",
+      "longitude": "-73.97956500",
+      "address_line_1": "236 Columbus Ave 71ST",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10023",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 1.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6nx9y",
+      "name": "Eli's Market",
+      "latitude": "40.77506600",
+      "longitude": "-73.95649800",
+      "address_line_1": "1411 3rd Ave",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10028",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vze95m",
+      "name": "Schaller & Weber",
+      "latitude": "40.77766681",
+      "longitude": "-73.95161212",
+      "address_line_1": "1654 2nd Avenue",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10028",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_eq7z8v6v",
+      "name": "Padoca Bakery",
+      "latitude": "40.76881200",
+      "longitude": "-73.96801900",
+      "address_line_1": "21o E 67th St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10065",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_rxmer8rq",
+      "name": "Anthropology",
+      "latitude": "40.76966797",
+      "longitude": "-73.96112118",
+      "address_line_1": "1230 3rd Ave",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10021",
+      "country": "USA",
+      "full_address": null,
+      "phone": "(212) 288-1940",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_5z5jv2mn",
+      "name": "Agata & Valentina",
+      "latitude": "40.77226680",
+      "longitude": "-73.95312116",
+      "address_line_1": "1505 1st Ave.",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10075",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6nxmy",
+      "name": "Rino's Confections",
+      "latitude": "40.76446679",
+      "longitude": "-73.97461212",
+      "address_line_1": "1 West 58th Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10019",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_8gkzprz6",
+      "name": "The Sweet Shop NYC",
+      "latitude": "40.76806679",
+      "longitude": "-73.95501212",
+      "address_line_1": "404 East 73rd Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10021",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6n2qy",
+      "name": "MoMA Design Store 53rd St",
+      "latitude": "40.76166783",
+      "longitude": "-73.97781212",
+      "address_line_1": "44 West 53rd St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10019",
+      "country": "USA",
+      "full_address": null,
+      "phone": "212-767-1050",
+      "website": "https://store.moma.org/",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6nr5y",
+      "name": "Bloomingdale's",
+      "latitude": "40.76195000",
+      "longitude": "-73.96652800",
+      "address_line_1": "1000 3rd Avenue",
+      "address_line_2": "7th Floor/ Forty Carrots",
+      "city": "New york",
+      "state": "NY",
+      "postal_code": "10022",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vzek6m",
+      "name": "MoMA Museum Store",
+      "latitude": "40.76106678",
+      "longitude": "-73.97714121",
+      "address_line_1": "11 West 53 St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10019",
+      "country": "USA",
+      "full_address": null,
+      "phone": "212-708-9700",
+      "website": "https://store.moma.org/",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_8gkzpex6",
+      "name": "Serendipity 3",
+      "latitude": "40.76186678",
+      "longitude": "-73.96481212",
+      "address_line_1": "225 East 60th Street",
+      "address_line_2": "",
+      "city": "New york ",
+      "state": "NY",
+      "postal_code": "10022",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_7vxjy2nq",
+      "name": "Z Grill",
+      "latitude": "40.76156678",
+      "longitude": "-73.98711212",
+      "address_line_1": "803 8th Ave",
+      "address_line_2": "",
+      "city": "New York ",
+      "state": "NY ",
+      "postal_code": "10019",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 2.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_wgqkxp7x",
+      "name": "Anthropology",
+      "latitude": "40.75955900",
+      "longitude": "-73.97824100",
+      "address_line_1": "50 Rockefeller Plaza",
+      "address_line_2": "Rockefeller Center",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10020",
+      "country": "USA",
+      "full_address": null,
+      "phone": "(212) 246-0386",
       "website": "",
       "email": "",
       "description": null,
@@ -2934,2422 +3485,15 @@
       "distance_units": "mi"
     },
     {
-      "id": "loc_p7gkrmwk",
-      "name": "Met Fresh of Whitestone",
-      "latitude": "40.77674668",
-      "longitude": "-73.81452121",
-      "address_line_1": "24-07 150th St",
+      "id": "loc_jzpx2nre",
+      "name": "FAO Schwarz",
+      "latitude": "40.75886678",
+      "longitude": "-73.97881212",
+      "address_line_1": "30 Rockefeller Plaza",
       "address_line_2": "",
-      "city": "Queens ",
-      "state": "NY ",
-      "postal_code": "11357",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 4.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_ywp2ey6v",
-      "name": "Met Fresh of Ridgewood",
-      "latitude": "40.70596669",
-      "longitude": "-73.89611211",
-      "address_line_1": "67-09 Fresh Pond Rd",
-      "address_line_2": "",
-      "city": "Queens",
-      "state": "NY",
-      "postal_code": "11385",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 5.1,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_qx5grpky",
-      "name": "Forever Young kids",
-      "latitude": "40.70366669",
-      "longitude": "-73.90311211",
-      "address_line_1": "801 Woodward Avenue",
-      "address_line_2": "",
-      "city": "Ridgewood",
-      "state": "NY",
-      "postal_code": "11385",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 5.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_2ne5zy79",
-      "name": "Fire House Deli 2",
-      "latitude": "40.68886666",
-      "longitude": "-73.90521211",
-      "address_line_1": "644 Wilson Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11207",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 5.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_ywp2eq7v",
-      "name": "Forest Mini Market",
-      "latitude": "40.69076667",
-      "longitude": "-73.90851211",
-      "address_line_1": "562 Wilson Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11207",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_p7gkrmpk",
-      "name": "Natural Farm Market",
-      "latitude": "40.69266667",
-      "longitude": "-73.91201211",
-      "address_line_1": "472 Wilson Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.1,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_kkwne9eq",
-      "name": "Woodbine Natural Deli Inc",
-      "latitude": "40.69592667",
-      "longitude": "-73.91356121",
-      "address_line_1": "279 Woodbine St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.1,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_jzpx272e",
-      "name": "Urban Natural Valley Market",
-      "latitude": "40.68356666",
-      "longitude": "-73.91101211",
-      "address_line_1": "1725 Broadway",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11207",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.2,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_jzpx298e",
-      "name": "The Paper Store",
-      "latitude": "40.75336677",
-      "longitude": "-73.69221207",
-      "address_line_1": "1510 Union Turnpike",
-      "address_line_2": "",
-      "city": "New Hyde Park",
-      "state": "NY",
-      "postal_code": "11040",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.2,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_v5vze7pm",
-      "name": "Urban Harvest Corp.",
-      "latitude": "40.69261667",
-      "longitude": "-73.91531121",
-      "address_line_1": "427 Central Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_9yk6ngxy",
-      "name": "Hana Natural",
-      "latitude": "40.70628500",
-      "longitude": "-73.92261900",
-      "address_line_1": "24 Wyckoffe Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11237",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_rxmerwrq",
-      "name": "Other People's Clothes",
-      "latitude": "40.70526669",
-      "longitude": "-73.92451211",
-      "address_line_1": "333 Troutman Street",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11237",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_7vxjy2gq",
-      "name": "Bliss Vintage & Handmade (by Violet's Volition)",
-      "latitude": "40.74626676",
-      "longitude": "-73.91791211",
-      "address_line_1": "41-03 46th Street, Ground Floor",
-      "address_line_2": "",
-      "city": "Sunnyside",
-      "state": "NY",
-      "postal_code": "11104",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_eq7z8kjv",
-      "name": "Sunrise Deli",
-      "latitude": "40.69786668",
-      "longitude": "-73.92512112",
-      "address_line_1": "214 Central Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_5z5jvnyn",
-      "name": "Royal Deli & Grill Corp",
-      "latitude": "40.70369500",
-      "longitude": "-73.92668700",
-      "address_line_1": "193 Kinckerbocker Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11237",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_wgqkxvkx",
-      "name": "Hygge Box",
-      "latitude": "40.74871668",
-      "longitude": "-73.91831121",
-      "address_line_1": "39-23 45th Street",
-      "address_line_2": "",
-      "city": "Sunnyside",
-      "state": "NY",
-      "postal_code": "11104",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_rxmer25q",
-      "name": "Harvest Valley Deli Corp",
-      "latitude": "40.68646666",
-      "longitude": "-73.92361211",
-      "address_line_1": "104 Ralph Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_6j8gq2y5",
-      "name": "Midwest Natural Market Corp",
-      "latitude": "40.70200667",
-      "longitude": "-73.92753121",
-      "address_line_1": "83 Wilson Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11237",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_5z5jvnvn",
-      "name": "Natural Valley Market",
-      "latitude": "40.68356666",
-      "longitude": "-73.92301211",
-      "address_line_1": "182 Ralph Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11233",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_2ne5zyz9",
-      "name": "Salt & Pepper Deli",
-      "latitude": "40.69396667",
-      "longitude": "-73.92681211",
-      "address_line_1": "854 Bushwick Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_nxe82pn5",
-      "name": "The Paper Store",
-      "latitude": "40.74173367",
-      "longitude": "-73.67249712",
-      "address_line_1": "5049 S. Cleveland Ave",
-      "address_line_2": "",
-      "city": "New Hyde Park",
-      "state": "NY",
-      "postal_code": "11040",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.9,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_2ne5zy99",
-      "name": "Mr. Deli & Grill",
-      "latitude": "40.69508667",
-      "longitude": "-73.92870121",
-      "address_line_1": "1185 Dekalb Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.9,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_8gkzpjw6",
-      "name": "Mr. Carrot Deli & Grill Inc.",
-      "latitude": "40.70380667",
-      "longitude": "-73.93062121",
-      "address_line_1": "1008 Flushing Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11237",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 6.9,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_qx5grn2y",
-      "name": "Pomegrant Deli Inc",
-      "latitude": "40.69481667",
-      "longitude": "-73.93120121",
-      "address_line_1": "1064 Broadway",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11221",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.1,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_v5vze7jm",
-      "name": "Brooklyn Natural",
-      "latitude": "40.70531000",
-      "longitude": "-73.93342600",
-      "address_line_1": "49 Borgart St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11206",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.1,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_qx5grp2y",
-      "name": "The Brass Owl",
-      "latitude": "40.77416680",
-      "longitude": "-73.90741211",
-      "address_line_1": "36-19 Ditmars Boulevard",
-      "address_line_2": "",
-      "city": "Astoria",
-      "state": "NY",
-      "postal_code": "11105",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.1,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_wgqkxv9x",
-      "name": "Beyond Natural",
-      "latitude": "40.70766696",
-      "longitude": "-73.94112115",
-      "address_line_1": "195 Montrose Avenue",
-      "address_line_2": "",
-      "city": "New York City",
-      "state": "NY ",
-      "postal_code": "11206",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_rxmerw6q",
-      "name": "Grass Roots Juicery",
-      "latitude": "40.71426671",
-      "longitude": "-73.94401211",
-      "address_line_1": "336 Graham Ave",
-      "address_line_2": "Suite A",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_7vxjyewq",
-      "name": "359 Graham Foods Inc.",
-      "latitude": "40.71532667",
-      "longitude": "-73.94468121",
-      "address_line_1": "Graham Garden",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_jzpx2e7e",
-      "name": "Graham Garden",
-      "latitude": "40.71536671",
-      "longitude": "-73.94481212",
-      "address_line_1": "359 Graham Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_z7wreyew",
-      "name": "Mr Carrot",
-      "latitude": "40.67991666",
-      "longitude": "-73.93859121",
-      "address_line_1": "1567 Fulton St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11216",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_2ne5zq69",
-      "name": "LEMON TREE FOOD MARKET",
-      "latitude": "40.71636671",
-      "longitude": "-73.94491212",
-      "address_line_1": "387 Graham Ave",
-      "address_line_2": "Ste 1",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_rxmerzkq",
-      "name": "City Chemist",
-      "latitude": "40.71418667",
-      "longitude": "-73.94519121",
-      "address_line_1": "710 Metropolitan Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_p7gkryrk",
-      "name": "Campbell & Co.",
-      "latitude": "40.72576673",
-      "longitude": "-73.94431212",
-      "address_line_1": "209 Nassau Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_jzpx276e",
-      "name": "Green Valley Mart Corp",
-      "latitude": "40.72311667",
-      "longitude": "-73.94490121",
-      "address_line_1": "162 Driggs Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_2ne5zqv9",
-      "name": "BROOKLYN STANDARD DELI",
-      "latitude": "40.72536672",
-      "longitude": "-73.94551212",
-      "address_line_1": "188 Nassau Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_mg2nzqyv",
-      "name": "The Standard",
-      "latitude": "40.72528667",
-      "longitude": "-73.94563121",
-      "address_line_1": "188 Nassau Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_gpv8xm67",
-      "name": "Grand Gourmet Deli",
-      "latitude": "40.71151667",
-      "longitude": "-73.94743121",
-      "address_line_1": "619 Grand St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_wgqkx9wx",
-      "name": "JC Deli & Grill Corp",
-      "latitude": "40.71024667",
-      "longitude": "-73.94862121",
-      "address_line_1": "442 Lorimer Street",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11206",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.9,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_9yk6nrxy",
-      "name": "RACHEL'S GARDEN",
-      "latitude": "40.72426672",
-      "longitude": "-73.94812116",
-      "address_line_1": "116 Nassau Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.9,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_mg2nzqzv",
-      "name": "Kings Natural Market Corp",
-      "latitude": "40.68383667",
-      "longitude": "-73.94415121",
-      "address_line_1": "390 Tompkins Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11216",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 7.9,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_rxmerz9q",
-      "name": "FOODCELLAR MARKET",
-      "latitude": "40.74826676",
-      "longitude": "-73.94301211",
-      "address_line_1": "43-18 Crescent St",
-      "address_line_2": "",
-      "city": "Long Island City",
-      "state": "NY",
-      "postal_code": "11101",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_wgqkx9rx",
-      "name": "Wholesome Gourmet Deli",
-      "latitude": "40.72416672",
-      "longitude": "-73.95011212",
-      "address_line_1": "101 Nassau Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_mg2nzq5v",
-      "name": "Bread&ButterMarket 505 LLC",
-      "latitude": "40.71117667",
-      "longitude": "-73.95091121",
-      "address_line_1": "505 Grand Street",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_nxe82yv5",
-      "name": "Hana Food",
-      "latitude": "40.71386667",
-      "longitude": "-73.95101121",
-      "address_line_1": "534 Metropolitan Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_qx5grmjy",
-      "name": "HANA FOOD",
-      "latitude": "40.71396671",
-      "longitude": "-73.95101212",
-      "address_line_1": "534 Metropolitan Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_v5vzejkm",
-      "name": "storm books & candy",
-      "latitude": "40.72576673",
-      "longitude": "-73.95012116",
-      "address_line_1": "118 Norman ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_nxe82yp5",
-      "name": "Park View Market",
-      "latitude": "40.72354667",
-      "longitude": "-73.95144121",
-      "address_line_1": "95 Bedford Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_z7wrey9w",
-      "name": "B'Way Mini Mart",
-      "latitude": "40.70713667",
-      "longitude": "-73.95381121",
-      "address_line_1": "403 Broadway",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.1,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_qx5grnpy",
-      "name": "God Bless USA Deli",
-      "latitude": "40.72837667",
-      "longitude": "-73.95315121",
-      "address_line_1": "818 Manhattan Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.2,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_5z5jvwwn",
-      "name": "Park View Market",
-      "latitude": "40.72006672",
-      "longitude": "-73.95461212",
-      "address_line_1": "101 Bedford Ave",
-      "address_line_2": "Ste 1",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.2,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_wgqkx8zx",
-      "name": "Teak New York",
-      "latitude": "40.72436672",
-      "longitude": "-73.95441212",
-      "address_line_1": "34 Norman Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.2,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_ywp2eykv",
-      "name": "Korean BTS Market",
-      "latitude": "40.68136665",
-      "longitude": "-73.95001212",
-      "address_line_1": "512 Nostrand Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11216",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.2,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_xgyzrq66",
-      "name": "Wholesome Farms Market",
-      "latitude": "40.67826665",
-      "longitude": "-73.94941212",
-      "address_line_1": "1306 Atlantic Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11216",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.2,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_kkwne2zq",
-      "name": "Geek Forest, LLC",
-      "latitude": "40.71966672",
-      "longitude": "-73.95581212",
-      "address_line_1": "122 Bedford Ave.",
-      "address_line_2": "2R",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11249",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_jzpx275e",
-      "name": "L Giambalvo Design",
-      "latitude": "40.59267665",
-      "longitude": "-73.79418121",
-      "address_line_1": "4-46 Beach 65th Street",
-      "address_line_2": "",
-      "city": "Arverne",
-      "state": "NY",
-      "postal_code": "11692",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_7vxjyepq",
-      "name": "Fresh Market Gourmet Deli",
-      "latitude": "40.73246674",
-      "longitude": "-73.95441212",
-      "address_line_1": "974 Manhattan Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_nxe82y25",
-      "name": "Bedford Fruit Market",
-      "latitude": "40.71896671",
-      "longitude": "-73.95671212",
-      "address_line_1": "146 Bedford Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11249",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_kkwne2wq",
-      "name": "The William Vale",
-      "latitude": "40.72236672",
-      "longitude": "-73.95651212",
-      "address_line_1": "111 N 12th St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11249",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_6j8gqkg5",
-      "name": "Altru Chemists + Compounding Pharmacy",
-      "latitude": "40.73276674",
-      "longitude": "-73.95491212",
-      "address_line_1": "987 Manhattan Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_p7gkrykk",
-      "name": "Her Winter Flowers",
-      "latitude": "40.70922667",
-      "longitude": "-73.95755121",
-      "address_line_1": "283 South 5th Street",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_p7gkrwyk",
-      "name": "North 7 Deli",
-      "latitude": "40.71782667",
-      "longitude": "-73.95748121",
-      "address_line_1": "183 Bedford Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_6j8gq2q5",
-      "name": "Olives Leave Deli Corp.",
-      "latitude": "40.68935667",
-      "longitude": "-73.95485121",
-      "address_line_1": "1011 Bedford Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11205",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_kkwnemkq",
-      "name": "Bathhouse",
-      "latitude": "40.72066672",
-      "longitude": "-73.95741212",
-      "address_line_1": "103 North 10th Street",
-      "address_line_2": "ground floor",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11249",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.3,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_xgyzrvn6",
-      "name": "Nature Market 1 Corp",
-      "latitude": "40.68641667",
-      "longitude": "-73.95430121",
-      "address_line_1": "1091 Bedford Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11216",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.4,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_7vxjyr8q",
-      "name": "Wythe Hotel",
-      "latitude": "40.72206672",
-      "longitude": "-73.95801212",
-      "address_line_1": "80 Wythe",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11249",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.4,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_mg2nz98v",
-      "name": "Wythe Hotel",
-      "latitude": "40.72206672",
-      "longitude": "-73.95801212",
-      "address_line_1": "80 Wythe Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11249",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.4,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_z7wreymw",
-      "name": "Walk In Deli Corp",
-      "latitude": "40.72211667",
-      "longitude": "-73.95846121",
-      "address_line_1": "61 N 11th Street",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11249",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.4,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_8gkzpjn6",
-      "name": "Aden Gourmet",
-      "latitude": "40.71132667",
-      "longitude": "-73.95977121",
-      "address_line_1": "244 Roebling St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.4,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_9yk6nrvy",
-      "name": "Aden Gourmet Deli",
-      "latitude": "40.71126670",
-      "longitude": "-73.95981212",
-      "address_line_1": "244 Roebling St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.4,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_z7wrep8w",
-      "name": "Premier Marketplace",
-      "latitude": "40.72677667",
-      "longitude": "-73.95887121",
-      "address_line_1": "29 West St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_gpv8xm57",
-      "name": "Premier Market Place",
-      "latitude": "40.72677667",
-      "longitude": "-73.95887121",
-      "address_line_1": "29 West St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_qx5grm8y",
-      "name": "DELI POINT",
-      "latitude": "40.73136673",
-      "longitude": "-73.95811212",
-      "address_line_1": "145 Franklin St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_nxe82y55",
-      "name": "Deli Point Corp",
-      "latitude": "40.73136673",
-      "longitude": "-73.95811212",
-      "address_line_1": "145 Franklin Street",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_jzpx2e5e",
-      "name": "CTown Supermarkets",
-      "latitude": "40.69086667",
-      "longitude": "-73.95921212",
-      "address_line_1": "241 Taaffe Pl",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11205",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.5,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_qx5grmwy",
-      "name": "JUBILEE MARKETPLACE",
-      "latitude": "40.73216674",
-      "longitude": "-73.95981212",
-      "address_line_1": "145 West St",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_ywp2eqrv",
-      "name": "Brooklyn  Gourmet",
-      "latitude": "40.71313667",
-      "longitude": "-73.96203121",
-      "address_line_1": "313 Bedford Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_5z5jvn2n",
-      "name": "Riverside Market Place NY",
-      "latitude": "40.73666742",
-      "longitude": "-73.95912117",
-      "address_line_1": "5 Blue Slip",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11222",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_p7gkrmek",
-      "name": "Food Garden Market",
-      "latitude": "40.67726665",
-      "longitude": "-73.95571212",
-      "address_line_1": "608 Franklin Ave",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY ",
-      "postal_code": "11238",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_z7wrep9w",
-      "name": "Foodcellar Market",
-      "latitude": "40.74576676",
-      "longitude": "-73.95651212",
-      "address_line_1": "485 47th Rd",
-      "address_line_2": "",
-      "city": "Queens",
-      "state": "NY",
-      "postal_code": "11101",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_kkwne2nq",
-      "name": "Myrtle Wombat",
-      "latitude": "40.69426667",
-      "longitude": "-73.96091212",
-      "address_line_1": "581 Myrtle Avenue",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11205",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_7vxjyerq",
-      "name": "Aden Food Market",
-      "latitude": "40.71177000",
-      "longitude": "-73.96288900",
-      "address_line_1": "351 Bedford Ave 4-5 st",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_ywp2eqmv",
-      "name": "Jubilee Mktplace Brooklyn",
-      "latitude": "40.71219200",
-      "longitude": "-73.96290900",
-      "address_line_1": "356 Bedford Ave (S 3rd ~ S 4th)",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11211",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.6,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_xgyzrvx6",
-      "name": "Prestige Market Place",
-      "latitude": "40.74771668",
-      "longitude": "-73.95631121",
-      "address_line_1": "4545 Center Blvd",
-      "address_line_2": "",
-      "city": "Queens",
+      "city": "New York",
       "state": "NY",
-      "postal_code": "11101",
+      "postal_code": "10111",
       "country": "USA",
       "full_address": null,
       "phone": "",
@@ -5366,7 +3510,7 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.6,
+      "distance": 2.8,
       "distance_units": "mi"
     },
     {
@@ -5395,19 +3539,19 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.6,
+      "distance": 2.9,
       "distance_units": "mi"
     },
     {
-      "id": "loc_8gkzpjp6",
-      "name": "Sapphire Cafe & Deli",
-      "latitude": "40.71838800",
-      "longitude": "-73.96334100",
-      "address_line_1": "40 N 4th Street",
+      "id": "loc_nxe82v55",
+      "name": "The Greats of Craft",
+      "latitude": "40.75635300",
+      "longitude": "-73.96457700",
+      "address_line_1": "983 1st Avenue",
       "address_line_2": "",
-      "city": "Brooklyn",
+      "city": "New York",
       "state": "NY",
-      "postal_code": "11249",
+      "postal_code": "10022",
       "country": "USA",
       "full_address": null,
       "phone": "",
@@ -5424,19 +3568,19 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.6,
+      "distance": 3.1,
       "distance_units": "mi"
     },
     {
-      "id": "loc_wgqkx9xx",
-      "name": "Pratt Gourmet Deli",
-      "latitude": "40.69407667",
-      "longitude": "-73.96209121",
-      "address_line_1": "551 Myrtle Ave",
+      "id": "loc_6j8gqkq5",
+      "name": "Beer Table",
+      "latitude": "40.75241600",
+      "longitude": "-73.97754400",
+      "address_line_1": "87 East 42nd Street",
       "address_line_2": "",
-      "city": "Brooklyn",
+      "city": "New York",
       "state": "NY",
-      "postal_code": "11205",
+      "postal_code": "10017",
       "country": "USA",
       "full_address": null,
       "phone": "",
@@ -5453,7 +3597,384 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.7,
+      "distance": 3.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_2ne5z8j9",
+      "name": "Refinery Hotel",
+      "latitude": "40.75246677",
+      "longitude": "-73.98511212",
+      "address_line_1": "63 W 38th Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10018",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_8gkzpjr6",
+      "name": "Prestige Cafe & Deli",
+      "latitude": "40.84293669",
+      "longitude": "-73.94180121",
+      "address_line_1": "228 Fort Washington Ave",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10032",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_rxmerwmq",
+      "name": "Scandinavia House",
+      "latitude": "40.74946676",
+      "longitude": "-73.97991212",
+      "address_line_1": "58 Park Avenue",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10016",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_eq7z8ygv",
+      "name": "Office Hours",
+      "latitude": "40.74978668",
+      "longitude": "-73.99513121",
+      "address_line_1": "1PENN, 1 Pennsylvania Plaza",
+      "address_line_2": "Lobby",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10119",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_xgyzrvx6",
+      "name": "Prestige Market Place",
+      "latitude": "40.74771668",
+      "longitude": "-73.95631121",
+      "address_line_1": "4545 Center Blvd",
+      "address_line_2": "",
+      "city": "Queens",
+      "state": "NY",
+      "postal_code": "11101",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_mg2nz9pv",
+      "name": "MADE Hotel",
+      "latitude": "40.74626676",
+      "longitude": "-73.98941212",
+      "address_line_1": "44 W 29th St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10001",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_5z5jv2xn",
+      "name": "The Ace Hotel",
+      "latitude": "40.74576676",
+      "longitude": "-73.98811212",
+      "address_line_1": "20 W 29th Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10001",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grpey",
+      "name": "James Nomad",
+      "latitude": "40.74466676",
+      "longitude": "-73.98551212",
+      "address_line_1": "22 E 29th St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10016",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.9,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_z7wrep9w",
+      "name": "Foodcellar Market",
+      "latitude": "40.74576676",
+      "longitude": "-73.95651212",
+      "address_line_1": "485 47th Rd",
+      "address_line_2": "",
+      "city": "Queens",
+      "state": "NY",
+      "postal_code": "11101",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.9,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_ywp2er9v",
+      "name": "Royalton Park Avenue Hotel",
+      "latitude": "40.74396675",
+      "longitude": "-73.98411212",
+      "address_line_1": "420 Park Ave S",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10016",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 3.9,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_rxmerz9q",
+      "name": "FOODCELLAR MARKET",
+      "latitude": "40.74826676",
+      "longitude": "-73.94301211",
+      "address_line_1": "43-18 Crescent St",
+      "address_line_2": "",
+      "city": "Long Island City",
+      "state": "NY",
+      "postal_code": "11101",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grp2y",
+      "name": "The Brass Owl",
+      "latitude": "40.77416680",
+      "longitude": "-73.90741211",
+      "address_line_1": "36-19 Ditmars Boulevard",
+      "address_line_2": "",
+      "city": "Astoria",
+      "state": "NY",
+      "postal_code": "11105",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_gpv8xwm7",
+      "name": "The Market on 7th",
+      "latitude": "40.74316675",
+      "longitude": "-73.99661212",
+      "address_line_1": "194 7th Ave",
+      "address_line_2": "",
+      "city": "New York ",
+      "state": "NY ",
+      "postal_code": "10011",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.1,
       "distance_units": "mi"
     },
     {
@@ -5482,36 +4003,7 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.7,
-      "distance_units": "mi"
-    },
-    {
-      "id": "loc_9yk6ngjy",
-      "name": "True Organic Deli Corp",
-      "latitude": "40.67435666",
-      "longitude": "-73.95679121",
-      "address_line_1": "637 Park PL",
-      "address_line_2": "",
-      "city": "Brooklyn",
-      "state": "NY",
-      "postal_code": "11238",
-      "country": "USA",
-      "full_address": null,
-      "phone": "",
-      "website": "",
-      "email": "",
-      "description": null,
-      "image_url": "",
-      "priority": 0,
-      "filters": [
-        {
-          "id": "flt_zp48ve8p",
-          "name": "Carries BonBon's Candy",
-          "position": 0
-        }
-      ],
-      "custom_fields": [],
-      "distance": 8.7,
+      "distance": 4.1,
       "distance_units": "mi"
     },
     {
@@ -5540,18 +4032,1294 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.7,
+      "distance": 4.1,
       "distance_units": "mi"
     },
     {
-      "id": "loc_nxe82mq5",
-      "name": "DOMINO GOURMET DELI",
-      "latitude": "40.71416671",
-      "longitude": "-73.96501212",
-      "address_line_1": "317 Wythe Ave",
+      "id": "loc_5z5jvw2n",
+      "name": "REPRALLY HQ",
+      "latitude": "40.74046675",
+      "longitude": "-73.99211212",
+      "address_line_1": "17 W 20th St",
+      "address_line_2": "FLOOR 6",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10011",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_6j8gqnq5",
+      "name": "Mess Method",
+      "latitude": "40.75516677",
+      "longitude": "-74.03141213",
+      "address_line_1": "1422 Grand Street",
+      "address_line_2": "4D",
+      "city": "Hoboken",
+      "state": "NJ",
+      "postal_code": "7030",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6neny",
+      "name": "Anthropology",
+      "latitude": "40.74266752",
+      "longitude": "-74.00512125",
+      "address_line_1": "75 9th Ave",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10011",
+      "country": "USA",
+      "full_address": null,
+      "phone": "(212) 620-3116",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_rxmer2wq",
+      "name": "Strawberry Marketplace",
+      "latitude": "40.74046300",
+      "longitude": "-74.00459400",
+      "address_line_1": "344 W 14th St. (8~9 Aves)",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_eq7z8vwv",
+      "name": "The Twenty Two NY",
+      "latitude": "40.73666743",
+      "longitude": "-73.99181212",
+      "address_line_1": "16 East 16th Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10003",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_5z5jvn2n",
+      "name": "Riverside Market Place NY",
+      "latitude": "40.73666742",
+      "longitude": "-73.95912117",
+      "address_line_1": "5 Blue Slip",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_wgqkxvkx",
+      "name": "Hygge Box",
+      "latitude": "40.74871668",
+      "longitude": "-73.91831121",
+      "address_line_1": "39-23 45th Street",
+      "address_line_2": "",
+      "city": "Sunnyside",
+      "state": "NY",
+      "postal_code": "11104",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_mg2nz9zv",
+      "name": "Everyman Espresso",
+      "latitude": "40.73266736",
+      "longitude": "-73.98831212",
+      "address_line_1": "136 East 13th Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10003",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vzejzm",
+      "name": "Boyar Gifts",
+      "latitude": "40.73546674",
+      "longitude": "-74.00501212",
+      "address_line_1": "388 Bleecker St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_ywp2er2v",
+      "name": "Greenwich Letterpress",
+      "latitude": "40.73406674",
+      "longitude": "-74.00012124",
+      "address_line_1": "15 Christopher Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.7,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grmwy",
+      "name": "JUBILEE MARKETPLACE",
+      "latitude": "40.73216674",
+      "longitude": "-73.95981212",
+      "address_line_1": "145 West St",
       "address_line_2": "",
       "city": "Brooklyn",
       "state": "NY ",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_6j8gqkg5",
+      "name": "Altru Chemists + Compounding Pharmacy",
+      "latitude": "40.73276674",
+      "longitude": "-73.95491212",
+      "address_line_1": "987 Manhattan Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_7vxjyepq",
+      "name": "Fresh Market Gourmet Deli",
+      "latitude": "40.73246674",
+      "longitude": "-73.95441212",
+      "address_line_1": "974 Manhattan Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_7vxjy2gq",
+      "name": "Bliss Vintage & Handmade (by Violet's Volition)",
+      "latitude": "40.74626676",
+      "longitude": "-73.91791211",
+      "address_line_1": "41-03 46th Street, Ground Floor",
+      "address_line_2": "",
+      "city": "Sunnyside",
+      "state": "NY",
+      "postal_code": "11104",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_ywp2erev",
+      "name": "Big Night",
+      "latitude": "40.73376674",
+      "longitude": "-74.00541213",
+      "address_line_1": "236 West 10th Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_nxe82y55",
+      "name": "Deli Point Corp",
+      "latitude": "40.73136673",
+      "longitude": "-73.95811212",
+      "address_line_1": "145 Franklin Street",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grm8y",
+      "name": "DELI POINT",
+      "latitude": "40.73136673",
+      "longitude": "-73.95811212",
+      "address_line_1": "145 Franklin St",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_6j8gq2k5",
+      "name": "World Mart NY",
+      "latitude": "40.73321667",
+      "longitude": "-74.00467121",
+      "address_line_1": "98 Christopher St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_nxe82vj5",
+      "name": "Christopher munch shop",
+      "latitude": "40.73316674",
+      "longitude": "-74.00461212",
+      "address_line_1": "98 Christopher Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.8,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_jzpx286e",
+      "name": "Anthropology",
+      "latitude": "40.74196675",
+      "longitude": "-74.02912129",
+      "address_line_1": "412 Washington St",
+      "address_line_2": "",
+      "city": "Hoboken",
+      "state": "NJ",
+      "postal_code": "7030",
+      "country": "USA",
+      "full_address": null,
+      "phone": "(201) 963-4221",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.9,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_xgyzrxy6",
+      "name": "Beef Jerky Expereince",
+      "latitude": "40.80876686",
+      "longitude": "-74.06891214",
+      "address_line_1": "1 American Dream Way",
+      "address_line_2": "Space G114",
+      "city": "East Rutherford",
+      "state": "NJ",
+      "postal_code": "7073",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.9,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grpyy",
+      "name": "Beef Jerky Experience",
+      "latitude": "40.80876686",
+      "longitude": "-74.06891214",
+      "address_line_1": "1 American Dream Way",
+      "address_line_2": "G114",
+      "city": "East Rutherford",
+      "state": "NJ",
+      "postal_code": "7073",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 4.9,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6nrky",
+      "name": "Aline collection",
+      "latitude": "40.73106673",
+      "longitude": "-74.00271212",
+      "address_line_1": "253 Bleecker Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_eq7z8v8v",
+      "name": "The Elk",
+      "latitude": "40.72974667",
+      "longitude": "-73.99975121",
+      "address_line_1": "228 Mott Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10012",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_5z5jvwnn",
+      "name": "Sheen Brothers",
+      "latitude": "40.72666673",
+      "longitude": "-73.97981212",
+      "address_line_1": "155 Avenue B",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY ",
+      "postal_code": "10009",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.1,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grnpy",
+      "name": "God Bless USA Deli",
+      "latitude": "40.72837667",
+      "longitude": "-73.95315121",
+      "address_line_1": "818 Manhattan Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.1,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_eq7z8ynv",
+      "name": "NOHO FOOD MARKET",
+      "latitude": "40.72686673",
+      "longitude": "-73.99212123",
+      "address_line_1": "352 Bowery",
+      "address_line_2": "",
+      "city": "New York ",
+      "state": "NY ",
+      "postal_code": "10012",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.1,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_jzpx2nwe",
+      "name": "Random Accessories",
+      "latitude": "40.72662667",
+      "longitude": "-73.99019121",
+      "address_line_1": "77 East 4th Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10003",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.1,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_z7wrep8w",
+      "name": "Premier Marketplace",
+      "latitude": "40.72677667",
+      "longitude": "-73.95887121",
+      "address_line_1": "29 West St",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY ",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.1,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_gpv8xm57",
+      "name": "Premier Market Place",
+      "latitude": "40.72677667",
+      "longitude": "-73.95887121",
+      "address_line_1": "29 West St",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.1,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_z7wreyjw",
+      "name": "Mayberry Marketplace",
+      "latitude": "40.72517200",
+      "longitude": "-73.98730100",
+      "address_line_1": "61 1st Ave. (E4th St)",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10009",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.2,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_qx5grjmy",
+      "name": "Anthropology",
+      "latitude": "40.72566724",
+      "longitude": "-74.00112124",
+      "address_line_1": "420 W Broadway",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10012",
+      "country": "USA",
+      "full_address": null,
+      "phone": "(646) 222-5753",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vzejkm",
+      "name": "storm books & candy",
+      "latitude": "40.72576673",
+      "longitude": "-73.95012116",
+      "address_line_1": "118 Norman ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vzej2m",
+      "name": "The Mercer Hotel",
+      "latitude": "40.72496672",
+      "longitude": "-73.99851212",
+      "address_line_1": "147 Mercer St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10012",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_wgqkx8zx",
+      "name": "Teak New York",
+      "latitude": "40.72436672",
+      "longitude": "-73.95441212",
+      "address_line_1": "34 Norman Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.3,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_nxe82vw5",
+      "name": "MOIC NYC",
+      "latitude": "40.72366672",
+      "longitude": "-73.99751212",
+      "address_line_1": "558 Broadway",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10012",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_p7gkryrk",
+      "name": "Campbell & Co.",
+      "latitude": "40.72576673",
+      "longitude": "-73.94431212",
+      "address_line_1": "209 Nassau Avenue",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_2ne5zqv9",
+      "name": "BROOKLYN STANDARD DELI",
+      "latitude": "40.72536672",
+      "longitude": "-73.94551212",
+      "address_line_1": "188 Nassau Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY ",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_mg2nzqyv",
+      "name": "The Standard",
+      "latitude": "40.72528667",
+      "longitude": "-73.94563121",
+      "address_line_1": "188 Nassau Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_wgqkx9rx",
+      "name": "Wholesome Gourmet Deli",
+      "latitude": "40.72416672",
+      "longitude": "-73.95011212",
+      "address_line_1": "101 Nassau Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vzejxm",
+      "name": "The Ludlow Hotel",
+      "latitude": "40.72186672",
+      "longitude": "-73.98721212",
+      "address_line_1": "180 Ludlow St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10002",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6nrxy",
+      "name": "RACHEL'S GARDEN",
+      "latitude": "40.72426672",
+      "longitude": "-73.94812116",
+      "address_line_1": "116 Nassau Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_nxe82yp5",
+      "name": "Park View Market",
+      "latitude": "40.72354667",
+      "longitude": "-73.95144121",
+      "address_line_1": "95 Bedford Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_8gkzpw96",
+      "name": "MoMA Design Store SOHO",
+      "latitude": "40.72296672",
+      "longitude": "-73.99791212",
+      "address_line_1": "81 Spring St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10012",
+      "country": "USA",
+      "full_address": null,
+      "phone": "646-613-1367",
+      "website": "https://store.moma.org/",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.4,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_z7wreymw",
+      "name": "Walk In Deli Corp",
+      "latitude": "40.72211667",
+      "longitude": "-73.95846121",
+      "address_line_1": "61 N 11th Street",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
       "postal_code": "11249",
       "country": "USA",
       "full_address": null,
@@ -5569,19 +5337,19 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.7,
+      "distance": 5.5,
       "distance_units": "mi"
     },
     {
-      "id": "loc_eq7z8vzv",
-      "name": "Su'juk",
-      "latitude": "40.68686666",
-      "longitude": "-73.96212118",
-      "address_line_1": "216 Greene Ave",
+      "id": "loc_kkwne2wq",
+      "name": "The William Vale",
+      "latitude": "40.72236672",
+      "longitude": "-73.95651212",
+      "address_line_1": "111 N 12th St",
       "address_line_2": "",
       "city": "Brooklyn",
       "state": "NY",
-      "postal_code": "11238",
+      "postal_code": "11249",
       "country": "USA",
       "full_address": null,
       "phone": "",
@@ -5598,19 +5366,135 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.7,
+      "distance": 5.5,
       "distance_units": "mi"
     },
     {
-      "id": "loc_kkwnemgq",
-      "name": "MR. KALE",
-      "latitude": "40.67306664",
+      "id": "loc_7vxjyr8q",
+      "name": "Wythe Hotel",
+      "latitude": "40.72206672",
+      "longitude": "-73.95801212",
+      "address_line_1": "80 Wythe",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11249",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_mg2nz98v",
+      "name": "Wythe Hotel",
+      "latitude": "40.72206672",
+      "longitude": "-73.95801212",
+      "address_line_1": "80 Wythe Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11249",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_v5vze79m",
+      "name": "Spring Mart",
+      "latitude": "40.72139400",
+      "longitude": "-73.99545000",
+      "address_line_1": "202 Mott St",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10012",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.5,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_jzpx276e",
+      "name": "Green Valley Mart Corp",
+      "latitude": "40.72311667",
+      "longitude": "-73.94490121",
+      "address_line_1": "162 Driggs Ave",
+      "address_line_2": "",
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11222",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_kkwnemkq",
+      "name": "Bathhouse",
+      "latitude": "40.72066672",
       "longitude": "-73.95741212",
-      "address_line_1": "744 Franklin Ave",
-      "address_line_2": "",
+      "address_line_1": "103 North 10th Street",
+      "address_line_2": "ground floor",
       "city": "Brooklyn",
       "state": "NY",
-      "postal_code": "11238",
+      "postal_code": "11249",
       "country": "USA",
       "full_address": null,
       "phone": "",
@@ -5627,7 +5511,123 @@
         }
       ],
       "custom_fields": [],
-      "distance": 8.8,
+      "distance": 5.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_5z5jv2vn",
+      "name": "The Goods Mart",
+      "latitude": "40.72076672",
+      "longitude": "-73.99821212",
+      "address_line_1": "189 Lafayette Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10013",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_xgyzrwv6",
+      "name": "Schumacher",
+      "latitude": "40.72066717",
+      "longitude": "-74.00012124",
+      "address_line_1": "459 Broadway",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10013",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_9yk6ngvy",
+      "name": "Happier Grocery",
+      "latitude": "40.72136672",
+      "longitude": "-74.00401212",
+      "address_line_1": "365 Canal Street",
+      "address_line_2": "",
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10013",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.6,
+      "distance_units": "mi"
+    },
+    {
+      "id": "loc_5z5jvwwn",
+      "name": "Park View Market",
+      "latitude": "40.72006672",
+      "longitude": "-73.95461212",
+      "address_line_1": "101 Bedford Ave",
+      "address_line_2": "Ste 1",
+      "city": "Brooklyn",
+      "state": "NY ",
+      "postal_code": "11211",
+      "country": "USA",
+      "full_address": null,
+      "phone": "",
+      "website": "",
+      "email": "",
+      "description": null,
+      "image_url": "",
+      "priority": 0,
+      "filters": [
+        {
+          "id": "flt_zp48ve8p",
+          "name": "Carries BonBon's Candy",
+          "position": 0
+        }
+      ],
+      "custom_fields": [],
+      "distance": 5.6,
       "distance_units": "mi"
     }
   ]

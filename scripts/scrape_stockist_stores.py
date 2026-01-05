@@ -81,10 +81,10 @@ def extract_stockist_user_id(page_source):
 
 def fetch_all_locations_from_api(user_id):
     """
-    Fetch all locations using Stockist's search API with multiple geographic queries.
+    Fetch all locations using Stockist's search API with optimized geographic queries.
 
-    Since Stockist limits results to 100 per query, we query from a dense grid of
-    geographic points to ensure we capture ALL locations, even in dense urban areas.
+    Since Stockist limits results to 100 per query but returns results within 200km radius,
+    we use a sparse grid (~50 points) with 3-4 degree spacing to cover the entire US efficiently.
 
     Args:
         user_id (str): Stockist user ID (e.g., 'u22327')
@@ -92,144 +92,24 @@ def fetch_all_locations_from_api(user_id):
     Returns:
         list: List of store objects, or empty list if request fails
     """
-    print(f"\n→ Fetching all locations for {user_id} using dense grid search strategy...")
-    print("  (This will take longer but ensures complete coverage)")
+    print(f"\n→ Fetching all locations for {user_id} using optimized grid search...")
+    print("  (Using sparse grid with 200km radius queries for fast, complete coverage)")
 
-    # Create a VERY dense grid covering the entire US and territories
-    # US bounds: roughly 24°N to 50°N latitude, -125°W to -66°W longitude
-    # Using 1° spacing (roughly 70 miles) for comprehensive coverage
-    # This creates ~600 grid points for thorough scraping
-
+    # Optimized grid using 3-4 degree spacing (200km radius provides overlap)
+    # This creates ~50 grid points for efficient scraping
     regions = []
 
-    # Continental US grid - 1 degree spacing for high resolution
-    for lat in range(24, 51, 1):  # 24°N to 50°N, every 1 degree
-        for lon in range(-125, -65, 1):  # 125°W to 66°W, every 1 degree
+    # Continental US grid - 3 degree lat, 4 degree lon spacing
+    for lat in range(25, 50, 3):  # 25°N to 49°N, every 3 degrees
+        for lon in range(-123, -68, 4):  # 123°W to 68°W, every 4 degrees
             regions.append({"name": f"Grid_{lat}N_{abs(lon)}W", "lat": lat, "lon": lon})
-
-    # Add specific high-density metro areas with VERY fine grid (0.5° spacing)
-    # This ensures we capture all stores in dense urban areas
-    metro_areas = []
-
-    # NYC metro - 0.5° grid
-    for lat_offset in [-1, -0.5, 0, 0.5, 1]:
-        for lon_offset in [-1, -0.5, 0, 0.5, 1]:
-            metro_areas.append({
-                "name": f"NYC_{lat_offset}_{lon_offset}",
-                "lat": 40.7 + lat_offset,
-                "lon": -74 + lon_offset
-            })
-
-    # LA metro - 0.5° grid
-    for lat_offset in [-1, -0.5, 0, 0.5, 1]:
-        for lon_offset in [-1, -0.5, 0, 0.5, 1]:
-            metro_areas.append({
-                "name": f"LA_{lat_offset}_{lon_offset}",
-                "lat": 34.0 + lat_offset,
-                "lon": -118 + lon_offset
-            })
-
-    # Chicago metro - 0.5° grid
-    for lat_offset in [-1, -0.5, 0, 0.5, 1]:
-        for lon_offset in [-1, -0.5, 0, 0.5, 1]:
-            metro_areas.append({
-                "name": f"Chicago_{lat_offset}_{lon_offset}",
-                "lat": 41.8 + lat_offset,
-                "lon": -87.6 + lon_offset
-            })
-
-    # SF Bay Area - 0.5° grid
-    for lat_offset in [-1, -0.5, 0, 0.5, 1]:
-        for lon_offset in [-1, -0.5, 0, 0.5, 1]:
-            metro_areas.append({
-                "name": f"SF_{lat_offset}_{lon_offset}",
-                "lat": 37.8 + lat_offset,
-                "lon": -122.4 + lon_offset
-            })
-
-    # Additional major metros - single high-density points
-    additional_metros = [
-        # Washington DC/Baltimore
-        {"name": "DC", "lat": 38.9, "lon": -77.0},
-        {"name": "Baltimore", "lat": 39.3, "lon": -76.6},
-
-        # Boston metro
-        {"name": "Boston", "lat": 42.4, "lon": -71.1},
-        {"name": "Boston_N", "lat": 42.8, "lon": -71.1},
-        {"name": "Boston_S", "lat": 42.0, "lon": -71.1},
-
-        # Seattle metro
-        {"name": "Seattle", "lat": 47.6, "lon": -122.3},
-        {"name": "Seattle_N", "lat": 48.0, "lon": -122.3},
-        {"name": "Seattle_S", "lat": 47.2, "lon": -122.3},
-
-        # Miami/South Florida
-        {"name": "Miami", "lat": 25.8, "lon": -80.2},
-        {"name": "FtLauderdale", "lat": 26.1, "lon": -80.1},
-        {"name": "WestPalmBeach", "lat": 26.7, "lon": -80.1},
-
-        # Houston metro
-        {"name": "Houston", "lat": 29.8, "lon": -95.4},
-        {"name": "Houston_N", "lat": 30.2, "lon": -95.4},
-        {"name": "Houston_S", "lat": 29.4, "lon": -95.4},
-
-        # Phoenix metro
-        {"name": "Phoenix", "lat": 33.4, "lon": -112.1},
-        {"name": "Phoenix_N", "lat": 33.8, "lon": -112.1},
-        {"name": "Phoenix_S", "lat": 33.0, "lon": -112.1},
-
-        # Philadelphia
-        {"name": "Philadelphia", "lat": 39.9, "lon": -75.2},
-
-        # San Diego
-        {"name": "SanDiego", "lat": 32.7, "lon": -117.2},
-
-        # Dallas/Fort Worth
-        {"name": "Dallas", "lat": 32.8, "lon": -96.8},
-        {"name": "FortWorth", "lat": 32.8, "lon": -97.3},
-
-        # Austin
-        {"name": "Austin", "lat": 30.3, "lon": -97.7},
-
-        # Denver
-        {"name": "Denver", "lat": 39.7, "lon": -104.9},
-
-        # Portland
-        {"name": "Portland", "lat": 45.5, "lon": -122.7},
-
-        # Las Vegas
-        {"name": "LasVegas", "lat": 36.2, "lon": -115.1},
-
-        # Atlanta
-        {"name": "Atlanta", "lat": 33.7, "lon": -84.4},
-
-        # Minneapolis
-        {"name": "Minneapolis", "lat": 44.9, "lon": -93.3},
-
-        # Detroit
-        {"name": "Detroit", "lat": 42.3, "lon": -83.0},
-
-        # Nashville
-        {"name": "Nashville", "lat": 36.2, "lon": -86.8},
-
-        # New Orleans
-        {"name": "NewOrleans", "lat": 30.0, "lon": -90.1},
-    ]
-
-    metro_areas.extend(additional_metros)
-    regions.extend(metro_areas)
 
     # Add Alaska, Hawaii, and territories
     special_regions = [
         {"name": "Alaska_SE", "lat": 58, "lon": -134},
         {"name": "Alaska_SW", "lat": 61, "lon": -150},
-        {"name": "Alaska_Interior", "lat": 64.5, "lon": -147},
-        {"name": "Alaska_North", "lat": 68, "lon": -156},
         {"name": "Hawaii_Oahu", "lat": 21.5, "lon": -158},
-        {"name": "Hawaii_BigIsland", "lat": 19.5, "lon": -155.5},
-        {"name": "Hawaii_Maui", "lat": 20.8, "lon": -156.3},
         {"name": "Puerto_Rico", "lat": 18.2, "lon": -66.5},
-        {"name": "US_Virgin_Islands", "lat": 18.3, "lon": -64.8},
     ]
 
     regions.extend(special_regions)
@@ -282,8 +162,8 @@ def fetch_all_locations_from_api(user_id):
                 # Progress indicator
                 print(f"  [{idx:3}/{total_regions}] {region['name']:20} - {len(locations):3} stores ({new_stores:3} new) | Total: {len(all_stores):5}")
 
-                # Longer delay to avoid rate limiting (0.5 seconds between successful requests)
-                time.sleep(0.5)
+                # Short delay to avoid rate limiting (0.2 seconds between successful requests)
+                time.sleep(0.2)
                 break  # Success, exit retry loop
 
             except requests.exceptions.RequestException as e:
