@@ -381,10 +381,6 @@
                                     <input type="checkbox" value="twitter" onchange="filterStores()" style="margin-right: 8px;">
                                     Twitter
                                 </label>
-                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
-                                    <input type="checkbox" value="any" onchange="filterStores()" style="margin-right: 8px;">
-                                    Any Social
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -421,17 +417,6 @@
                         Clear All
                     </button>
 
-                    <!-- Columns Visibility Toggle -->
-                    <div style="position: relative; margin-left: 16px; border-left: 1px solid rgba(55, 53, 47, 0.16); padding-left: 16px;">
-                        <button id="columnsFilterButton" onclick="toggleColumnsFilter()" style="min-width: 100px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
-                            <span id="columnsFilterLabel">Columns</span>
-                            <span style="margin-left: 8px;">▼</span>
-                        </button>
-                        <div id="columnsFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 180px; z-index: 1000;">
-                            <div id="columnsCheckboxes" style="padding: 8px;"></div>
-                        </div>
-                    </div>
-
                     <!-- Filtered Results Count -->
                     <span id="filteredResultsCount" style="font-size: 14px; color: rgba(55, 53, 47, 0.65); margin-left: 8px; padding: 6px 0;"></span>
                 </div>
@@ -460,6 +445,14 @@
                             <th data-column="phone"><span class="th-content">Phone<button class="hide-col-btn" onclick="hideColumn('phone')" title="Hide column">×</button></span></th>
                             <th data-column="social"><span class="th-content">Social<button class="hide-col-btn" onclick="hideColumn('social')" title="Hide column">×</button></span></th>
                             <th data-column="scraped"><span class="th-content">Scraped<button class="hide-col-btn" onclick="hideColumn('scraped')" title="Hide column">×</button></span></th>
+                        </tr>
+                        <tr id="hiddenColumnsRow" style="display: none;">
+                            <td colspan="10" style="background-color: rgba(46, 170, 220, 0.08); padding: 4px 8px; border-bottom: 1px solid rgba(55, 53, 47, 0.09);">
+                                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                                    <span style="font-size: 12px; color: rgba(55, 53, 47, 0.65);">Hidden columns:</span>
+                                    <div id="hiddenColumnsTags" style="display: flex; gap: 4px; flex-wrap: wrap;"></div>
+                                </div>
+                            </td>
                         </tr>
                     </thead>
                     <tbody id="storeTableBody">
@@ -700,7 +693,6 @@
 
                 // Populate filter dropdowns
                 populateFilters();
-                populateColumnsFilter();
 
                 renderStores(GROUPED_STORES);
             } catch (error) {
@@ -2029,13 +2021,11 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
-            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             socialDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
-            columnsDropdown.style.display = 'none';
 
             // Toggle location dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -2046,13 +2036,11 @@
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
-            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             socialDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
-            columnsDropdown.style.display = 'none';
 
             // Toggle brand dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -2063,13 +2051,11 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
-            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
-            columnsDropdown.style.display = 'none';
 
             // Toggle social dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -2080,86 +2066,27 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
-            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             socialDropdown.style.display = 'none';
-            columnsDropdown.style.display = 'none';
 
             // Toggle size dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
-        function toggleColumnsFilter() {
-            const dropdown = document.getElementById('columnsFilterDropdown');
-            const brandDropdown = document.getElementById('brandFilterDropdown');
-            const locationDropdown = document.getElementById('locationFilterDropdown');
-            const socialDropdown = document.getElementById('socialFilterDropdown');
-            const sizeDropdown = document.getElementById('sizeFilterDropdown');
-
-            // Close other dropdowns
-            brandDropdown.style.display = 'none';
-            locationDropdown.style.display = 'none';
-            socialDropdown.style.display = 'none';
-            sizeDropdown.style.display = 'none';
-
-            // Toggle columns dropdown
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-        }
-
-        function populateColumnsFilter() {
-            const container = document.getElementById('columnsCheckboxes');
-            container.innerHTML = '';
-
-            TABLE_COLUMNS.forEach(col => {
-                if (!col.hideable) return; // Skip non-hideable columns like Store Name
-
-                const label = document.createElement('label');
-                label.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
-                label.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
-                label.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
-
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.checked = !hiddenColumns.has(col.id);
-                checkbox.dataset.column = col.id;
-                checkbox.style.marginRight = '8px';
-                checkbox.onchange = function() {
-                    toggleColumnVisibility(col.id, this.checked);
-                };
-
-                const text = document.createTextNode(col.label);
-
-                label.appendChild(checkbox);
-                label.appendChild(text);
-                container.appendChild(label);
-            });
-        }
-
         function hideColumn(columnId) {
+            event.stopPropagation();
             hiddenColumns.add(columnId);
             applyColumnVisibility();
-            updateColumnsFilterCheckboxes();
-            updateColumnsLabel();
+            updateHiddenColumnsRow();
         }
 
         function showColumn(columnId) {
             hiddenColumns.delete(columnId);
             applyColumnVisibility();
-            updateColumnsFilterCheckboxes();
-            updateColumnsLabel();
-        }
-
-        function toggleColumnVisibility(columnId, isVisible) {
-            if (isVisible) {
-                hiddenColumns.delete(columnId);
-            } else {
-                hiddenColumns.add(columnId);
-            }
-            applyColumnVisibility();
-            updateColumnsLabel();
+            updateHiddenColumnsRow();
         }
 
         function applyColumnVisibility() {
@@ -2184,22 +2111,32 @@
             });
         }
 
-        function updateColumnsFilterCheckboxes() {
-            document.querySelectorAll('#columnsCheckboxes input[data-column]').forEach(cb => {
-                cb.checked = !hiddenColumns.has(cb.dataset.column);
-            });
-        }
+        function updateHiddenColumnsRow() {
+            const row = document.getElementById('hiddenColumnsRow');
+            const tagsContainer = document.getElementById('hiddenColumnsTags');
 
-        function updateColumnsLabel() {
-            const label = document.getElementById('columnsFilterLabel');
-            const hiddenCount = hiddenColumns.size;
-            if (hiddenCount > 0) {
-                label.textContent = `Columns (${TABLE_COLUMNS.filter(c => c.hideable).length - hiddenCount}/${TABLE_COLUMNS.filter(c => c.hideable).length})`;
-                label.style.fontWeight = '600';
-            } else {
-                label.textContent = 'Columns';
-                label.style.fontWeight = 'normal';
+            if (hiddenColumns.size === 0) {
+                row.style.display = 'none';
+                return;
             }
+
+            row.style.display = '';
+            tagsContainer.innerHTML = '';
+
+            hiddenColumns.forEach(columnId => {
+                const col = TABLE_COLUMNS.find(c => c.id === columnId);
+                if (!col) return;
+
+                const tag = document.createElement('button');
+                tag.style.cssText = 'display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; font-size: 12px; background-color: rgba(46, 170, 220, 0.15); color: rgb(24, 51, 71); border: none; border-radius: 3px; cursor: pointer; transition: background-color 0.15s;';
+                tag.onmouseover = function() { this.style.backgroundColor = 'rgba(46, 170, 220, 0.25)'; };
+                tag.onmouseout = function() { this.style.backgroundColor = 'rgba(46, 170, 220, 0.15)'; };
+                tag.onclick = function() { showColumn(columnId); };
+                tag.title = 'Click to show column';
+                tag.innerHTML = `${col.label} <span style="font-size: 10px;">+</span>`;
+
+                tagsContainer.appendChild(tag);
+            });
         }
 
         // Close dropdowns when clicking outside
@@ -2212,8 +2149,6 @@
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeButton = document.getElementById('sizeFilterButton');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
-            const columnsButton = document.getElementById('columnsFilterButton');
-            const columnsDropdown = document.getElementById('columnsFilterDropdown');
 
             if (!brandButton.contains(event.target) && !brandDropdown.contains(event.target)) {
                 brandDropdown.style.display = 'none';
@@ -2229,10 +2164,6 @@
 
             if (!sizeButton.contains(event.target) && !sizeDropdown.contains(event.target)) {
                 sizeDropdown.style.display = 'none';
-            }
-
-            if (!columnsButton.contains(event.target) && !columnsDropdown.contains(event.target)) {
-                columnsDropdown.style.display = 'none';
             }
         });
 
@@ -2298,7 +2229,6 @@
                         if (social === 'instagram') return !!socialLinks.instagram;
                         if (social === 'facebook') return !!socialLinks.facebook;
                         if (social === 'twitter') return !!socialLinks.twitter;
-                        if (social === 'any') return Object.keys(socialLinks).length > 0;
                         return false;
                     });
                 }
@@ -2435,7 +2365,7 @@
 
             // Add social tags
             selectedSocial.forEach(social => {
-                const label = social === 'any' ? 'Any Social' : social.charAt(0).toUpperCase() + social.slice(1);
+                const label = social.charAt(0).toUpperCase() + social.slice(1);
                 const tag = createFilterTag(label, () => {
                     const checkbox = document.querySelector(`#socialFilterDropdown input[value="${social}"]`);
                     if (checkbox) checkbox.checked = false;
