@@ -148,6 +148,21 @@ def enrich_stores(input_file, output_file='stores_google_enriched.json', limit=N
             enriched_count += 1
             print(f"  ✓ Found on Google Places")
 
+            # Extract and add lat/lng to top-level store object
+            location = google_data.get('location', {})
+            if location.get('latitude') and location.get('longitude'):
+                store['lat'] = location['latitude']
+                store['lng'] = location['longitude']
+                store['location'] = {
+                    'latitude': location['latitude'],
+                    'longitude': location['longitude']
+                }
+                print(f"    Coordinates: ({location['latitude']:.6f}, {location['longitude']:.6f})")
+
+            # Add formatted address to top level
+            if google_data.get('formattedAddress'):
+                store['formattedAddress'] = google_data['formattedAddress']
+
             # Log key data found
             if google_data.get('websiteUri'):
                 print(f"    Website: {google_data['websiteUri']}")

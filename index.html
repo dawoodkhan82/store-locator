@@ -519,6 +519,11 @@
                     </button>
                 </div>
             </div>
+            <!-- Map Title -->
+            <div id="mapTitle" style="position: absolute; bottom: 16px; left: 16px; z-index: 1000; background: white; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 8px 12px;">
+                <span style="font-size: 13px; font-weight: 500; color: rgb(55, 53, 47);">Enriched store locations</span>
+                <span id="mapStoreCount" style="font-size: 13px; color: rgba(55, 53, 47, 0.65); margin-left: 6px;"></span>
+            </div>
             <div id="leafletMapContainer" style="width: 100%; height: 100%;"></div>
         </div>
     </div>
@@ -740,19 +745,30 @@
         function loadMap() {
             const mapView = document.getElementById('mapView');
 
-            // Get ALL stores with valid coordinates (not limited to 500)
+            // Get ALL stores with valid coordinates - expand locations array to show all individual markers
             const storesWithCoords = filteredStores
-                .map(store => {
-                    const lat = store.location?.latitude || store.lat;
-                    const lng = store.location?.longitude || store.lng;
-                    const name = store.displayName?.text || store.name || 'Store';
-                    const address = store.formattedAddress || store.address_line_1 || '';
-                    if (lat && lng) {
-                        return { lat, lng, name, address };
-                    }
-                    return null;
+                .flatMap(store => {
+                    // Expand locations array to show all individual location markers
+                    const locations = store.locations || [store];
+                    return locations.map(loc => {
+                        const lat = parseFloat(loc.location?.latitude || loc.lat);
+                        const lng = parseFloat(loc.location?.longitude || loc.lng);
+                        const name = loc.displayName?.text || loc.name || store.name || 'Store';
+                        const address = loc.formattedAddress || loc.address_line_1 || '';
+                        // Filter to USA bounds: lat 15-72 (includes Hawaii & Alaska), lng must be negative (Americas)
+                        if (lat && lng && !isNaN(lat) && !isNaN(lng) && lng < 0 && lat > 15 && lat < 72) {
+                            return { lat, lng, name, address };
+                        }
+                        return null;
+                    });
                 })
                 .filter(store => store !== null);
+
+            // Update map title with store count
+            const mapCountEl = document.getElementById('mapStoreCount');
+            if (mapCountEl) {
+                mapCountEl.textContent = `(${storesWithCoords.length.toLocaleString()} locations)`;
+            }
 
             if (storesWithCoords.length === 0) {
                 mapView.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: rgba(55, 53, 47, 0.65); font-size: 14px;">No stores with coordinates found</div>';

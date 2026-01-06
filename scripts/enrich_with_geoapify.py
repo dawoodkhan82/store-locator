@@ -193,6 +193,19 @@ def enrich_stores(input_file, output_file='stores_geoapify_enriched.json', limit
             # Log key data found
             geocoding = geoapify_data.get('geocoding', {})
             place_details = geoapify_data.get('place_details', {})
+            geometry = geoapify_data.get('geometry', {})
+            
+            # Extract and add lat/lng to top-level store object
+            # GeoJSON format: coordinates = [longitude, latitude]
+            coords = geometry.get('coordinates', [])
+            if coords and len(coords) >= 2:
+                store['lng'] = coords[0]
+                store['lat'] = coords[1]
+                store['location'] = {
+                    'latitude': coords[1],
+                    'longitude': coords[0]
+                }
+                print(f"    Coordinates: ({coords[1]:.6f}, {coords[0]:.6f})")
             
             # Check for website
             website = geocoding.get('website') or (place_details.get('properties', {}).get('website') if place_details else None)
@@ -207,6 +220,7 @@ def enrich_stores(input_file, output_file='stores_geoapify_enriched.json', limit
             # Check for address
             formatted_address = geocoding.get('formatted')
             if formatted_address:
+                store['formattedAddress'] = formatted_address
                 print(f"    Address: {formatted_address}")
 
         else:

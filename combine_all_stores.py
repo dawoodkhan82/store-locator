@@ -83,6 +83,54 @@ def detect_enrichment_sources(store, filename):
     return sources
 
 
+def extract_coordinates(store):
+    """
+    Extract latitude and longitude from store data, including enrichment sources.
+
+    Returns tuple of (latitude, longitude) or (None, None) if not found.
+    """
+    lat = None
+    lng = None
+
+    # Check existing top-level coordinates
+    if store.get('lat') and store.get('lng'):
+        try:
+            return float(store['lat']), float(store['lng'])
+        except (ValueError, TypeError):
+            pass
+
+    if store.get('location'):
+        loc = store['location']
+        if loc.get('latitude') and loc.get('longitude'):
+            try:
+                return float(loc['latitude']), float(loc['longitude'])
+            except (ValueError, TypeError):
+                pass
+
+    # Extract from Geoapify enrichment (GeoJSON format: [lng, lat])
+    geoapify = store.get('geoapify', {})
+    geometry = geoapify.get('geometry', {})
+    coords = geometry.get('coordinates', [])
+    if coords and len(coords) >= 2:
+        try:
+            lng = float(coords[0])
+            lat = float(coords[1])
+            return lat, lng
+        except (ValueError, TypeError):
+            pass
+
+    # Extract from Google Places enrichment
+    google_places = store.get('google_places', {})
+    location = google_places.get('location', {})
+    if location.get('latitude') and location.get('longitude'):
+        try:
+            return float(location['latitude']), float(location['longitude'])
+        except (ValueError, TypeError):
+            pass
+
+    return None, None
+
+
 def extract_country_state(store):
     """
     Extract country and state from store data.
@@ -155,6 +203,16 @@ def is_usa_store(store):
     Returns:
         bool: True if store is in USA, False otherwise
     """
+    # First, check coordinates to filter out stores with bad country data
+    # (e.g., stores labeled "United States" but actually in Asia)
+    lat, lng = extract_coordinates(store)
+    if lat is not None and lng is not None:
+        # USA bounds: longitude must be negative (Americas), latitude 15-72 (includes AK, HI, PR)
+        if lng > 0:  # Positive longitude = Eastern hemisphere (Asia, Europe, Africa)
+            return False
+        if lat < 15 or lat > 72:  # Outside USA latitude range
+            return False
+
     country = store.get('country')
 
     # Check if country is explicitly United States
@@ -209,6 +267,17 @@ def extract_stores(data, source_file):
         # Detect and add enrichment sources
         enrichment_sources = detect_enrichment_sources(store, source_file)
         store['data_enriched'] = enrichment_sources
+
+        # Extract coordinates from enrichment data if not already present
+        if not store.get('lat') or not store.get('lng'):
+            lat, lng = extract_coordinates(store)
+            if lat and lng:
+                store['lat'] = lat
+                store['lng'] = lng
+                store['location'] = {
+                    'latitude': lat,
+                    'longitude': lng
+                }
 
         # Extract and add country/state
         country, state_code = extract_country_state(store)
