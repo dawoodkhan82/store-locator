@@ -18,6 +18,8 @@ Output: all_stores/combined/combined.json
 
 import json
 import os
+import csv
+import re
 from pathlib import Path
 from datetime import datetime
 
@@ -27,6 +29,9 @@ PLACES_ENRICHED_DIR = Path('all_stores/places_enriched')
 RAW_DIR = Path('all_stores/raw')
 OUTPUT_DIR = Path('all_stores/combined')
 OUTPUT_FILE = OUTPUT_DIR / 'combined.json'
+
+# Wholesale CRM CSV file
+WHOLESALE_CRM_CSV = Path('Wholesale_CRM_1f5fc65a08aa80e6ac25db4424caaa0a_all.csv')
 
 
 def get_brand_name(filename):
@@ -129,6 +134,154 @@ def extract_coordinates(store):
             pass
 
     return None, None
+
+
+def load_wholesale_crm_csv(csv_path):
+    """
+    Load wholesale CRM data from CSV file.
+    
+    Extracts only: Shop Name, Address, IG Link
+    
+    Args:
+        csv_path: Path to the CSV file
+        
+    Returns:
+        List of store dictionaries with name, address, and instagram fields
+    """
+    stores = []
+    
+    if not csv_path.exists():
+        print(f"  ⚠ CSV file not found: {csv_path}")
+        return stores
+    
+    try:
+        with open(csv_path, 'r', encoding='utf-8-sig') as f:  # utf-8-sig handles BOM
+            reader = csv.DictReader(f)
+            for row in reader:
+                shop_name = row.get('Shop Name', '').strip()
+                address = row.get('Address', '').strip()
+                ig_link = row.get('IG Link', '').strip()
+                
+                # Skip rows without a shop name
+                if not shop_name:
+                    continue
+                
+                store = {
+                    'name': shop_name,
+                    'source': 'wholesale_crm',
+                    'brand': 'wholesale_crm',
+                    'data_enriched': []
+                }
+                
+                # Add address if present
+                if address:
+                    store['address_line_1'] = address
+                    store['formattedAddress'] = address
+                
+                # Add Instagram link if present
+                if ig_link:
+                    store['enrichment'] = {
+                        'socialLinks': {
+                            'instagram': ig_link
+                        }
+                    }
+                
+                stores.append(store)
+                
+    except Exception as e:
+        print(f"  ✗ Error loading CSV: {e}")
+    
+    return stores
+
+
+def normalize_store_name_for_matching(name):
+    """
+    Normalize store name for fuzzy matching.
+    
+    - Lowercase
+    - Remove punctuation
+    - Remove common suffixes (LLC, Inc, Co, etc.)
+    - Collapse whitespace
+    """
+    if not name:
+        return ""
+    
+    normalized = name.lower().strip()
+    
+    # Remove common business suffixes
+    suffixes = [' llc', ' inc', ' co', ' corp', ' ltd', ' company', ' store', ' market', ' shop']
+    for suffix in suffixes:
+        if normalized.endswith(suffix):
+            normalized = normalized[:-len(suffix)]
+    
+    # Remove punctuation
+    normalized = re.sub(r'[^\w\s]', '', normalized)
+    
+    # Collapse whitespace
+    normalized = ' '.join(normalized.split())
+    
+    return normalized
+
+
+def find_matching_store(crm_store, store_map, name_index):
+    """
+    Find a matching store in the store_map for a CRM store.
+    
+    Uses normalized name matching to find existing stores.
+    
+    Args:
+        crm_store: Store dictionary from CRM CSV
+        store_map: Dictionary of existing stores (key -> store)
+        name_index: Dictionary mapping normalized names to store keys
+        
+    Returns:
+        Matching store key if found, None otherwise
+    """
+    crm_name = crm_store.get('name', '')
+    normalized_crm_name = normalize_store_name_for_matching(crm_name)
+    
+    if not normalized_crm_name:
+        return None
+    
+    # Check for exact normalized name match
+    if normalized_crm_name in name_index:
+        return name_index[normalized_crm_name]
+    
+    # Check for partial matches (CRM name contains existing store name or vice versa)
+    for existing_name, store_key in name_index.items():
+        if existing_name in normalized_crm_name or normalized_crm_name in existing_name:
+            # Only match if significant overlap (at least 5 chars)
+            if len(existing_name) >= 5 or len(normalized_crm_name) >= 5:
+                return store_key
+    
+    return None
+
+
+def build_name_index(store_map):
+    """
+    Build an index of normalized store names to store keys for fast matching.
+    
+    Args:
+        store_map: Dictionary of stores (key -> store)
+        
+    Returns:
+        Dictionary mapping normalized names to store keys
+    """
+    name_index = {}
+    
+    for key, store in store_map.items():
+        # Get store name from various fields
+        name = (
+            store.get('name') or 
+            store.get('displayName', {}).get('text') or 
+            ''
+        )
+        
+        normalized = normalize_store_name_for_matching(name)
+        if normalized and normalized not in name_index:
+            name_index[normalized] = key
+    
+    return name_index
 
 
 def extract_country_state(store):
@@ -555,6 +708,72 @@ def main():
 
     print(f"\n✓ Raw: {stats['raw']} stores")
 
+    # Process Wholesale CRM CSV (add Instagram links and new stores)
+    print("\n3.5. Processing Wholesale CRM data...")
+    print("-" * 80)
+
+    if WHOLESALE_CRM_CSV.exists():
+        print(f"\nLoading: {WHOLESALE_CRM_CSV}")
+        crm_stores = load_wholesale_crm_csv(WHOLESALE_CRM_CSV)
+        print(f"  → {len(crm_stores)} stores from CSV")
+
+        # Build name index for matching
+        name_index = build_name_index(store_map)
+
+        crm_matched = 0
+        crm_added = 0
+        crm_ig_added = 0
+
+        for crm_store in crm_stores:
+            # Try to find matching store
+            matching_key = find_matching_store(crm_store, store_map, name_index)
+
+            if matching_key:
+                # Merge Instagram link into existing store
+                existing_store = store_map[matching_key]
+
+                # Add Instagram link if CRM has one and existing store doesn't
+                crm_ig = crm_store.get('enrichment', {}).get('socialLinks', {}).get('instagram')
+                if crm_ig:
+                    if 'enrichment' not in existing_store:
+                        existing_store['enrichment'] = {}
+                    if 'socialLinks' not in existing_store['enrichment']:
+                        existing_store['enrichment']['socialLinks'] = {}
+                    
+                    # Only add if existing store doesn't have Instagram
+                    if not existing_store['enrichment']['socialLinks'].get('instagram'):
+                        existing_store['enrichment']['socialLinks']['instagram'] = crm_ig
+                        crm_ig_added += 1
+
+                crm_matched += 1
+            else:
+                # Add as new store
+                key = get_store_key(crm_store)
+                if key not in store_map:
+                    store_map[key] = crm_store
+                    crm_added += 1
+                    
+                    # Update name index
+                    normalized = normalize_store_name_for_matching(crm_store.get('name', ''))
+                    if normalized:
+                        name_index[normalized] = key
+
+        stats['crm_total'] = len(crm_stores)
+        stats['crm_matched'] = crm_matched
+        stats['crm_added'] = crm_added
+        stats['crm_ig_added'] = crm_ig_added
+
+        print(f"\n✓ CRM Processing complete:")
+        print(f"  - Matched to existing stores: {crm_matched}")
+        print(f"  - Instagram links added: {crm_ig_added}")
+        print(f"  - New stores added: {crm_added}")
+    else:
+        print(f"  ⚠ CSV file not found: {WHOLESALE_CRM_CSV}")
+        stats['crm_total'] = 0
+        stats['crm_matched'] = 0
+        stats['crm_added'] = 0
+        stats['crm_ig_added'] = 0
+
     # Convert map to list
     all_stores_unfiltered = list(store_map.values())
 
@@ -636,6 +855,11 @@ def main():
     print(f"Non-USA stores filtered:     {stats['non_usa_filtered']:,}")
     print(f"{'─'*80}")
     print(f"Final USA stores:            {stats['unique_locations']:,}")
+    print(f"\nWholesale CRM integration:")
+    print(f"  - CSV stores processed:    {stats.get('crm_total', 0):,}")
+    print(f"  - Matched existing stores: {stats.get('crm_matched', 0):,}")
+    print(f"  - Instagram links added:   {stats.get('crm_ig_added', 0):,}")
+    print(f"  - New stores added:        {stats.get('crm_added', 0):,}")
     print(f"\nEnrichment breakdown:")
     print(f"  - Geoapify:      {enrichment_counts['geoapify']:,} stores")
     print(f"  - Google Places: {enrichment_counts['google_places']:,} stores")
