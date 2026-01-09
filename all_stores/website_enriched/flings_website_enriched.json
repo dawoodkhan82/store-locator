@@ -1,0 +1,1503 @@
+{
+  "source_file": "all_stores/raw/flings.json",
+  "enriched_at": "2026-01-06T00:06:33.187852",
+  "total_stores": 8,
+  "enriched_count": 8,
+  "not_found_count": 0,
+  "stores": [
+    {
+      "id": 44940015,
+      "name": "Parker & Scott",
+      "latitude": "30.35478101",
+      "longitude": "-97.72883000",
+      "address_line_1": "2113 W Anderson Ln. Suite B",
+      "address_line_2": null,
+      "city": "Austin",
+      "state": "TX",
+      "postal_code": "78757",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 88,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Shipley Do-Nuts",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Texas",
+          "county": "Travis County",
+          "city": "Austin",
+          "postcode": "78757",
+          "district": "Wooten",
+          "street": "West Anderson Lane",
+          "housenumber": "2113",
+          "iso3166_2": "US-TX",
+          "lon": -97.728766,
+          "lat": 30.3548047,
+          "state_code": "TX",
+          "result_type": "amenity",
+          "formatted": "Shipley Do-Nuts, 2113 West Anderson Lane, Austin, TX 78757, United States of America",
+          "address_line1": "Shipley Do-Nuts",
+          "address_line2": "2113 West Anderson Lane, Austin, TX 78757, United States of America",
+          "category": "catering.fast_food",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "8624973C+WF",
+          "plus_code_short": "973C+WF, 78757 Austin, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 5.02532463949153,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51f31b261aa46e58c05993f7167bd45a3e40f00103f901063a8e9c00000000c0020192030f536869706c657920446f2d4e757473"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.728766,
+            30.3548047
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Shipley Do-Nuts",
+                "categories": [
+                  "catering",
+                  "catering.fast_food"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Shipley Do-Nuts",
+                    "osm_id": 2626566662,
+                    "amenity": "fast_food",
+                    "osm_type": "n"
+                  }
+                },
+                "housenumber": "2113",
+                "street": "West Anderson Lane",
+                "city": "Austin",
+                "county": "Travis County",
+                "state": "Texas",
+                "postcode": "78757",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Shipley Do-Nuts, 2113 West Anderson Lane, Austin, TX 78757, United States of America",
+                "address_line1": "Shipley Do-Nuts",
+                "address_line2": "2113 West Anderson Lane, Austin, TX 78757, United States of America",
+                "lat": 30.3548047,
+                "lon": -97.728766,
+                "iso3166_2": "US-TX",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "place_id": "51f31b261aa46e58c059ecb7157bd45a3e40f00103f901063a8e9c0000000092030f536869706c657920446f2d4e757473"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -97.728766,
+                  30.3548047
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 81774245,
+      "name": "Fairway Market",
+      "latitude": "40.78086682",
+      "longitude": "-73.98171212",
+      "address_line_1": "2131 Broadway",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10023",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 1.4,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Fairway Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10023",
+          "district": "Manhattan",
+          "neighbourhood": "Manhattan Community Board 7",
+          "street": "Broadway",
+          "housenumber": "2131",
+          "iso3166_2": "US-NY",
+          "lon": -73.9817611,
+          "lat": 40.780745,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Fairway Market, 2131 Broadway, New York, NY 10023, United States of America",
+          "address_line1": "Fairway Market",
+          "address_line2": "2131 Broadway, New York, NY 10023, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8Q2J9+77",
+          "plus_code_short": "Q2J9+77 New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.808309199996219,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "510a3f822cd57e52c059fdc1c073ef634440f00103f901a9d9483c00000000c0020192030e46616972776179204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.9817611,
+            40.780745
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.fairwaymarket.com/",
+                "opening_hours": "Mo-Su 06:00-01:00",
+                "brand_details": {
+                  "wikidata": "Q5430910",
+                  "wikipedia": "en:Fairway Market"
+                },
+                "branch": "Upper West Side",
+                "name": "Fairway Market",
+                "contact": {
+                  "phone": "+1-212-595-1888"
+                },
+                "facilities": {
+                  "wheelchair": true,
+                  "wheelchair_details": {
+                    "description": "bathroom is upstairs but there is an elevator."
+                  },
+                  "toilets": true
+                },
+                "commercial": {
+                  "type": "supermarket"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.supermarket",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Fairway Market",
+                    "shop": "supermarket",
+                    "phone": "+1-212-595-1888",
+                    "branch": "Upper West Side",
+                    "osm_id": 1011407273,
+                    "website": "https://www.fairwaymarket.com/",
+                    "osm_type": "n",
+                    "addr:city": "New York",
+                    "addr:state": "NY",
+                    "wheelchair": "yes",
+                    "addr:street": "Broadway",
+                    "addr:country": "US",
+                    "addr:postcode": 10023,
+                    "opening_hours": "Mo-Su 06:00-01:00",
+                    "brand:wikidata": "Q5430910",
+                    "brand:wikipedia": "en:Fairway Market",
+                    "addr:housenumber": 2131,
+                    "toilets:wheelchair": "yes",
+                    "wheelchair:description": "bathroom is upstairs but there is an elevator."
+                  }
+                },
+                "housenumber": "2131",
+                "street": "Broadway",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10023",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Fairway Market, 2131 Broadway, New York, NY 10023, United States of America",
+                "address_line1": "Fairway Market",
+                "address_line2": "2131 Broadway, New York, NY 10023, United States of America",
+                "lat": 40.780745,
+                "lon": -73.9817611,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "510a3f822cd57e52c059b48bc173ef634440f00103f901a9d9483c0000000092030e46616972776179204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.9817611,
+                  40.780745
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "enrichment": {
+        "productCategories": [
+          "Baby",
+          "Beauty & Personal Care",
+          "Beverages",
+          "Dairy",
+          "Frozen Foods",
+          "Produce",
+          "Snacks",
+          "Meat",
+          "Household Essentials",
+          "Health & Wellness"
+        ],
+        "aboutText": "Fairway Market offers a diverse selection of high-quality products, focusing on fresh produce and unique grocery items that cater to all dietary needs.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "prepared foods"
+        ],
+        "socialLinks": {}
+      }
+    },
+    {
+      "id": 81774242,
+      "name": "Gourmet Garage",
+      "latitude": "40.77456680",
+      "longitude": "-73.98311212",
+      "address_line_1": "155 West 66th Street",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10023",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 1.8,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "The Phillips Club",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10023",
+          "district": "Manhattan",
+          "neighbourhood": "Manhattan Community Board 7",
+          "street": "West 66th Street",
+          "housenumber": "155",
+          "iso3166_2": "US-NY",
+          "lon": -73.98313909314717,
+          "lat": 40.774525999999994,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "The Phillips Club, 155 West 66th Street, New York, NY 10023, United States of America",
+          "address_line1": "The Phillips Club",
+          "address_line2": "155 West 66th Street, New York, NY 10023, United States of America",
+          "category": "accommodation.hotel",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8Q2F8+RP",
+          "plus_code_short": "Q2F8+RP New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.913495250094256,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "511e1f3bc0eb7e52c0596af3ffaa23634440f00102f90127080c1000000000c00201920311546865205068696c6c69707320436c7562"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.98313909314717,
+            40.774525999999994
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://phillipsclub.com/",
+                "name": "The Phillips Club",
+                "contact": {
+                  "phone": "+1-212-835-8800"
+                },
+                "facilities": {
+                  "internet_access": true,
+                  "air_conditioning": true
+                },
+                "building": {
+                  "type": "hotel",
+                  "height": 29.9
+                },
+                "categories": [
+                  "accommodation",
+                  "accommodation.hotel",
+                  "building",
+                  "building.accommodation",
+                  "internet_access"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "The Phillips Club",
+                    "phone": "+1-212-835-8800",
+                    "height": 29.9,
+                    "osm_id": 269223975,
+                    "tourism": "hotel",
+                    "website": "https://phillipsclub.com/",
+                    "building": "hotel",
+                    "osm_type": "w",
+                    "addr:city": "New York",
+                    "addr:state": "NY",
+                    "addr:street": "West 66th Street",
+                    "addr:postcode": 10023,
+                    "contact:twitter": "thephillipsclub",
+                    "internet_access": "wlan",
+                    "addr:housenumber": 155,
+                    "air_conditioning": "yes",
+                    "contact:facebook": "ThePhillipsClub",
+                    "contact:instagram": "thephillipsclub"
+                  }
+                },
+                "housenumber": "155",
+                "street": "West 66th Street",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10023",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "The Phillips Club, 155 West 66th Street, New York, NY 10023, United States of America",
+                "address_line1": "The Phillips Club",
+                "address_line2": "155 West 66th Street, New York, NY 10023, United States of America",
+                "lat": 40.774525999999994,
+                "lon": -73.98313909314717,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "511e1f3bc0eb7e52c059babc00ab23634440f00102f90127080c1000000000920311546865205068696c6c69707320436c7562"
+              },
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -73.9835136,
+                      40.7745397
+                    ],
+                    [
+                      -73.9832969,
+                      40.7744485
+                    ],
+                    [
+                      -73.983312,
+                      40.7744278
+                    ],
+                    [
+                      -73.9830819,
+                      40.774331
+                    ],
+                    [
+                      -73.9830715,
+                      40.7743452
+                    ],
+                    [
+                      -73.983013,
+                      40.7743206
+                    ],
+                    [
+                      -73.9830234,
+                      40.7743063
+                    ],
+                    [
+                      -73.98294,
+                      40.7742712
+                    ],
+                    [
+                      -73.9828355,
+                      40.7744154
+                    ],
+                    [
+                      -73.982774,
+                      40.7744991
+                    ],
+                    [
+                      -73.9827646,
+                      40.7745123
+                    ],
+                    [
+                      -73.9830736,
+                      40.7746424
+                    ],
+                    [
+                      -73.9833531,
+                      40.77476
+                    ],
+                    [
+                      -73.9835136,
+                      40.7745397
+                    ]
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "enrichment": {
+        "productCategories": [
+          "Extended Stay Apartments",
+          "Short Stay Apartments",
+          "Fractional Residences"
+        ],
+        "aboutText": "The Phillips Club offers a unique blend of luxury and flexibility in the heart of New York, providing elegantly designed residences with personalized services.",
+        "specialties": [
+          "luxury",
+          "flexibility",
+          "personalized services"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/thephillipsclub",
+          "facebook": "https://www.facebook.com/ThePhillipsClub",
+          "twitter": "",
+          "tiktok": ""
+        }
+      }
+    },
+    {
+      "id": 81774248,
+      "name": "Fairway Market",
+      "latitude": "40.77796681",
+      "longitude": "-73.95261212",
+      "address_line_1": "240 E. 86th Street",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10028",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 2,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Fairway Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10028",
+          "district": "Manhattan",
+          "neighbourhood": "Carnegie Hill",
+          "street": "East 86th Street",
+          "housenumber": "240",
+          "iso3166_2": "US-NY",
+          "lon": -73.9524939,
+          "lat": 40.7779915,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Fairway Market, 240 East 86th Street, New York, NY 10028, United States of America",
+          "address_line1": "Fairway Market",
+          "address_line2": "240 East 86th Street, New York, NY 10028, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8Q2HX+52",
+          "plus_code_short": "Q2HX+52 New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.985271593422229,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51ed88f9a8f57c52c0597288b83995634440f00103f90144861c0203000000c0020192030e46616972776179204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.9524939,
+            40.7779915
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.fairwaymarket.com/sm/planning/rsid/4000/store",
+                "opening_hours": "Mo-Su 07:00-24:00; Dec 25 off",
+                "branch": "Upper East Side",
+                "name": "Fairway Market",
+                "contact": {
+                  "phone": "+1-718-569-4511"
+                },
+                "facilities": {
+                  "wheelchair": true
+                },
+                "commercial": {
+                  "type": "supermarket"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.supermarket",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Fairway Market",
+                    "shop": "supermarket",
+                    "phone": "+1-718-569-4511",
+                    "branch": "Upper East Side",
+                    "osm_id": 12920325700,
+                    "website": "https://www.fairwaymarket.com/sm/planning/rsid/4000/store",
+                    "osm_type": "n",
+                    "wheelchair": "yes",
+                    "addr:street": "East 86th Street",
+                    "addr:postcode": 10028,
+                    "opening_hours": "Mo-Su 07:00-24:00; Dec 25 off",
+                    "addr:housenumber": 240
+                  }
+                },
+                "housenumber": "240",
+                "street": "East 86th Street",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10028",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Fairway Market, 240 East 86th Street, New York, NY 10028, United States of America",
+                "address_line1": "Fairway Market",
+                "address_line2": "240 East 86th Street, New York, NY 10028, United States of America",
+                "lat": 40.7779915,
+                "lon": -73.9524939,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51ec88f9a8f57c52c059fb51b93995634440f00103f90144861c020300000092030e46616972776179204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.9524939,
+                  40.7779915
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "enrichment": {
+        "productCategories": [
+          "Baby",
+          "Beauty & Personal Care",
+          "Beverages",
+          "Dairy",
+          "Frozen Foods",
+          "Produce",
+          "Snacks",
+          "Meat",
+          "Household Essentials",
+          "Canned & Packaged Foods"
+        ],
+        "aboutText": "Fairway Market offers a diverse selection of high-quality products, focusing on fresh produce and specialty items that cater to various dietary needs.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "prepared foods"
+        ],
+        "socialLinks": {}
+      }
+    },
+    {
+      "id": 81774246,
+      "name": "Fairway Market",
+      "latitude": "40.74445500",
+      "longitude": "-73.99155000",
+      "address_line_1": "766 6th Avenue",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10010",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 3.9,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Fairway Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10010",
+          "district": "Manhattan",
+          "neighbourhood": "NoMad",
+          "street": "6th Avenue",
+          "housenumber": "766",
+          "iso3166_2": "US-NY",
+          "lon": -73.9914762,
+          "lat": 40.7443827,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Fairway Market, 766 6th Avenue, New York, NY 10010, United States of America",
+          "address_line1": "Fairway Market",
+          "address_line2": "766 6th Avenue, New York, NY 10010, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8P2V5+QC",
+          "plus_code_short": "P2V5+QC New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 8.615793062435909,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51ca709758747f52c059a61aacee475f4440f00103f901d618429c00000000c0020192030e46616972776179204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.9914762,
+            40.7443827
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://fairwaymarket.com/",
+                "opening_hours": "Mo-Su 07:00-21:00",
+                "operator": "Fairway",
+                "branch": "Chelsea",
+                "name": "Fairway Market",
+                "contact": {
+                  "phone": "+1 646-676-4550"
+                },
+                "facilities": {
+                  "wheelchair": true
+                },
+                "commercial": {
+                  "type": "supermarket"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.supermarket",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Fairway Market",
+                    "shop": "supermarket",
+                    "phone": "+1 646-676-4550",
+                    "branch": "Chelsea",
+                    "osm_id": 2621577430,
+                    "website": "https://fairwaymarket.com/",
+                    "operator": "Fairway",
+                    "osm_type": "n",
+                    "addr:city": "New York",
+                    "addr:state": "NY",
+                    "wheelchair": "yes",
+                    "addr:street": "6th Avenue",
+                    "addr:postcode": 10010,
+                    "opening_hours": "Mo-Su 07:00-21:00",
+                    "addr:housenumber": 766
+                  }
+                },
+                "housenumber": "766",
+                "street": "6th Avenue",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10010",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Fairway Market, 766 6th Avenue, New York, NY 10010, United States of America",
+                "address_line1": "Fairway Market",
+                "address_line2": "766 6th Avenue, New York, NY 10010, United States of America",
+                "lat": 40.7443827,
+                "lon": -73.9914762,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51c9709758747f52c059ffe1acee475f4440f00103f901d618429c0000000092030e46616972776179204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.9914762,
+                  40.7443827
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "enrichment": {
+        "productCategories": [
+          "Baby",
+          "Beauty & Personal Care",
+          "Beverages",
+          "Dairy",
+          "Frozen Foods",
+          "Produce",
+          "Snacks",
+          "Meat",
+          "Bakery",
+          "Household Essentials"
+        ],
+        "aboutText": "Fairway Market offers a diverse selection of high-quality products, focusing on fresh and unique items that cater to the needs of the community.",
+        "specialties": [
+          "organic",
+          "local",
+          "gourmet",
+          "prepared foods"
+        ],
+        "socialLinks": {}
+      }
+    },
+    {
+      "id": 81774247,
+      "name": "Fairway Market",
+      "latitude": "40.74254000",
+      "longitude": "-73.97712300",
+      "address_line_1": "550 2nd Avenue",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10016",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 4,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Fairway Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10016",
+          "district": "Manhattan",
+          "neighbourhood": "Kips Bay",
+          "street": "2nd Avenue",
+          "housenumber": "550",
+          "iso3166_2": "US-NY",
+          "lon": -73.977245,
+          "lat": 40.7423053,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Fairway Market, 550 2nd Avenue, New York, NY 10016, United States of America",
+          "address_line1": "Fairway Market",
+          "address_line2": "550 2nd Avenue, New York, NY 10016, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8P2RF+W4",
+          "plus_code_short": "P2RF+W4 New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.993698374061562,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "517dcb9c2e8b7e52c059e0922ddc035f4440f00103f90115bf08e100000000c0020192030e46616972776179204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.977245,
+            40.7423053
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.fairwaymarket.com",
+                "opening_hours": "Mo-Su 07:00-22:00",
+                "branch": "Kips Bay",
+                "name": "Fairway Market",
+                "contact": {
+                  "phone": "+1 718-569-4522"
+                },
+                "commercial": {
+                  "type": "supermarket"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.supermarket"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Fairway Market",
+                    "shop": "supermarket",
+                    "phone": "+1 718-569-4522",
+                    "branch": "Kips Bay",
+                    "osm_id": 3775446805,
+                    "website": "https://www.fairwaymarket.com",
+                    "osm_type": "n",
+                    "addr:street": "2nd Avenue",
+                    "addr:postcode": 10016,
+                    "opening_hours": "Mo-Su 07:00-22:00",
+                    "addr:housenumber": 550
+                  }
+                },
+                "housenumber": "550",
+                "street": "2nd Avenue",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10016",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Fairway Market, 550 2nd Avenue, New York, NY 10016, United States of America",
+                "address_line1": "Fairway Market",
+                "address_line2": "550 2nd Avenue, New York, NY 10016, United States of America",
+                "lat": 40.7423053,
+                "lon": -73.977245,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "517dcb9c2e8b7e52c059155a2edc035f4440f00103f90115bf08e10000000092030e46616972776179204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977245,
+                  40.7423053
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "enrichment": {
+        "productCategories": [
+          "Baby",
+          "Beauty & Personal Care",
+          "Beverages",
+          "Dairy",
+          "Frozen Foods",
+          "Produce",
+          "Snacks",
+          "Meat",
+          "Household Essentials",
+          "Canned & Packaged Foods"
+        ],
+        "aboutText": "Fairway Market offers a diverse selection of high-quality products, focusing on fresh and unique items that cater to the needs of the community.",
+        "specialties": [
+          "organic",
+          "local",
+          "sustainable",
+          "prepared foods"
+        ],
+        "socialLinks": {}
+      }
+    },
+    {
+      "id": 81774244,
+      "name": "Gourmet Garage",
+      "latitude": "40.73676100",
+      "longitude": "-74.00598900",
+      "address_line_1": "585 Hudson Street",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10014",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 4.6,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10014",
+          "district": "Manhattan",
+          "suburb": "West Village",
+          "street": "Hudson Street",
+          "housenumber": "585",
+          "iso3166_2": "US-NY",
+          "lon": -74.005935,
+          "lat": 40.737028,
+          "state_code": "NY",
+          "result_type": "building",
+          "formatted": "585 Hudson Street, New York, NY 10014, United States of America",
+          "address_line1": "585 Hudson Street",
+          "address_line2": "New York, NY 10014, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G7PXPV+RJ",
+          "plus_code_short": "PXPV+RJ New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 8.220527481153276,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51b6b9313d618052c0593f1efaee565e4440f00102f901ec91560000000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.005935,
+            40.737028
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Hudson Street",
+                "name_international": {
+                  "ru": "Хадсон-стрит"
+                },
+                "wiki_and_media": {
+                  "wikidata": "Q389991",
+                  "wikipedia": "en:Hudson Street (Manhattan)"
+                },
+                "restrictions": {
+                  "max_speed": "25 mph"
+                },
+                "way": {
+                  "oneway": true,
+                  "lanes": 1,
+                  "surface": "asphalt"
+                },
+                "categories": [
+                  "highway",
+                  "highway.residential"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Hudson Street",
+                    "lanes": 1,
+                    "oneway": "yes",
+                    "osm_id": 5673452,
+                    "highway": "residential",
+                    "name:ru": "Хадсон-стрит",
+                    "surface": "asphalt",
+                    "z_order": 330,
+                    "maxspeed": "25 mph",
+                    "osm_type": "w",
+                    "wikidata": "Q389991",
+                    "wikipedia": "en:Hudson Street (Manhattan)",
+                    "sidewalk:left": "no",
+                    "sidewalk:right": "separate"
+                  }
+                },
+                "street": "Hudson Street",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10014",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Hudson Street, New York, NY 10014, United States of America",
+                "address_line1": "Hudson Street",
+                "address_line2": "New York, NY 10014, United States of America",
+                "lat": 40.73708822420453,
+                "lon": -74.00582176567835,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "5140d422475f8052c059442a26e6595e4440f00102f901ec9156000000000092030d487564736f6e20537472656574"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -74.0057682,
+                    40.7372197
+                  ],
+                  [
+                    -74.0058153,
+                    40.7371185
+                  ],
+                  [
+                    -74.0058405,
+                    40.7370005
+                  ],
+                  [
+                    -74.0058445,
+                    40.7369751
+                  ],
+                  [
+                    -74.0058481,
+                    40.7369612
+                  ],
+                  [
+                    -74.0058568,
+                    40.7369518
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 44940014,
+      "name": "Pop Up Grocer",
+      "latitude": "40.72966732",
+      "longitude": "-74.00171212",
+      "address_line_1": "205 Bleecker St",
+      "address_line_2": null,
+      "city": "New York",
+      "state": "NY",
+      "postal_code": "10012",
+      "country": null,
+      "full_address": null,
+      "phone": null,
+      "website": null,
+      "email": null,
+      "description": null,
+      "image_url": null,
+      "priority": 0,
+      "filters": [],
+      "custom_fields": [],
+      "distance": 5,
+      "distance_units": "mi",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Pop Up Grocer",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10012",
+          "district": "Manhattan",
+          "neighbourhood": "NoHo",
+          "street": "Bleecker Street",
+          "housenumber": "205",
+          "iso3166_2": "US-NY",
+          "lon": -74.0018437,
+          "lat": 40.7296464,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Pop Up Grocer, 205 Bleecker Street, New York, NY 10012, United States of America",
+          "address_line1": "Pop Up Grocer",
+          "address_line2": "205 Bleecker Street, New York, NY 10012, United States of America",
+          "category": "catering.cafe",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G7PXHX+V7",
+          "plus_code_short": "PXHX+V7 New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 8.47461970207813,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5108cd09351e8052c05973d2a00d655d4440f00103f901bd997fe502000000c0020192030d506f702055702047726f636572"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.0018437,
+            40.7296464
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://popupgrocer.com/",
+                "name": "Pop Up Grocer",
+                "commercial": {
+                  "type": "convenience"
+                },
+                "categories": [
+                  "catering",
+                  "catering.cafe",
+                  "commercial",
+                  "commercial.convenience"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Pop Up Grocer",
+                    "shop": "convenience",
+                    "osm_id": 12440279485,
+                    "amenity": "cafe",
+                    "website": "https://popupgrocer.com/",
+                    "osm_type": "n",
+                    "addr:city": "New York",
+                    "addr:state": "NY",
+                    "addr:street": "Bleecker Street",
+                    "addr:postcode": 10012,
+                    "addr:housenumber": 205
+                  }
+                },
+                "housenumber": "205",
+                "street": "Bleecker Street",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10012",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Pop Up Grocer, 205 Bleecker Street, New York, NY 10012, United States of America",
+                "address_line1": "Pop Up Grocer",
+                "address_line2": "205 Bleecker Street, New York, NY 10012, United States of America",
+                "lat": 40.7296464,
+                "lon": -74.0018437,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "5108cd09351e8052c059d398a10d655d4440f00103f901bd997fe50200000092030d506f702055702047726f636572"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -74.0018437,
+                  40.7296464
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "enrichment": {
+        "productCategories": [
+          "Snacks",
+          "Beverages",
+          "Health Foods",
+          "Pantry Staples",
+          "Protein Packed",
+          "Wellness",
+          "Collectible Merch",
+          "Limited-Edition Boxes",
+          "Café Items",
+          "Gourmet"
+        ],
+        "aboutText": "Pop Up Grocer is a unique grocery store and café that focuses on discovering new, better-for-you products from independent producers.",
+        "specialties": [
+          "curated",
+          "emerging brands",
+          "small-batch",
+          "sustainable"
+        ],
+        "socialLinks": {
+          "instagram": "https://www.instagram.com/popup.grocer/",
+          "tiktok": "https://www.tiktok.com/@popup.grocer"
+        }
+      }
+    }
+  ]
+}
