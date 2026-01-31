@@ -426,6 +426,14 @@
                     <span style="font-size: 13px; color: rgba(55, 53, 47, 0.65);">Active filters:</span>
                     <div id="activeFilterTags" style="display: flex; flex-wrap: wrap; gap: 6px;"></div>
                 </div>
+
+                <!-- Export Button -->
+                <div style="margin-top: 8px; display: flex; justify-content: flex-end;">
+                    <button onclick="exportFilteredStoresToCSV()" style="background: rgb(46, 170, 220); color: white; border: none; border-radius: 4px; padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='rgb(36, 150, 200)'" onmouseout="this.style.backgroundColor='rgb(46, 170, 220)'">
+                        <span>📊</span>
+                        Export to CSV
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -757,9 +765,9 @@
                         const address = loc.formattedAddress || loc.address_line_1 || '';
                         // Filter to USA bounds: lat 15-72 (includes Hawaii & Alaska), lng must be negative (Americas)
                         if (lat && lng && !isNaN(lat) && !isNaN(lng) && lng < 0 && lat > 15 && lat < 72) {
-                            return { lat, lng, name, address };
-                        }
-                        return null;
+                        return { lat, lng, name, address };
+                    }
+                    return null;
                     });
                 })
                 .filter(store => store !== null);
@@ -2481,6 +2489,105 @@
             });
 
             renderStores(filteredStores);
+        }
+
+        function exportFilteredStoresToCSV() {
+            if (filteredStores.length === 0) {
+                alert('No stores to export after applying filters.');
+                return;
+            }
+
+            // CSV headers
+            const headers = [
+                'Store Name',
+                'Address',
+                'City',
+                'State',
+                'ZIP Code',
+                'Brands',
+                'Categories',
+                'Specialties',
+                'Website',
+                'Phone',
+                'Instagram',
+                'Facebook',
+                'Twitter',
+                'Data Sources',
+                'Latitude',
+                'Longitude'
+            ];
+
+            // Convert stores to CSV rows
+            const csvRows = filteredStores.map(store => {
+                const enrichment = store.enrichment || {};
+                const socialLinks = enrichment.socialLinks || {};
+
+                // Extract address components
+                const address = getStoreAddress(store);
+                const city = store.city || '';
+                const state = store.state_code || extractState(store, address) || '';
+                const zip = store.zip_code || extractZipCode(store, address) || '';
+
+                // Extract brands (from locations if available)
+                const brands = store.brands || (store.locations && store.locations.length > 0 ?
+                    [...new Set(store.locations.map(loc => loc.brand || loc.source || '').filter(b => b))] :
+                    [store.brand || store.source || '']).filter(b => b).join('; ') || '';
+
+                // Extract categories and specialties
+                const categories = (enrichment.productCategories || []).join('; ');
+                const specialties = (enrichment.specialties || []).join('; ');
+
+                // Extract website and phone
+                const website = store.website || enrichment.website || '';
+                const phone = store.phone || enrichment.phone || '';
+
+                // Extract social media links
+                const instagram = socialLinks.instagram || '';
+                const facebook = socialLinks.facebook || '';
+                const twitter = socialLinks.twitter || '';
+
+                // Data sources
+                const dataSources = (store.dataEnriched || []).join('; ');
+
+                // Coordinates
+                const lat = store.lat || (store.locations && store.locations[0] && store.locations[0].lat) || '';
+                const lng = store.lng || (store.locations && store.locations[0] && store.locations[0].lng) || '';
+
+                return [
+                    store.displayName?.text || store.name || 'Unknown',
+                    address,
+                    city,
+                    state,
+                    zip,
+                    brands,
+                    categories,
+                    specialties,
+                    website,
+                    phone,
+                    instagram,
+                    facebook,
+                    twitter,
+                    dataSources,
+                    lat,
+                    lng
+                ];
+            });
+
+            // Combine headers and rows
+            const csvContent = [headers, ...csvRows]
+                .map(row => row.map(cell => `"${String(cell || '').replace(/"/g, '""')}"`).join(','))
+                .join('\\n');
+
+            // Create and download the file
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', `filtered_stores_${new Date().toISOString().split('T')[0]}.csv`);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
