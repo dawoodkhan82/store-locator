@@ -22,6 +22,7 @@ import csv
 import re
 from pathlib import Path
 from datetime import datetime
+from collections import defaultdict
 
 # Directories
 WEBSITE_ENRICHED_DIR = Path('all_stores/website_enriched')
@@ -32,6 +33,39 @@ OUTPUT_FILE = OUTPUT_DIR / 'combined.json'
 
 # Wholesale CRM CSV file
 WHOLESALE_CRM_CSV = Path('Wholesale_CRM_1f5fc65a08aa80e6ac25db4424caaa0a_all.csv')
+
+# Store names that should be combined (base name, then number or city)
+STORE_NAMES_TO_COMBINE = [
+    'Alfred coffee',
+    'Festival foods',
+    'Haggen',
+    'Harmons',
+    'Erewhon',
+    'Jewel',
+    "Balducci'S",
+    'Bel Air',
+    'Kowalskis',
+    'Mar-Val Foods',
+    "Mariano'S",
+    "Mccaffrey'S",
+    'Nob Hill Foods',
+    'Pcc Community Markets',
+    'Raleys',
+    'Rosauers',
+    'Sendiks',
+    'The Fresh Market',
+    'Union Market',
+    'Urm Stores',
+    "Woodman'S",
+    'ASG Met Fresh'
+]
+
+# Military keywords
+MILITARY_KEYWORDS = [
+    'military', 'navy', 'army', 'air force', 'base', 'afb', 'naval', 
+    'usaf', 'usn', 'usmc', 'fort ', 'camp ', 'commissary', 'exchange',
+    'px ', 'bx ', 'nco club', 'officers club'
+]
 
 
 def get_brand_name(filename):
@@ -562,6 +596,147 @@ def merge_stores(existing_store, new_store):
     return base_store
 
 
+def has_instacart_website(store):
+    """Check if store has instacart.com as website."""
+    website_fields = ['websiteUri', 'url', 'website', 'website_url']
+    for field in website_fields:
+        value = store.get(field, '')
+        if value and 'instacart.com' in str(value).lower():
+            return True
+    return False
+
+
+def is_military_site(store):
+    """Check if store is a military site."""
+    name = str(store.get('name', '') or store.get('displayName', {}).get('text', '')).lower()
+    address = str(
+        store.get('formattedAddress', '') or 
+        store.get('address', '') or 
+        store.get('address_line_1', '')
+    ).lower()
+    
+    text_to_check = f"{name} {address}"
+    
+    for keyword in MILITARY_KEYWORDS:
+        if keyword.lower() in text_to_check:
+            return True
+    
+    return False
+
+
+def get_base_store_name(name):
+    """
+    Extract base store name, removing numbers, city names, etc.
+    For example: "Alfred coffee #5" -> "Alfred coffee"
+                 "Alfred coffee Los Angeles" -> "Alfred coffee"
+    """
+    if not name:
+        return ""
+    
+    name_lower = name.lower().strip()
+    
+    # Check if name starts with any of the store names to combine
+    for store_base in STORE_NAMES_TO_COMBINE:
+        store_base_lower = store_base.lower()
+        if name_lower.startswith(store_base_lower):
+            # Extract the base name (preserve original case from STORE_NAMES_TO_COMBINE)
+            base_len = len(store_base)
+            if len(name) > base_len:
+                # Check if what follows is a number, city indicator, etc.
+                remainder = name[base_len:].strip()
+                # More strict matching - only combine if there's a clear pattern
+                if (re.match(r'^#\s*\d+', remainder) or
+                    re.match(r'^(No\.|Store)\s*\d+', remainder, re.IGNORECASE) or
+                    re.match(r'^\d+', remainder) or
+                    (len(remainder.split()) <= 2 and len(remainder) < 30 and 
+                     any(word[0].isupper() for word in remainder.split() if word))):
+                    return store_base
+            else:
+                # Exact match
+                return store_base
+    
+    return name
+
+
+def combine_duplicate_stores(stores):
+    """
+    Combine stores that have the same base name (e.g., "Alfred coffee #5", "Alfred coffee LA").
+    Keeps the store with the most complete data.
+    """
+    # Group stores by base name
+    stores_by_base = defaultdict(list)
+    
+    for store in stores:
+        name = store.get('name', '') or store.get('displayName', {}).get('text', '')
+        base_name = get_base_store_name(name)
+        
+        if base_name and base_name != name:  # Only combine if we found a base name
+            stores_by_base[base_name.lower()].append(store)
+        else:
+            # Store doesn't match any base name pattern, keep as-is
+            stores_by_base[f"__unique__{len(stores_by_base)}"].append(store)
+    
+    combined_stores = []
+    stats = {
+        'combined_groups': 0,
+        'stores_combined': 0
+    }
+    
+    for base_name, store_group in stores_by_base.items():
+        if base_name.startswith('__unique__'):
+            # Not a combinable store, keep all
+            combined_stores.extend(store_group)
+        elif len(store_group) > 1:
+            # Multiple stores with same base name - combine them
+            stats['combined_groups'] += 1
+            stats['stores_combined'] += len(store_group)
+            
+            # Find the store with most complete data
+            best_store = None
+            best_score = -1
+            
+            for store in store_group:
+                score = 0
+                # Score based on data completeness
+                if store.get('enrichment'):
+                    score += 10
+                if store.get('websiteUri') or store.get('url'):
+                    score += 5
+                if store.get('phone') or store.get('internationalPhoneNumber'):
+                    score += 3
+                if store.get('lat') and store.get('lng'):
+                    score += 2
+                if store.get('address') or store.get('formattedAddress'):
+                    score += 1
+                
+                if score > best_score:
+                    best_score = score
+                    best_store = store
+            
+            # Merge brands from all stores
+            if best_store:
+                all_brands = set()
+                for store in store_group:
+                    if store.get('brand'):
+                        all_brands.add(store['brand'])
+                    if store.get('brands'):
+                        all_brands.update(store['brands'])
+                    if store.get('source'):
+                        all_brands.add(store['source'])
+                
+                if all_brands:
+                    best_store['brands'] = sorted(list(all_brands))
+                    if not best_store.get('brand') and all_brands:
+                        best_store['brand'] = sorted(list(all_brands))[0]
+                
+                combined_stores.append(best_store)
+        else:
+            # Only one store with this base name, keep it
+            combined_stores.extend(store_group)
+    
+    return combined_stores, stats
+
+
 def main():
     print("="*80)
     print("COMBINING ALL STORE DATA")
@@ -785,9 +960,43 @@ def main():
     print(f"  Removed {non_usa_count} non-USA stores")
     print(f"  Keeping {len(all_stores)} USA stores")
 
+    stats['non_usa_filtered'] = non_usa_count
+
+    # Filter out instacart.com stores
+    print("\n4.5. Filtering out instacart.com stores...")
+    print("-" * 80)
+    stores_before_instacart = len(all_stores)
+    all_stores = [store for store in all_stores if not has_instacart_website(store)]
+    instacart_count = stores_before_instacart - len(all_stores)
+    stats['instacart_filtered'] = instacart_count
+    if instacart_count > 0:
+        print(f"  Removed {instacart_count:,} stores with instacart.com websites")
+    print(f"  Keeping {len(all_stores):,} stores")
+
+    # Filter out military sites
+    print("\n4.6. Filtering out military sites...")
+    print("-" * 80)
+    stores_before_military = len(all_stores)
+    all_stores = [store for store in all_stores if not is_military_site(store)]
+    military_count = stores_before_military - len(all_stores)
+    stats['military_filtered'] = military_count
+    if military_count > 0:
+        print(f"  Removed {military_count:,} military sites")
+    print(f"  Keeping {len(all_stores):,} stores")
+
+    # Combine stores with same base name
+    print("\n4.7. Combining stores with same base name...")
+    print("-" * 80)
+    all_stores, combine_stats = combine_duplicate_stores(all_stores)
+    stats['combined_groups'] = combine_stats['combined_groups']
+    stats['combined_stores'] = combine_stats['stores_combined'] - combine_stats['combined_groups']
+    if combine_stats['combined_groups'] > 0:
+        print(f"  Combined {combine_stats['combined_groups']:,} groups")
+        print(f"  → {combine_stats['stores_combined']:,} stores were combined into {combine_stats['combined_groups']:,} stores")
+    print(f"  Keeping {len(all_stores):,} stores")
+
     stats['unique_locations'] = len(all_stores)
     stats['total'] = len(all_stores)
-    stats['non_usa_filtered'] = non_usa_count
 
     # Count enrichment stats
     enrichment_counts = {
@@ -853,6 +1062,10 @@ def main():
     print(f"Total stores loaded:         {stats['website_enriched'] + stats['places_enriched'] + stats['raw']:,}")
     print(f"Duplicates merged:           {stats['duplicates_merged']:,}")
     print(f"Non-USA stores filtered:     {stats['non_usa_filtered']:,}")
+    print(f"Instacart stores filtered:   {stats.get('instacart_filtered', 0):,}")
+    print(f"Military sites filtered:     {stats.get('military_filtered', 0):,}")
+    if stats.get('combined_groups', 0) > 0:
+        print(f"Stores combined:             {stats.get('combined_stores', 0):,}")
     print(f"{'─'*80}")
     print(f"Final USA stores:            {stats['unique_locations']:,}")
     print(f"\nWholesale CRM integration:")

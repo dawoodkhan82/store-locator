@@ -47,6 +47,7 @@ EXCLUDED_CHAINS = [
     "Smith's",
     'Acme Markets',
     'Giant Food',
+    'Giant',
     'Market Basket',
     'Price Chopper',
     'Hannaford',
@@ -104,6 +105,10 @@ EXCLUDED_CHAINS = [
     'Instacart',
     'Amazon Fresh',
     'FreshDirect',
+    'H E B',
+    'HEB',
+    'Go Puff',
+    'GoPuff',
 ]
 
 
