@@ -1524,6 +1524,34 @@
             return null;
         }
 
+        function extractZipCode(store, address) {
+            // Priority: Check various zip code fields in store object
+            if (store?.postal_code) {
+                return store.postal_code;
+            }
+            if (store?.postcode) {
+                return store.postcode;
+            }
+            if (store?.zip_code) {
+                return store.zip_code;
+            }
+            if (store?.zip) {
+                return store.zip;
+            }
+            // Check Geoapify data
+            if (store?.geoapify?.geocoding?.postcode) {
+                return store.geoapify.geocoding.postcode;
+            }
+            // Parse from address string - look for 5-digit zip code (with optional +4 extension)
+            if (!address) return null;
+            // Match zip code pattern: 5 digits optionally followed by -4 digits
+            const zipPattern = /\b(\d{5}(?:-\d{4})?)\b/;
+            const match = address.match(zipPattern);
+            if (match) return match[1];
+
+            return null;
+        }
+
         // US Regions mapping
         const US_REGIONS = {
             'Northeast': ['CT', 'ME', 'MA', 'NH', 'NJ', 'NY', 'PA', 'RI', 'VT'],
