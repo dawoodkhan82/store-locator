@@ -2558,17 +2558,24 @@
                 const zip = store.zip_code || extractZipCode(store, address) || '';
 
                 // Extract brands (from locations if available)
-                const brands = store.brands || (store.locations && store.locations.length > 0 ?
-                    [...new Set(store.locations.map(loc => loc.brand || loc.source || '').filter(b => b))] :
-                    [store.brand || store.source || '']).filter(b => b).join('; ') || '';
+                let brands = '';
+                if (store.brands && Array.isArray(store.brands)) {
+                    brands = store.brands.filter(b => b).join('; ');
+                } else if (store.locations && store.locations.length > 0) {
+                    const locationBrands = [...new Set(store.locations.map(loc => loc.brand || loc.source || '').filter(b => b))];
+                    brands = locationBrands.join('; ');
+                } else {
+                    const brandList = [store.brand, store.source].filter(b => b);
+                    brands = brandList.join('; ');
+                }
 
                 // Extract categories and specialties
                 const categories = (enrichment.productCategories || []).join('; ');
                 const specialties = (enrichment.specialties || []).join('; ');
 
                 // Extract website and phone
-                const website = store.website || enrichment.website || '';
-                const phone = store.phone || enrichment.phone || '';
+                const website = store.websiteUri || store.website || enrichment.website || '';
+                const phone = store.internationalPhoneNumber || store.phone || enrichment.phone || '';
 
                 // Extract social media links
                 const instagram = socialLinks.instagram || '';
@@ -2576,7 +2583,7 @@
                 const twitter = socialLinks.twitter || '';
 
                 // Data sources
-                const dataSources = (store.dataEnriched || []).join('; ');
+                const dataSources = (store.data_enriched || []).join('; ');
 
                 // Coordinates
                 const lat = store.lat || (store.locations && store.locations[0] && store.locations[0].lat) || '';
@@ -2604,8 +2611,16 @@
 
             // Combine headers and rows
             const csvContent = [headers, ...csvRows]
-                .map(row => row.map(cell => `"${String(cell || '').replace(/"/g, '""')}"`).join(','))
-                .join('\\n');
+                .map(row => row.map(cell => {
+                    // Convert cell to string and escape quotes
+                    const cellValue = String(cell || '').replace(/"/g, '""');
+                    // Wrap in quotes if cell contains comma, newline, or quote
+                    if (cellValue.includes(',') || cellValue.includes('\n') || cellValue.includes('"')) {
+                        return `"${cellValue}"`;
+                    }
+                    return cellValue;
+                }).join(','))
+                .join('\n');
 
             // Create and download the file
             const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
