@@ -7,12 +7,6 @@ This script combines store data with the following priority:
 2. Fall back to places_enriched files (Geoapify/Google Places enriched)
 3. Fall back to raw files (scraped store data without enrichment)
 
-Each store gets a 'data_enriched' field tracking which sources were used:
-- 'geoapify' - enriched with Geoapify Places API
-- 'google_places' - enriched with Google Places API
-- 'openai' - website scraped and analyzed with OpenAI
-- [] (empty) - raw scraped data with no enrichment
-
 Output: all_stores/combined/combined.json
 """
 
@@ -203,8 +197,7 @@ def load_wholesale_crm_csv(csv_path):
                 store = {
                     'name': shop_name,
                     'source': 'wholesale_crm',
-                    'brand': 'wholesale_crm',
-                    'data_enriched': []
+                    'brand': 'wholesale_crm'
                 }
                 
                 # Add address if present
@@ -451,10 +444,6 @@ def extract_stores(data, source_file):
         if scraped_at and not store.get('scraped_at'):
             store['scraped_at'] = scraped_at
 
-        # Detect and add enrichment sources
-        enrichment_sources = detect_enrichment_sources(store, source_file)
-        store['data_enriched'] = enrichment_sources
-
         # Extract coordinates from enrichment data if not already present
         if not store.get('lat') or not store.get('lng'):
             lat, lng = extract_coordinates(store)
@@ -573,11 +562,6 @@ def merge_stores(existing_store, new_store):
             for platform, link in new_store['enrichment']['socialLinks'].items():
                 if platform not in base_store['enrichment']['socialLinks']:
                     base_store['enrichment']['socialLinks'][platform] = link
-
-    # Merge data_enriched sources
-    existing_sources = set(existing_store.get('data_enriched', []))
-    new_sources = set(new_store.get('data_enriched', []))
-    base_store['data_enriched'] = sorted(list(existing_sources | new_sources))
 
     # Set combined brands
     base_store['brands'] = sorted(list(all_brands))
@@ -998,20 +982,13 @@ def main():
     stats['unique_locations'] = len(all_stores)
     stats['total'] = len(all_stores)
 
-    # Count enrichment stats
+    # Enrichment stats no longer tracked
     enrichment_counts = {
         'geoapify': 0,
         'google_places': 0,
         'openai': 0,
         'none': 0
     }
-    for store in all_stores:
-        sources = store.get('data_enriched', [])
-        if not sources:
-            enrichment_counts['none'] += 1
-        for source in sources:
-            if source in enrichment_counts:
-                enrichment_counts[source] += 1
 
     # Create output directory if needed
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

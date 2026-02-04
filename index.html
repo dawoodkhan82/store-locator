@@ -2541,7 +2541,6 @@
                 'Instagram',
                 'Facebook',
                 'Twitter',
-                'Data Sources',
                 'Latitude',
                 'Longitude'
             ];
@@ -2582,9 +2581,6 @@
                 const facebook = socialLinks.facebook || '';
                 const twitter = socialLinks.twitter || '';
 
-                // Data sources
-                const dataSources = (store.data_enriched || []).join('; ');
-
                 // Coordinates
                 const lat = store.lat || (store.locations && store.locations[0] && store.locations[0].lat) || '';
                 const lng = store.lng || (store.locations && store.locations[0] && store.locations[0].lng) || '';
@@ -2603,7 +2599,6 @@
                     instagram,
                     facebook,
                     twitter,
-                    dataSources,
                     lat,
                     lng
                 ];
