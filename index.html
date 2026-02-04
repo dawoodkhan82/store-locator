@@ -2609,21 +2609,26 @@
                 ];
             });
 
-            // Combine headers and rows
+            // Combine headers and rows - properly format CSV
             const csvContent = [headers, ...csvRows]
-                .map(row => row.map(cell => {
-                    // Convert cell to string and escape quotes
-                    const cellValue = String(cell || '').replace(/"/g, '""');
-                    // Wrap in quotes if cell contains comma, newline, or quote
-                    if (cellValue.includes(',') || cellValue.includes('\n') || cellValue.includes('"')) {
-                        return `"${cellValue}"`;
-                    }
-                    return cellValue;
-                }).join(','))
-                .join('\n');
+                .map(row => {
+                    return row.map(cell => {
+                        // Convert cell to string
+                        const cellValue = String(cell || '').trim();
+                        // Escape quotes by doubling them
+                        const escapedValue = cellValue.replace(/"/g, '""');
+                        // Always wrap in quotes for proper CSV formatting
+                        return `"${escapedValue}"`;
+                    }).join(',');
+                })
+                .join('\r\n'); // Use \r\n for Windows/Excel compatibility
+
+            // Add BOM for Excel UTF-8 compatibility
+            const BOM = '\uFEFF';
+            const csvWithBOM = BOM + csvContent;
 
             // Create and download the file
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const blob = new Blob([csvWithBOM], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
             const url = URL.createObjectURL(blob);
             link.setAttribute('href', url);
