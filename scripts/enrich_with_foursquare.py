@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
 """
-Foursquare Places API Enrichment Script
+Foursquare Places API Instagram Enrichment Script
 
-This script takes a list of stores (from raw scraped data) and enriches them
-with data from Foursquare Places API including:
-- Website URL
-- Social media links (Instagram, Facebook, Twitter)
-- Phone, email
-- Hours of operation
-- Ratings and popularity
+This script enriches already-enriched stores with Instagram profiles from Foursquare Places API.
+It only adds Instagram links to stores that don't already have them.
 
 Usage: python enrich_with_foursquare.py <input_json> [output_json]
 
 Examples:
-  python enrich_with_foursquare.py all_stores/raw/brand.json
+  python enrich_with_foursquare.py all_stores/combined/combined.json
   python enrich_with_foursquare.py stores.json enriched.json --test
 """
 
@@ -26,8 +21,11 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
+# Load environment variables (ignore errors if .env file not accessible)
+try:
+    load_dotenv()
+except Exception:
+    pass  # Continue without .env file if not accessible
 
 # Foursquare API configuration
 FOURSQUARE_API_KEY = os.getenv('FOURSQUARE_API_KEY')
@@ -36,23 +34,11 @@ PLACE_MATCH_URL = 'https://places-api.foursquare.com/places/match'
 API_VERSION = '2025-06-17'
 
 # Fields to request from Foursquare API
-# Core fields + website + social_media + contact info
-# Note: Some fields like fsq_id, geocodes, verified are not valid for the Places API
+# Only request minimal fields needed for Instagram lookup
 REQUESTED_FIELDS = ','.join([
     'name',
     'location',
-    'categories',
-    'chains',
-    'website',
-    'social_media',
-    'tel',
-    'email',
-    'hours',
-    'hours_popular',
-    'rating',
-    'popularity',
-    'price',
-    'link'
+    'social_media'
 ])
 
 
@@ -185,93 +171,50 @@ def search_foursquare_place(store_name, lat, lng, address=None, city=None, state
     return None
 
 
-def extract_enrichment_data(fsq_data):
+def extract_instagram_handle(fsq_data):
     """
-    Extract useful enrichment data from Foursquare API response.
+    Extract Instagram handle from Foursquare API response and convert to full URL.
 
     Args:
         fsq_data (dict): Raw Foursquare place data
 
     Returns:
-        dict: Cleaned enrichment data with website, social_media, etc.
+        str: Instagram profile URL or None if not found
     """
-    enrichment = {
-        'fsq_id': fsq_data.get('fsq_id'),
-        'name': fsq_data.get('name'),
-        'verified': fsq_data.get('verified', False),
-    }
-
-    # Website
-    if fsq_data.get('website'):
-        enrichment['website'] = fsq_data['website']
-
-    # Social media
     social_media = fsq_data.get('social_media', {})
-    if social_media:
-        enrichment['social_media'] = {}
-        if social_media.get('instagram'):
-            enrichment['social_media']['instagram'] = social_media['instagram']
-        if social_media.get('facebook_id'):
-            enrichment['social_media']['facebook_id'] = social_media['facebook_id']
-        if social_media.get('twitter'):
-            enrichment['social_media']['twitter'] = social_media['twitter']
+    instagram_handle = social_media.get('instagram')
+    
+    if not instagram_handle:
+        return None
+    
+    # Foursquare returns Instagram as a handle (username without @)
+    # Convert to full Instagram profile URL
+    handle = instagram_handle.strip().lstrip('@')
+    if handle:
+        return f"https://www.instagram.com/{handle}/"
+    return None
 
-    # Contact info
-    if fsq_data.get('tel'):
-        enrichment['phone'] = fsq_data['tel']
-    if fsq_data.get('email'):
-        enrichment['email'] = fsq_data['email']
 
-    # Location
-    location = fsq_data.get('location', {})
-    if location:
-        enrichment['location'] = {
-            'address': location.get('address'),
-            'locality': location.get('locality'),
-            'region': location.get('region'),
-            'postcode': location.get('postcode'),
-            'country': location.get('country'),
-            'formatted_address': location.get('formatted_address')
-        }
+def store_has_instagram(store):
+    """
+    Check if store already has an Instagram link.
 
-    # Geocodes
-    geocodes = fsq_data.get('geocodes', {})
-    if geocodes.get('main'):
-        enrichment['coordinates'] = {
-            'latitude': geocodes['main'].get('latitude'),
-            'longitude': geocodes['main'].get('longitude')
-        }
+    Args:
+        store (dict): Store data object
 
-    # Hours
-    if fsq_data.get('hours'):
-        enrichment['hours'] = fsq_data['hours']
-
-    # Rating and popularity
-    if fsq_data.get('rating'):
-        enrichment['rating'] = fsq_data['rating']
-    if fsq_data.get('popularity'):
-        enrichment['popularity'] = fsq_data['popularity']
-    if fsq_data.get('price'):
-        enrichment['price'] = fsq_data['price']
-
-    # Categories
-    categories = fsq_data.get('categories', [])
-    if categories:
-        enrichment['categories'] = [
-            {'id': cat.get('id'), 'name': cat.get('name')}
-            for cat in categories
-        ]
-
-    # Link to Foursquare page
-    if fsq_data.get('link'):
-        enrichment['foursquare_link'] = fsq_data['link']
-
-    return enrichment
+    Returns:
+        bool: True if store has Instagram, False otherwise
+    """
+    enrichment = store.get('enrichment', {})
+    social_links = enrichment.get('socialLinks', {})
+    instagram = social_links.get('instagram', '')
+    return bool(instagram and instagram.strip())
 
 
 def enrich_stores(input_file, output_file='stores_foursquare_enriched.json', limit=None):
     """
-    Enrich stores with Foursquare Places API data.
+    Enrich stores with Instagram profiles from Foursquare Places API.
+    Only adds Instagram to stores that don't already have one.
 
     Args:
         input_file (str): Input JSON file with stores
@@ -292,71 +235,103 @@ def enrich_stores(input_file, output_file='stores_foursquare_enriched.json', lim
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     print("=" * 80)
-    print("FOURSQUARE PLACES API ENRICHMENT")
+    print("FOURSQUARE PLACES API - INSTAGRAM ENRICHMENT")
     print("=" * 80)
     print(f"\nInput: {input_file}")
     print(f"Output: {output_file}")
-    print(f"Requesting fields: website, social_media, contact info, hours, rating\n")
+    print(f"Only enriching stores that don't already have Instagram profiles\n")
 
     # Load input data
     with open(input_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    stores = data.get('stores', [])
+    # Handle different data structures
+    if isinstance(data, dict):
+        stores = data.get('stores', []) or data.get('places', [])
+    elif isinstance(data, list):
+        stores = data
+    else:
+        print(f"Error: Unexpected data format in {input_file}")
+        return 1
+    
     total = len(stores)
 
     if limit:
         stores = stores[:limit]
         print(f"LIMIT MODE: Only processing {limit} stores\n")
 
+    # Filter to only stores without Instagram
+    stores_needing_ig = [s for s in stores if not store_has_instagram(s)]
+    stores_with_ig = total - len(stores_needing_ig)
+
+    print(f"Total stores: {total}")
+    print(f"Stores with Instagram: {stores_with_ig}")
+    print(f"Stores needing Instagram: {len(stores_needing_ig)}\n")
+
+    if not stores_needing_ig:
+        print("All stores already have Instagram profiles. Nothing to enrich.")
+        return 0
+
     enriched_count = 0
     not_found_count = 0
-    with_website = 0
-    with_instagram = 0
+    skipped_count = 0
+    total_instagram_found = 0  # Total Instagram links found (including existing)
+    total_social_media_found = 0  # Total social media links found
 
-    for idx, store in enumerate(stores, 1):
-        store_name = store.get('name', 'Unknown')
-        address = store.get('address_line_1', '') or store.get('address', '')
+    # Count existing social media links
+    for store in stores:
+        enrichment = store.get('enrichment', {})
+        social_links = enrichment.get('socialLinks', {})
+        if social_links.get('instagram'):
+            total_instagram_found += 1
+        if social_links.get('facebook') or social_links.get('twitter') or social_links.get('instagram'):
+            total_social_media_found += 1
+
+    print(f"Existing social media links:")
+    print(f"  - Instagram: {total_instagram_found}")
+    print(f"  - Any social media: {total_social_media_found}\n")
+
+    for idx, store in enumerate(stores_needing_ig, 1):
+        store_name = store.get('name', 'Unknown') or store.get('displayName', {}).get('text', 'Unknown')
+        address = store.get('address_line_1', '') or store.get('address', '') or store.get('formattedAddress', '')
         city = store.get('city', '')
-        state = store.get('state', '')
+        state = store.get('state', '') or store.get('state_code', '')
         lat, lng = get_store_coordinates(store)
 
-        print(f"[{idx}/{len(stores)}] {store_name}")
+        print(f"[{idx}/{len(stores_needing_ig)}] {store_name}")
         if lat and lng:
             print(f"  Coords: {lat:.4f}, {lng:.4f}")
-        else:
+        elif city or state:
             print(f"  Location: {city}, {state}")
+
+        # Check again if store has Instagram (in case it was added during processing)
+        if store_has_instagram(store):
+            skipped_count += 1
+            print(f"  ⊘ Already has Instagram, skipping")
+            continue
 
         # Search Foursquare
         fsq_data = search_foursquare_place(store_name, lat, lng, address, city, state)
 
         if fsq_data:
-            # Extract and merge enrichment data
-            enrichment = extract_enrichment_data(fsq_data)
-            store['foursquare'] = enrichment
-            enriched_count += 1
+            # Extract Instagram URL
+            instagram_url = extract_instagram_handle(fsq_data)
 
-            # Log key data found
-            if enrichment.get('website'):
-                print(f"  + Website: {enrichment['website']}")
-                with_website += 1
-
-            social = enrichment.get('social_media', {})
-            if social.get('instagram'):
-                print(f"  + Instagram: @{social['instagram']}")
-                with_instagram += 1
-            if social.get('facebook_id'):
-                print(f"  + Facebook: {social['facebook_id']}")
-            if social.get('twitter'):
-                print(f"  + Twitter: @{social['twitter']}")
-
-            if enrichment.get('phone'):
-                print(f"  + Phone: {enrichment['phone']}")
-
-            if enrichment.get('rating'):
-                print(f"  + Rating: {enrichment['rating']}/10")
-
-            print(f"  Found on Foursquare")
+            if instagram_url:
+                # Add Instagram to store's enrichment
+                if 'enrichment' not in store:
+                    store['enrichment'] = {}
+                if 'socialLinks' not in store['enrichment']:
+                    store['enrichment']['socialLinks'] = {}
+                
+                store['enrichment']['socialLinks']['instagram'] = instagram_url
+                enriched_count += 1
+                total_instagram_found += 1
+                total_social_media_found += 1
+                print(f"  ✓ Added Instagram: {instagram_url}")
+            else:
+                not_found_count += 1
+                print(f"  x No Instagram found on Foursquare")
         else:
             not_found_count += 1
             print(f"  x Not found on Foursquare")
@@ -364,18 +339,33 @@ def enrich_stores(input_file, output_file='stores_foursquare_enriched.json', lim
         # Rate limiting - Foursquare allows 50 requests/second but let's be respectful
         time.sleep(0.2)
 
-    # Prepare output
-    result = {
-        'source_file': input_file,
-        'enriched_at': datetime.now().isoformat(),
-        'enrichment_source': 'foursquare',
-        'total_stores': len(stores),
-        'enriched_count': enriched_count,
-        'not_found_count': not_found_count,
-        'with_website': with_website,
-        'with_instagram': with_instagram,
-        'stores': stores
-    }
+    # Prepare output - preserve original structure
+    if isinstance(data, dict) and 'stores' in data:
+        # Update the existing data structure
+        data['enriched_at'] = datetime.now().isoformat()
+        data['foursquare_enrichment'] = {
+            'total_stores': total,
+            'stores_with_instagram_before': stores_with_ig,
+            'stores_needing_instagram': len(stores_needing_ig),
+            'instagram_added': enriched_count,
+            'not_found': not_found_count,
+            'skipped': skipped_count
+        }
+        result = data
+    else:
+        # Create new structure if input was just a list
+        result = {
+            'source_file': input_file,
+            'enriched_at': datetime.now().isoformat(),
+            'enrichment_source': 'foursquare_instagram',
+            'total_stores': total,
+            'stores_with_instagram_before': stores_with_ig,
+            'stores_needing_instagram': len(stores_needing_ig),
+            'instagram_added': enriched_count,
+            'not_found': not_found_count,
+            'skipped': skipped_count,
+            'stores': stores
+        }
 
     # Save to file
     print(f"\n{'=' * 80}")
@@ -383,13 +373,35 @@ def enrich_stores(input_file, output_file='stores_foursquare_enriched.json', lim
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
 
-    print(f"\n ENRICHMENT COMPLETE!")
-    print(f"  Total stores: {len(stores)}")
-    print(f"  Successfully enriched: {enriched_count}")
-    print(f"  Not found: {not_found_count}")
-    print(f"  Success rate: {enriched_count/len(stores)*100:.1f}%")
-    print(f"\n  Stores with website: {with_website}")
-    print(f"  Stores with Instagram: {with_instagram}")
+    # Final count of social media links
+    final_instagram_count = 0
+    final_social_media_count = 0
+    for store in stores:
+        enrichment = store.get('enrichment', {})
+        social_links = enrichment.get('socialLinks', {})
+        if social_links.get('instagram'):
+            final_instagram_count += 1
+        if social_links.get('facebook') or social_links.get('twitter') or social_links.get('instagram'):
+            final_social_media_count += 1
+
+    print(f"\n{'=' * 80}")
+    print(f"✓ INSTAGRAM ENRICHMENT COMPLETE!")
+    print(f"{'=' * 80}")
+    print(f"\nSUMMARY:")
+    print(f"  Total stores processed: {total}")
+    print(f"  Stores with Instagram (before): {stores_with_ig}")
+    print(f"  Stores needing Instagram: {len(stores_needing_ig)}")
+    print(f"  Instagram links added: {enriched_count}")
+    print(f"  Not found on Foursquare: {not_found_count}")
+    if skipped_count > 0:
+        print(f"  Skipped (got Instagram during processing): {skipped_count}")
+    if len(stores_needing_ig) > 0:
+        print(f"  Success rate: {enriched_count/len(stores_needing_ig)*100:.1f}%")
+    
+    print(f"\nFINAL COUNTS:")
+    print(f"  Total Instagram links: {final_instagram_count} ({final_instagram_count/total*100:.1f}% of stores)")
+    print(f"  Total social media links: {final_social_media_count} ({final_social_media_count/total*100:.1f}% of stores)")
+    print(f"  Instagram links added this run: {enriched_count}")
 
     return 0
 
@@ -399,15 +411,10 @@ def main():
     if len(sys.argv) < 2:
         print("Usage: python enrich_with_foursquare.py <input_json> [output_json] [--test]")
         print("\nExamples:")
-        print("  python enrich_with_foursquare.py all_stores/raw/brand.json")
+        print("  python enrich_with_foursquare.py all_stores/combined/combined.json")
         print("  python enrich_with_foursquare.py stores.json enriched.json --test")
-        print("\nThis script enriches store data with:")
-        print("  - Website URLs")
-        print("  - Instagram handles")
-        print("  - Facebook and Twitter IDs")
-        print("  - Phone numbers and emails")
-        print("  - Hours of operation")
-        print("  - Ratings and popularity")
+        print("\nThis script enriches stores with Instagram profiles from Foursquare.")
+        print("It only adds Instagram to stores that don't already have one.")
         return 1
 
     # Parse arguments
