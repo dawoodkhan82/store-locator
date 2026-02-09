@@ -1,0 +1,1469 @@
+{
+  "source_file": "all_stores/raw/everyday_dose.json",
+  "enriched_at": "2026-02-08T07:51:51.942291",
+  "total_stores": 10,
+  "enriched_count": 10,
+  "not_found_count": 0,
+  "stores": [
+    {
+      "id": "cmixo0t2u007j13lky2ylyy41",
+      "name": "Sprouts Farmer’s Market",
+      "address_line_1": "3102 34th Street South",
+      "address_line_2": null,
+      "city": "St. Petersburg",
+      "state": "FL",
+      "postal_code": "33712",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 27.740211,
+      "lng": -82.6786702,
+      "merchant_id": "sprouts",
+      "merchant_logo": "https://storage.googleapis.com/aisle-digital-asset-manager/merchants/sprouts/logos/121bf8db-3485-49f1-9530-76c81a476cb4",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Florida",
+          "county": "Pinellas County",
+          "city": "Saint Petersburg",
+          "postcode": "33711",
+          "district": "Boca Ciega Townhomes",
+          "street": "34th Street South",
+          "housenumber": "3102",
+          "iso3166_2": "US-FL",
+          "lon": -82.67919232663317,
+          "lat": 27.740352673366832,
+          "state_code": "FL",
+          "result_type": "building",
+          "formatted": "3102 34th Street South, Saint Petersburg, FL 33711, United States of America",
+          "address_line1": "3102 34th Street South",
+          "address_line2": "Saint Petersburg, FL 33711, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "76VVP8RC+48",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 3.5466763653590188,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "515aa517e377ab54c059e19db7c087bd3b40f00102f901559d935000000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.67919232663317,
+            27.740352673366832
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "34th Street South",
+                "ref": "US 19",
+                "restrictions": {
+                  "max_speed": "45 mph"
+                },
+                "way": {
+                  "oneway": true,
+                  "lanes": 3,
+                  "surface": "asphalt"
+                },
+                "categories": [
+                  "highway",
+                  "highway.trunk"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "hgv": "designated",
+                    "ref": "US 19",
+                    "HFCS": "Urban Principal Arterial - Other",
+                    "name": "34th Street South",
+                    "lanes": 3,
+                    "oneway": "yes",
+                    "osm_id": 1351851349,
+                    "highway": "trunk",
+                    "surface": "asphalt",
+                    "z_order": 370,
+                    "maxspeed": "45 mph",
+                    "osm_type": "w",
+                    "sidewalk": "right",
+                    "unsigned_ref": "SR 55"
+                  }
+                },
+                "street": "34th Street South",
+                "city": "Saint Petersburg",
+                "county": "Pinellas County",
+                "state": "Florida",
+                "postcode": "33711",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "34th Street South, Saint Petersburg, FL 33711, United States of America",
+                "address_line1": "34th Street South",
+                "address_line2": "Saint Petersburg, FL 33711, United States of America",
+                "lat": 27.74009405,
+                "lon": -82.6792293,
+                "iso3166_2": "US-FL",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "514424af7378ab54c059af505ed559bd3b40f00102f901559d935000000000920311333474682053747265657420536f757468"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -82.6792268,
+                    27.739652
+                  ],
+                  [
+                    -82.6792318,
+                    27.7405361
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cl8df3iz931751ntuhdcsialt6",
+      "name": "Sprouts",
+      "address_line_1": "5455 East High Street",
+      "address_line_2": null,
+      "city": "Phoenix",
+      "state": "AZ",
+      "postal_code": "85054",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 33.6751764,
+      "lng": -111.9634961,
+      "merchant_id": "sprouts",
+      "merchant_logo": "https://storage.googleapis.com/aisle-digital-asset-manager/merchants/sprouts/logos/121bf8db-3485-49f1-9530-76c81a476cb4",
+      "geoapify": {
+        "geocoding": {
+          "country": "United States",
+          "country_code": "us",
+          "state": "Arizona",
+          "county": "Maricopa County",
+          "city": "Phoenix",
+          "postcode": "85054",
+          "street": "East High Street",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "state_code": "AZ",
+          "lon": -111.963231,
+          "lat": 33.6751318,
+          "housenumber": "5455",
+          "result_type": "unknown",
+          "formatted": "5455 East High Street, Phoenix, AZ 85054, United States of America",
+          "address_line1": "5455 East High Street",
+          "address_line2": "Phoenix, AZ 85054, United States of America",
+          "timezone": {
+            "name": "America/Phoenix",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MST"
+          },
+          "plus_code": "855CM2GP+3P",
+          "plus_code_short": "M2GP+3P, 85054 Phoenix, United States",
+          "iso3166_2": "US-AZ",
+          "rank": {
+            "popularity": 3.609904731320984,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "inner_part"
+          },
+          "place_id": "5193dfa293a5fd5bc059acbe04b86ad64040f00103f9019f843cff02000000c00200"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.963231,
+            33.6751318
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://ocean-prime.com",
+                "opening_hours": "Su-Th 16:00-21:00; Fr-Sa 16:00-22:00",
+                "name": "Ocean Prime",
+                "contact": {
+                  "phone": "+1-480-347-1313"
+                },
+                "facilities": {
+                  "wheelchair": true,
+                  "toilets": true,
+                  "air_conditioning": true,
+                  "outdoor_seating": true
+                },
+                "wiki_and_media": {
+                  "wikidata": "Q7076048",
+                  "wikipedia": "en:Ocean Prime",
+                  "image": "https://ocean-prime.com/wp-content/themes/Ocean%20Prime/img/logo.svg"
+                },
+                "catering": {
+                  "cuisine": "seafood;steak_house;fine_dining",
+                  "reservation": "required"
+                },
+                "categories": [
+                  "catering",
+                  "catering.restaurant",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "bar": "yes",
+                    "name": "Ocean Prime",
+                    "image": "https://ocean-prime.com/wp-content/themes/Ocean%20Prime/img/logo.svg",
+                    "level": 1,
+                    "phone": "+1-480-347-1313",
+                    "osm_id": 12872090783,
+                    "amenity": "restaurant",
+                    "cuisine": "seafood;steak_house;fine_dining",
+                    "toilets": "yes",
+                    "website": "https://ocean-prime.com",
+                    "osm_type": "n",
+                    "wikidata": "Q7076048",
+                    "addr:city": "Phoenix",
+                    "wikipedia": "en:Ocean Prime",
+                    "addr:state": "AZ",
+                    "wheelchair": "yes",
+                    "addr:street": "East High Street",
+                    "reservation": "yes",
+                    "website:menu": "https://ocean-prime.com/locations-menus/phoenix/",
+                    "addr:postcode": 85054,
+                    "opening_hours": "Su-Th 16:00-21:00; Fr-Sa 16:00-22:00",
+                    "outdoor_seating": "yes",
+                    "addr:housenumber": 5455,
+                    "air_conditioning": "yes"
+                  }
+                },
+                "housenumber": "5455",
+                "street": "East High Street",
+                "city": "Phoenix",
+                "county": "Maricopa County",
+                "state": "Arizona",
+                "postcode": "85054",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Ocean Prime, 5455 East High Street, Phoenix, AZ 85054, United States of America",
+                "address_line1": "Ocean Prime",
+                "address_line2": "5455 East High Street, Phoenix, AZ 85054, United States of America",
+                "lat": 33.6751318,
+                "lon": -111.963231,
+                "iso3166_2": "US-AZ",
+                "timezone": {
+                  "name": "America/Phoenix",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MST"
+                },
+                "place_id": "5192dfa293a5fd5bc05906df03b86ad64040f00103f9019f843cff0200000092030b4f6365616e205072696d65"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -111.963231,
+                  33.6751318
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cmbgvsn6301mnzxjdrly097i4",
+      "name": "Sprouts Café",
+      "address_line_1": "3123 Harrison Avenue",
+      "address_line_2": null,
+      "city": "South Lake Tahoe",
+      "state": "CA",
+      "postal_code": "96150",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 38.9421173,
+      "lng": -119.9776329,
+      "merchant_id": "sprouts",
+      "merchant_logo": "https://storage.googleapis.com/aisle-digital-asset-manager/merchants/sprouts/logos/121bf8db-3485-49f1-9530-76c81a476cb4",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "California",
+          "county": "El Dorado County",
+          "city": "South Lake Tahoe",
+          "hamlet": "Al Tahoe",
+          "postcode": "96150",
+          "street": "Harrison Avenue",
+          "housenumber": "3123",
+          "iso3166_2": "US-CA",
+          "lon": -119.977540647769,
+          "lat": 38.941744546456064,
+          "state_code": "CA",
+          "result_type": "building",
+          "formatted": "3123 Harrison Avenue, South Lake Tahoe, CA 96150, United States of America",
+          "address_line1": "3123 Harrison Avenue",
+          "address_line2": "South Lake Tahoe, CA 96150, United States of America",
+          "timezone": {
+            "name": "America/Los_Angeles",
+            "offset_STD": "-08:00",
+            "offset_STD_seconds": -28800,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "PST",
+            "abbreviation_DST": "PDT"
+          },
+          "plus_code": "85C2W2RC+MX",
+          "plus_code_short": "RC+MX South Lake Tahoe, El Dorado County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 2.108798171972885,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "516d2ba60690fe5dc0598a1bd6158b784340f00102f90152879d0000000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -119.977540647769,
+            38.941744546456064
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Harrison Avenue",
+                "way": {
+                  "oneway": true,
+                  "surface": "asphalt"
+                },
+                "categories": [
+                  "highway",
+                  "highway.public"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Harrison Avenue",
+                    "oneway": "yes",
+                    "osm_id": 10323794,
+                    "highway": "unclassified",
+                    "surface": "asphalt",
+                    "z_order": 330,
+                    "osm_type": "w"
+                  }
+                },
+                "street": "Harrison Avenue",
+                "city": "South Lake Tahoe",
+                "county": "El Dorado County",
+                "state": "California",
+                "postcode": "96150",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Harrison Avenue, South Lake Tahoe, CA 96150, United States of America",
+                "address_line1": "Harrison Avenue",
+                "address_line2": "South Lake Tahoe, CA 96150, United States of America",
+                "lat": 38.9409754978886,
+                "lon": -119.97741862777944,
+                "iso3166_2": "US-CA",
+                "timezone": {
+                  "name": "America/Los_Angeles",
+                  "offset_STD": "-08:00",
+                  "offset_STD_seconds": -28800,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "PST",
+                  "abbreviation_DST": "PDT"
+                },
+                "place_id": "51b0039dff8dfe5dc0590d7ec5bb6d784340f00102f90152879d000000000092030f4861727269736f6e204176656e7565"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -119.9774115,
+                    38.94296
+                  ],
+                  [
+                    -119.9774276,
+                    38.9422883
+                  ],
+                  [
+                    -119.9774276,
+                    38.9416248
+                  ],
+                  [
+                    -119.9774266,
+                    38.9415601
+                  ],
+                  [
+                    -119.9774169,
+                    38.9408488
+                  ],
+                  [
+                    -119.9774235,
+                    38.9400865
+                  ],
+                  [
+                    -119.9774454,
+                    38.938991
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "clc86hcj8008g5fxxskgkb78h",
+      "name": "Good Earth Markets",
+      "address_line_1": "336 West Main Street",
+      "address_line_2": null,
+      "city": "American Fork",
+      "state": "UT",
+      "postal_code": "84003",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 40.3772787,
+      "lng": -111.8073778,
+      "merchant_id": "goodearthmarkets",
+      "merchant_logo": null,
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "336",
+          "street": "West Main Street",
+          "country": "United States",
+          "county": "Utah County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "84003",
+          "state": "Utah",
+          "state_code": "UT",
+          "county_code": "UT",
+          "city": "American Fork",
+          "lon": -111.807325,
+          "lat": 40.377303,
+          "result_type": "building",
+          "formatted": "336 West Main Street, American Fork, UT 84003, United States of America",
+          "address_line1": "336 West Main Street",
+          "address_line2": "American Fork, UT 84003, United States of America",
+          "timezone": {
+            "name": "America/Denver",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-06:00",
+            "offset_DST_seconds": -21600,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MDT"
+          },
+          "plus_code": "85GC95GV+W3",
+          "plus_code_short": "GV+W3 American Fork, Utah County, United States",
+          "iso3166_2": "US-UT",
+          "rank": {
+            "popularity": 1.6522731681264684,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51910f7a36abf35bc05962d7f6764b304440c00203e203426f70656e6164647265737365733a616464726573733a75732f75742f757461682d6164647265737365732d636f756e74793a31323231333062373363323162613462"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.807325,
+            40.377303
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "336",
+                "street": "West Main Street",
+                "country": "United States",
+                "county": "Utah County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ut/utah-addresses-county:122130b73c21ba4b",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "84003",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Utah",
+                "state_code": "UT",
+                "county_code": "UT",
+                "city": "American Fork",
+                "lon": -111.807325,
+                "lat": 40.377303,
+                "feature_type": "details",
+                "formatted": "336 West Main Street, American Fork, UT 84003, United States of America",
+                "address_line1": "336 West Main Street",
+                "address_line2": "American Fork, UT 84003, United States of America",
+                "timezone": {
+                  "name": "America/Denver",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-06:00",
+                  "offset_DST_seconds": -21600,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MDT"
+                },
+                "iso3166_2": "US-UT"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -111.807325,
+                  40.377303
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "clka3edhc002wk10f7ip65p4v",
+      "name": "Good Earth Markets",
+      "address_line_1": "1160 West Hill Field Road",
+      "address_line_2": null,
+      "city": "Layton",
+      "state": "UT",
+      "postal_code": "84041",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 41.0716726,
+      "lng": -111.9868171,
+      "merchant_id": "goodearthmarkets",
+      "merchant_logo": null,
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "1160",
+          "street": "W Hill Field Road",
+          "country": "United States",
+          "county": "Davis County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "84041",
+          "state": "Utah",
+          "state_code": "UT",
+          "county_code": "DA",
+          "city": "Layton",
+          "lon": -111.986423,
+          "lat": 41.071531,
+          "result_type": "building",
+          "formatted": "1160 W Hill Field Road, Layton, UT 84041, United States of America",
+          "address_line1": "1160 W Hill Field Road",
+          "address_line2": "Layton, UT 84041, United States of America",
+          "timezone": {
+            "name": "America/Denver",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-06:00",
+            "offset_DST_seconds": -21600,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MDT"
+          },
+          "plus_code": "85HC32C7+JC",
+          "plus_code_short": "32C7+JC Layton, Davis County, United States",
+          "iso3166_2": "US-UT",
+          "rank": {
+            "popularity": 1.7130406391583852,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "516c41ef8d21ff5bc05939d384ed27894440c00203e203466f70656e6164647265737365733a616464726573733a75732f75742f7374617465776964652d6164647265737365732d73746174653a38376639326436633138376532656232"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.986423,
+            41.071531
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "1160",
+                "street": "W Hill Field Road",
+                "country": "United States",
+                "county": "Davis County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ut/statewide-addresses-state:87f92d6c187e2eb2",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "84041",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Utah",
+                "state_code": "UT",
+                "county_code": "DA",
+                "city": "Layton",
+                "lon": -111.986423,
+                "lat": 41.071531,
+                "feature_type": "details",
+                "formatted": "1160 W Hill Field Road, Layton, UT 84041, United States of America",
+                "address_line1": "1160 W Hill Field Road",
+                "address_line2": "Layton, UT 84041, United States of America",
+                "timezone": {
+                  "name": "America/Denver",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-06:00",
+                  "offset_DST_seconds": -21600,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MDT"
+                },
+                "iso3166_2": "US-UT"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -111.986423,
+                  41.071531
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cllfq7r4c002yjv0f4jthe24z",
+      "name": "Good Earth Markets",
+      "address_line_1": "1050 West Riverdale Road",
+      "address_line_2": null,
+      "city": "Ogden",
+      "state": "UT",
+      "postal_code": "84405",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 41.1775641,
+      "lng": -112.0038785,
+      "merchant_id": "goodearthmarkets",
+      "merchant_logo": null,
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Good Earth Markets",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Utah",
+          "county": "Weber",
+          "city": "Riverdale",
+          "postcode": "84405",
+          "district": "Tibbitts",
+          "street": "West Riverdale Road",
+          "housenumber": "1050",
+          "iso3166_2": "US-UT",
+          "lon": -112.0038476,
+          "lat": 41.1775799,
+          "state_code": "UT",
+          "result_type": "amenity",
+          "county_code": "WB",
+          "formatted": "Good Earth Markets, 1050 West Riverdale Road, Riverdale, UT 84405, United States of America",
+          "address_line1": "Good Earth Markets",
+          "address_line2": "1050 West Riverdale Road, Riverdale, UT 84405, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/Denver",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-06:00",
+            "offset_DST_seconds": -21600,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MDT"
+          },
+          "plus_code": "85H95XHW+2F",
+          "plus_code_short": "+2F, 84405 Riverdale, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 1.6265660750712652,
+            "confidence": 0,
+            "confidence_city_level": 0,
+            "confidence_street_level": 0,
+            "confidence_building_level": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "51c20a010a3f005cc059a6762bf0ba964440f00103f901527c621200000000c00201920312476f6f64204561727468204d61726b657473e203226f70656e7374726565746d61703a76656e75653a6e6f64652f333038343434323432"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -112.0038476,
+            41.1775799
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://goodearthmarkets.com/riverdale/",
+                "opening_hours": "Mo-Sa 08:30-21:00; Su off",
+                "name": "Good Earth Markets",
+                "contact": {
+                  "phone": "+1 801-334-5500"
+                },
+                "commercial": {
+                  "type": "supermarket"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.supermarket"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Good Earth Markets",
+                    "shop": "supermarket",
+                    "phone": "+1 801-334-5500",
+                    "osm_id": 308444242,
+                    "website": "https://goodearthmarkets.com/riverdale/",
+                    "osm_type": "n",
+                    "addr:city": "Riverdale",
+                    "addr:state": "UT",
+                    "check_date": "2025-06-19",
+                    "addr:street": "West Riverdale Road",
+                    "addr:postcode": 84405,
+                    "opening_hours": "Mo-Sa 08:30-21:00; Su off",
+                    "addr:housenumber": 1050
+                  }
+                },
+                "housenumber": "1050",
+                "street": "West Riverdale Road",
+                "city": "Riverdale",
+                "county": "Weber",
+                "state": "Utah",
+                "postcode": "84405",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Good Earth Markets, 1050 West Riverdale Road, Riverdale, UT 84405, United States of America",
+                "address_line1": "Good Earth Markets",
+                "address_line2": "1050 West Riverdale Road, Riverdale, UT 84405, United States of America",
+                "lat": 41.1775799,
+                "lon": -112.0038476,
+                "iso3166_2": "US-UT",
+                "timezone": {
+                  "name": "America/Denver",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-06:00",
+                  "offset_DST_seconds": -21600,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MDT"
+                },
+                "place_id": "51c20a010a3f005cc059de582cf0ba964440f00103f901527c621200000000920312476f6f64204561727468204d61726b657473"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -112.0038476,
+                  41.1775799
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "clmaz427f00a8js0f4x2856au",
+      "name": "Good Earth Markets",
+      "address_line_1": "7905 South 700 East",
+      "address_line_2": null,
+      "city": "Sandy",
+      "state": "UT",
+      "postal_code": "84070",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 40.60713399999999,
+      "lng": -111.8712628,
+      "merchant_id": "goodearthmarkets",
+      "merchant_logo": null,
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "7905",
+          "street": "South 700 East",
+          "country": "United States",
+          "county": "Salt Lake County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "84070",
+          "state": "Utah",
+          "state_code": "UT",
+          "county_code": "SL",
+          "city": "Sandy",
+          "lon": -111.871385,
+          "lat": 40.607059,
+          "result_type": "building",
+          "formatted": "7905 South 700 East, Sandy, UT 84070, United States of America",
+          "address_line1": "7905 South 700 East",
+          "address_line2": "Sandy, UT 84070, United States of America",
+          "timezone": {
+            "name": "America/Denver",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-06:00",
+            "offset_DST_seconds": -21600,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MDT"
+          },
+          "plus_code": "85GCJ44H+RC",
+          "plus_code_short": "J44H+RC, 84070 Sandy, United States",
+          "iso3166_2": "US-UT",
+          "rank": {
+            "popularity": 2.5982117864573926,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51664e97c5c4f75bc05909dffb1bb44d4440c00203e203466f70656e6164647265737365733a616464726573733a75732f75742f7374617465776964652d6164647265737365732d73746174653a34303431613938363231653437666263"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.871385,
+            40.607059
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "7905",
+                "street": "South 700 East",
+                "country": "United States",
+                "county": "Salt Lake County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ut/statewide-addresses-state:4041a98621e47fbc",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "84070",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Utah",
+                "state_code": "UT",
+                "county_code": "SL",
+                "city": "Sandy",
+                "lon": -111.871385,
+                "lat": 40.607059,
+                "feature_type": "details",
+                "formatted": "7905 South 700 East, Sandy, UT 84070, United States of America",
+                "address_line1": "7905 South 700 East",
+                "address_line2": "Sandy, UT 84070, United States of America",
+                "timezone": {
+                  "name": "America/Denver",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-06:00",
+                  "offset_DST_seconds": -21600,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MDT"
+                },
+                "iso3166_2": "US-UT"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -111.871385,
+                  40.607059
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cm2drvy1a009s7i55jbli7g0a",
+      "name": "Good Earth Markets",
+      "address_line_1": "863 North 700 East",
+      "address_line_2": null,
+      "city": "Spanish Fork",
+      "state": "UT",
+      "postal_code": "84660",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 40.1210892,
+      "lng": -111.6430962,
+      "merchant_id": "goodearthmarkets",
+      "merchant_logo": null,
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Good Earth Natural Foods",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Utah",
+          "county": "Utah County",
+          "city": "Spanish Fork",
+          "postcode": "84660",
+          "street": "North 700 East",
+          "housenumber": "863",
+          "iso3166_2": "US-UT",
+          "lon": -111.64309,
+          "lat": 40.1211657,
+          "state_code": "UT",
+          "result_type": "amenity",
+          "formatted": "Good Earth Natural Foods, 863 North 700 East, Spanish Fork, UT 84660, United States of America",
+          "address_line1": "Good Earth Natural Foods",
+          "address_line2": "863 North 700 East, Spanish Fork, UT 84660, United States of America",
+          "category": "commercial.food_and_drink.deli;commercial.food_and_drink.health_food",
+          "timezone": {
+            "name": "America/Denver",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-06:00",
+            "offset_DST_seconds": -21600,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MDT"
+          },
+          "plus_code": "85GC49C4+FQ",
+          "plus_code_short": "C4+FQ Spanish Fork, Utah County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 1.2914261225699657,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "519e98f56228e95bc059cf728f5b820f4440f00103f901758ed0c601000000c00201920318476f6f64204561727468204e61747572616c20466f6f6473"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.64309,
+            40.1211657
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Good Earth Natural Foods",
+                "commercial": {
+                  "type": "health_food"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.food_and_drink",
+                  "commercial.food_and_drink.deli",
+                  "commercial.food_and_drink.health_food"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Good Earth Natural Foods",
+                    "shop": "health_food",
+                    "osm_id": 7630524021,
+                    "osm_type": "n",
+                    "addr:city": "Spanish Fork",
+                    "addr:state": "UT",
+                    "addr:street": "North 700 East",
+                    "addr:postcode": 84660,
+                    "addr:housenumber": 863
+                  }
+                },
+                "housenumber": "863",
+                "street": "North 700 East",
+                "city": "Spanish Fork",
+                "county": "Utah County",
+                "state": "Utah",
+                "postcode": "84660",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Good Earth Natural Foods, 863 North 700 East, Spanish Fork, UT 84660, United States of America",
+                "address_line1": "Good Earth Natural Foods",
+                "address_line2": "863 North 700 East, Spanish Fork, UT 84660, United States of America",
+                "lat": 40.1211657,
+                "lon": -111.64309,
+                "iso3166_2": "US-UT",
+                "timezone": {
+                  "name": "America/Denver",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-06:00",
+                  "offset_DST_seconds": -21600,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MDT"
+                },
+                "place_id": "519e98f56228e95bc059b80e905b820f4440f00103f901758ed0c601000000920318476f6f64204561727468204e61747572616c20466f6f6473"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -111.64309,
+                  40.1211657
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cmhy33fsm02b55agqomdi17em",
+      "name": "Sprout's Drug Store",
+      "address_line_1": "122 Academy Street",
+      "address_line_2": null,
+      "city": "Shinglehouse",
+      "state": "PA",
+      "postal_code": "16748",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 41.963855,
+      "lng": -78.1910681,
+      "merchant_id": "sprouts",
+      "merchant_logo": "https://storage.googleapis.com/aisle-digital-asset-manager/merchants/sprouts/logos/121bf8db-3485-49f1-9530-76c81a476cb4",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "country": "United States",
+          "country_code": "us",
+          "state": "Pennsylvania",
+          "county": "Potter County",
+          "city": "Shinglehouse",
+          "postcode": "16748",
+          "street": "Academy Street",
+          "housenumber": "122",
+          "iso3166_2": "US-PA",
+          "lon": -78.18602422774012,
+          "lat": 41.964220017337574,
+          "state_code": "PA",
+          "result_type": "building",
+          "formatted": "122 Academy Street, Shinglehouse, PA 16748, United States of America",
+          "address_line1": "122 Academy Street",
+          "address_line2": "Shinglehouse, PA 16748, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87H3XR77+MH",
+          "plus_code_short": "77+MH Shinglehouse, Potter County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 1.7773470345085236,
+            "confidence": 0.9,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "match_by_building"
+          },
+          "place_id": "51149a29d2e78b53c059854ec08f6bfb4440f00102f901eb61b70000000000c00203"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -78.18602422774012,
+            41.964220017337574
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Academy Street",
+                "categories": [
+                  "highway",
+                  "highway.public"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Academy Street",
+                    "osm_id": 12018155,
+                    "highway": "unclassified",
+                    "z_order": 330,
+                    "osm_type": "w"
+                  }
+                },
+                "street": "Academy Street",
+                "city": "Shinglehouse",
+                "county": "Potter County",
+                "state": "Pennsylvania",
+                "postcode": "18748",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Academy Street, Shinglehouse, PA 18748, United States of America",
+                "address_line1": "Academy Street",
+                "address_line2": "Shinglehouse, PA 18748, United States of America",
+                "lat": 41.96433901246312,
+                "lon": -78.1860138964422,
+                "iso3166_2": "US-PA",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51186426ace88b53c059d6244a8270fb4440f00102f901eb61b7000000000092030e41636164656d7920537472656574"
+              },
+              "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                  [
+                    -78.1851235,
+                    41.9641349
+                  ],
+                  [
+                    -78.1853989,
+                    41.964162
+                  ],
+                  [
+                    -78.1857221,
+                    41.9641892
+                  ],
+                  [
+                    -78.1860762,
+                    41.964371
+                  ],
+                  [
+                    -78.1861465,
+                    41.9644044
+                  ],
+                  [
+                    -78.1862589,
+                    41.9644128
+                  ],
+                  [
+                    -78.1869274,
+                    41.9644137
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cm1595459000bxapdntwqwtje",
+      "name": "Food Garden Market",
+      "address_line_1": "608 Franklin Avenue",
+      "address_line_2": null,
+      "city": "Brooklyn",
+      "state": "NY",
+      "postal_code": "11238",
+      "country": "USA",
+      "phone": null,
+      "website": null,
+      "lat": 40.6774892,
+      "lng": -73.9556861,
+      "merchant_id": "foodgardenmarket",
+      "merchant_logo": null,
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Food Garden Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "Kings County",
+          "city": "New York",
+          "postcode": "11228",
+          "district": "Brooklyn",
+          "suburb": "Clinton Hill",
+          "street": "Franklin Avenue",
+          "housenumber": "608",
+          "iso3166_2": "US-NY",
+          "lon": -73.9556666,
+          "lat": 40.6774773,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Food Garden Market, 608 Franklin Avenue, New York, NY 11228, United States of America",
+          "address_line1": "Food Garden Market",
+          "address_line2": "608 Franklin Avenue, New York, NY 11228, United States of America",
+          "category": "commercial.supermarket",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8M2GV+XP",
+          "plus_code_short": "M2GV+XP New York, Kings County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.230915105822992,
+            "confidence": 1,
+            "confidence_city_level": 1,
+            "confidence_street_level": 1,
+            "confidence_building_level": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "514a383ea4297d52c05925a47f93b7564440f00103f901752010ad01000000c00201920312466f6f642047617264656e204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.9556666,
+            40.6774773
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://foodgardenmarket.com",
+                "opening_hours": "Mo-Su 08:00-21:00",
+                "name": "Food Garden Market",
+                "contact": {
+                  "phone": "+1-718-399-1529"
+                },
+                "facilities": {
+                  "toilets": true
+                },
+                "commercial": {
+                  "type": "supermarket"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.supermarket"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Food Garden Market",
+                    "shop": "supermarket",
+                    "phone": "+1-718-399-1529",
+                    "osm_id": 7198482549,
+                    "cuisine": "sandwich;pizza;salad",
+                    "toilets": "yes",
+                    "website": "https://foodgardenmarket.com",
+                    "osm_type": "n",
+                    "addr:city": "Brooklyn",
+                    "addr:state": "NY",
+                    "drink:beer": "yes",
+                    "addr:street": "Franklin Avenue",
+                    "drink:coffee": "yes",
+                    "addr:postcode": 11228,
+                    "opening_hours": "Mo-Su 08:00-21:00",
+                    "toilets:access": "permissive",
+                    "toilets:unisex": "no",
+                    "addr:housenumber": 608
+                  }
+                },
+                "housenumber": "608",
+                "street": "Franklin Avenue",
+                "city": "New York",
+                "county": "Kings County",
+                "state": "New York",
+                "postcode": "11228",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Food Garden Market, 608 Franklin Avenue, New York, NY 11228, United States of America",
+                "address_line1": "Food Garden Market",
+                "address_line2": "608 Franklin Avenue, New York, NY 11228, United States of America",
+                "lat": 40.6774773,
+                "lon": -73.9556666,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "514a383ea4297d52c05912678093b7564440f00103f901752010ad01000000920312466f6f642047617264656e204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.9556666,
+                  40.6774773
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "foursquare_enrichment": {
+    "total_stores": 10,
+    "stores_with_instagram_before": 0,
+    "stores_needing_instagram": 10,
+    "instagram_added": 0,
+    "not_found": 10,
+    "skipped": 0
+  }
+}
