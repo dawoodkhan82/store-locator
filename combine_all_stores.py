@@ -174,7 +174,7 @@ def load_wholesale_crm_csv(csv_path):
     """
     Load wholesale CRM data from CSV file.
     
-    Extracts only: Shop Name, Address, IG Link
+    Extracts: Shop Name, Address, IG Link (from both "IG Link" and "IG DM Link" columns)
     
     Args:
         csv_path: Path to the CSV file
@@ -194,7 +194,14 @@ def load_wholesale_crm_csv(csv_path):
             for row in reader:
                 shop_name = row.get('Shop Name', '').strip()
                 address = row.get('Address', '').strip()
+                
+                # Check both Instagram columns - prefer "IG Link" over "IG DM Link"
                 ig_link = row.get('IG Link', '').strip()
+                ig_dm_link = row.get('IG DM Link', '').strip()
+                
+                # Use IG Link if available, otherwise use IG DM Link
+                if not ig_link and ig_dm_link:
+                    ig_link = ig_dm_link
                 
                 # Skip rows without a shop name
                 if not shop_name:
@@ -842,6 +849,10 @@ def main():
         places_files = sorted(PLACES_ENRICHED_DIR.glob('*.json'))
 
         for file_path in places_files:
+            # Skip Foursquare files - they're processed separately in Step 3.6
+            if '_foursquare.json' in file_path.name:
+                continue
+            
             brand = get_brand_name(file_path.name)
 
             if brand in website_enriched_brands:
