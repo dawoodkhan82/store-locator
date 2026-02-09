@@ -65,11 +65,17 @@ MILITARY_KEYWORDS = [
 def get_brand_name(filename):
     """Extract brand name from filename (remove suffixes)."""
     name = filename.replace('.json', '')
-    suffixes = ['_website_enriched', '_geoapify', '_google', '_places', '_enriched']
-    for suffix in suffixes:
-        if name.endswith(suffix):
-            name = name[:-len(suffix)]
-            break
+    # Remove suffixes in order (most specific first, then more general)
+    # Keep removing until no more suffixes match
+    suffixes = ['_website_enriched', '_foursquare', '_geoapify', '_google', '_places', '_enriched']
+    changed = True
+    while changed:
+        changed = False
+        for suffix in suffixes:
+            if name.endswith(suffix):
+                name = name[:-len(suffix)]
+                changed = True
+                break
     return name
 
 
@@ -219,6 +225,50 @@ def load_wholesale_crm_csv(csv_path):
         print(f"  ✗ Error loading CSV: {e}")
     
     return stores
+
+
+def load_foursquare_instagram_stores(foursquare_file):
+    """
+    Load Foursquare enriched file and extract stores that have Instagram links.
+    
+    Args:
+        foursquare_file: Path to Foursquare enriched JSON file
+        
+    Returns:
+        List of stores with Instagram links from Foursquare
+    """
+    stores_with_ig = []
+    
+    if not foursquare_file.exists():
+        return stores_with_ig
+    
+    try:
+        data = load_json_file(foursquare_file)
+        if not data:
+            return stores_with_ig
+        
+        # Handle different data structures
+        if isinstance(data, dict):
+            stores = data.get('stores', []) or data.get('places', [])
+        elif isinstance(data, list):
+            stores = data
+        else:
+            stores = []
+        
+        # Extract stores that have Instagram links
+        for store in stores:
+            enrichment = store.get('enrichment', {})
+            social_links = enrichment.get('socialLinks', {})
+            instagram = social_links.get('instagram')
+            
+            if instagram and instagram.strip():
+                # Store has Instagram, include it
+                stores_with_ig.append(store)
+        
+    except Exception as e:
+        print(f"  ⚠ Error loading {foursquare_file.name}: {e}")
+    
+    return stores_with_ig
 
 
 def normalize_store_name_for_matching(name):
@@ -736,7 +786,10 @@ def main():
         'files_processed': 0,
         'files_skipped': 0,
         'duplicates_merged': 0,
-        'unique_locations': 0
+        'unique_locations': 0,
+        'foursquare_files': 0,
+        'foursquare_stores_processed': 0,
+        'foursquare_ig_added': 0
     }
 
     # Get list of brands that have website enrichment
@@ -933,6 +986,90 @@ def main():
         stats['crm_added'] = 0
         stats['crm_ig_added'] = 0
 
+    # Process Foursquare enriched files (add Instagram links)
+    print("\n3.6. Processing Foursquare Instagram links...")
+    print("-" * 80)
+
+    if PLACES_ENRICHED_DIR.exists():
+        foursquare_files = sorted(PLACES_ENRICHED_DIR.glob('*_foursquare.json'))
+        
+        if foursquare_files:
+            print(f"  Found {len(foursquare_files)} Foursquare enriched files")
+            
+            # Build name index for matching
+            name_index = build_name_index(store_map)
+            
+            fsq_ig_added = 0
+            fsq_stores_processed = 0
+            fsq_files_processed = 0
+            
+            for foursquare_file in foursquare_files:
+                brand = get_brand_name(foursquare_file.name)
+                print(f"\n  Processing: {foursquare_file.name} (brand: {brand})")
+                
+                # Load stores with Instagram from Foursquare file
+                fsq_stores = load_foursquare_instagram_stores(foursquare_file)
+                
+                if not fsq_stores:
+                    print(f"    → No stores with Instagram in this file")
+                    continue
+                
+                fsq_stores_processed += len(fsq_stores)
+                fsq_files_processed += 1
+                
+                # Match and merge Instagram links
+                file_ig_added = 0
+                for fsq_store in fsq_stores:
+                    # Try to find matching store by location key first
+                    fsq_key = get_store_key(fsq_store)
+                    
+                    if fsq_key in store_map:
+                        # Found by location key
+                        existing_store = store_map[fsq_key]
+                    else:
+                        # Try to find by name
+                        matching_key = find_matching_store(fsq_store, store_map, name_index)
+                        if matching_key:
+                            existing_store = store_map[matching_key]
+                        else:
+                            # Store not found, skip
+                            continue
+                    
+                    # Add Instagram link if store doesn't have one
+                    fsq_ig = fsq_store.get('enrichment', {}).get('socialLinks', {}).get('instagram')
+                    if fsq_ig:
+                        if 'enrichment' not in existing_store:
+                            existing_store['enrichment'] = {}
+                        if 'socialLinks' not in existing_store['enrichment']:
+                            existing_store['enrichment']['socialLinks'] = {}
+                        
+                        # Only add if existing store doesn't have Instagram
+                        if not existing_store['enrichment']['socialLinks'].get('instagram'):
+                            existing_store['enrichment']['socialLinks']['instagram'] = fsq_ig
+                            fsq_ig_added += 1
+                            file_ig_added += 1
+                
+                print(f"    → Processed {len(fsq_stores)} stores with Instagram, added {file_ig_added} links")
+            
+            stats['foursquare_files'] = fsq_files_processed
+            stats['foursquare_stores_processed'] = fsq_stores_processed
+            stats['foursquare_ig_added'] = fsq_ig_added
+            
+            print(f"\n✓ Foursquare Processing complete:")
+            print(f"  - Files processed: {fsq_files_processed}")
+            print(f"  - Stores with Instagram processed: {fsq_stores_processed}")
+            print(f"  - Instagram links added: {fsq_ig_added}")
+        else:
+            print(f"  → No Foursquare enriched files found")
+            stats['foursquare_files'] = 0
+            stats['foursquare_stores_processed'] = 0
+            stats['foursquare_ig_added'] = 0
+    else:
+        print(f"  ⚠ Directory not found: {PLACES_ENRICHED_DIR}")
+        stats['foursquare_files'] = 0
+        stats['foursquare_stores_processed'] = 0
+        stats['foursquare_ig_added'] = 0
+
     # Convert map to list
     all_stores_unfiltered = list(store_map.values())
 
@@ -1050,6 +1187,10 @@ def main():
     print(f"  - Matched existing stores: {stats.get('crm_matched', 0):,}")
     print(f"  - Instagram links added:   {stats.get('crm_ig_added', 0):,}")
     print(f"  - New stores added:        {stats.get('crm_added', 0):,}")
+    print(f"\nFoursquare Instagram integration:")
+    print(f"  - Files processed:         {stats.get('foursquare_files', 0):,}")
+    print(f"  - Stores with IG processed: {stats.get('foursquare_stores_processed', 0):,}")
+    print(f"  - Instagram links added:   {stats.get('foursquare_ig_added', 0):,}")
     print(f"\nEnrichment breakdown:")
     print(f"  - Geoapify:      {enrichment_counts['geoapify']:,} stores")
     print(f"  - Google Places: {enrichment_counts['google_places']:,} stores")
