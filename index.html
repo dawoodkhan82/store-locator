@@ -413,6 +413,28 @@
                         </div>
                     </div>
 
+                    <!-- Categories Filter (multi-select with checkboxes) -->
+                    <div style="position: relative;">
+                        <button id="categoryFilterButton" onclick="toggleCategoryFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
+                            <span id="categoryFilterLabel">Categories</span>
+                            <span style="margin-left: 8px;">▼</span>
+                        </button>
+                        <div id="categoryFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 400px; overflow-y: auto; min-width: 280px; z-index: 1000;">
+                            <div id="categoryCheckboxes" style="padding: 8px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Specialties Filter (multi-select with checkboxes) -->
+                    <div style="position: relative;">
+                        <button id="specialtyFilterButton" onclick="toggleSpecialtyFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
+                            <span id="specialtyFilterLabel">Specialties</span>
+                            <span style="margin-left: 8px;">▼</span>
+                        </button>
+                        <div id="specialtyFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 400px; overflow-y: auto; min-width: 280px; z-index: 1000;">
+                            <div id="specialtyCheckboxes" style="padding: 8px;"></div>
+                        </div>
+                    </div>
+
                     <button onclick="clearFilters()" style="padding: 6px 12px; font-size: 14px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: white; color: rgba(55, 53, 47, 0.65); cursor: pointer; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='white'">
                         Clear All
                     </button>
@@ -448,7 +470,6 @@
                             <th data-column="brands"><span class="th-content">Brands<button class="hide-col-btn" onclick="hideColumn('brands')" title="Hide column">×</button></span></th>
                             <th data-column="categories"><span class="th-content">Categories<button class="hide-col-btn" onclick="hideColumn('categories')" title="Hide column">×</button></span></th>
                             <th data-column="specialties"><span class="th-content">Specialties<button class="hide-col-btn" onclick="hideColumn('specialties')" title="Hide column">×</button></span></th>
-                            <th data-column="dataEnriched"><span class="th-content">Data Enriched<button class="hide-col-btn" onclick="hideColumn('dataEnriched')" title="Hide column">×</button></span></th>
                             <th data-column="website"><span class="th-content">Website<button class="hide-col-btn" onclick="hideColumn('website')" title="Hide column">×</button></span></th>
                             <th data-column="phone"><span class="th-content">Phone<button class="hide-col-btn" onclick="hideColumn('phone')" title="Hide column">×</button></span></th>
                             <th data-column="social"><span class="th-content">Social<button class="hide-col-btn" onclick="hideColumn('social')" title="Hide column">×</button></span></th>
@@ -560,7 +581,6 @@
             { id: 'brands', label: 'Brands', hideable: true },
             { id: 'categories', label: 'Categories', hideable: true },
             { id: 'specialties', label: 'Specialties', hideable: true },
-            { id: 'dataEnriched', label: 'Data Enriched', hideable: true },
             { id: 'website', label: 'Website', hideable: true },
             { id: 'phone', label: 'Phone', hideable: true },
             { id: 'social', label: 'Social', hideable: true },
@@ -653,12 +673,6 @@
                         });
                     }
 
-                    // Merge data_enriched sources
-                    if (store.data_enriched) {
-                        const sources = new Set(group.data_enriched || []);
-                        store.data_enriched.forEach(s => sources.add(s));
-                        group.data_enriched = [...sources];
-                    }
                 }
             });
 
@@ -1182,24 +1196,6 @@
                                 ${specialties.length > 3 ? `<span style="font-size: 12px; color: rgba(55, 53, 47, 0.4);">+${specialties.length - 3}</span>` : ''}
                             </div>
                         </td>
-                        <td data-column="dataEnriched" class="${hiddenColumns.has('dataEnriched') ? 'column-hidden' : ''}">
-                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-                                ${(store.data_enriched || []).map(source => {
-                                    const colors = {
-                                        'geoapify': { bg: 'rgba(156, 39, 176, 0.15)', text: 'rgb(106, 27, 120)' },
-                                        'google_places': { bg: 'rgba(66, 133, 244, 0.15)', text: 'rgb(25, 103, 210)' },
-                                        'openai': { bg: 'rgba(16, 163, 127, 0.15)', text: 'rgb(10, 110, 85)' }
-                                    };
-                                    const labels = {
-                                        'geoapify': 'Geoapify',
-                                        'google_places': 'Google',
-                                        'openai': 'OpenAI'
-                                    };
-                                    const c = colors[source] || { bg: 'rgba(55, 53, 47, 0.1)', text: 'rgb(55, 53, 47)' };
-                                    return `<span style="background-color: ${c.bg}; color: ${c.text}; padding: 1px 6px; border-radius: 3px; font-size: 11px; font-weight: 500; display: inline-block; white-space: nowrap;">${labels[source] || source}</span>`;
-                                }).join('') || '<span style="color: rgba(55, 53, 47, 0.4);">-</span>'}
-                            </div>
-                        </td>
                         <td data-column="website" class="${hiddenColumns.has('website') ? 'column-hidden' : ''}">
                             ${website ? `<a href="${website}" target="_blank" style="color: rgb(46, 170, 220); text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'" onclick="event.stopPropagation()">Link ↗</a>` : '-'}
                         </td>
@@ -1656,6 +1652,8 @@
             // Populate brand and region/state filters
             // Uses GROUPED_STORES to count unique stores (not locations)
             const brands = new Set();
+            const categories = new Set();
+            const specialties = new Set();
             regionCounts = {};
             stateCounts = {};
 
@@ -1671,6 +1669,19 @@
                 } else {
                     if (store.brand) brands.add(store.brand);
                     if (store.source) brands.add(store.source);
+                }
+
+                // Extract categories and specialties
+                const enrichment = store.enrichment || {};
+                if (enrichment.productCategories && Array.isArray(enrichment.productCategories)) {
+                    enrichment.productCategories.forEach(cat => {
+                        if (cat && cat.trim()) categories.add(cat.trim());
+                    });
+                }
+                if (enrichment.specialties && Array.isArray(enrichment.specialties)) {
+                    enrichment.specialties.forEach(spec => {
+                        if (spec && spec.trim()) specialties.add(spec.trim());
+                    });
                 }
 
                 // For grouped stores, count in all states/regions where they have locations
@@ -1786,6 +1797,50 @@
                 categoryContainer.appendChild(categoryHeader);
                 categoryContainer.appendChild(brandsContainer);
                 brandCheckboxes.appendChild(categoryContainer);
+            });
+
+            // Populate category checkboxes
+            const categoryCheckboxes = document.getElementById('categoryCheckboxes');
+            categoryCheckboxes.innerHTML = '';
+            const sortedCategories = Array.from(categories).sort();
+            sortedCategories.forEach(category => {
+                const label = document.createElement('label');
+                label.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
+                label.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                label.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = category;
+                checkbox.style.marginRight = '8px';
+                checkbox.onchange = function() { filterStores(); };
+
+                const text = document.createTextNode(category);
+                label.appendChild(checkbox);
+                label.appendChild(text);
+                categoryCheckboxes.appendChild(label);
+            });
+
+            // Populate specialty checkboxes
+            const specialtyCheckboxes = document.getElementById('specialtyCheckboxes');
+            specialtyCheckboxes.innerHTML = '';
+            const sortedSpecialties = Array.from(specialties).sort();
+            sortedSpecialties.forEach(specialty => {
+                const label = document.createElement('label');
+                label.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
+                label.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                label.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = specialty;
+                checkbox.style.marginRight = '8px';
+                checkbox.onchange = function() { filterStores(); };
+
+                const text = document.createTextNode(specialty);
+                label.appendChild(checkbox);
+                label.appendChild(text);
+                specialtyCheckboxes.appendChild(label);
             });
 
             // Add uncategorized brands at the bottom
@@ -2074,11 +2129,15 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const categoryDropdown = document.getElementById('categoryFilterDropdown');
+            const specialtyDropdown = document.getElementById('specialtyFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             socialDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
+            categoryDropdown.style.display = 'none';
+            specialtyDropdown.style.display = 'none';
 
             // Toggle location dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -2089,11 +2148,15 @@
             const socialDropdown = document.getElementById('socialFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const categoryDropdown = document.getElementById('categoryFilterDropdown');
+            const specialtyDropdown = document.getElementById('specialtyFilterDropdown');
 
             // Close other dropdowns
             socialDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
+            categoryDropdown.style.display = 'none';
+            specialtyDropdown.style.display = 'none';
 
             // Toggle brand dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -2104,11 +2167,15 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const categoryDropdown = document.getElementById('categoryFilterDropdown');
+            const specialtyDropdown = document.getElementById('specialtyFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             sizeDropdown.style.display = 'none';
+            categoryDropdown.style.display = 'none';
+            specialtyDropdown.style.display = 'none';
 
             // Toggle social dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
@@ -2119,13 +2186,55 @@
             const brandDropdown = document.getElementById('brandFilterDropdown');
             const locationDropdown = document.getElementById('locationFilterDropdown');
             const socialDropdown = document.getElementById('socialFilterDropdown');
+            const categoryDropdown = document.getElementById('categoryFilterDropdown');
+            const specialtyDropdown = document.getElementById('specialtyFilterDropdown');
 
             // Close other dropdowns
             brandDropdown.style.display = 'none';
             locationDropdown.style.display = 'none';
             socialDropdown.style.display = 'none';
+            categoryDropdown.style.display = 'none';
+            specialtyDropdown.style.display = 'none';
 
             // Toggle size dropdown
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleCategoryFilter() {
+            const dropdown = document.getElementById('categoryFilterDropdown');
+            const brandDropdown = document.getElementById('brandFilterDropdown');
+            const locationDropdown = document.getElementById('locationFilterDropdown');
+            const socialDropdown = document.getElementById('socialFilterDropdown');
+            const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const specialtyDropdown = document.getElementById('specialtyFilterDropdown');
+
+            // Close other dropdowns
+            brandDropdown.style.display = 'none';
+            locationDropdown.style.display = 'none';
+            socialDropdown.style.display = 'none';
+            sizeDropdown.style.display = 'none';
+            specialtyDropdown.style.display = 'none';
+
+            // Toggle category dropdown
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleSpecialtyFilter() {
+            const dropdown = document.getElementById('specialtyFilterDropdown');
+            const brandDropdown = document.getElementById('brandFilterDropdown');
+            const locationDropdown = document.getElementById('locationFilterDropdown');
+            const socialDropdown = document.getElementById('socialFilterDropdown');
+            const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            const categoryDropdown = document.getElementById('categoryFilterDropdown');
+
+            // Close other dropdowns
+            brandDropdown.style.display = 'none';
+            locationDropdown.style.display = 'none';
+            socialDropdown.style.display = 'none';
+            sizeDropdown.style.display = 'none';
+            categoryDropdown.style.display = 'none';
+
+            // Toggle specialty dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
@@ -2238,6 +2347,14 @@
             // Get selected size filter
             const selectedSize = document.querySelector('#sizeFilterDropdown input[name="sizeFilter"]:checked')?.value || 'all';
 
+            // Get selected categories
+            const selectedCategories = Array.from(document.querySelectorAll('#categoryCheckboxes input:checked'))
+                .map(cb => cb.value);
+
+            // Get selected specialties
+            const selectedSpecialties = Array.from(document.querySelectorAll('#specialtyCheckboxes input:checked'))
+                .map(cb => cb.value);
+
             filteredStores = GROUPED_STORES.filter(store => {
                 const name = (store.displayName?.text || store.name || '').toLowerCase();
                 const address = getStoreAddress(store);
@@ -2297,27 +2414,46 @@
                     matchesSize = locationCount >= 10;
                 }
 
-                return matchesSearch && matchesLocation && matchesBrand && matchesSocial && matchesSize;
+                // Category filter (OR logic - match ANY selected category)
+                let matchesCategory = true;
+                if (selectedCategories.length > 0) {
+                    const storeCategories = (enrichment.productCategories || []).map(cat => cat.trim());
+                    matchesCategory = selectedCategories.some(selectedCategory =>
+                        storeCategories.includes(selectedCategory)
+                    );
+                }
+
+                // Specialty filter (OR logic - match ANY selected specialty)
+                let matchesSpecialty = true;
+                if (selectedSpecialties.length > 0) {
+                    const storeSpecialties = (enrichment.specialties || []).map(spec => spec.trim());
+                    matchesSpecialty = selectedSpecialties.some(selectedSpecialty =>
+                        storeSpecialties.includes(selectedSpecialty)
+                    );
+                }
+
+                return matchesSearch && matchesLocation && matchesBrand && matchesSocial && matchesSize && matchesCategory && matchesSpecialty;
             });
 
             // Update button labels
-            updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize);
+            updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedCategories, selectedSpecialties);
 
             // Update active filter tags
-            updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize);
+            updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedCategories, selectedSpecialties);
 
             // Update filtered results count
-            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize);
+            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize, selectedCategories, selectedSpecialties);
 
             currentPage = 1; // Reset to first page when filtering
             sortStores();
         }
 
-        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize) {
+        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize, selectedCategories, selectedSpecialties) {
             const countEl = document.getElementById('filteredResultsCount');
             const hasFilters = searchTerm || selectedStates.length > 0 ||
                               selectedBrands.length > 0 || selectedSocial.length > 0 ||
-                              (selectedSize && selectedSize !== 'all');
+                              (selectedSize && selectedSize !== 'all') ||
+                              selectedCategories.length > 0 || selectedSpecialties.length > 0;
 
             if (hasFilters) {
                 countEl.textContent = `${filteredStores.length.toLocaleString()} of ${GROUPED_STORES.length.toLocaleString()} stores`;
@@ -2328,11 +2464,13 @@
             }
         }
 
-        function updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize) {
+        function updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedCategories, selectedSpecialties) {
             const brandLabel = document.getElementById('brandFilterLabel');
             const socialLabel = document.getElementById('socialFilterLabel');
             const locationLabel = document.getElementById('locationFilterLabel');
             const sizeLabel = document.getElementById('sizeFilterLabel');
+            const categoryLabel = document.getElementById('categoryFilterLabel');
+            const specialtyLabel = document.getElementById('specialtyFilterLabel');
 
             // Update location label (now counts states only)
             if (selectedStates.length > 0) {
@@ -2375,15 +2513,34 @@
                 sizeLabel.textContent = 'Store Size';
                 sizeLabel.style.fontWeight = 'normal';
             }
+
+            // Update category label
+            if (selectedCategories.length > 0) {
+                categoryLabel.textContent = `Categories (${selectedCategories.length})`;
+                categoryLabel.style.fontWeight = '600';
+            } else {
+                categoryLabel.textContent = 'Categories';
+                categoryLabel.style.fontWeight = 'normal';
+            }
+
+            // Update specialty label
+            if (selectedSpecialties.length > 0) {
+                specialtyLabel.textContent = `Specialties (${selectedSpecialties.length})`;
+                specialtyLabel.style.fontWeight = '600';
+            } else {
+                specialtyLabel.textContent = 'Specialties';
+                specialtyLabel.style.fontWeight = 'normal';
+            }
         }
 
-        function updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize) {
+        function updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedCategories, selectedSpecialties) {
             const container = document.getElementById('activeFiltersContainer');
             const tagsDiv = document.getElementById('activeFilterTags');
             tagsDiv.innerHTML = '';
 
             const hasFilters = selectedBrands.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
-                              (selectedSize && selectedSize !== 'all');
+                              (selectedSize && selectedSize !== 'all') ||
+                              selectedCategories.length > 0 || selectedSpecialties.length > 0;
 
             if (!hasFilters) {
                 container.style.display = 'none';
@@ -2441,6 +2598,26 @@
                 });
                 tagsDiv.appendChild(tag);
             }
+
+            // Add category tags
+            selectedCategories.forEach(category => {
+                const tag = createFilterTag(category, () => {
+                    const checkbox = document.querySelector(`#categoryCheckboxes input[value="${category}"]`);
+                    if (checkbox) checkbox.checked = false;
+                    filterStores();
+                });
+                tagsDiv.appendChild(tag);
+            });
+
+            // Add specialty tags
+            selectedSpecialties.forEach(specialty => {
+                const tag = createFilterTag(specialty, () => {
+                    const checkbox = document.querySelector(`#specialtyCheckboxes input[value="${specialty}"]`);
+                    if (checkbox) checkbox.checked = false;
+                    filterStores();
+                });
+                tagsDiv.appendChild(tag);
+            });
         }
 
         function createFilterTag(text, onRemove) {
@@ -2490,6 +2667,12 @@
                 const btn = container.previousElementSibling?.querySelector('.category-expand-btn');
                 if (btn) btn.textContent = '▶';
             });
+
+            // Clear category filter
+            document.querySelectorAll('#categoryCheckboxes input:checked').forEach(cb => cb.checked = false);
+
+            // Clear specialty filter
+            document.querySelectorAll('#specialtyCheckboxes input:checked').forEach(cb => cb.checked = false);
 
             // Uncheck all social checkboxes
             document.querySelectorAll('#socialFilterDropdown input').forEach(cb => cb.checked = false);
