@@ -91,8 +91,8 @@
         td:first-child {
             position: sticky;
             left: 0;
-            background-color: inherit;
             z-index: 5;
+            box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.1);
         }
 
         th:first-child {
@@ -105,7 +105,7 @@
         }
 
         .store-row:hover td:first-child {
-            background-color: rgba(55, 53, 47, 0.08);
+            background-color: #f0efec;
         }
 
         /* Add shadow to indicate scroll */
@@ -275,6 +275,427 @@
             gap: 16px;
         }
 
+        /* DM Outreach Styles */
+        .dm-stats-bar {
+            display: flex;
+            gap: 24px;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, rgba(46, 170, 220, 0.08) 0%, rgba(120, 85, 195, 0.08) 100%);
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .dm-stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .dm-stat-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(55, 53, 47);
+        }
+
+        .dm-stat-label {
+            font-size: 12px;
+            color: rgba(55, 53, 47, 0.65);
+        }
+
+        .dm-section {
+            margin-bottom: 24px;
+        }
+
+        .dm-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+            margin-bottom: 12px;
+        }
+
+        .dm-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgb(55, 53, 47);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dm-section-count {
+            background-color: rgba(55, 53, 47, 0.08);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .dm-store-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border: 1px solid rgba(55, 53, 47, 0.09);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            transition: all 0.15s;
+        }
+
+        .dm-store-card:hover {
+            background-color: rgba(55, 53, 47, 0.03);
+            border-color: rgba(55, 53, 47, 0.16);
+        }
+
+        .dm-store-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .dm-store-name {
+            font-weight: 500;
+            color: rgb(55, 53, 47);
+            font-size: 14px;
+        }
+
+        .dm-store-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 12px;
+            color: rgba(55, 53, 47, 0.65);
+        }
+
+        .dm-store-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dm-btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s;
+            border: none;
+        }
+
+        .dm-btn-primary {
+            background-color: rgb(46, 170, 220);
+            color: white;
+        }
+
+        .dm-btn-primary:hover {
+            background-color: rgb(36, 150, 200);
+        }
+
+        .dm-btn-secondary {
+            background-color: rgba(55, 53, 47, 0.08);
+            color: rgb(55, 53, 47);
+        }
+
+        .dm-btn-secondary:hover {
+            background-color: rgba(55, 53, 47, 0.12);
+        }
+
+        .dm-btn-success {
+            background-color: rgba(52, 168, 83, 0.15);
+            color: rgb(30, 120, 60);
+        }
+
+        .dm-btn-success:hover {
+            background-color: rgba(52, 168, 83, 0.25);
+        }
+
+        .dm-btn-danger {
+            background-color: rgba(220, 38, 38, 0.1);
+            color: rgb(180, 30, 30);
+        }
+
+        .dm-btn-danger:hover {
+            background-color: rgba(220, 38, 38, 0.2);
+        }
+
+        .dm-status-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .dm-status-new {
+            background-color: rgba(55, 53, 47, 0.08);
+            color: rgba(55, 53, 47, 0.65);
+        }
+
+        .dm-status-contacted {
+            background-color: rgba(46, 170, 220, 0.15);
+            color: rgb(30, 120, 180);
+        }
+
+        .dm-status-responded {
+            background-color: rgba(52, 168, 83, 0.15);
+            color: rgb(30, 120, 60);
+        }
+
+        .dm-status-interested {
+            background-color: rgba(120, 85, 195, 0.15);
+            color: rgb(90, 60, 160);
+        }
+
+        .dm-status-not-interested {
+            background-color: rgba(220, 38, 38, 0.1);
+            color: rgb(180, 30, 30);
+        }
+
+        .dm-days-badge {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .dm-days-green {
+            background-color: rgba(52, 168, 83, 0.15);
+            color: rgb(30, 120, 60);
+        }
+
+        .dm-days-yellow {
+            background-color: rgba(251, 191, 36, 0.2);
+            color: rgb(160, 120, 20);
+        }
+
+        .dm-days-red {
+            background-color: rgba(220, 38, 38, 0.1);
+            color: rgb(180, 30, 30);
+        }
+
+        .dm-status-seen {
+            background-color: rgba(251, 191, 36, 0.2);
+            color: rgb(160, 120, 20);
+        }
+
+        .dm-settings-panel {
+            background: rgba(55, 53, 47, 0.03);
+            border: 1px solid rgba(55, 53, 47, 0.09);
+            border-radius: 8px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .dm-settings-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .dm-settings-toggle:hover {
+            background: rgba(55, 53, 47, 0.05);
+        }
+
+        .dm-settings-body {
+            padding: 0 16px 16px;
+            display: none;
+        }
+
+        .dm-settings-body.open {
+            display: block;
+        }
+
+        .dm-settings-field {
+            margin-bottom: 12px;
+        }
+
+        .dm-settings-field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(55, 53, 47, 0.65);
+            margin-bottom: 4px;
+        }
+
+        .dm-settings-field input,
+        .dm-settings-field textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px 10px;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: inherit;
+            color: rgb(55, 53, 47);
+            background: white;
+        }
+
+        .dm-settings-field textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .dm-template-live-preview {
+            background: rgba(55, 53, 47, 0.04);
+            border: 1px solid rgba(55, 53, 47, 0.09);
+            border-radius: 4px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: rgba(55, 53, 47, 0.8);
+            white-space: pre-wrap;
+            line-height: 1.5;
+        }
+
+        .dm-modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 15, 15, 0.6);
+        }
+
+        .dm-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dm-modal-content {
+            background-color: white;
+            padding: 24px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 5px 10px, rgba(15, 15, 15, 0.2) 0px 15px 40px;
+        }
+
+        .dm-modal-header {
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+        }
+
+        .dm-modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: rgb(55, 53, 47);
+            margin: 0 0 4px 0;
+        }
+
+        .dm-modal-subtitle {
+            font-size: 13px;
+            color: rgba(55, 53, 47, 0.65);
+        }
+
+        .dm-template-preview {
+            background-color: rgba(242, 241, 238, 0.6);
+            border: 1px solid rgba(55, 53, 47, 0.09);
+            border-radius: 6px;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            color: rgb(55, 53, 47);
+        }
+
+        .dm-template-select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .dm-modal-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .dm-response-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 12px 0;
+        }
+
+        .dm-response-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .dm-response-option:hover {
+            background-color: rgba(55, 53, 47, 0.03);
+            border-color: rgba(55, 53, 47, 0.25);
+        }
+
+        .dm-response-option.selected {
+            background-color: rgba(46, 170, 220, 0.08);
+            border-color: rgb(46, 170, 220);
+        }
+
+        .dm-notes-textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px 12px;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 6px;
+            font-size: 13px;
+            font-family: inherit;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        .dm-notes-textarea:focus {
+            outline: none;
+            border-color: rgb(46, 170, 220);
+            box-shadow: rgba(46, 170, 220, 0.3) 0px 0px 0px 1px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background-color: rgb(55, 53, 47);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            z-index: 2000;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
         .spinner {
             border: 3px solid rgba(55, 53, 47, 0.1);
             border-top: 3px solid rgb(46, 170, 220);
@@ -302,11 +723,30 @@
     <div id="mainContent" style="display: none;">
         <!-- Header -->
         <header style="border-bottom: 1px solid rgba(55, 53, 47, 0.09); background-color: #ffffff; position: sticky; top: 0; z-index: 50;">
-            <div class="content-wrapper" style="padding-top: 24px; padding-bottom: 16px;">
-                <h1 style="font-size: 24px; font-weight: 600; color: rgb(55, 53, 47); margin: 0 0 4px 0;">Independent Grocery Stores</h1>
-                <p style="font-size: 14px; color: rgba(55, 53, 47, 0.65); margin: 0;">
-                    <span id="storeCount">0</span> stores
-                </p>
+            <div class="content-wrapper" style="padding-top: 24px; padding-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <h1 style="font-size: 24px; font-weight: 600; color: rgb(55, 53, 47); margin: 0 0 4px 0;">Independent Grocery Stores</h1>
+                    <p style="font-size: 14px; color: rgba(55, 53, 47, 0.65); margin: 0;">
+                        <span id="storeCount">0</span> stores
+                    </p>
+                </div>
+                <!-- Instagram Login Section -->
+                <div id="instagramAuthSection">
+                    <button id="instagramLoginBtn" onclick="loginWithInstagram()" style="display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Login with Instagram
+                    </button>
+                    <!-- Logged in state (hidden by default) -->
+                    <div id="instagramUserInfo" style="display: none; align-items: center; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 8px; padding: 6px 12px; background: rgba(55, 53, 47, 0.05); border-radius: 6px;">
+                            <span style="font-size: 14px; color: rgb(55, 53, 47);">@<span id="instagramUsername">username</span></span>
+                            <span id="dmSyncStatus" style="font-size: 11px; padding: 2px 6px; background: rgba(52, 168, 83, 0.15); color: rgb(30, 120, 60); border-radius: 4px;">Synced</span>
+                        </div>
+                        <button onclick="logoutInstagram()" style="padding: 6px 12px; background: transparent; border: 1px solid rgba(55, 53, 47, 0.2); border-radius: 4px; font-size: 13px; color: rgba(55, 53, 47, 0.65); cursor: pointer;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.05)'" onmouseout="this.style.backgroundColor='transparent'">Logout</button>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -318,6 +758,9 @@
                 </button>
                 <button onclick="switchView('map')" id="mapTab" class="view-tab">
                     Map
+                </button>
+                <button onclick="switchView('dm')" id="dmTab" class="view-tab">
+                    DM Outreach
                 </button>
             </div>
 
@@ -451,6 +894,7 @@
                             <th data-column="website"><span class="th-content">Website<button class="hide-col-btn" onclick="hideColumn('website')" title="Hide column">×</button></span></th>
                             <th data-column="phone"><span class="th-content">Phone<button class="hide-col-btn" onclick="hideColumn('phone')" title="Hide column">×</button></span></th>
                             <th data-column="social"><span class="th-content">Social<button class="hide-col-btn" onclick="hideColumn('social')" title="Hide column">×</button></span></th>
+                            <th data-column="dmstatus"><span class="th-content">DM Status<button class="hide-col-btn" onclick="hideColumn('dmstatus')" title="Hide column">×</button></span></th>
                             <th data-column="scraped"><span class="th-content">Scraped<button class="hide-col-btn" onclick="hideColumn('scraped')" title="Hide column">×</button></span></th>
                         </tr>
                         <tr id="hiddenColumnsRow" style="display: none;">
@@ -533,6 +977,173 @@
             </div>
             <div id="leafletMapContainer" style="width: 100%; height: 100%;"></div>
         </div>
+
+        <!-- DM Outreach View -->
+        <div id="dmView" class="content-wrapper" style="display: none; padding-bottom: 48px;">
+            <!-- Quick Stats Bar -->
+            <div class="dm-stats-bar">
+                <div class="dm-stat">
+                    <span class="dm-stat-value" id="dmStatToday">0</span>
+                    <span class="dm-stat-label">Sent Today</span>
+                </div>
+                <div class="dm-stat">
+                    <span class="dm-stat-value" id="dmStatWeek">0</span>
+                    <span class="dm-stat-label">This Week</span>
+                </div>
+                <div class="dm-stat">
+                    <span class="dm-stat-value" id="dmStatSeen">0</span>
+                    <span class="dm-stat-label">Seen</span>
+                </div>
+                <div class="dm-stat">
+                    <span class="dm-stat-value" id="dmStatResponses">0</span>
+                    <span class="dm-stat-label">Responses</span>
+                </div>
+                <div class="dm-stat">
+                    <span class="dm-stat-value" id="dmStatRate">0%</span>
+                    <span class="dm-stat-label">Response Rate</span>
+                </div>
+            </div>
+
+            <!-- Settings Panel (collapsible) -->
+            <div class="dm-settings-panel">
+                <div class="dm-settings-toggle" onclick="toggleDMSettings()">
+                    <span style="font-size: 14px; font-weight: 500; color: rgb(55, 53, 47); display: flex; align-items: center; gap: 6px;">
+                        Settings
+                    </span>
+                    <span id="dmSettingsArrow" style="font-size: 12px; color: rgba(55, 53, 47, 0.5); transition: transform 0.2s;">&#9654;</span>
+                </div>
+                <div class="dm-settings-body" id="dmSettingsBody">
+                    <div class="dm-settings-field">
+                        <label>Brand Name</label>
+                        <input type="text" id="dmBrandNameInput" placeholder="Your brand name" oninput="onDMSettingsChange()">
+                    </div>
+                    <div class="dm-settings-field">
+                        <label>Initial DM Template</label>
+                        <textarea id="dmTemplateInput" placeholder="Use {{storeName}} and {{brandName}} as variables" oninput="onDMSettingsChange()"></textarea>
+                    </div>
+                    <div class="dm-settings-field">
+                        <label>Follow-up Interval (days)</label>
+                        <input type="number" id="dmFollowUpInput" min="1" max="30" style="width: 80px;" oninput="onDMSettingsChange()">
+                    </div>
+                    <div class="dm-settings-field">
+                        <label>Live Preview</label>
+                        <div class="dm-template-live-preview" id="dmLivePreview">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Needs Follow-Up Section -->
+            <div class="dm-section">
+                <div class="dm-section-header">
+                    <div class="dm-section-title">
+                        <span style="color: rgb(251, 191, 36);">⏰</span>
+                        Needs Follow-Up
+                        <span class="dm-section-count" id="followUpCount">0</span>
+                    </div>
+                    <button class="dm-btn dm-btn-secondary" onclick="toggleSection('followUp')">
+                        <span id="followUpToggle">Hide</span>
+                    </button>
+                </div>
+                <div id="followUpSection">
+                    <div id="followUpList"></div>
+                </div>
+            </div>
+
+            <!-- Ready for Outreach Section -->
+            <div class="dm-section">
+                <div class="dm-section-header">
+                    <div class="dm-section-title">
+                        <span style="color: rgb(46, 170, 220);">📬</span>
+                        Ready for Outreach
+                        <span class="dm-section-count" id="readyCount">0</span>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <input
+                            type="text"
+                            id="dmSearchInput"
+                            placeholder="Search stores..."
+                            style="padding: 6px 10px; font-size: 13px; width: 200px;"
+                            oninput="filterDMStores()"
+                        >
+                        <button class="dm-btn dm-btn-secondary" onclick="toggleSection('ready')">
+                            <span id="readyToggle">Hide</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="readySection">
+                    <div id="readyList"></div>
+                    <div id="readyPagination" style="margin-top: 12px; text-align: center;"></div>
+                </div>
+            </div>
+
+            <!-- Awaiting Response Section -->
+            <div class="dm-section">
+                <div class="dm-section-header">
+                    <div class="dm-section-title">
+                        <span style="color: rgb(120, 85, 195);">⏳</span>
+                        Awaiting Response
+                        <span class="dm-section-count" id="awaitingCount">0</span>
+                    </div>
+                    <button class="dm-btn dm-btn-secondary" onclick="toggleSection('awaiting')">
+                        <span id="awaitingToggle">Hide</span>
+                    </button>
+                </div>
+                <div id="awaitingSection">
+                    <div id="awaitingList"></div>
+                </div>
+            </div>
+
+            <!-- Seen (API-tracked) Section -->
+            <div class="dm-section" id="seenSectionWrapper" style="display: none;">
+                <div class="dm-section-header">
+                    <div class="dm-section-title">
+                        <span style="color: rgb(251, 191, 36);">👁</span>
+                        Seen
+                        <span class="dm-section-count" id="seenCount">0</span>
+                    </div>
+                    <button class="dm-btn dm-btn-secondary" onclick="toggleSection('seen')">
+                        <span id="seenToggle">Hide</span>
+                    </button>
+                </div>
+                <div id="seenSection">
+                    <div id="seenList"></div>
+                </div>
+            </div>
+
+            <!-- Export & Import -->
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(55, 53, 47, 0.09); display: flex; gap: 12px; flex-wrap: wrap;">
+                <button class="dm-btn dm-btn-secondary" onclick="exportDMData()">
+                    📥 Export DM Data (JSON)
+                </button>
+                <button class="dm-btn dm-btn-secondary" onclick="document.getElementById('dmImportInput').click()">
+                    📤 Import DM Data
+                </button>
+                <input type="file" id="dmImportInput" accept=".json" style="display: none;" onchange="importDMData(event)">
+                <button class="dm-btn dm-btn-secondary" onclick="exportDMToCSV()">
+                    📊 Export to CSV
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DM Action Modal -->
+    <div id="dmModal" class="dm-modal" onclick="closeDMModal(event)">
+        <div class="dm-modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeDMModal()" style="position: absolute; top: 12px; right: 12px; background: transparent; border: none; font-size: 20px; color: rgba(55, 53, 47, 0.4); cursor: pointer; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 4px;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.08)'" onmouseout="this.style.backgroundColor='transparent'">&times;</button>
+            <div id="dmModalContent">
+                <!-- DM modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Response Modal -->
+    <div id="responseModal" class="dm-modal" onclick="closeResponseModal(event)">
+        <div class="dm-modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeResponseModal()" style="position: absolute; top: 12px; right: 12px; background: transparent; border: none; font-size: 20px; color: rgba(55, 53, 47, 0.4); cursor: pointer; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 4px;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.08)'" onmouseout="this.style.backgroundColor='transparent'">&times;</button>
+            <div id="responseModalContent">
+                <!-- Response modal content will be inserted here -->
+            </div>
+        </div>
     </div>
 
     <!-- Modal for store details -->
@@ -545,7 +1156,446 @@
         </div>
     </div>
 
+    <!-- Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+    <!-- Supabase Config -->
+    <script src="supabase-config.js" onerror="console.log('supabase-config.js not found - Instagram login disabled')"></script>
+
     <script>
+        // ===== SUPABASE & INSTAGRAM INTEGRATION =====
+
+        let supabaseClient = null;
+        let currentUser = null;
+        let instagramAccessToken = null;
+        let instagramConversations = [];
+        let conversationCache = { data: null, timestamp: 0 };
+        const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+        // Initialize Supabase if config exists
+        function initializeSupabase() {
+            if (typeof window.SUPABASE_URL !== 'undefined' && window.SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+                try {
+                    supabaseClient = supabase.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+
+                    // Listen for auth state changes
+                    supabaseClient.auth.onAuthStateChange((event, session) => {
+                        handleAuthStateChange(session?.user || null);
+                    });
+
+                    // Check for OAuth callback
+                    handleInstagramCallback();
+
+                    console.log('Supabase initialized');
+                } catch (error) {
+                    console.error('Supabase initialization error:', error);
+                }
+            } else {
+                console.log('Supabase config not set - Instagram login disabled');
+                document.getElementById('instagramLoginBtn').style.display = 'none';
+            }
+        }
+
+        // Handle auth state changes
+        async function handleAuthStateChange(user) {
+            currentUser = user;
+            const loginBtn = document.getElementById('instagramLoginBtn');
+            const userInfo = document.getElementById('instagramUserInfo');
+
+            if (user) {
+                loginBtn.style.display = 'none';
+                userInfo.style.display = 'flex';
+
+                try {
+                    const { data: userData, error } = await supabaseClient
+                        .from('users')
+                        .select('instagram_username, access_token, page_id')
+                        .eq('id', user.id)
+                        .single();
+
+                    if (!error && userData) {
+                        document.getElementById('instagramUsername').textContent = userData.instagram_username || 'User';
+                        instagramAccessToken = userData.access_token;
+
+                        // Sync DM data from Supabase in background
+                        syncDMDataFromSupabase();
+
+                        // Fetch conversations if on DM tab
+                        if (document.getElementById('dmView').style.display !== 'none') {
+                            await fetchInstagramConversations();
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading user data:', error);
+                }
+            } else {
+                loginBtn.style.display = 'flex';
+                userInfo.style.display = 'none';
+                instagramAccessToken = null;
+                instagramConversations = [];
+            }
+        }
+
+        // Login with Instagram OAuth
+        function loginWithInstagram() {
+            if (typeof window.INSTAGRAM_APP_ID === 'undefined' || window.INSTAGRAM_APP_ID === 'YOUR_INSTAGRAM_APP_ID') {
+                showToast('Instagram App ID not configured. Please set up supabase-config.js');
+                return;
+            }
+
+            const scope = 'instagram_business_basic,instagram_business_manage_messages';
+            const state = generateRandomState();
+            sessionStorage.setItem('instagram_oauth_state', state);
+
+            const redirectUri = window.location.origin + window.location.pathname;
+
+            const authUrl = `https://api.instagram.com/oauth/authorize?` +
+                `client_id=${window.INSTAGRAM_APP_ID}&` +
+                `redirect_uri=${encodeURIComponent(redirectUri)}&` +
+                `scope=${scope}&` +
+                `response_type=code&` +
+                `state=${state}`;
+
+            window.location.href = authUrl;
+        }
+
+        // Generate random state for OAuth
+        function generateRandomState() {
+            const array = new Uint32Array(4);
+            crypto.getRandomValues(array);
+            return Array.from(array, x => x.toString(16)).join('');
+        }
+
+        // Handle Instagram OAuth callback
+        async function handleInstagramCallback() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            const state = urlParams.get('state');
+            const error = urlParams.get('error');
+
+            if (error) {
+                showToast('Instagram login cancelled');
+                window.history.replaceState({}, document.title, window.location.pathname);
+                return;
+            }
+
+            if (code && state) {
+                const savedState = sessionStorage.getItem('instagram_oauth_state');
+
+                if (state !== savedState) {
+                    showToast('Invalid OAuth state - please try again');
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    return;
+                }
+
+                sessionStorage.removeItem('instagram_oauth_state');
+
+                const loginBtn = document.getElementById('instagramLoginBtn');
+                loginBtn.innerHTML = '<span class="spinner" style="width:16px;height:16px;border-width:2px;"></span> Logging in...';
+                loginBtn.disabled = true;
+
+                try {
+                    const redirectUri = window.location.origin + window.location.pathname;
+
+                    // Exchange code for token via Supabase Edge Function
+                    const response = await fetch(`${window.EDGE_FUNCTIONS_URL}/instagram-auth`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            code: code,
+                            redirectUri: redirectUri
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+
+                    // Sign in to Supabase with the returned session
+                    if (data.access_token) {
+                        await supabaseClient.auth.setSession({
+                            access_token: data.access_token,
+                            refresh_token: data.refresh_token
+                        });
+                    }
+
+                    showToast(`Logged in as @${data.username}`);
+                    window.history.replaceState({}, document.title, window.location.pathname);
+
+                } catch (error) {
+                    console.error('OAuth exchange error:', error);
+                    showToast('Login failed: ' + error.message);
+                    loginBtn.innerHTML = 'Login with Instagram';
+                    loginBtn.disabled = false;
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                }
+            }
+        }
+
+        // Logout
+        async function logoutInstagram() {
+            try {
+                if (supabaseClient) {
+                    await supabaseClient.auth.signOut();
+                }
+                currentUser = null;
+                instagramAccessToken = null;
+                instagramConversations = [];
+                document.getElementById('instagramLoginBtn').style.display = 'flex';
+                document.getElementById('instagramUserInfo').style.display = 'none';
+                showToast('Logged out');
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        }
+
+        // Sync DM data from Supabase (background merge with localStorage)
+        async function syncDMDataFromSupabase() {
+            if (!supabaseClient || !currentUser) return;
+
+            try {
+                const { data: records, error } = await supabaseClient
+                    .from('dm_records')
+                    .select('*')
+                    .eq('user_id', currentUser.id);
+
+                if (error || !records) return;
+
+                // Merge remote data into localStorage (remote wins for API-tracked fields)
+                const localData = loadDMData();
+                records.forEach(record => {
+                    const key = record.instagram_handle || record.store_key;
+                    if (!key) return;
+
+                    const local = localData.stores[key];
+                    if (!local) {
+                        // Remote record not in local — add it
+                        localData.stores[key] = {
+                            storeKey: key,
+                            storeName: record.store_name || '',
+                            instagramHandle: record.instagram_handle || '',
+                            instagramUrl: record.instagram_url || '',
+                            campaigns: record.campaigns || { intro: { dm1: { sent: false }, dm2: { sent: false }, dm3: { sent: false } }, followUp: { sent: false }, feedback: { dm1: { sent: false }, dm2: { sent: false } } },
+                            status: record.status || 'new',
+                            apiStatus: record.api_status || null,
+                            responses: record.responses || [],
+                            lastContactDate: record.last_contact_date || null,
+                            createdAt: record.created_at
+                        };
+                    } else {
+                        // Merge: API status always wins
+                        if (record.api_status) {
+                            local.apiStatus = record.api_status;
+                        }
+                        if (record.api_seen_at) local.apiSeenAt = record.api_seen_at;
+                        if (record.api_responded_at) local.apiRespondedAt = record.api_responded_at;
+                    }
+                });
+
+                saveDMData(localData);
+
+                // Also sync templates from Supabase
+                const { data: templates } = await supabaseClient
+                    .from('dm_templates')
+                    .select('*')
+                    .eq('user_id', currentUser.id);
+
+                if (templates && templates.length > 0) {
+                    templates.forEach(t => {
+                        if (DM_TEMPLATES[t.template_key]) {
+                            DM_TEMPLATES[t.template_key].content = t.content;
+                        }
+                    });
+                }
+
+                // Sync settings
+                const { data: settings } = await supabaseClient
+                    .from('dm_settings')
+                    .select('*')
+                    .eq('user_id', currentUser.id)
+                    .single();
+
+                if (settings) {
+                    const localSettings = loadDMSettings();
+                    if (settings.brand_name) localSettings.brandName = settings.brand_name;
+                    if (settings.follow_up_interval_days) localSettings.followUpIntervalDays = settings.follow_up_interval_days;
+                    saveDMSettings(localSettings);
+                }
+
+                console.log('Synced DM data from Supabase');
+            } catch (err) {
+                console.error('Supabase sync error:', err);
+            }
+        }
+
+        // Async save DM record to Supabase
+        async function saveDMRecordToSupabase(key, record) {
+            if (!supabaseClient || !currentUser) return;
+
+            try {
+                await supabaseClient.from('dm_records').upsert({
+                    user_id: currentUser.id,
+                    store_key: key,
+                    store_name: record.storeName,
+                    instagram_handle: record.instagramHandle,
+                    instagram_url: record.instagramUrl,
+                    campaigns: record.campaigns,
+                    status: record.status,
+                    responses: record.responses,
+                    last_contact_date: record.lastContactDate,
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'user_id,store_key' });
+            } catch (err) {
+                console.error('Failed to save to Supabase:', err);
+            }
+        }
+
+        // Fetch Instagram conversations via API
+        async function fetchInstagramConversations(forceRefresh = false) {
+            if (!currentUser || !instagramAccessToken) {
+                console.log('Not logged in - skipping conversation fetch');
+                return [];
+            }
+
+            const now = Date.now();
+            if (!forceRefresh && conversationCache.data && (now - conversationCache.timestamp) < CACHE_DURATION) {
+                instagramConversations = conversationCache.data;
+                return conversationCache.data;
+            }
+
+            const syncStatus = document.getElementById('dmSyncStatus');
+            if (syncStatus) {
+                syncStatus.textContent = 'Syncing...';
+                syncStatus.style.background = 'rgba(251, 191, 36, 0.2)';
+                syncStatus.style.color = 'rgb(160, 120, 20)';
+            }
+
+            try {
+                const { data: { session } } = await supabaseClient.auth.getSession();
+
+                const response = await fetch(`${window.EDGE_FUNCTIONS_URL}/instagram-conversations`, {
+                    headers: {
+                        'Authorization': `Bearer ${session.access_token}`
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                instagramConversations = data.conversations || [];
+                conversationCache = { data: instagramConversations, timestamp: now };
+
+                // Update local DM records with API-detected statuses
+                if (data.dm_updates) {
+                    const localData = loadDMData();
+                    data.dm_updates.forEach(update => {
+                        const key = update.instagram_handle?.toLowerCase();
+                        if (key && localData.stores[key]) {
+                            localData.stores[key].apiStatus = update.status;
+                            if (update.seen_at) localData.stores[key].apiSeenAt = update.seen_at;
+                            if (update.responded_at) localData.stores[key].apiRespondedAt = update.responded_at;
+                        }
+                    });
+                    saveDMData(localData);
+                }
+
+                if (syncStatus) {
+                    syncStatus.textContent = 'Synced';
+                    syncStatus.style.background = 'rgba(52, 168, 83, 0.15)';
+                    syncStatus.style.color = 'rgb(30, 120, 60)';
+                }
+
+                console.log(`Fetched ${instagramConversations.length} conversations`);
+                renderDMView();
+                return instagramConversations;
+
+            } catch (error) {
+                console.error('Error fetching conversations:', error);
+
+                if (syncStatus) {
+                    syncStatus.textContent = 'Error';
+                    syncStatus.style.background = 'rgba(220, 38, 38, 0.1)';
+                    syncStatus.style.color = 'rgb(180, 30, 30)';
+                }
+
+                return [];
+            }
+        }
+
+        // Get conversation status for a store by Instagram handle
+        function getConversationStatusForStore(instagramHandle) {
+            if (!instagramHandle || !instagramConversations.length) {
+                return { status: 'unknown', conversation: null };
+            }
+
+            const normalizedHandle = instagramHandle.toLowerCase().replace('@', '');
+
+            const conversation = instagramConversations.find(conv => {
+                const participants = conv.participants?.data || [];
+                return participants.some(p =>
+                    p.username?.toLowerCase() === normalizedHandle ||
+                    p.id === normalizedHandle
+                );
+            });
+
+            if (!conversation) {
+                return { status: 'not_contacted', conversation: null };
+            }
+
+            const messages = conversation.messages?.data || [];
+            if (messages.length === 0) {
+                return { status: 'contacted', conversation };
+            }
+
+            const latestMessage = messages[0];
+            const lastSenderUsername = latestMessage.from?.username?.toLowerCase();
+            const ourUsername = document.getElementById('instagramUsername')?.textContent?.toLowerCase();
+
+            if (lastSenderUsername && ourUsername && lastSenderUsername !== ourUsername) {
+                return {
+                    status: 'responded',
+                    conversation,
+                    lastMessage: latestMessage.message,
+                    lastMessageTime: latestMessage.created_time
+                };
+            }
+
+            return {
+                status: 'awaiting',
+                conversation,
+                lastMessage: latestMessage.message,
+                lastMessageTime: latestMessage.created_time
+            };
+        }
+
+        // Format relative time
+        function formatRelativeTime(dateString) {
+            if (!dateString) return '';
+            const date = new Date(dateString);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+
+            if (diffMins < 60) return `${diffMins}m ago`;
+            if (diffHours < 24) return `${diffHours}h ago`;
+            if (diffDays < 7) return `${diffDays}d ago`;
+            return date.toLocaleDateString();
+        }
+
+        // Initialize Supabase on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSupabase();
+        });
+
+        // ===== END SUPABASE & INSTAGRAM INTEGRATION =====
+
         let STORES_DATA = [];  // Raw stores data (all individual locations)
         let GROUPED_STORES = []; // Stores grouped by name (for display)
         let filteredStores = [];
@@ -562,6 +1612,8 @@
             { id: 'website', label: 'Website', hideable: true },
             { id: 'phone', label: 'Phone', hideable: true },
             { id: 'social', label: 'Social', hideable: true },
+            { id: 'dmlink', label: 'DM Link', hideable: true },
+            { id: 'dmstatus', label: 'DM Status', hideable: true },
             { id: 'scraped', label: 'Scraped', hideable: true }
         ];
         let hiddenColumns = new Set();
@@ -716,25 +1768,35 @@
         function switchView(view) {
             const listView = document.getElementById('listView');
             const mapView = document.getElementById('mapView');
+            const dmView = document.getElementById('dmView');
             const listTab = document.getElementById('listTab');
             const mapTab = document.getElementById('mapTab');
+            const dmTab = document.getElementById('dmTab');
             const listViewFilters = document.getElementById('listViewFilters');
+
+            // Hide all views and deactivate all tabs
+            listView.style.display = 'none';
+            mapView.style.display = 'none';
+            dmView.style.display = 'none';
+            listViewFilters.style.display = 'none';
+            listTab.classList.remove('active');
+            mapTab.classList.remove('active');
+            dmTab.classList.remove('active');
 
             if (view === 'list') {
                 listView.style.display = 'block';
-                mapView.style.display = 'none';
                 listViewFilters.style.display = 'block';
                 listTab.classList.add('active');
-                mapTab.classList.remove('active');
             } else if (view === 'map') {
-                listView.style.display = 'none';
                 mapView.style.display = 'block';
-                listViewFilters.style.display = 'none';
-                listTab.classList.remove('active');
                 mapTab.classList.add('active');
-
                 // Load map with all stores
                 loadMap();
+            } else if (view === 'dm') {
+                dmView.style.display = 'block';
+                dmTab.classList.add('active');
+                // Render DM view
+                renderDMView();
             }
         }
 
@@ -1115,9 +2177,11 @@
 
                 // Build social links HTML with SVG logos
                 const socialLinksHtml = [];
+                const igHandle = getInstagramHandle(socialLinks.instagram);
+                const igProfileUrl = igHandle ? `https://instagram.com/${igHandle}` : socialLinks.instagram;
                 if (socialLinks.instagram) {
                     socialLinksHtml.push(`
-                        <a href="${socialLinks.instagram}" target="_blank" onclick="event.stopPropagation()" title="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 4px; background-color: rgba(225, 48, 108, 0.1); transition: all 0.2s;" onmouseover="this.style.backgroundColor='rgba(225, 48, 108, 0.2)'" onmouseout="this.style.backgroundColor='rgba(225, 48, 108, 0.1)'">
+                        <a href="${igProfileUrl}" target="_blank" onclick="event.stopPropagation()" title="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 4px; background-color: rgba(225, 48, 108, 0.1); transition: all 0.2s;" onmouseover="this.style.backgroundColor='rgba(225, 48, 108, 0.2)'" onmouseout="this.style.backgroundColor='rgba(225, 48, 108, 0.1)'">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#E1306C"/>
                             </svg>
@@ -1182,6 +2246,12 @@
                             <div style="display: flex; gap: 6px; align-items: center;">
                                 ${socialLinksHtml.length > 0 ? socialLinksHtml.join('') : '<span style="color: rgba(55, 53, 47, 0.4);">-</span>'}
                             </div>
+                        </td>
+                        <td data-column="dmlink" class="${hiddenColumns.has('dmlink') ? 'column-hidden' : ''}">
+                            ${igHandle ? `<a href="https://ig.me/m/${igHandle}" target="_blank" style="color: rgb(46, 170, 220); text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'" onclick="event.stopPropagation()">DM ↗</a>` : '-'}
+                        </td>
+                        <td data-column="dmstatus" class="${hiddenColumns.has('dmstatus') ? 'column-hidden' : ''}">
+                            ${renderDMStatusCell(store)}
                         </td>
                         <td data-column="scraped" class="${hiddenColumns.has('scraped') ? 'column-hidden' : ''}" style="color: rgba(55, 53, 47, 0.65); font-size: 12px; white-space: nowrap;">
                             ${store.scraped_at ? formatScrapedDate(store.scraped_at) : '-'}
@@ -1324,7 +2394,7 @@
                         <div style="color: rgba(55, 53, 47, 0.45); font-size: 12px; margin-bottom: 8px;">SOCIAL</div>
                         <div style="display: flex; gap: 8px; align-items: center;">
                             ${socialLinks.instagram ? `
-                                <a href="${socialLinks.instagram}" target="_blank" title="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 6px; background-color: rgba(225, 48, 108, 0.1); transition: all 0.2s; text-decoration: none;" onmouseover="this.style.backgroundColor='rgba(225, 48, 108, 0.2)'" onmouseout="this.style.backgroundColor='rgba(225, 48, 108, 0.1)'">
+                                <a href="${igProfileUrl}" target="_blank" title="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 6px; background-color: rgba(225, 48, 108, 0.1); transition: all 0.2s; text-decoration: none;" onmouseover="this.style.backgroundColor='rgba(225, 48, 108, 0.2)'" onmouseout="this.style.backgroundColor='rgba(225, 48, 108, 0.1)'">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#E1306C"/>
                                     </svg>
@@ -2623,6 +3693,910 @@
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        }
+
+        // ===== DM OUTREACH TRACKING SYSTEM =====
+
+        // Render DM status cell for table (defined early for renderStores)
+        function renderDMStatusCell(store) {
+            const instagram = store.enrichment?.socialLinks?.instagram;
+            if (!instagram) {
+                return '<span style="color: rgba(55, 53, 47, 0.4); font-size: 12px;">-</span>';
+            }
+
+            const record = getDMRecord(store);
+            if (!record || record.status === 'new') {
+                const key = getDMStoreKey(store);
+                return `<button class="dm-btn dm-btn-primary" style="padding: 3px 8px; font-size: 11px;" onclick="event.stopPropagation(); openDMModal('${key}')">Send DM</button>`;
+            }
+
+            const intro = record.campaigns?.intro || {};
+            const count = [intro.dm1?.sent, intro.dm2?.sent, intro.dm3?.sent].filter(Boolean).length;
+            const days = record.lastContactDate ? daysSince(record.lastContactDate) : null;
+            const daysClass = getDaysBadgeClass(days);
+
+            let statusColor = 'rgba(46, 170, 220, 0.15)';
+            let statusTextColor = 'rgb(30, 120, 180)';
+            let statusText = `${count}/3`;
+
+            const effectiveStatus = getEffectiveStatus(record);
+
+            if (effectiveStatus === 'responded' || effectiveStatus === 'interested') {
+                statusColor = 'rgba(52, 168, 83, 0.15)';
+                statusTextColor = 'rgb(30, 120, 60)';
+                statusText = effectiveStatus === 'interested' ? 'Interested' : 'Responded';
+            } else if (effectiveStatus === 'seen') {
+                statusColor = 'rgba(251, 191, 36, 0.2)';
+                statusTextColor = 'rgb(160, 120, 20)';
+                statusText = 'Seen';
+            } else if (effectiveStatus === 'not_interested') {
+                statusColor = 'rgba(220, 38, 38, 0.1)';
+                statusTextColor = 'rgb(180, 30, 30)';
+                statusText = 'Not interested';
+            }
+
+            const key = getDMStoreKey(store);
+            return `
+                <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap;">
+                    <span onclick="event.stopPropagation(); openDMModal('${key}')" style="background: ${statusColor}; color: ${statusTextColor}; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 500; cursor: pointer;">${statusText}</span>
+                    ${days !== null ? `<span class="dm-days-badge ${daysClass}" style="font-size: 10px;">${days}d</span>` : ''}
+                </div>
+            `;
+        }
+
+        // DM Storage Manager
+        const DM_STORAGE_KEY = 'dm_tracking_data';
+        const DM_SETTINGS_KEY = 'dm_settings';
+
+        // Default settings
+        const DEFAULT_SETTINGS = {
+            brandName: 'Confusion Snacks',
+            followUpIntervalDays: 3,
+            maxIntroAttempts: 3
+        };
+
+        // Default message templates
+        const DM_TEMPLATES = {
+            introDm1: {
+                name: 'Intro DM 1',
+                content: `Hi! I came across {{storeName}} and love what you're doing.
+
+I'm the founder of {{brandName}} - we make Indian-spiced peanut snacks perfect for specialty stores.
+
+Would you be open to trying some free samples? I'd love your feedback!`
+            },
+            introDm2: {
+                name: 'Intro DM 2 (Follow-up)',
+                content: `Hey! Following up on my message from a few days ago.
+
+I know you're busy, but I'd love to send {{brandName}} samples your way - no strings attached.
+
+Let me know if interested!`
+            },
+            introDm3: {
+                name: 'Intro DM 3 (Final)',
+                content: `Hi! Last follow-up from me!
+
+If you're ever looking for a new snack product for {{storeName}}, I'd be happy to send samples.
+
+Just let me know!`
+            },
+            trackingSent: {
+                name: 'Tracking Info',
+                content: `Your samples are en-route! Here's your tracking link: {{trackingUrl}}`
+            },
+            feedbackRequest: {
+                name: 'Feedback Request',
+                content: `Hey! Just checking in - did the samples arrive? Would love to hear what you thought!`
+            }
+        };
+
+        // Load DM tracking data
+        function loadDMData() {
+            const data = localStorage.getItem(DM_STORAGE_KEY);
+            if (data) {
+                return JSON.parse(data);
+            }
+            return { stores: {}, analytics: { dailyStats: {} } };
+        }
+
+        // Save DM tracking data (localStorage always, Supabase async if logged in)
+        function saveDMData(data) {
+            data.updatedAt = new Date().toISOString();
+            localStorage.setItem(DM_STORAGE_KEY, JSON.stringify(data));
+        }
+
+        // Load settings
+        function loadDMSettings() {
+            const settings = localStorage.getItem(DM_SETTINGS_KEY);
+            if (settings) {
+                return { ...DEFAULT_SETTINGS, ...JSON.parse(settings) };
+            }
+            return DEFAULT_SETTINGS;
+        }
+
+        // Save settings (localStorage + Supabase)
+        function saveDMSettings(settings) {
+            localStorage.setItem(DM_SETTINGS_KEY, JSON.stringify(settings));
+            saveDMSettingsToSupabase(settings);
+        }
+
+        // Async save settings to Supabase
+        async function saveDMSettingsToSupabase(settings) {
+            if (!supabaseClient || !currentUser) return;
+            try {
+                await supabaseClient.from('dm_settings').upsert({
+                    user_id: currentUser.id,
+                    brand_name: settings.brandName,
+                    follow_up_interval_days: settings.followUpIntervalDays,
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'user_id' });
+            } catch (err) {
+                console.error('Failed to save settings to Supabase:', err);
+            }
+        }
+
+        // Toggle DM settings panel
+        function toggleDMSettings() {
+            const body = document.getElementById('dmSettingsBody');
+            const arrow = document.getElementById('dmSettingsArrow');
+            const isOpen = body.classList.contains('open');
+            if (isOpen) {
+                body.classList.remove('open');
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                body.classList.add('open');
+                arrow.style.transform = 'rotate(90deg)';
+                // Load current settings into inputs
+                const settings = loadDMSettings();
+                document.getElementById('dmBrandNameInput').value = settings.brandName || '';
+                document.getElementById('dmTemplateInput').value = DM_TEMPLATES.introDm1?.content || '';
+                document.getElementById('dmFollowUpInput').value = settings.followUpIntervalDays || 3;
+                updateDMLivePreview();
+            }
+        }
+
+        // Handle settings change
+        let dmSettingsDebounce = null;
+        function onDMSettingsChange() {
+            updateDMLivePreview();
+            clearTimeout(dmSettingsDebounce);
+            dmSettingsDebounce = setTimeout(() => {
+                const settings = loadDMSettings();
+                settings.brandName = document.getElementById('dmBrandNameInput').value || settings.brandName;
+                settings.followUpIntervalDays = parseInt(document.getElementById('dmFollowUpInput').value) || 3;
+                saveDMSettings(settings);
+
+                // Update template content
+                const templateContent = document.getElementById('dmTemplateInput').value;
+                if (templateContent) {
+                    DM_TEMPLATES.introDm1.content = templateContent;
+                    // Save template to Supabase
+                    saveTemplateToSupabase('introDm1', templateContent);
+                }
+            }, 500);
+        }
+
+        // Update live preview
+        function updateDMLivePreview() {
+            const brandName = document.getElementById('dmBrandNameInput')?.value || loadDMSettings().brandName;
+            const template = document.getElementById('dmTemplateInput')?.value || DM_TEMPLATES.introDm1?.content || '';
+            const preview = template
+                .replace(/\{\{brandName\}\}/g, brandName)
+                .replace(/\{\{storeName\}\}/g, 'Example Store');
+            const el = document.getElementById('dmLivePreview');
+            if (el) el.textContent = preview;
+        }
+
+        // Save template to Supabase
+        async function saveTemplateToSupabase(key, content) {
+            if (!supabaseClient || !currentUser) return;
+            try {
+                await supabaseClient.from('dm_templates').upsert({
+                    user_id: currentUser.id,
+                    template_key: key,
+                    content: content,
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'user_id,template_key' });
+            } catch (err) {
+                console.error('Failed to save template to Supabase:', err);
+            }
+        }
+
+        // Get effective status (API status takes priority)
+        function getEffectiveStatus(record) {
+            if (!record) return null;
+            if (record.apiStatus === 'responded') return 'responded';
+            if (record.apiStatus === 'seen') return 'seen';
+            return record.status;
+        }
+
+        // Get Instagram handle from URL
+        function getInstagramHandle(url) {
+            if (!url) return null;
+            const match = url.match(/instagram\.com\/([^\/\?]+)/i);
+            return match ? match[1].replace(/\/$/, '') : null;
+        }
+
+        // Get DM store key (unique identifier)
+        function getDMStoreKey(store) {
+            const instagram = store.enrichment?.socialLinks?.instagram;
+            if (instagram) {
+                const handle = getInstagramHandle(instagram);
+                if (handle) return handle.toLowerCase();
+            }
+            // Fallback to normalized name
+            return (store.name || 'unknown').toLowerCase().replace(/[^a-z0-9]/g, '_');
+        }
+
+        // Get DM tracking record for a store
+        function getDMRecord(store) {
+            const data = loadDMData();
+            const key = getDMStoreKey(store);
+            return data.stores[key] || null;
+        }
+
+        // Create or update DM record
+        function updateDMRecord(store, updates) {
+            const data = loadDMData();
+            const key = getDMStoreKey(store);
+            const instagram = store.enrichment?.socialLinks?.instagram;
+
+            if (!data.stores[key]) {
+                data.stores[key] = {
+                    storeKey: key,
+                    storeName: store.name || 'Unknown',
+                    instagramUrl: instagram || '',
+                    instagramHandle: getInstagramHandle(instagram) || '',
+                    campaigns: {
+                        intro: { dm1: { sent: false }, dm2: { sent: false }, dm3: { sent: false } },
+                        followUp: { sent: false },
+                        feedback: { dm1: { sent: false }, dm2: { sent: false } }
+                    },
+                    status: 'new',
+                    responses: [],
+                    lastContactDate: null,
+                    createdAt: new Date().toISOString()
+                };
+            }
+
+            // Merge updates
+            Object.assign(data.stores[key], updates, { updatedAt: new Date().toISOString() });
+
+            saveDMData(data);
+
+            // Async sync to Supabase
+            saveDMRecordToSupabase(key, data.stores[key]);
+
+            return data.stores[key];
+        }
+
+        // Calculate days since date
+        function daysSince(dateStr) {
+            if (!dateStr) return null;
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diffTime = Math.abs(now - date);
+            return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        }
+
+        // Get days badge class
+        function getDaysBadgeClass(days) {
+            if (days === null) return '';
+            if (days <= 3) return 'dm-days-green';
+            if (days <= 7) return 'dm-days-yellow';
+            return 'dm-days-red';
+        }
+
+        // Get next DM in sequence
+        function getNextDMInSequence(record) {
+            if (!record) return 'introDm1';
+            const intro = record.campaigns?.intro || {};
+            if (!intro.dm1?.sent) return 'introDm1';
+            if (!intro.dm2?.sent) return 'introDm2';
+            if (!intro.dm3?.sent) return 'introDm3';
+            return null; // Completed intro sequence
+        }
+
+        // Get DM progress text
+        function getDMProgressText(record) {
+            if (!record) return 'Not contacted';
+            const intro = record.campaigns?.intro || {};
+            const count = [intro.dm1?.sent, intro.dm2?.sent, intro.dm3?.sent].filter(Boolean).length;
+            if (count === 0) return 'Not contacted';
+            return `DM ${count}/3 sent`;
+        }
+
+        // Render template with variables
+        function renderTemplate(templateKey, store) {
+            const settings = loadDMSettings();
+            const template = DM_TEMPLATES[templateKey];
+            if (!template) return '';
+
+            let content = template.content;
+            content = content.replace(/\{\{storeName\}\}/g, store.name || 'your store');
+            content = content.replace(/\{\{brandName\}\}/g, settings.brandName);
+            content = content.replace(/\{\{trackingUrl\}\}/g, '');
+
+            return content;
+        }
+
+        // Copy text to clipboard
+        async function copyToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                return false;
+            }
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) existingToast.remove();
+
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Open DM modal for a store
+        function openDMModal(storeKey) {
+            const store = findStoreByKey(storeKey);
+            if (!store) return;
+
+            const record = getDMRecord(store);
+            const nextDM = getNextDMInSequence(record);
+            const instagram = store.enrichment?.socialLinks?.instagram;
+            const handle = getInstagramHandle(instagram);
+            const progress = getDMProgressText(record);
+            const days = record?.lastContactDate ? daysSince(record.lastContactDate) : null;
+            const daysText = days !== null ? `${days} day${days !== 1 ? 's' : ''} ago` : '';
+
+            const modalContent = document.getElementById('dmModalContent');
+            modalContent.innerHTML = `
+                <div class="dm-modal-header">
+                    <h3 class="dm-modal-title">${store.name || 'Unknown Store'}</h3>
+                    <div class="dm-modal-subtitle">
+                        ${handle ? `@${handle}` : 'No Instagram'}
+                        ${record?.status ? ` · <span class="dm-status-badge dm-status-${record.status}">${record.status.replace('_', ' ')}</span>` : ''}
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <div style="font-size: 13px; color: rgba(55, 53, 47, 0.65); margin-bottom: 4px;">Status</div>
+                    <div style="font-size: 14px; color: rgb(55, 53, 47);">
+                        ${progress}
+                        ${daysText ? ` · Last sent ${daysText}` : ''}
+                    </div>
+                </div>
+
+                ${nextDM ? `
+                    <div style="margin-bottom: 12px;">
+                        <label style="font-size: 13px; color: rgba(55, 53, 47, 0.65); display: block; margin-bottom: 4px;">Template</label>
+                        <select class="dm-template-select" id="dmTemplateSelect" onchange="updateTemplatePreview('${storeKey}')">
+                            ${Object.entries(DM_TEMPLATES).map(([key, tmpl]) =>
+                                `<option value="${key}" ${key === nextDM ? 'selected' : ''}>${tmpl.name}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 4px; font-size: 13px; color: rgba(55, 53, 47, 0.65);">Preview</div>
+                    <div class="dm-template-preview" id="templatePreview">${renderTemplate(nextDM, store)}</div>
+                ` : `
+                    <div style="padding: 16px; background-color: rgba(52, 168, 83, 0.1); border-radius: 6px; color: rgb(30, 120, 60); font-size: 14px;">
+                        ✓ Intro sequence completed
+                    </div>
+                `}
+
+                <div class="dm-modal-actions">
+                    ${instagram && nextDM ? `
+                        <button class="dm-btn dm-btn-primary" onclick="copyAndOpenDM('${storeKey}')">
+                            📋 Copy & Open Instagram
+                        </button>
+                        <button class="dm-btn dm-btn-success" onclick="markDMSent('${storeKey}')">
+                            ✓ Mark Sent
+                        </button>
+                    ` : ''}
+                    <button class="dm-btn dm-btn-secondary" onclick="openResponseModal('${storeKey}')">
+                        📝 Log Response
+                    </button>
+                    <button class="dm-btn dm-btn-danger" onclick="markNotInterested('${storeKey}')">
+                        ✗ Not Interested
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('dmModal').classList.add('active');
+        }
+
+        // Close DM modal
+        function closeDMModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('dmModal').classList.remove('active');
+        }
+
+        // Update template preview
+        function updateTemplatePreview(storeKey) {
+            const store = findStoreByKey(storeKey);
+            const templateKey = document.getElementById('dmTemplateSelect').value;
+            const preview = document.getElementById('templatePreview');
+            if (preview && store) {
+                preview.textContent = renderTemplate(templateKey, store);
+            }
+        }
+
+        // Find store by key
+        function findStoreByKey(key) {
+            return GROUPED_STORES.find(s => getDMStoreKey(s) === key);
+        }
+
+        // Copy message and open Instagram DM
+        async function copyAndOpenDM(storeKey) {
+            const store = findStoreByKey(storeKey);
+            if (!store) return;
+
+            const templateKey = document.getElementById('dmTemplateSelect')?.value || getNextDMInSequence(getDMRecord(store));
+            const message = renderTemplate(templateKey, store);
+            const instagram = store.enrichment?.socialLinks?.instagram;
+            const handle = getInstagramHandle(instagram);
+
+            if (!handle) {
+                showToast('No Instagram handle found');
+                return;
+            }
+
+            const copied = await copyToClipboard(message);
+            if (copied) {
+                showToast('Message copied! Paste in Instagram');
+
+                // Open DM thread directly via ig.me
+                const dmUrl = `https://ig.me/m/${handle}`;
+                window.open(dmUrl, '_blank');
+            } else {
+                showToast('Failed to copy message');
+            }
+        }
+
+        // Mark DM as sent
+        function markDMSent(storeKey) {
+            const store = findStoreByKey(storeKey);
+            if (!store) return;
+
+            const record = getDMRecord(store);
+            const nextDM = getNextDMInSequence(record);
+            const now = new Date().toISOString();
+
+            const updates = {
+                lastContactDate: now,
+                status: 'contacted'
+            };
+
+            // Update the appropriate DM in the sequence
+            if (nextDM === 'introDm1') {
+                updates['campaigns'] = { ...record?.campaigns, intro: { ...record?.campaigns?.intro, dm1: { sent: true, date: now } } };
+            } else if (nextDM === 'introDm2') {
+                updates['campaigns'] = { ...record?.campaigns, intro: { ...record?.campaigns?.intro, dm2: { sent: true, date: now } } };
+            } else if (nextDM === 'introDm3') {
+                updates['campaigns'] = { ...record?.campaigns, intro: { ...record?.campaigns?.intro, dm3: { sent: true, date: now } } };
+            }
+
+            updateDMRecord(store, updates);
+
+            // Update analytics
+            updateDMAnalytics('sent');
+
+            showToast('DM marked as sent!');
+            closeDMModal();
+            renderDMView();
+        }
+
+        // Open response modal
+        function openResponseModal(storeKey) {
+            const store = findStoreByKey(storeKey);
+            if (!store) return;
+
+            const modalContent = document.getElementById('responseModalContent');
+            modalContent.innerHTML = `
+                <div class="dm-modal-header">
+                    <h3 class="dm-modal-title">Log Response</h3>
+                    <div class="dm-modal-subtitle">${store.name || 'Unknown Store'}</div>
+                </div>
+
+                <div style="margin-bottom: 12px;">
+                    <label style="font-size: 13px; color: rgba(55, 53, 47, 0.65); display: block; margin-bottom: 8px;">Response Type</label>
+                    <div class="dm-response-options" id="responseOptions">
+                        <label class="dm-response-option" onclick="selectResponseType(this, 'interested')">
+                            <input type="radio" name="responseType" value="interested" style="display: none;">
+                            <span style="font-size: 16px;">✅</span>
+                            <span>Interested - Wants samples</span>
+                        </label>
+                        <label class="dm-response-option" onclick="selectResponseType(this, 'question')">
+                            <input type="radio" name="responseType" value="question" style="display: none;">
+                            <span style="font-size: 16px;">❓</span>
+                            <span>Asked a question</span>
+                        </label>
+                        <label class="dm-response-option" onclick="selectResponseType(this, 'not_interested')">
+                            <input type="radio" name="responseType" value="not_interested" style="display: none;">
+                            <span style="font-size: 16px;">❌</span>
+                            <span>Not interested</span>
+                        </label>
+                        <label class="dm-response-option" onclick="selectResponseType(this, 'other')">
+                            <input type="radio" name="responseType" value="other" style="display: none;">
+                            <span style="font-size: 16px;">💬</span>
+                            <span>Other response</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 16px;">
+                    <label style="font-size: 13px; color: rgba(55, 53, 47, 0.65); display: block; margin-bottom: 4px;">Notes (optional)</label>
+                    <textarea class="dm-notes-textarea" id="responseNotes" placeholder="Paste their response or add notes..."></textarea>
+                </div>
+
+                <div class="dm-modal-actions">
+                    <button class="dm-btn dm-btn-primary" onclick="saveResponse('${storeKey}')">Save Response</button>
+                    <button class="dm-btn dm-btn-secondary" onclick="closeResponseModal()">Cancel</button>
+                </div>
+            `;
+
+            document.getElementById('responseModal').classList.add('active');
+            closeDMModal();
+        }
+
+        // Close response modal
+        function closeResponseModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('responseModal').classList.remove('active');
+        }
+
+        // Select response type
+        function selectResponseType(element, type) {
+            document.querySelectorAll('.dm-response-option').forEach(el => el.classList.remove('selected'));
+            element.classList.add('selected');
+            element.querySelector('input').checked = true;
+        }
+
+        // Save response
+        function saveResponse(storeKey) {
+            const store = findStoreByKey(storeKey);
+            if (!store) return;
+
+            const selectedOption = document.querySelector('.dm-response-option.selected input');
+            const responseType = selectedOption?.value || 'other';
+            const notes = document.getElementById('responseNotes')?.value || '';
+
+            const record = getDMRecord(store) || {};
+            const responses = record.responses || [];
+            responses.push({
+                date: new Date().toISOString(),
+                type: responseType,
+                notes: notes
+            });
+
+            let status = 'responded';
+            if (responseType === 'interested') status = 'interested';
+            if (responseType === 'not_interested') status = 'not_interested';
+
+            updateDMRecord(store, {
+                responses: responses,
+                status: status
+            });
+
+            // Update analytics
+            updateDMAnalytics('response');
+
+            showToast('Response saved!');
+            closeResponseModal();
+            renderDMView();
+        }
+
+        // Mark store as not interested
+        function markNotInterested(storeKey) {
+            const store = findStoreByKey(storeKey);
+            if (!store) return;
+
+            updateDMRecord(store, {
+                status: 'not_interested'
+            });
+
+            showToast('Marked as not interested');
+            closeDMModal();
+            renderDMView();
+        }
+
+        // Update analytics
+        function updateDMAnalytics(type) {
+            const data = loadDMData();
+            const today = new Date().toISOString().split('T')[0];
+
+            if (!data.analytics) data.analytics = { dailyStats: {} };
+            if (!data.analytics.dailyStats[today]) {
+                data.analytics.dailyStats[today] = { sent: 0, responses: 0 };
+            }
+
+            if (type === 'sent') {
+                data.analytics.dailyStats[today].sent++;
+            } else if (type === 'response') {
+                data.analytics.dailyStats[today].responses++;
+            }
+
+            saveDMData(data);
+        }
+
+        // Calculate analytics
+        function calculateDMAnalytics() {
+            const data = loadDMData();
+            const stores = data.stores || {};
+            const dailyStats = data.analytics?.dailyStats || {};
+
+            const today = new Date().toISOString().split('T')[0];
+            const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+            let todaySent = dailyStats[today]?.sent || 0;
+            let weekSent = 0;
+            let totalResponses = 0;
+            let totalContacted = 0;
+
+            // Count from daily stats
+            Object.entries(dailyStats).forEach(([date, stats]) => {
+                if (date >= weekAgo) {
+                    weekSent += stats.sent || 0;
+                }
+            });
+
+            let totalSeen = 0;
+
+            // Count from store records
+            Object.values(stores).forEach(record => {
+                if (record.status !== 'new') totalContacted++;
+                if (record.responses && record.responses.length > 0) totalResponses++;
+                const effective = getEffectiveStatus(record);
+                if (effective === 'seen') totalSeen++;
+            });
+
+            const responseRate = totalContacted > 0 ? Math.round((totalResponses / totalContacted) * 100) : 0;
+
+            return { todaySent, weekSent, totalResponses, totalSeen, responseRate };
+        }
+
+        // Render DM View
+        function renderDMView() {
+            const data = loadDMData();
+            const settings = loadDMSettings();
+
+            // Get stores with Instagram
+            const storesWithIG = GROUPED_STORES.filter(store =>
+                store.enrichment?.socialLinks?.instagram
+            );
+
+            // Categorize stores
+            const needsFollowUp = [];
+            const readyForOutreach = [];
+            const awaitingResponse = [];
+            const seenByStore = [];
+
+            storesWithIG.forEach(store => {
+                const record = getDMRecord(store);
+                const effectiveStatus = getEffectiveStatus(record);
+
+                if (!record || record.status === 'new') {
+                    readyForOutreach.push({ store, record });
+                } else if (effectiveStatus === 'seen') {
+                    seenByStore.push({ store, record, days: daysSince(record.lastContactDate) });
+                } else if (effectiveStatus === 'contacted') {
+                    const days = daysSince(record.lastContactDate);
+                    if (days >= settings.followUpIntervalDays && getNextDMInSequence(record)) {
+                        needsFollowUp.push({ store, record, days });
+                    } else {
+                        awaitingResponse.push({ store, record, days });
+                    }
+                } else if (effectiveStatus === 'responded' || effectiveStatus === 'interested') {
+                    awaitingResponse.push({ store, record, days: daysSince(record.lastContactDate) });
+                }
+                // Skip 'not_interested' and 'converted'
+            });
+
+            // Sort by days (oldest first for follow-up)
+            needsFollowUp.sort((a, b) => (b.days || 0) - (a.days || 0));
+            awaitingResponse.sort((a, b) => (b.days || 0) - (a.days || 0));
+            seenByStore.sort((a, b) => (b.days || 0) - (a.days || 0));
+
+            // Update counts
+            document.getElementById('followUpCount').textContent = needsFollowUp.length;
+            document.getElementById('readyCount').textContent = readyForOutreach.length;
+            document.getElementById('awaitingCount').textContent = awaitingResponse.length;
+            document.getElementById('seenCount').textContent = seenByStore.length;
+
+            // Show/hide Seen section based on data
+            const seenWrapper = document.getElementById('seenSectionWrapper');
+            if (seenWrapper) {
+                seenWrapper.style.display = seenByStore.length > 0 ? 'block' : 'none';
+            }
+
+            // Update stats
+            const analytics = calculateDMAnalytics();
+            document.getElementById('dmStatToday').textContent = analytics.todaySent;
+            document.getElementById('dmStatWeek').textContent = analytics.weekSent;
+            document.getElementById('dmStatSeen').textContent = analytics.totalSeen;
+            document.getElementById('dmStatResponses').textContent = analytics.totalResponses;
+            document.getElementById('dmStatRate').textContent = analytics.responseRate + '%';
+
+            // Render follow-up list
+            renderDMStoreList('followUpList', needsFollowUp.slice(0, 20), true);
+
+            // Render ready list (with search and pagination)
+            const searchQuery = document.getElementById('dmSearchInput')?.value?.toLowerCase() || '';
+            let filteredReady = readyForOutreach;
+            if (searchQuery) {
+                filteredReady = readyForOutreach.filter(({ store }) =>
+                    (store.name || '').toLowerCase().includes(searchQuery) ||
+                    (getInstagramHandle(store.enrichment?.socialLinks?.instagram) || '').toLowerCase().includes(searchQuery)
+                );
+            }
+            renderDMStoreList('readyList', filteredReady.slice(0, 50), false);
+
+            // Render awaiting list
+            renderDMStoreList('awaitingList', awaitingResponse.slice(0, 20), true);
+
+            // Render seen list
+            renderDMStoreList('seenList', seenByStore.slice(0, 20), true);
+        }
+
+        // Render DM store list
+        function renderDMStoreList(containerId, items, showDays) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            if (items.length === 0) {
+                container.innerHTML = '<div style="padding: 16px; text-align: center; color: rgba(55, 53, 47, 0.5); font-size: 13px;">No stores in this section</div>';
+                return;
+            }
+
+            container.innerHTML = items.map(({ store, record, days }) => {
+                const key = getDMStoreKey(store);
+                const handle = getInstagramHandle(store.enrichment?.socialLinks?.instagram);
+                const progress = getDMProgressText(record);
+                const daysClass = getDaysBadgeClass(days);
+                const city = store.city || store.locations?.[0]?.city || '';
+                const state = store.state || store.locations?.[0]?.state || '';
+                const location = [city, state].filter(Boolean).join(', ');
+
+                return `
+                    <div class="dm-store-card">
+                        <div class="dm-store-info">
+                            <div class="dm-store-name">${store.name || 'Unknown'}</div>
+                            <div class="dm-store-meta">
+                                ${handle ? `<span>@${handle}</span>` : ''}
+                                ${location ? `<span>${location}</span>` : ''}
+                                <span>${progress}</span>
+                                ${showDays && days !== null && days !== undefined ? `<span class="dm-days-badge ${daysClass}">${days}d ago</span>` : ''}
+                            </div>
+                        </div>
+                        <div class="dm-store-actions">
+                            <button class="dm-btn dm-btn-primary" onclick="openDMModal('${key}')">Send DM</button>
+                            ${record && record.status === 'contacted' ? `
+                                <button class="dm-btn dm-btn-secondary" onclick="openResponseModal('${key}')">Response</button>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Filter DM stores (search)
+        function filterDMStores() {
+            renderDMView();
+        }
+
+        // Toggle section visibility
+        function toggleSection(section) {
+            const sectionEl = document.getElementById(section + 'Section');
+            const toggleEl = document.getElementById(section + 'Toggle');
+            if (sectionEl.style.display === 'none') {
+                sectionEl.style.display = 'block';
+                toggleEl.textContent = 'Hide';
+            } else {
+                sectionEl.style.display = 'none';
+                toggleEl.textContent = 'Show';
+            }
+        }
+
+        // Export DM data to JSON
+        function exportDMData() {
+            const data = loadDMData();
+            const settings = loadDMSettings();
+            const exportData = {
+                version: 1,
+                exportedAt: new Date().toISOString(),
+                settings: settings,
+                tracking: data
+            };
+
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `dm_tracking_${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+
+            showToast('DM data exported!');
+        }
+
+        // Import DM data from JSON
+        function importDMData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importData = JSON.parse(e.target.result);
+                    if (importData.tracking) {
+                        saveDMData(importData.tracking);
+                    }
+                    if (importData.settings) {
+                        saveDMSettings(importData.settings);
+                    }
+                    showToast('DM data imported!');
+                    renderDMView();
+                } catch (err) {
+                    showToast('Failed to import: Invalid JSON');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; // Reset input
+        }
+
+        // Export DM data to CSV
+        function exportDMToCSV() {
+            const data = loadDMData();
+            const stores = data.stores || {};
+
+            const headers = [
+                'Store Name', 'Instagram Handle', 'Instagram URL', 'Status',
+                'Intro DM1 Sent', 'Intro DM1 Date', 'Intro DM2 Sent', 'Intro DM2 Date',
+                'Intro DM3 Sent', 'Intro DM3 Date', 'Last Contact Date',
+                'Response Count', 'Last Response Type', 'Notes'
+            ];
+
+            const rows = Object.values(stores).map(record => {
+                const intro = record.campaigns?.intro || {};
+                const lastResponse = record.responses?.[record.responses.length - 1];
+                return [
+                    record.storeName || '',
+                    record.instagramHandle || '',
+                    record.instagramUrl || '',
+                    record.status || 'new',
+                    intro.dm1?.sent ? 'Yes' : 'No',
+                    intro.dm1?.date || '',
+                    intro.dm2?.sent ? 'Yes' : 'No',
+                    intro.dm2?.date || '',
+                    intro.dm3?.sent ? 'Yes' : 'No',
+                    intro.dm3?.date || '',
+                    record.lastContactDate || '',
+                    record.responses?.length || 0,
+                    lastResponse?.type || '',
+                    lastResponse?.notes || ''
+                ];
+            });
+
+            const csvContent = [headers, ...rows]
+                .map(row => row.map(cell => `"${String(cell || '').replace(/"/g, '""')}"`).join(','))
+                .join('\r\n');
+
+            const BOM = '\uFEFF';
+            const blob = new Blob([BOM + csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `dm_tracking_${new Date().toISOString().split('T')[0]}.csv`;
+            link.click();
+
+            showToast('CSV exported!');
         }
     </script>
 </body>

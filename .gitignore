@@ -1,6 +1,10 @@
 # Environment variables (contains API key)
 .env
 
+# Config files with secrets
+supabase-config.js
+firebase-config.js
+
 # Python
 __pycache__/
 *.py[cod]
