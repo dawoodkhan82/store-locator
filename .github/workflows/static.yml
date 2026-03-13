@@ -31,6 +31,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Generate supabase-config.js
+        run: |
+          cat > supabase-config.js << 'SCRIPT'
+          const SUPABASE_URL = "${{ secrets.SUPABASE_URL }}";
+          const SUPABASE_ANON_KEY = "${{ secrets.SUPABASE_ANON_KEY }}";
+          const INSTAGRAM_APP_ID = "${{ secrets.INSTAGRAM_APP_ID }}";
+          const EDGE_FUNCTIONS_URL = "${{ secrets.SUPABASE_URL }}/functions/v1";
+          window.SUPABASE_URL = SUPABASE_URL;
+          window.SUPABASE_ANON_KEY = SUPABASE_ANON_KEY;
+          window.INSTAGRAM_APP_ID = INSTAGRAM_APP_ID;
+          window.EDGE_FUNCTIONS_URL = EDGE_FUNCTIONS_URL;
+          SCRIPT
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
