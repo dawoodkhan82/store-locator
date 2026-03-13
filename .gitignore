@@ -25,6 +25,6 @@ Thumbs.db
 *.swp
 *.swo
 
-# Large data files (hosted via GitHub Releases instead)
-all_stores/combined/combined.json
+# Large data files (hosted via R2)
+all_stores/combined/*.json
 combined.json

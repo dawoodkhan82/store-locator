@@ -127,7 +127,8 @@
             overflow: auto;
             background-color: #ffffff;
             -webkit-overflow-scrolling: touch;
-            max-height: calc(100vh - 280px);
+            flex: 1;
+            min-height: 0;
         }
 
         /* Responsive table */
@@ -162,6 +163,50 @@
             width: 100%;
             height: 100%;
             background-color: rgba(15, 15, 15, 0.5);
+        }
+
+        .privacy-footer {
+            flex-shrink: 0;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 12px;
+            color: rgba(55, 53, 47, 0.4);
+            border-top: 1px solid rgba(55, 53, 47, 0.09);
+        }
+
+        .privacy-footer a {
+            color: rgba(55, 53, 47, 0.4);
+            text-decoration: none;
+        }
+
+        .privacy-footer a:hover {
+            color: rgba(55, 53, 47, 0.65);
+            text-decoration: underline;
+        }
+
+        #privacyModal .modal-content {
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        #privacyModal .modal-content h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(55, 53, 47);
+            margin: 0 0 16px 0;
+        }
+
+        #privacyModal .modal-content h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: rgb(55, 53, 47);
+            margin: 20px 0 8px 0;
+        }
+
+        #privacyModal .modal-content p {
+            font-size: 14px;
+            color: rgba(55, 53, 47, 0.85);
+            margin: 0 0 12px 0;
         }
 
         .modal.active {
@@ -715,14 +760,14 @@
     <!-- Loading State -->
     <div id="loadingState" class="loading">
         <div class="spinner"></div>
-        <p style="color: rgba(55, 53, 47, 0.65); font-size: 14px;">Loading from combined.json...</p>
-        <p style="color: rgba(55, 53, 47, 0.45); font-size: 12px;">v2.0 - Dynamic Loading</p>
+        <p id="loadingText" style="color: rgba(55, 53, 47, 0.65); font-size: 14px;">Loading store data...</p>
+        <p id="loadingProgress" style="color: rgba(55, 53, 47, 0.45); font-size: 12px;"></p>
     </div>
 
     <!-- Main Content -->
-    <div id="mainContent" style="display: none;">
+    <div id="mainContent" style="display: none; height: 100vh; flex-direction: column; overflow: hidden;">
         <!-- Header -->
-        <header style="border-bottom: 1px solid rgba(55, 53, 47, 0.09); background-color: #ffffff; position: sticky; top: 0; z-index: 50;">
+        <header style="border-bottom: 1px solid rgba(55, 53, 47, 0.09); background-color: #ffffff; z-index: 50; flex-shrink: 0;">
             <div class="content-wrapper" style="padding-top: 24px; padding-bottom: 16px; display: flex; justify-content: space-between; align-items: flex-start;">
                 <div>
                     <h1 style="font-size: 24px; font-weight: 600; color: rgb(55, 53, 47); margin: 0 0 4px 0;">Independent Grocery Stores</h1>
@@ -751,7 +796,7 @@
         </header>
 
         <!-- View Tabs & Search -->
-        <div class="content-wrapper" style="padding-top: 16px;">
+        <div class="content-wrapper" style="padding-top: 16px; flex-shrink: 0;">
             <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                 <button onclick="switchView('list')" id="listTab" class="view-tab active">
                     List
@@ -881,7 +926,7 @@
         </div>
 
         <!-- List View (Table) -->
-        <div id="listView" class="content-wrapper" style="padding-bottom: 48px;">
+        <div id="listView" class="content-wrapper" style="padding-bottom: 0; flex: 1; display: flex; flex-direction: column; min-height: 0; overflow: hidden;">
             <div class="table-container">
                 <table id="storeTable">
                     <thead>
@@ -916,7 +961,7 @@
             </div>
 
             <!-- Pagination Controls -->
-            <div id="paginationControls" style="display: none; margin-top: 24px; padding: 16px; border-top: 1px solid rgba(55, 53, 47, 0.09);">
+            <div id="paginationControls" style="display: none; padding: 12px 0; border-top: 1px solid rgba(55, 53, 47, 0.09); flex-shrink: 0;">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <button
                         id="prevPage"
@@ -949,7 +994,7 @@
         </div>
 
         <!-- Map View -->
-        <div id="mapView" style="display: none; width: 100%; height: calc(100vh - 200px); padding: 0; position: relative;">
+        <div id="mapView" style="display: none; width: 100%; flex: 1; min-height: 0; padding: 0; position: relative;">
             <!-- Map Search Bar -->
             <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 1000; width: 90%; max-width: 400px;">
                 <div style="display: flex; gap: 8px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 8px;">
@@ -979,7 +1024,7 @@
         </div>
 
         <!-- DM Outreach View -->
-        <div id="dmView" class="content-wrapper" style="display: none; padding-bottom: 48px;">
+        <div id="dmView" class="content-wrapper" style="display: none; padding-bottom: 48px; flex: 1; min-height: 0; overflow-y: auto;">
             <!-- Quick Stats Bar -->
             <div class="dm-stats-bar">
                 <div class="dm-stat">
@@ -1123,6 +1168,36 @@
                     📊 Export to CSV
                 </button>
             </div>
+        </div>
+        <div class="privacy-footer">
+            <a href="#privacy" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal" onclick="closePrivacyModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closePrivacyModal()" style="position: absolute; top: 16px; right: 16px; background: transparent; border: none; font-size: 24px; color: rgba(55, 53, 47, 0.4); cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 3px; transition: background-color 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.08)'; this.style.color='rgb(55, 53, 47)';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='rgba(55, 53, 47, 0.4)';">&times;</button>
+            <h2>Privacy Policy</h2>
+            <p><strong>Last updated:</strong> March 13, 2026</p>
+
+            <h3>What We Collect</h3>
+            <p>When you log in with Instagram, we collect your Instagram username and access token. If you use the DM tracking feature, we store metadata about messages sent to store accounts (recipient, timestamp, and status).</p>
+
+            <h3>How We Use Your Data</h3>
+            <p>Your data is used solely to help you track outreach to independent grocery stores. We do not use your data for advertising, analytics, or any purpose other than powering the features you interact with.</p>
+
+            <h3>Storage</h3>
+            <p>Data is stored securely in Supabase (a hosted PostgreSQL service). Access is restricted to authenticated users viewing their own data.</p>
+
+            <h3>Third-Party Sharing</h3>
+            <p>We do not sell, rent, or share your personal data with any third parties.</p>
+
+            <h3>Data Deletion</h3>
+            <p>You can request deletion of your data at any time by contacting us. Revoking the app's access in your Instagram settings will also stop any further data collection.</p>
+
+            <h3>Contact</h3>
+            <p>For questions about this policy, please open an issue on our GitHub repository.</p>
         </div>
     </div>
 
@@ -1600,7 +1675,7 @@
         let GROUPED_STORES = []; // Stores grouped by name (for display)
         let filteredStores = [];
         let currentPage = 1;
-        const STORES_PER_PAGE = 1000;
+        const STORES_PER_PAGE = 50;
 
         // Column visibility state
         const TABLE_COLUMNS = [
@@ -1733,14 +1808,50 @@
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                 }
-                const data = await response.json();
+
+                const contentLength = response.headers.get('Content-Length');
+                const totalBytes = contentLength ? parseInt(contentLength, 10) : 0;
+                const loadingText = document.getElementById('loadingText');
+                const loadingProgress = document.getElementById('loadingProgress');
+
+                let data;
+                if (totalBytes && response.body) {
+                    const reader = response.body.getReader();
+                    const chunks = [];
+                    let receivedBytes = 0;
+
+                    while (true) {
+                        const { done, value } = await reader.read();
+                        if (done) break;
+                        chunks.push(value);
+                        receivedBytes += value.length;
+                        const mb = (receivedBytes / 1024 / 1024).toFixed(1);
+                        const totalMb = (totalBytes / 1024 / 1024).toFixed(1);
+                        const pct = Math.round((receivedBytes / totalBytes) * 100);
+                        loadingProgress.textContent = `${mb} / ${totalMb} MB (${pct}%)`;
+                    }
+
+                    loadingText.textContent = 'Processing store data...';
+                    loadingProgress.textContent = '';
+                    const allChunks = new Uint8Array(receivedBytes);
+                    let pos = 0;
+                    for (const chunk of chunks) {
+                        allChunks.set(chunk, pos);
+                        pos += chunk.length;
+                    }
+                    const text = new TextDecoder().decode(allChunks);
+                    data = JSON.parse(text);
+                } else {
+                    loadingProgress.textContent = 'Downloading...';
+                    data = await response.json();
+                }
 
                 STORES_DATA = data.stores || [];
                 GROUPED_STORES = groupStoresByName(STORES_DATA);
                 filteredStores = [...GROUPED_STORES];
 
                 document.getElementById('loadingState').style.display = 'none';
-                document.getElementById('mainContent').style.display = 'block';
+                document.getElementById('mainContent').style.display = 'flex';
 
                 // Show unique store count (grouped) and total locations
                 const uniqueCount = GROUPED_STORES.length;
@@ -1784,7 +1895,7 @@
             dmTab.classList.remove('active');
 
             if (view === 'list') {
-                listView.style.display = 'block';
+                listView.style.display = 'flex';
                 listViewFilters.style.display = 'block';
                 listTab.classList.add('active');
             } else if (view === 'map') {
@@ -2436,6 +2547,25 @@
             if (!event || event.target.id === 'storeModal') {
                 document.getElementById('storeModal').classList.remove('active');
             }
+        }
+
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').classList.add('active');
+            history.replaceState(null, '', '#privacy');
+        }
+
+        function closePrivacyModal(event) {
+            if (!event || event.target.id === 'privacyModal') {
+                document.getElementById('privacyModal').classList.remove('active');
+                history.replaceState(null, '', window.location.pathname);
+            }
+        }
+
+        // Open privacy modal if URL has #privacy hash
+        if (window.location.hash === '#privacy') {
+            window.addEventListener('DOMContentLoaded', function() {
+                document.getElementById('privacyModal').classList.add('active');
+            });
         }
 
         function toggleLocationsExpand() {
