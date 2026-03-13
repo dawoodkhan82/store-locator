@@ -131,12 +131,12 @@ serve(async (req) => {
     });
 
     // Sign in on behalf of user to get session tokens
-    const tempPassword = `ig_${instagramUserId}_${Date.now()}`;
-    await supabaseAdmin.auth.admin.updateUser(userId, { password: tempPassword });
+    const tempAuthToken = `ig_${instagramUserId}_${Date.now()}`;
+    await supabaseAdmin.auth.admin.updateUser(userId, { password: tempAuthToken });
 
     const { data: authSession, error: authError } = await supabaseAdmin.auth.signInWithPassword({
       email: email,
-      password: tempPassword,
+      password: tempAuthToken,
     });
 
     if (authError) {
