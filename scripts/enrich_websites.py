@@ -21,6 +21,7 @@ import requests
 from bs4 import BeautifulSoup
 from openai import OpenAI
 from dotenv import load_dotenv
+from classify_store_type import classify_store
 
 # Load environment variables
 load_dotenv()
@@ -301,6 +302,11 @@ def enrich_stores(input_file, output_file, limit=None):
 
             # Add enrichment data to the place
             place['enrichment'] = enrichment
+
+            # Classify store type
+            store_type = classify_store(place)
+            place['enrichment']['storeType'] = store_type
+
             enriched_count += 1
 
             # Be respectful - add delay between requests

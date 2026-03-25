@@ -849,6 +849,17 @@
                         </div>
                     </div>
 
+                    <!-- Store Type Filter (multi-select with checkboxes) -->
+                    <div style="position: relative;">
+                        <button id="storeTypeFilterButton" onclick="toggleStoreTypeFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
+                            <span id="storeTypeFilterLabel">Store Type</span>
+                            <span style="margin-left: 8px;">▼</span>
+                        </button>
+                        <div id="storeTypeFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 400px; overflow-y: auto; min-width: 240px; z-index: 1000;">
+                            <div id="storeTypeCheckboxes" style="padding: 8px;"></div>
+                        </div>
+                    </div>
+
                     <!-- Social Filter (multi-select with checkboxes) -->
                     <div style="position: relative;">
                         <button id="socialFilterButton" onclick="toggleSocialFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
@@ -935,6 +946,7 @@
                             <th data-column="address"><span class="th-content">Address<button class="hide-col-btn" onclick="hideColumn('address')" title="Hide column">×</button></span></th>
                             <th data-column="brands"><span class="th-content">Brands<button class="hide-col-btn" onclick="hideColumn('brands')" title="Hide column">×</button></span></th>
                             <th data-column="categories"><span class="th-content">Categories<button class="hide-col-btn" onclick="hideColumn('categories')" title="Hide column">×</button></span></th>
+                            <th data-column="storeType"><span class="th-content">Store Type<button class="hide-col-btn" onclick="hideColumn('storeType')" title="Hide column">×</button></span></th>
                             <th data-column="specialties"><span class="th-content">Specialties<button class="hide-col-btn" onclick="hideColumn('specialties')" title="Hide column">×</button></span></th>
                             <th data-column="website"><span class="th-content">Website<button class="hide-col-btn" onclick="hideColumn('website')" title="Hide column">×</button></span></th>
                             <th data-column="phone"><span class="th-content">Phone<button class="hide-col-btn" onclick="hideColumn('phone')" title="Hide column">×</button></span></th>
@@ -1683,6 +1695,7 @@
             { id: 'address', label: 'Address', hideable: true },
             { id: 'brands', label: 'Brands', hideable: true },
             { id: 'categories', label: 'Categories', hideable: true },
+            { id: 'storeType', label: 'Store Type', hideable: true },
             { id: 'specialties', label: 'Specialties', hideable: true },
             { id: 'website', label: 'Website', hideable: true },
             { id: 'phone', label: 'Phone', hideable: true },
@@ -2272,6 +2285,7 @@
                 const enrichment = store.enrichment || {};
                 const productCategories = enrichment.productCategories || [];
                 const specialties = enrichment.specialties || [];
+                const storeType = enrichment.storeType || 'Other';
                 const socialLinks = enrichment.socialLinks || {};
 
                 // Get brands for this store
@@ -2343,6 +2357,9 @@
                                 ${productCategories.length > 3 ? `<span style="font-size: 12px; color: rgba(55, 53, 47, 0.4);">+${productCategories.length - 3}</span>` : ''}
                             </div>
                         </td>
+                        <td data-column="storeType" class="${hiddenColumns.has('storeType') ? 'column-hidden' : ''}">
+                            <span class="tag" style="background-color: rgba(120, 85, 195, 0.15); color: rgb(80, 50, 150); padding: 1px 6px; border-radius: 3px; font-size: 12px; font-weight: 400; display: inline-block; white-space: nowrap;">${storeType}</span>
+                        </td>
                         <td data-column="specialties" class="${hiddenColumns.has('specialties') ? 'column-hidden' : ''}">
                             <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                                 ${specialties.slice(0, 3).map(s => `<span class="tag tag-green">${s}</span>`).join('')}
@@ -2408,6 +2425,7 @@
             const enrichment = store.enrichment || {};
             const productCategories = enrichment.productCategories || [];
             const specialties = enrichment.specialties || [];
+            const storeType = enrichment.storeType || 'Other';
             const socialLinks = enrichment.socialLinks || {};
 
             // Check for multiple locations
@@ -2456,7 +2474,10 @@
             }
 
             const modalContent = `
-                <h2 style="font-size: 18px; font-weight: 600; color: rgb(55, 53, 47); margin: 0 0 20px 0;">${name}</h2>
+                <h2 style="font-size: 18px; font-weight: 600; color: rgb(55, 53, 47); margin: 0 0 4px 0;">${name}</h2>
+                <div style="margin-bottom: 16px;">
+                    <span style="background-color: rgba(120, 85, 195, 0.15); color: rgb(80, 50, 150); padding: 2px 8px; border-radius: 3px; font-size: 12px; font-weight: 500;">${storeType}</span>
+                </div>
 
                 <div style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
                     ${rating !== 'N/A' ? `
@@ -2832,6 +2853,7 @@
             const brands = new Set();
             const categories = new Set();
             const specialties = new Set();
+            const storeTypeCounts = {};
             regionCounts = {};
             stateCounts = {};
 
@@ -2849,7 +2871,7 @@
                     if (store.source) brands.add(store.source);
                 }
 
-                // Extract categories and specialties
+                // Extract categories, specialties, and store type
                 const enrichment = store.enrichment || {};
                 if (enrichment.productCategories && Array.isArray(enrichment.productCategories)) {
                     enrichment.productCategories.forEach(cat => {
@@ -2861,6 +2883,8 @@
                         if (spec && spec.trim()) specialties.add(spec.trim());
                     });
                 }
+                const st = enrichment.storeType || 'Other';
+                storeTypeCounts[st] = (storeTypeCounts[st] || 0) + 1;
 
                 // For grouped stores, count in all states/regions where they have locations
                 const locations = store.locations || [store];
@@ -3151,6 +3175,39 @@
                 regionContainer.appendChild(statesContainer);
                 locationCheckboxes.appendChild(regionContainer);
             });
+
+            // Populate store type checkboxes
+            const storeTypeCheckboxes = document.getElementById('storeTypeCheckboxes');
+            storeTypeCheckboxes.innerHTML = '';
+
+            // Sort by count descending
+            const sortedTypes = Object.entries(storeTypeCounts).sort((a, b) => b[1] - a[1]);
+
+            sortedTypes.forEach(([type, count]) => {
+                const label = document.createElement('label');
+                label.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
+                label.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                label.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = type;
+                checkbox.style.cssText = 'margin-right: 8px; cursor: pointer;';
+                checkbox.onchange = function() { filterStores(); };
+
+                const text = document.createElement('span');
+                text.style.cssText = 'flex: 1;';
+                text.textContent = type;
+
+                const countSpan = document.createElement('span');
+                countSpan.style.cssText = 'color: rgba(55, 53, 47, 0.4); font-size: 12px; margin-left: 4px;';
+                countSpan.textContent = count.toLocaleString();
+
+                label.appendChild(checkbox);
+                label.appendChild(text);
+                label.appendChild(countSpan);
+                storeTypeCheckboxes.appendChild(label);
+            });
         }
 
         function toggleRegion(region) {
@@ -3259,63 +3316,40 @@
             }
         }
 
+        function closeAllFilterDropdowns(except) {
+            const ids = ['locationFilterDropdown', 'brandFilterDropdown', 'storeTypeFilterDropdown', 'socialFilterDropdown', 'sizeFilterDropdown'];
+            ids.forEach(id => {
+                if (id !== except) document.getElementById(id).style.display = 'none';
+            });
+        }
+
         function toggleLocationFilter() {
+            closeAllFilterDropdowns('locationFilterDropdown');
             const dropdown = document.getElementById('locationFilterDropdown');
-            const brandDropdown = document.getElementById('brandFilterDropdown');
-            const socialDropdown = document.getElementById('socialFilterDropdown');
-            const sizeDropdown = document.getElementById('sizeFilterDropdown');
-
-            // Close other dropdowns
-            brandDropdown.style.display = 'none';
-            socialDropdown.style.display = 'none';
-            sizeDropdown.style.display = 'none';
-
-            // Toggle location dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
         function toggleBrandFilter() {
+            closeAllFilterDropdowns('brandFilterDropdown');
             const dropdown = document.getElementById('brandFilterDropdown');
-            const socialDropdown = document.getElementById('socialFilterDropdown');
-            const locationDropdown = document.getElementById('locationFilterDropdown');
-            const sizeDropdown = document.getElementById('sizeFilterDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
 
-            // Close other dropdowns
-            socialDropdown.style.display = 'none';
-            locationDropdown.style.display = 'none';
-            sizeDropdown.style.display = 'none';
-
-            // Toggle brand dropdown
+        function toggleStoreTypeFilter() {
+            closeAllFilterDropdowns('storeTypeFilterDropdown');
+            const dropdown = document.getElementById('storeTypeFilterDropdown');
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
         function toggleSocialFilter() {
+            closeAllFilterDropdowns('socialFilterDropdown');
             const dropdown = document.getElementById('socialFilterDropdown');
-            const brandDropdown = document.getElementById('brandFilterDropdown');
-            const locationDropdown = document.getElementById('locationFilterDropdown');
-            const sizeDropdown = document.getElementById('sizeFilterDropdown');
-
-            // Close other dropdowns
-            brandDropdown.style.display = 'none';
-            locationDropdown.style.display = 'none';
-            sizeDropdown.style.display = 'none';
-
-            // Toggle social dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
         function toggleSizeFilter() {
+            closeAllFilterDropdowns('sizeFilterDropdown');
             const dropdown = document.getElementById('sizeFilterDropdown');
-            const brandDropdown = document.getElementById('brandFilterDropdown');
-            const locationDropdown = document.getElementById('locationFilterDropdown');
-            const socialDropdown = document.getElementById('socialFilterDropdown');
-
-            // Close other dropdowns
-            brandDropdown.style.display = 'none';
-            locationDropdown.style.display = 'none';
-            socialDropdown.style.display = 'none';
-
-            // Toggle size dropdown
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
@@ -3385,30 +3419,20 @@
 
         // Close dropdowns when clicking outside
         document.addEventListener('click', function(event) {
-            const brandButton = document.getElementById('brandFilterButton');
-            const brandDropdown = document.getElementById('brandFilterDropdown');
-            const socialButton = document.getElementById('socialFilterButton');
-            const socialDropdown = document.getElementById('socialFilterDropdown');
-            const locationButton = document.getElementById('locationFilterButton');
-            const locationDropdown = document.getElementById('locationFilterDropdown');
-            const sizeButton = document.getElementById('sizeFilterButton');
-            const sizeDropdown = document.getElementById('sizeFilterDropdown');
-
-            if (!brandButton.contains(event.target) && !brandDropdown.contains(event.target)) {
-                brandDropdown.style.display = 'none';
-            }
-
-            if (!socialButton.contains(event.target) && !socialDropdown.contains(event.target)) {
-                socialDropdown.style.display = 'none';
-            }
-
-            if (!locationButton.contains(event.target) && !locationDropdown.contains(event.target)) {
-                locationDropdown.style.display = 'none';
-            }
-
-            if (!sizeButton.contains(event.target) && !sizeDropdown.contains(event.target)) {
-                sizeDropdown.style.display = 'none';
-            }
+            const filters = [
+                { btn: 'brandFilterButton', dd: 'brandFilterDropdown' },
+                { btn: 'storeTypeFilterButton', dd: 'storeTypeFilterDropdown' },
+                { btn: 'socialFilterButton', dd: 'socialFilterDropdown' },
+                { btn: 'locationFilterButton', dd: 'locationFilterDropdown' },
+                { btn: 'sizeFilterButton', dd: 'sizeFilterDropdown' },
+            ];
+            filters.forEach(({ btn, dd }) => {
+                const button = document.getElementById(btn);
+                const dropdown = document.getElementById(dd);
+                if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.style.display = 'none';
+                }
+            });
         });
 
         function filterStores() {
@@ -3420,6 +3444,10 @@
 
             // Get selected brands (only brand checkboxes, not category checkboxes)
             const selectedBrands = Array.from(document.querySelectorAll('#brandCheckboxes input[data-type="brand"]:checked'))
+                .map(cb => cb.value);
+
+            // Get selected store types
+            const selectedStoreTypes = Array.from(document.querySelectorAll('#storeTypeCheckboxes input:checked'))
                 .map(cb => cb.value);
 
             // Get selected social filters
@@ -3437,6 +3465,7 @@
                 const enrichment = store.enrichment || {};
                 const categories = (enrichment.productCategories || []).join(' ').toLowerCase();
                 const specialties = (enrichment.specialties || []).join(' ').toLowerCase();
+                const storeTypeSearch = (enrichment.storeType || '').toLowerCase();
                 const socialLinks = enrichment.socialLinks || {};
 
                 // Text search filter
@@ -3444,7 +3473,8 @@
                     name.includes(searchTerm) ||
                     address.toLowerCase().includes(searchTerm) ||
                     categories.includes(searchTerm) ||
-                    specialties.includes(searchTerm);
+                    specialties.includes(searchTerm) ||
+                    storeTypeSearch.includes(searchTerm);
 
                 // Location filter: match selected states (check any location for grouped stores)
                 let matchesLocation = true;
@@ -3464,6 +3494,13 @@
                     matchesBrand = selectedBrands.some(selectedBrand =>
                         storeBrands.includes(selectedBrand)
                     );
+                }
+
+                // Store type filter (OR logic)
+                let matchesStoreType = true;
+                if (selectedStoreTypes.length > 0) {
+                    const storeType = (store.enrichment || {}).storeType || 'Other';
+                    matchesStoreType = selectedStoreTypes.includes(storeType);
                 }
 
                 // Social filter (OR logic - match ANY selected social)
@@ -3488,27 +3525,28 @@
                     matchesSize = locationCount >= 10;
                 }
 
-                return matchesSearch && matchesLocation && matchesBrand && matchesSocial && matchesSize;
+                return matchesSearch && matchesLocation && matchesBrand && matchesStoreType && matchesSocial && matchesSize;
             });
 
             // Update button labels
-            updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize);
+            updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
 
             // Update active filter tags
-            updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize);
+            updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
 
             // Update filtered results count
-            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize);
+            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize, selectedStoreTypes);
 
             currentPage = 1; // Reset to first page when filtering
             sortStores();
         }
 
-        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize) {
+        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize, selectedStoreTypes) {
             const countEl = document.getElementById('filteredResultsCount');
             const hasFilters = searchTerm || selectedStates.length > 0 ||
                               selectedBrands.length > 0 || selectedSocial.length > 0 ||
-                              (selectedSize && selectedSize !== 'all');
+                              (selectedSize && selectedSize !== 'all') ||
+                              (selectedStoreTypes && selectedStoreTypes.length > 0);
 
             if (hasFilters) {
                 countEl.textContent = `${filteredStores.length.toLocaleString()} of ${GROUPED_STORES.length.toLocaleString()} stores`;
@@ -3519,11 +3557,12 @@
             }
         }
 
-        function updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize) {
+        function updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
             const brandLabel = document.getElementById('brandFilterLabel');
             const socialLabel = document.getElementById('socialFilterLabel');
             const locationLabel = document.getElementById('locationFilterLabel');
             const sizeLabel = document.getElementById('sizeFilterLabel');
+            const storeTypeLabel = document.getElementById('storeTypeFilterLabel');
 
             // Update location label (now counts states only)
             if (selectedStates.length > 0) {
@@ -3566,15 +3605,25 @@
                 sizeLabel.textContent = 'Store Size';
                 sizeLabel.style.fontWeight = 'normal';
             }
+
+            // Update store type label
+            if (selectedStoreTypes && selectedStoreTypes.length > 0) {
+                storeTypeLabel.textContent = `Store Type (${selectedStoreTypes.length})`;
+                storeTypeLabel.style.fontWeight = '600';
+            } else {
+                storeTypeLabel.textContent = 'Store Type';
+                storeTypeLabel.style.fontWeight = 'normal';
+            }
         }
 
-        function updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize) {
+        function updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
             const container = document.getElementById('activeFiltersContainer');
             const tagsDiv = document.getElementById('activeFilterTags');
             tagsDiv.innerHTML = '';
 
             const hasFilters = selectedBrands.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
-                              (selectedSize && selectedSize !== 'all');
+                              (selectedSize && selectedSize !== 'all') ||
+                              (selectedStoreTypes && selectedStoreTypes.length > 0);
 
             if (!hasFilters) {
                 container.style.display = 'none';
@@ -3617,6 +3666,18 @@
                 });
                 tagsDiv.appendChild(tag);
             });
+
+            // Add store type tags
+            if (selectedStoreTypes) {
+                selectedStoreTypes.forEach(type => {
+                    const tag = createFilterTag(type, () => {
+                        const checkbox = document.querySelector(`#storeTypeCheckboxes input[value="${type}"]`);
+                        if (checkbox) checkbox.checked = false;
+                        filterStores();
+                    });
+                    tagsDiv.appendChild(tag);
+                });
+            }
 
             // Add size tag
             if (selectedSize && selectedSize !== 'all') {
@@ -3682,6 +3743,9 @@
                 if (btn) btn.textContent = '▶';
             });
 
+            // Uncheck all store type checkboxes
+            document.querySelectorAll('#storeTypeCheckboxes input').forEach(cb => cb.checked = false);
+
             // Uncheck all social checkboxes
             document.querySelectorAll('#socialFilterDropdown input').forEach(cb => cb.checked = false);
 
@@ -3725,6 +3789,7 @@
                 'State',
                 'ZIP Code',
                 'Brands',
+                'Store Type',
                 'Categories',
                 'Specialties',
                 'Website',
@@ -3760,6 +3825,7 @@
                 }
 
                 // Extract categories and specialties
+                const storeType = enrichment.storeType || 'Other';
                 const categories = (enrichment.productCategories || []).join('; ');
                 const specialties = (enrichment.specialties || []).join('; ');
 
@@ -3783,6 +3849,7 @@
                     state,
                     zip,
                     brands,
+                    storeType,
                     categories,
                     specialties,
                     website,

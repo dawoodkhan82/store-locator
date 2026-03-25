@@ -33,7 +33,8 @@
       "Bash(pkill -f \"scrape_.*_stores.py\")",
       "WebFetch(domain:www.munchrooms.com)",
       "WebFetch(domain:zaza-snacks.com)",
-      "WebFetch(domain:www.rapsnacks.net)"
+      "WebFetch(domain:www.rapsnacks.net)",
+      "Bash(xargs -I{} echo \"Process running: {}\")"
     ],
     "deny": [],
     "ask": []

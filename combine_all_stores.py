@@ -14,9 +14,14 @@ import json
 import os
 import csv
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
+
+# Add scripts/ to path for imports
+sys.path.insert(0, str(Path(__file__).parent / 'scripts'))
+from classify_store_type import classify_stores, STORE_TYPES
 
 # Directories
 WEBSITE_ENRICHED_DIR = Path('all_stores/website_enriched')
@@ -1186,6 +1191,16 @@ def main():
 
     stats['unique_locations'] = len(all_stores)
     stats['total'] = len(all_stores)
+
+    # Classify store types
+    print("\n4.8. Classifying store types...")
+    print("-" * 80)
+    type_counts = classify_stores(all_stores)
+    for store_type in STORE_TYPES:
+        count = type_counts.get(store_type, 0)
+        if count > 0:
+            print(f"  {store_type:<28} {count:>6,}")
+    print(f"  {'TOTAL':<28} {len(all_stores):>6,}")
 
     # Enrichment stats no longer tracked
     enrichment_counts = {
