@@ -3084,10 +3084,10 @@
             }
 
             // Populate location (regions) checkboxes
-            populateLocationFilter();
+            populateLocationFilter(storeTypeCounts);
         }
 
-        function populateLocationFilter() {
+        function populateLocationFilter(storeTypeCounts) {
             const locationCheckboxes = document.getElementById('locationCheckboxes');
             locationCheckboxes.innerHTML = '';
 
