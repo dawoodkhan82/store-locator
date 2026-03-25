@@ -1,0 +1,2859 @@
+{
+  "source_file": "all_stores/raw/zaza_snacks.json",
+  "enriched_at": "2026-03-24T18:27:17.723281",
+  "total_stores": 20,
+  "enriched_count": 19,
+  "not_found_count": 1,
+  "stores": [
+    {
+      "id": "zaza_1",
+      "name": "Happier Grocery",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 30.221521,
+      "lng": -95.368154,
+      "phone": "",
+      "website": "https://www.happiergrocery.com",
+      "google_maps_url": "https://www.google.com/maps/place/Happier+Grocery/@40.7212928,-74.0066542,17z/data=!3m2!4b1!5s0x89c2598b0375ee13:0xbcd73dfd65b09a7c!4m6!3m5!1s0x89c259553f9497af:0xd6d375d614016755!8m2!3d40.7212888!4d-74.0040793!16s%2Fg%2F11l217wggj?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "16319",
+          "street": "Happier Way",
+          "country": "United States",
+          "county": "Montgomery County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "77302",
+          "state": "Texas",
+          "state_code": "TX",
+          "county_code": "MOT",
+          "city": "Conroe",
+          "suburb": "Research Forest",
+          "lon": -95.368154,
+          "lat": 30.221521,
+          "result_type": "building",
+          "formatted": "16319 Happier Way, Conroe, TX 77302, United States of America",
+          "address_line1": "16319 Happier Way",
+          "address_line2": "Conroe, TX 77302, United States of America",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "86266JCJ+JP",
+          "plus_code_short": "6JCJ+JP Conroe, Montgomery County, United States",
+          "iso3166_2": "US-TX",
+          "rank": {
+            "popularity": 2.669676069300964,
+            "confidence": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "511079cbd58fd757c0599160aa99b5383e40c00203e203486f70656e6164647265737365733a616464726573733a75732f74782f6d6f6e74676f6d6572792d6164647265737365732d636f756e74793a33333330306230326236616564373638"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.368154,
+            30.221521
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "16319",
+                "street": "Happier Way",
+                "country": "United States",
+                "county": "Montgomery County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/tx/montgomery-addresses-county:33300b02b6aed768",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "77302",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Texas",
+                "state_code": "TX",
+                "county_code": "MG",
+                "city": "Conroe",
+                "suburb": "Research Forest",
+                "lon": -95.368154,
+                "lat": 30.221521,
+                "feature_type": "details",
+                "formatted": "16319 Happier Way, Conroe, TX 77302, United States of America",
+                "address_line1": "16319 Happier Way",
+                "address_line2": "Conroe, TX 77302, United States of America",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "iso3166_2": "US-TX"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -95.368154,
+                  30.221521
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 30.221521,
+        "longitude": -95.368154
+      },
+      "formattedAddress": "16319 Happier Way, Conroe, TX 77302, United States of America"
+    },
+    {
+      "id": "zaza_2",
+      "name": "Chelsea Savoy Hotel",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 40.7440882,
+      "lng": -73.9960078,
+      "phone": "",
+      "website": "https://hotelchelsea.com",
+      "google_maps_url": "https://www.google.com/maps/place/Chelsea+Savoy+Hotel/@40.7441112,-73.9985596,17z/data=!3m1!4b1!4m9!3m8!1s0x89c259bb3d32079b:0xadcc411fd60be9aa!5m2!4m1!1i2!8m2!3d40.7441072!4d-73.9959847!16zL20vMGJscjQ?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Chelsea Savoy Hotel",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10011",
+          "district": "Chelsea",
+          "suburb": "Manhattan",
+          "street": "West 23rd Street",
+          "housenumber": "204",
+          "iso3166_2": "US-NY",
+          "lon": -73.9960078,
+          "lat": 40.7440882,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Chelsea Savoy Hotel, 204 West 23rd Street, New York, NY 10011, United States of America",
+          "address_line1": "Chelsea Savoy Hotel",
+          "address_line2": "204 West 23rd Street, New York, NY 10011, United States of America",
+          "category": "accommodation.hotel",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8P2V3+JH",
+          "plus_code_short": "P2V3+JH New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 8.114151767906156,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51e6e37f97be7f52c059752b3a483e5f4440f00103f901a35e660601000000c002019203134368656c736561205361766f7920486f74656c"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.9960078,
+            40.7440882
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.chelseasavoynyc.com/",
+                "name": "Chelsea Savoy Hotel",
+                "name_international": {
+                  "en": "Chelsea Savoy Hotel"
+                },
+                "categories": [
+                  "accommodation",
+                  "accommodation.hotel"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Chelsea Savoy Hotel",
+                    "osm_id": 4402339491,
+                    "name:en": "Chelsea Savoy Hotel",
+                    "tourism": "hotel",
+                    "website": "https://www.chelseasavoynyc.com/",
+                    "osm_type": "n",
+                    "addr:street": "West 23rd Street",
+                    "addr:housenumber": 204
+                  }
+                },
+                "housenumber": "204",
+                "street": "West 23rd Street",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10011",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Chelsea Savoy Hotel, 204 West 23rd Street, New York, NY 10011, United States of America",
+                "address_line1": "Chelsea Savoy Hotel",
+                "address_line2": "204 West 23rd Street, New York, NY 10011, United States of America",
+                "lat": 40.7440882,
+                "lon": -73.9960078,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51e5e37f97be7f52c059c8f23a483e5f4440f00103f901a35e6606010000009203134368656c736561205361766f7920486f74656c"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.9960078,
+                  40.7440882
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 40.7440882,
+        "longitude": -73.9960078
+      },
+      "formattedAddress": "Chelsea Savoy Hotel, 204 West 23rd Street, New York, NY 10011, United States of America"
+    },
+    {
+      "id": "zaza_3",
+      "name": "Meadow Lane",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 40.7189686,
+      "lng": -74.012693,
+      "phone": "",
+      "website": "https://www.meadowlane.nyc",
+      "google_maps_url": "https://www.google.com/maps/place/Meadow+Lane/@40.7189686,-74.012693,17z/data=!3m1!4b1!4m6!3m5!1s0x89c25b7d1dd4f3c9:0x9fe063c93222caff!8m2!3d40.7189646!4d-74.0101127!16s%2Fg%2F11lw0zqv55?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D"
+    },
+    {
+      "id": "zaza_4",
+      "name": "Mast Market",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 40.7802867,
+      "lng": -73.9764564,
+      "phone": "",
+      "website": "https://mastmarket.com/pages/nyc-uws?gad_source=1&gad_campaignid=19773939118&gbraid=0AAAAADDMebZPqWioql2e6VvUj3MuBLIJX&gclid=CjwKCAiAj8LLBhAkEiwAJjbY7yJPRwmba10PmXlp6KA5b5quxOj58hYrYsDmWQDqJmrfIZjXwraAnBoCNFEQAvD_BwE",
+      "google_maps_url": "https://www.google.com/maps/place/Mast+Market/@40.780324,-73.9790291,17z/data=!3m1!4b1!4m6!3m5!1s0x89c259704709fd27:0x8e0d6819f645f418!8m2!3d40.78032!4d-73.9764488!16s%2Fg%2F11rhwng4by?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Mast Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10023",
+          "district": "Manhattan Community Board 7",
+          "suburb": "Manhattan",
+          "street": "Columbus Avenue",
+          "housenumber": "353",
+          "iso3166_2": "US-NY",
+          "lon": -73.9764564,
+          "lat": 40.7802867,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "Mast Market, 353 Columbus Avenue, New York, NY 10023, United States of America",
+          "address_line1": "Mast Market",
+          "address_line2": "353 Columbus Avenue, New York, NY 10023, United States of America",
+          "category": "commercial.food_and_drink.deli;commercial.food_and_drink.health_food",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8Q2JF+4C",
+          "plus_code_short": "Q2JF+4C New York, New York County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.856787973321327,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5113fefb427e7e52c0597b00416fe0634440f00103f901eee2a3a300000000c0020192030b4d617374204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.9764564,
+            40.7802867
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.mastmarket.com/",
+                "opening_hours": "Mo-Su 07:00-21:00",
+                "name": "Mast Market",
+                "contact": {
+                  "phone": "+1-212-874-6278"
+                },
+                "commercial": {
+                  "type": "health_food"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.food_and_drink",
+                  "commercial.food_and_drink.deli",
+                  "commercial.food_and_drink.health_food"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Mast Market",
+                    "shop": "health_food",
+                    "phone": "+1-212-874-6278",
+                    "osm_id": 2745426670,
+                    "website": "https://www.mastmarket.com/",
+                    "osm_type": "n",
+                    "addr:city": "New York",
+                    "addr:state": "NY",
+                    "check_date": "2024-07-28",
+                    "addr:street": "Columbus Avenue",
+                    "addr:postcode": 10023,
+                    "opening_hours": "Mo-Su 07:00-21:00",
+                    "addr:housenumber": 353
+                  }
+                },
+                "housenumber": "353",
+                "street": "Columbus Avenue",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10023",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Mast Market, 353 Columbus Avenue, New York, NY 10023, United States of America",
+                "address_line1": "Mast Market",
+                "address_line2": "353 Columbus Avenue, New York, NY 10023, United States of America",
+                "lat": 40.7802867,
+                "lon": -73.9764564,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "5113fefb427e7e52c0592bca416fe0634440f00103f901eee2a3a30000000092030b4d617374204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.9764564,
+                  40.7802867
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 40.7802867,
+        "longitude": -73.9764564
+      },
+      "formattedAddress": "Mast Market, 353 Columbus Avenue, New York, NY 10023, United States of America"
+    },
+    {
+      "id": "zaza_5",
+      "name": "The Mercer",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 40.3461663,
+      "lng": -74.6519653,
+      "phone": "",
+      "website": "https://mercerhotel.com",
+      "google_maps_url": "https://www.google.com/maps/place/(The+Mercer)/@40.7249391,-74.0010954,17z/data=!3m1!4b1!4m9!3m8!1s0x89c2598efa772ccf:0x7fd6769e81c734f4!5m2!4m1!1i2!8m2!3d40.7249351!4d-73.9985151!16s%2Fm%2F0p8t0sm?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "The Hedgehog and the Fox",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New Jersey",
+          "county": "Mercer County",
+          "city": "Princeton",
+          "postcode": "08544",
+          "street": "Ivy Lane",
+          "iso3166_2": "US-NJ",
+          "lon": -74.6519653,
+          "lat": 40.3461663,
+          "state_code": "NJ",
+          "county_code": "MER",
+          "district": "Princeton",
+          "result_type": "amenity",
+          "formatted": "The Hedgehog and the Fox, Ivy Lane, Princeton, NJ 08544, United States of America",
+          "address_line1": "The Hedgehog and the Fox",
+          "address_line2": "Ivy Lane, Princeton, NJ 08544, United States of America",
+          "category": "tourism.attraction.artwork",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G788WX+F6",
+          "plus_code_short": "WX+F6, 08544 Princeton, United States",
+          "rank": {
+            "importance": 0.3269037816797396,
+            "popularity": 4.613368342806717,
+            "confidence": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "511e68aaccb9a952c05919bd642d4f2c4440f00103f901501b1bbd01000000c00201920318546865204865646765686f6720616e642074686520466f78e203236f70656e7374726565746d61703a76656e75653a6e6f64652f37343637363337353834"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.6519653,
+            40.3461663
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "The Hedgehog and the Fox",
+                "wiki_and_media": {
+                  "wikidata": "Q7739293",
+                  "wikipedia": "en:The Hedgehog and the Fox (sculpture)"
+                },
+                "artwork": {
+                  "artist_name": "Richard Serra",
+                  "artist_details": {
+                    "wikidata": "Q321245"
+                  },
+                  "artwork_type": "sculpture"
+                },
+                "categories": [
+                  "tourism",
+                  "tourism.attraction",
+                  "tourism.attraction.artwork"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "The Hedgehog and the Fox",
+                    "osm_id": 7467637584,
+                    "tourism": "artwork",
+                    "material": "steel",
+                    "osm_type": "n",
+                    "wikidata": "Q7739293",
+                    "wikipedia": "en:The Hedgehog and the Fox (sculpture)",
+                    "artist_name": "Richard Serra",
+                    "artwork_type": "sculpture",
+                    "artist:wikidata": "Q321245"
+                  }
+                },
+                "street": "Ivy Lane",
+                "city": "Princeton",
+                "county": "Mercer County",
+                "state": "New Jersey",
+                "postcode": "08544",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "The Hedgehog and the Fox, Ivy Lane, Princeton, NJ 08544, United States of America",
+                "address_line1": "The Hedgehog and the Fox",
+                "address_line2": "Ivy Lane, Princeton, NJ 08544, United States of America",
+                "lat": 40.3461663,
+                "lon": -74.6519653,
+                "iso3166_2": "US-NJ",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "511e68aaccb9a952c0593d69652d4f2c4440f00103f901501b1bbd01000000920318546865204865646765686f6720616e642074686520466f78"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -74.6519653,
+                  40.3461663
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 40.3461663,
+        "longitude": -74.6519653
+      },
+      "formattedAddress": "The Hedgehog and the Fox, Ivy Lane, Princeton, NJ 08544, United States of America"
+    },
+    {
+      "id": "zaza_6",
+      "name": "Spitfire Cheese & Sundry",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 36.5471282,
+      "lng": 31.9952973,
+      "phone": "",
+      "website": "https://spitfirecheese.com",
+      "google_maps_url": "https://www.google.com/maps/place/Spitfire+Cheese+%26+Sundry/@40.7654033,-73.9866405,17z/data=!3m1!4b1!4m6!3m5!1s0x89c259c609eb89ed:0xa762cdec3e46cb99!8m2!3d40.7653993!4d-73.9840602!16s%2Fg%2F11vx16xd0z?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Cheese & Cheese",
+          "country": "Turkey",
+          "country_code": "tr",
+          "state": "Mediterranean Region",
+          "county": "Antalya",
+          "city": "Alanya",
+          "postcode": "74000",
+          "suburb": "Kadıpaşa Mahallesi",
+          "street": "Şevket Tokuş Caddesi",
+          "iso3166_2": "TR-07",
+          "lon": 31.9952973,
+          "lat": 36.5471282,
+          "state_code": "AL",
+          "county_code": "AL",
+          "result_type": "amenity",
+          "formatted": "Cheese & Cheese, Şevket Tokuş Caddesi, 74000 Alanya, Turkey",
+          "address_line1": "Cheese & Cheese",
+          "address_line2": "Şevket Tokuş Caddesi, 74000 Alanya, Turkey",
+          "category": "commercial.food_and_drink.bakery",
+          "timezone": {
+            "name": "Europe/Istanbul",
+            "offset_STD": "+03:00",
+            "offset_STD_seconds": 10800,
+            "offset_DST": "+03:00",
+            "offset_DST_seconds": 10800
+          },
+          "plus_code": "8G8HGXWW+V4",
+          "plus_code_short": "WW+V4 Alanya, Antalya, Turkey",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 6.685880116492891,
+            "confidence": 0.5,
+            "match_type": "full_match"
+          },
+          "place_id": "510f4cc9cdcbfe3f405914dcfe4b08464240f00103f901fa94c01e01000000c0020192030f436865657365202620436865657365e203236f70656e7374726565746d61703a76656e75653a6e6f64652f34383130393034383236"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            31.9952973,
+            36.5471282
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Cheese & Cheese",
+                "commercial": {
+                  "type": "bakery"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.food_and_drink",
+                  "commercial.food_and_drink.bakery"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Cheese & Cheese",
+                    "shop": "bakery",
+                    "osm_id": 4810904826,
+                    "osm_type": "n",
+                    "check_date": "2025-04-29"
+                  }
+                },
+                "street": "Şevket Tokuş Caddesi",
+                "city": "Alanya",
+                "county": "Antalya",
+                "state": "Mediterranean Region",
+                "postcode": "74000",
+                "country": "Turkey",
+                "country_code": "tr",
+                "formatted": "Cheese & Cheese, Şevket Tokuş Caddesi, 74000 Alanya, Turkey",
+                "address_line1": "Cheese & Cheese",
+                "address_line2": "Şevket Tokuş Caddesi, 74000 Alanya, Turkey",
+                "lat": 36.5471282,
+                "lon": 31.9952973,
+                "iso3166_2": "TR-07",
+                "timezone": {
+                  "name": "Europe/Istanbul",
+                  "offset_STD": "+03:00",
+                  "offset_STD_seconds": 10800,
+                  "offset_DST": "+03:00",
+                  "offset_DST_seconds": 10800
+                },
+                "place_id": "510e4cc9cdcbfe3f4059e16afe4b08464240f00103f901fa94c01e0100000092030f436865657365202620436865657365"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  31.9952973,
+                  36.5471282
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 36.5471282,
+        "longitude": 31.9952973
+      },
+      "formattedAddress": "Cheese & Cheese, Şevket Tokuş Caddesi, 74000 Alanya, Turkey"
+    },
+    {
+      "id": "zaza_7",
+      "name": "Fairway Market of 74th Street",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 40.731783,
+      "lng": -73.888404,
+      "phone": "",
+      "website": "https://www.fairwaymarket.com/sm/planning/rsid/4000",
+      "google_maps_url": "https://www.google.com/maps/place/Fairway+Market+of+74th+Street/@40.7807653,-73.9842415,17z/data=!3m2!4b1!5s0x89c25889c1da00a5:0xa9053dbbd2f0ad2e!4m6!3m5!1s0x89c25889954abe43:0xe56c7cd79e36b5b3!8m2!3d40.7807653!4d-73.9816666!16s%2Fg%2F1th880q6?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "52-74",
+          "street": "74th Street",
+          "country": "United States",
+          "county": "Queens County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "11373",
+          "state": "New York",
+          "state_code": "NY",
+          "city": "New York",
+          "district": "Queens",
+          "suburb": "Maspeth",
+          "lon": -73.888404,
+          "lat": 40.731783,
+          "result_type": "building",
+          "formatted": "52-74 74th Street, New York, NY 11373, United States of America",
+          "address_line1": "52-74 74th Street",
+          "address_line2": "New York, NY 11373, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8P4J6+PJ",
+          "plus_code_short": "P4J6+PJ New York, Queens County, United States",
+          "iso3166_2": "US-NY",
+          "rank": {
+            "popularity": 6.960628486721867,
+            "confidence": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "51ad68739cdb7852c0596762ba10ab5d4440c00203e2034c6f70656e6164647265737365733a616464726573733a75732f6e792f636974795f6f665f6e65775f796f726b2d6164647265737365732d636974793a30643964663032346465316233303061"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.888404,
+            40.731783
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "52-74",
+                "street": "74th Street",
+                "country": "United States",
+                "county": "Queens County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ny/city_of_new_york-addresses-city:0d9df024de1b300a",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "11373",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "New York",
+                "state_code": "NY",
+                "city": "New York",
+                "district": "Queens",
+                "suburb": "Maspeth",
+                "lon": -73.888404,
+                "lat": 40.731783,
+                "feature_type": "details",
+                "formatted": "52-74 74th Street, New York, NY 11373, United States of America",
+                "address_line1": "52-74 74th Street",
+                "address_line2": "New York, NY 11373, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-NY"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -73.888404,
+                  40.731783
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 40.731783,
+        "longitude": -73.888404
+      },
+      "formattedAddress": "52-74 74th Street, New York, NY 11373, United States of America"
+    },
+    {
+      "id": "zaza_8",
+      "name": "Westerlind",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 39.752657,
+      "lng": -104.9967166,
+      "phone": "",
+      "website": "https://www.westerlindoutdoor.com/pages/locations?srsltid=AfmBOopp6Xe04JNgmFdYbe-OoNXe2_X-sEQaVQEaje-68UWPS7XPslsh",
+      "google_maps_url": "https://www.google.com/maps/place/Westerlind/@41.9539982,-73.5127047,17z/data=!3m1!4b1!4m6!3m5!1s0x89dd7fd2dd3fda53:0x2e1910f8ae7ea968!8m2!3d41.9539942!4d-73.5101298!16s%2Fg%2F11k7v2yw9n?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Westerlind",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Colorado",
+          "city": "Denver",
+          "postcode": "80202",
+          "district": "Central Business District",
+          "street": "Blake Street",
+          "housenumber": "1801",
+          "iso3166_2": "US-CO",
+          "lon": -104.9967166,
+          "lat": 39.752657,
+          "state_code": "CO",
+          "result_type": "amenity",
+          "formatted": "Westerlind, 1801 Blake Street, Denver, CO 80202, United States of America",
+          "address_line1": "Westerlind",
+          "address_line2": "1801 Blake Street, Denver, CO 80202, United States of America",
+          "category": "commercial.outdoor_and_sport",
+          "timezone": {
+            "name": "America/Denver",
+            "offset_STD": "-07:00",
+            "offset_STD_seconds": -25200,
+            "offset_DST": "-06:00",
+            "offset_DST_seconds": -21600,
+            "abbreviation_STD": "MST",
+            "abbreviation_DST": "MDT"
+          },
+          "plus_code": "85FQQ233+38",
+          "plus_code_short": "33+38, 80202 Denver, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 7.244887711776413,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5157186c34ca3f5ac059800d881057e04340f00103f9016b4f0ab401000000c0020192030a5765737465726c696e64"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.9967166,
+            39.752657
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Westerlind",
+                "commercial": {
+                  "type": "sports"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.outdoor_and_sport"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Westerlind",
+                    "shop": "sports",
+                    "osm_id": 7315541867,
+                    "osm_type": "n",
+                    "addr:city": "Denver",
+                    "addr:state": "CO",
+                    "addr:street": "Blake Street",
+                    "addr:postcode": 80202,
+                    "addr:housenumber": 1801
+                  }
+                },
+                "housenumber": "1801",
+                "street": "Blake Street",
+                "city": "Denver",
+                "state": "Colorado",
+                "postcode": "80202",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Westerlind, 1801 Blake Street, Denver, CO 80202, United States of America",
+                "address_line1": "Westerlind",
+                "address_line2": "1801 Blake Street, Denver, CO 80202, United States of America",
+                "lat": 39.752657,
+                "lon": -104.9967166,
+                "iso3166_2": "US-CO",
+                "timezone": {
+                  "name": "America/Denver",
+                  "offset_STD": "-07:00",
+                  "offset_STD_seconds": -25200,
+                  "offset_DST": "-06:00",
+                  "offset_DST_seconds": -21600,
+                  "abbreviation_STD": "MST",
+                  "abbreviation_DST": "MDT"
+                },
+                "place_id": "5157186c34ca3f5ac059c58d881057e04340f00103f9016b4f0ab40100000092030a5765737465726c696e64"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -104.9967166,
+                  39.752657
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 39.752657,
+        "longitude": -104.9967166
+      },
+      "formattedAddress": "Westerlind, 1801 Blake Street, Denver, CO 80202, United States of America"
+    },
+    {
+      "id": "zaza_9",
+      "name": "The Maker Hotel",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 33.9720052,
+      "lng": -84.5271794,
+      "phone": "",
+      "website": "https://www.themaker.com",
+      "google_maps_url": "https://www.google.com/maps/place/The+Maker+Hotel/@42.2530399,-73.7934706,16z/data=!3m2!4b1!5s0x89dd942c765239d1:0x25786ca2e79bd4d!4m9!3m8!1s0x89dd95c7ba02290f:0x73933cfd1b6cfe3f!5m2!4m1!1i2!8m2!3d42.253036!4d-73.7908903!16s%2Fg%2F11jcwjgs8f?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "The Maker Station",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Georgia",
+          "county": "Cobb County",
+          "city": "Marietta",
+          "postcode": "30062",
+          "street": "Pickens Industrial Drive Northeast",
+          "housenumber": "869",
+          "iso3166_2": "US-GA",
+          "lon": -84.5271794,
+          "lat": 33.9720052,
+          "state_code": "GA",
+          "county_code": "CB",
+          "result_type": "amenity",
+          "formatted": "The Maker Station, 869 Pickens Industrial Drive Northeast, Marietta, GA 30062, United States of America",
+          "address_line1": "The Maker Station",
+          "address_line2": "869 Pickens Industrial Drive Northeast, Marietta, GA 30062, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "865QXFCF+R4",
+          "plus_code_short": "XFCF+R4, 30062 Marietta, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.213947542245288,
+            "confidence": 0.7,
+            "match_type": "full_match"
+          },
+          "place_id": "51fe87aa4ebd2155c0595ec598aa6afc4040f00103f9019b6058d802000000c00201920311546865204d616b65722053746174696f6ee203246f70656e7374726565746d61703a76656e75653a6e6f64652f3132323139363035313437"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.5271794,
+            33.9720052
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.themakerstation.com/Main_Page",
+                "opening_hours": "08:00-22:00",
+                "name": "The Maker Station",
+                "contact": {
+                  "email": "info@themakerstation.com"
+                },
+                "facilities": {
+                  "internet_access": true,
+                  "wheelchair": true
+                },
+                "restrictions": {
+                  "access": "permit"
+                },
+                "payment_options": {
+                  "cash": true,
+                  "debit_cards": true,
+                  "credit_cards": true
+                },
+                "categories": [
+                  "access_limited",
+                  "access_limited.with_permit",
+                  "fee",
+                  "internet_access",
+                  "internet_access.for_customers",
+                  "wheelchair",
+                  "wheelchair.yes"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "fee": "yes",
+                    "name": "The Maker Station",
+                    "email": "info@themakerstation.com",
+                    "level": "0;1",
+                    "access": "permit",
+                    "osm_id": 12219605147,
+                    "leisure": "hackerspace",
+                    "website": "https://www.themakerstation.com/Main_Page",
+                    "osm_type": "n",
+                    "addr:floor": "G;1",
+                    "check_date": "2025-09-25",
+                    "wheelchair": "yes",
+                    "addr:street": "Pickens Industrial Drive Northeast",
+                    "payment:cash": "yes",
+                    "opening_hours": "08:00-22:00",
+                    "internet_access": "wlan",
+                    "addr:housenumber": 869,
+                    "contact:facebook": "https://www.facebook.com/themakerstation/",
+                    "contact:instagram": "http://instagram.com/themakerstation",
+                    "internet_access:fee": "customers",
+                    "payment:debit_cards": "yes",
+                    "payment:credit_cards": "yes"
+                  }
+                },
+                "housenumber": "869",
+                "street": "Pickens Industrial Drive Northeast",
+                "city": "Marietta",
+                "county": "Cobb County",
+                "state": "Georgia",
+                "postcode": "30062",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "The Maker Station, 869 Pickens Industrial Drive Northeast, Marietta, GA 30062, United States of America",
+                "address_line1": "The Maker Station",
+                "address_line2": "869 Pickens Industrial Drive Northeast, Marietta, GA 30062, United States of America",
+                "lat": 33.9720052,
+                "lon": -84.5271794,
+                "iso3166_2": "US-GA",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "51fd87aa4ebd2155c059eae997aa6afc4040f00103f9019b6058d802000000920311546865204d616b65722053746174696f6e"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -84.5271794,
+                  33.9720052
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 33.9720052,
+        "longitude": -84.5271794
+      },
+      "formattedAddress": "The Maker Station, 869 Pickens Industrial Drive Northeast, Marietta, GA 30062, United States of America"
+    },
+    {
+      "id": "zaza_10",
+      "name": "Baker Street Market",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 38.084604,
+      "lng": -120.563362,
+      "phone": "",
+      "website": "https://www.bakerstmarket.com",
+      "google_maps_url": "https://www.google.com/maps/place/Baker+Street+Market/@40.7302956,-74.281851,17z/data=!3m1!4b1!4m6!3m5!1s0x89c3ad493ab1be97:0x5f902dd2349acb0c!8m2!3d40.7302916!4d-74.2792707!16s%2Fg%2F11fq_snzyb?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "253",
+          "street": "Baker Baker Street",
+          "country": "United States",
+          "county": "Calaveras County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "state": "California",
+          "state_code": "CA",
+          "county_code": "CA",
+          "city": "Angels",
+          "lon": -120.563362,
+          "lat": 38.084604,
+          "result_type": "building",
+          "postcode": "95222",
+          "formatted": "253 Baker Baker Street, Angels, CA 95222, United States of America",
+          "address_line1": "253 Baker Baker Street",
+          "address_line2": "Angels, CA 95222, United States of America",
+          "timezone": {
+            "name": "America/Los_Angeles",
+            "offset_STD": "-08:00",
+            "offset_STD_seconds": -28800,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "PST",
+            "abbreviation_DST": "PDT"
+          },
+          "plus_code": "84CX3CMP+RM",
+          "iso3166_2": "US-CA",
+          "rank": {
+            "popularity": 2.498700386273292,
+            "confidence": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "51c9737d1f0e245ec0592e8eca4dd40a4340c00203e203476f70656e6164647265737365733a616464726573733a75732f63612f63616c6176657261732d6164647265737365732d636f756e74793a38383839643865643261383535386165"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -120.563362,
+            38.084604
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "253",
+                "street": "Baker Baker Street",
+                "country": "United States",
+                "county": "Calaveras County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ca/calaveras-addresses-county:8889d8ed2a8558ae",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "California",
+                "state_code": "CA",
+                "county_code": "CA",
+                "city": "Angels",
+                "lon": -120.563362,
+                "lat": 38.084604,
+                "feature_type": "details",
+                "formatted": "253 Baker Baker Street, Angels, CA, United States of America",
+                "address_line1": "253 Baker Baker Street",
+                "address_line2": "Angels, CA, United States of America",
+                "timezone": {
+                  "name": "America/Los_Angeles",
+                  "offset_STD": "-08:00",
+                  "offset_STD_seconds": -28800,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "PST",
+                  "abbreviation_DST": "PDT"
+                },
+                "iso3166_2": "US-CA"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -120.563362,
+                  38.084604
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 38.084604,
+        "longitude": -120.563362
+      },
+      "formattedAddress": "253 Baker Baker Street, Angels, CA 95222, United States of America"
+    },
+    {
+      "id": "zaza_11",
+      "name": "Anderson Market",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 41.1648988,
+      "lng": -96.1402139,
+      "phone": "",
+      "website": "https://www.andersonmkt.com/our-story",
+      "google_maps_url": "https://www.google.com/maps/place/Anderson+Market/@40.3487281,-74.0781005,17z/data=!3m1!4b1!4m6!3m5!1s0x89c2312f8ba0c4a9:0xe1d20c9994daec48!8m2!3d40.348724!4d-74.0755256!16s%2Fg%2F11ydkq0934?entry=ttu&g_ep=EgoyMDI2MDExOS4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Anderson Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Nebraska",
+          "county": "Sarpy County",
+          "city": "Gretna",
+          "municipality": "Forest City No. 1 Precinct",
+          "postcode": "68138",
+          "street": "South 145th Street",
+          "iso3166_2": "US-NE",
+          "lon": -96.1402139,
+          "lat": 41.1648988,
+          "state_code": "NE",
+          "result_type": "amenity",
+          "formatted": "Anderson Market, South 145th Street, Gretna, NE 68138, United States of America",
+          "address_line1": "Anderson Market",
+          "address_line2": "South 145th Street, Gretna, NE 68138, United States of America",
+          "category": "commercial.convenience",
+          "timezone": {
+            "name": "America/Chicago",
+            "offset_STD": "-06:00",
+            "offset_STD_seconds": -21600,
+            "offset_DST": "-05:00",
+            "offset_DST_seconds": -18000,
+            "abbreviation_STD": "CST",
+            "abbreviation_DST": "CDT"
+          },
+          "plus_code": "86H55V75+XW",
+          "plus_code_short": "5V75+XW, 68138 Gretna, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 1.8759558537961958,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5175bcb843f90858c059289364671b954440f00103f901e0ff110502000000c0020192030f416e646572736f6e204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.1402139,
+            41.1648988
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Anderson Market",
+                "commercial": {
+                  "type": "convenience"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.convenience"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Anderson Market",
+                    "shop": "convenience",
+                    "osm_id": 8675000288,
+                    "osm_type": "n"
+                  }
+                },
+                "street": "South 145th Street",
+                "city": "Gretna",
+                "county": "Sarpy County",
+                "state": "Nebraska",
+                "postcode": "68138",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Anderson Market, South 145th Street, Gretna, NE 68138, United States of America",
+                "address_line1": "Anderson Market",
+                "address_line2": "South 145th Street, Gretna, NE 68138, United States of America",
+                "lat": 41.1648988,
+                "lon": -96.1402139,
+                "iso3166_2": "US-NE",
+                "timezone": {
+                  "name": "America/Chicago",
+                  "offset_STD": "-06:00",
+                  "offset_STD_seconds": -21600,
+                  "offset_DST": "-05:00",
+                  "offset_DST_seconds": -18000,
+                  "abbreviation_STD": "CST",
+                  "abbreviation_DST": "CDT"
+                },
+                "place_id": "5175bcb843f90858c059a47465671b954440f00103f901e0ff11050200000092030f416e646572736f6e204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -96.1402139,
+                  41.1648988
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 41.1648988,
+        "longitude": -96.1402139
+      },
+      "formattedAddress": "Anderson Market, South 145th Street, Gretna, NE 68138, United States of America"
+    },
+    {
+      "id": "zaza_13",
+      "name": "shelter social club ojai",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 45.5152648,
+      "lng": 10.2111992,
+      "phone": "",
+      "website": "https://sheltersocialclub.com",
+      "google_maps_url": "https://www.google.com/maps/search/shelter+social+club+ojai/@34.4414778,-119.2779685,14z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Social Club",
+          "country": "Italy",
+          "country_code": "it",
+          "state": "Lombardy",
+          "county": "Brescia",
+          "city": "Brescia",
+          "postcode": "25124",
+          "district": "Zona Sud",
+          "suburb": "Lamarmora",
+          "street": "Via della Ziziola",
+          "housenumber": "105",
+          "iso3166_2": "IT-25",
+          "iso3166_2_sublevel": "IT-BS",
+          "lon": 10.2111992,
+          "lat": 45.5152648,
+          "state_code": "LOM",
+          "county_code": "BS",
+          "result_type": "amenity",
+          "NUTS_3": "ITC47",
+          "formatted": "Social Club, Via della Ziziola, 105, 25124 Brescia BS, Italy",
+          "address_line1": "Social Club",
+          "address_line2": "Via della Ziziola, 105, 25124 Brescia BS, Italy",
+          "category": "adult.nightclub",
+          "timezone": {
+            "name": "Europe/Rome",
+            "offset_STD": "+01:00",
+            "offset_STD_seconds": 3600,
+            "offset_DST": "+02:00",
+            "offset_DST_seconds": 7200,
+            "abbreviation_STD": "CET",
+            "abbreviation_DST": "CEST"
+          },
+          "plus_code": "8FQGG686+4F",
+          "plus_code_short": "G686+4F Brescia, Italy",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 6.822034766711677,
+            "confidence": 0,
+            "confidence_city_level": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "51fae1314d226c244059d6636c32f4c14640f00103f901bc80984402000000c0020192030b536f6369616c20436c7562e203236f70656e7374726565746d61703a76656e75653a6e6f64652f39373430373739373038"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            10.2111992,
+            45.5152648
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.ilsocialclub.com/",
+                "operator": "Social Club S.r.l.",
+                "name": "Social Club",
+                "ref_other": {
+                  "vatin": "IT03506580988"
+                },
+                "contact": {
+                  "phone": "+39 328 7356354",
+                  "email": "info@ilsocialclub.it"
+                },
+                "categories": [
+                  "adult",
+                  "adult.nightclub"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Social Club",
+                    "osm_id": 9740779708,
+                    "amenity": "nightclub",
+                    "operator": "Social Club S.r.l.",
+                    "osm_type": "n",
+                    "addr:city": "Brescia",
+                    "ref:vatin": "IT03506580988",
+                    "live_music": "yes",
+                    "addr:street": "Via della Ziziola",
+                    "addr:postcode": 25124,
+                    "contact:email": "info@ilsocialclub.it",
+                    "contact:phone": "+39 328 7356354",
+                    "contact:website": "https://www.ilsocialclub.com/",
+                    "addr:housenumber": 105,
+                    "contact:instagram": "ilsocialclub"
+                  }
+                },
+                "housenumber": "105",
+                "street": "Via della Ziziola",
+                "city": "Brescia",
+                "county": "Brescia",
+                "state": "Lombardy",
+                "postcode": "25124",
+                "country": "Italy",
+                "country_code": "it",
+                "formatted": "Social Club, Via della Ziziola, 105, 25124 Brescia BS, Italy",
+                "address_line1": "Social Club",
+                "address_line2": "Via della Ziziola, 105, 25124 Brescia BS, Italy",
+                "lat": 45.5152648,
+                "lon": 10.2111992,
+                "iso3166_2": "IT-25",
+                "iso3166_2_sublevel": "IT-BS",
+                "timezone": {
+                  "name": "Europe/Rome",
+                  "offset_STD": "+01:00",
+                  "offset_STD_seconds": 3600,
+                  "offset_DST": "+02:00",
+                  "offset_DST_seconds": 7200,
+                  "abbreviation_STD": "CET",
+                  "abbreviation_DST": "CEST"
+                },
+                "place_id": "51fae1314d226c244059bc456d32f4c14640f00103f901bc8098440200000092030b536f6369616c20436c7562"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  10.2111992,
+                  45.5152648
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 45.5152648,
+        "longitude": 10.2111992
+      },
+      "formattedAddress": "Social Club, Via della Ziziola, 105, 25124 Brescia BS, Italy"
+    },
+    {
+      "id": "zaza_14",
+      "name": "Superette Market",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 44.5690907,
+      "lng": -123.279815,
+      "phone": "",
+      "website": "https://www.superettemarket.com",
+      "google_maps_url": "https://www.google.com/maps/place/Superette+Market/@38.5501102,-121.5087283,17z/data=!3m2!4b1!5s0x809ad10ef9ef7231:0x861cefe675d1eb58!4m6!3m5!1s0x809ad14de7cc19cf:0x806e44ed0c3a8ca8!8m2!3d38.550106!4d-121.5061534!16s%2Fg%2F11ycmmrxg9?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Superette Market",
+          "country": "United States",
+          "country_code": "us",
+          "state": "Oregon",
+          "county": "Benton County",
+          "city": "Corvallis",
+          "postcode": "97330",
+          "street": "Monroe Avenue",
+          "housenumber": "2531",
+          "iso3166_2": "US-OR",
+          "lon": -123.279815,
+          "lat": 44.5690907,
+          "state_code": "OR",
+          "result_type": "amenity",
+          "formatted": "Superette Market, 2531 Monroe Avenue, Corvallis, OR 97330, United States of America",
+          "address_line1": "Superette Market",
+          "address_line2": "2531 Monroe Avenue, Corvallis, OR 97330, United States of America",
+          "category": "commercial.marketplace",
+          "timezone": {
+            "name": "America/Los_Angeles",
+            "offset_STD": "-08:00",
+            "offset_STD_seconds": -28800,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "PST",
+            "abbreviation_DST": "PDT"
+          },
+          "plus_code": "84PRHP9C+J3",
+          "plus_code_short": "HP9C+J3 Corvallis, Benton County, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 1.4068191198897766,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "51897b2c7de8d15ec059977accf6d7484640f00103f9013a40be8101000000c00201920310537570657265747465204d61726b6574"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -123.279815,
+            44.5690907
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "opening_hours": "Mo-Th 08:00-24:00, Fr-Sa 08:00-02:00, Su 09:00-24:00",
+                "description": "Hottest market at Oregon State University make sure to say hi to Mike while you're there",
+                "name": "Superette Market",
+                "contact": {
+                  "phone": "+1-541-758-0830"
+                },
+                "building": {
+                  "type": "commercial"
+                },
+                "categories": [
+                  "building",
+                  "building.commercial",
+                  "commercial.marketplace"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Superette Market",
+                    "phone": "+1-541-758-0830",
+                    "osm_id": 6471696442,
+                    "amenity": "marketplace",
+                    "building": "commercial",
+                    "osm_type": "n",
+                    "addr:city": "Corvallis",
+                    "addr:state": "OR",
+                    "addr:street": "Monroe Avenue",
+                    "description": "Hottest market at Oregon State University make sure to say hi to Mike while you're there",
+                    "addr:postcode": 97330,
+                    "opening_hours": "Mo-Th 08:00-24:00, Fr-Sa 08:00-02:00, Su 09:00-24:00",
+                    "addr:housenumber": 2531
+                  }
+                },
+                "housenumber": "2531",
+                "street": "Monroe Avenue",
+                "city": "Corvallis",
+                "county": "Benton County",
+                "state": "Oregon",
+                "postcode": "97330",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "Superette Market, 2531 Monroe Avenue, Corvallis, OR 97330, United States of America",
+                "address_line1": "Superette Market",
+                "address_line2": "2531 Monroe Avenue, Corvallis, OR 97330, United States of America",
+                "lat": 44.5690907,
+                "lon": -123.279815,
+                "iso3166_2": "US-OR",
+                "timezone": {
+                  "name": "America/Los_Angeles",
+                  "offset_STD": "-08:00",
+                  "offset_STD_seconds": -28800,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "PST",
+                  "abbreviation_DST": "PDT"
+                },
+                "place_id": "51897b2c7de8d15ec059758fcdf6d7484640f00103f9013a40be8101000000920310537570657265747465204d61726b6574"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -123.279815,
+                  44.569090701
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 44.5690907,
+        "longitude": -123.279815
+      },
+      "formattedAddress": "Superette Market, 2531 Monroe Avenue, Corvallis, OR 97330, United States of America"
+    },
+    {
+      "id": "zaza_15",
+      "name": "Maydan Market",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 38.899049,
+      "lng": -77.210545,
+      "phone": "",
+      "website": "https://www.maydanmarket.com",
+      "google_maps_url": "https://www.google.com/maps/place/Maydan+Market/@34.0258374,-118.3458003,17z/data=!3m1!4b1!4m6!3m5!1s0x80c2b90013b46dd1:0x2331a4aadf2874d2!8m2!3d34.025833!4d-118.34322!16s%2Fg%2F11m5q212d5?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "7604",
+          "street": "Maydan Lane",
+          "country": "United States",
+          "county": "Fairfax County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "22043",
+          "state": "Virginia",
+          "state_code": "VA",
+          "county_code": "FX",
+          "city": "Falls Church",
+          "lon": -77.210545,
+          "lat": 38.899049,
+          "result_type": "building",
+          "formatted": "7604 Maydan Lane, Falls Church, VA 22043, United States of America",
+          "address_line1": "7604 Maydan Lane",
+          "address_line2": "Falls Church, VA 22043, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87C4VQXQ+JQ",
+          "plus_code_short": "VQXQ+JQ Falls Church, Fairfax County, United States",
+          "iso3166_2": "US-VA",
+          "rank": {
+            "popularity": 5.39835670089106,
+            "confidence": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "518655bc91794d53c0593140a20914734340c00203e203456f70656e6164647265737365733a616464726573733a75732f76612f666169726661782d6164647265737365732d636f756e74793a31646134393934323663306234303037"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.210545,
+            38.899049
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "7604",
+                "street": "Maydan Lane",
+                "country": "United States",
+                "county": "Fairfax County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/va/fairfax-addresses-county:1da499426c0b4007",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "22043",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Virginia",
+                "state_code": "VA",
+                "county_code": "FX",
+                "city": "Falls Church",
+                "lon": -77.210545,
+                "lat": 38.899049,
+                "feature_type": "details",
+                "formatted": "7604 Maydan Lane, Falls Church, VA 22043, United States of America",
+                "address_line1": "7604 Maydan Lane",
+                "address_line2": "Falls Church, VA 22043, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-VA"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -77.210545,
+                  38.899049
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 38.899049,
+        "longitude": -77.210545
+      },
+      "formattedAddress": "7604 Maydan Lane, Falls Church, VA 22043, United States of America"
+    },
+    {
+      "id": "zaza_16",
+      "name": "L’Épicuriste",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 48.7430969,
+      "lng": -0.022963,
+      "phone": "",
+      "website": "https://lepicuriste.com",
+      "google_maps_url": "https://www.google.com/maps/place/L’Épicuriste/@40.9371449,-72.3072876,17z/data=!3m1!4b1!4m6!3m5!1s0x89e8bd2a1461af69:0x17639d6a543f4674!8m2!3d40.9371409!4d-72.3024221!16s%2Fg%2F11t4wd3hl6?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "L'Epicuriste",
+          "country": "France",
+          "country_code": "fr",
+          "region": "Metropolitan France",
+          "state": "Normandy",
+          "county": "Orne",
+          "city": "Argentan",
+          "municipality": "Argentan",
+          "postcode": "61200",
+          "street": "Rue de la Chaussée",
+          "iso3166_2": "FR-NOR",
+          "iso3166_2_sublevel": "FR-61",
+          "lon": -0.022963,
+          "lat": 48.7430969,
+          "state_code": "NOR",
+          "state_COG": "28",
+          "result_type": "amenity",
+          "department_COG": "61",
+          "NUTS_3": "FRD13",
+          "formatted": "L'Epicuriste, Rue de la Chaussée, 61200 Argentan, France",
+          "address_line1": "L'Epicuriste",
+          "address_line2": "Rue de la Chaussée, 61200 Argentan, France",
+          "category": "commercial",
+          "timezone": {
+            "name": "Europe/Paris",
+            "offset_STD": "+01:00",
+            "offset_STD_seconds": 3600,
+            "offset_DST": "+02:00",
+            "offset_DST_seconds": 7200,
+            "abbreviation_STD": "CET",
+            "abbreviation_DST": "CEST"
+          },
+          "plus_code": "8CWXPXVG+6R",
+          "plus_code_short": "VG+6R Argentan, Orne, France",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 4.592633507577129,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "512d7b12d89c8397bf5926a199cc1d5f4840f00103f901679f0c6602000000c0020192030c4c2745706963757269737465"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -0.022963,
+            48.7430969
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "L'Epicuriste",
+                "commercial": {
+                  "type": "deli"
+                },
+                "categories": [
+                  "commercial"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "L'Epicuriste",
+                    "shop": "deli",
+                    "osm_id": 10302037863,
+                    "osm_type": "n"
+                  }
+                },
+                "street": "Rue de la Chaussée",
+                "city": "Argentan",
+                "county": "Orne",
+                "state": "Normandy",
+                "postcode": "61200",
+                "country": "France",
+                "country_code": "fr",
+                "formatted": "L'Epicuriste, Rue de la Chaussée, 61200 Argentan, France",
+                "address_line1": "L'Epicuriste",
+                "address_line2": "Rue de la Chaussée, 61200 Argentan, France",
+                "lat": 48.7430969,
+                "lon": -0.022963,
+                "iso3166_2": "FR-NOR",
+                "iso3166_2_sublevel": "FR-61",
+                "timezone": {
+                  "name": "Europe/Paris",
+                  "offset_STD": "+01:00",
+                  "offset_STD_seconds": 3600,
+                  "offset_DST": "+02:00",
+                  "offset_DST_seconds": 7200,
+                  "abbreviation_STD": "CET",
+                  "abbreviation_DST": "CEST"
+                },
+                "place_id": "512c7b12d89c8397bf59091b99cc1d5f4840f00103f901679f0c660200000092030c4c2745706963757269737465"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -0.022963,
+                  48.7430969
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 48.7430969,
+        "longitude": -0.022963
+      },
+      "formattedAddress": "L'Epicuriste, Rue de la Chaussée, 61200 Argentan, France"
+    },
+    {
+      "id": "zaza_17",
+      "name": "Field and Fort",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 39.425617200000005,
+      "lng": -123.8046878699495,
+      "phone": "",
+      "website": "https://www.fieldandfort.com",
+      "google_maps_url": "https://www.google.com/maps/place/Field+and+Fort/@34.4193777,-119.5938487,17z/data=!3m1!4b1!4m6!3m5!1s0x80e90da09330b3f9:0x8af1920068f57985!8m2!3d34.4193733!4d-119.5912738!16s%2Fg%2F11j0zyyk79?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory",
+          "country": "United States",
+          "country_code": "us",
+          "state": "California",
+          "county": "Mendocino County",
+          "city": "Fort Bragg",
+          "postcode": "95473",
+          "street": "North Harbor Drive",
+          "housenumber": "32330",
+          "iso3166_2": "US-CA",
+          "lon": -123.8046878699495,
+          "lat": 39.425617200000005,
+          "state_code": "CA",
+          "result_type": "amenity",
+          "formatted": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory, 32330 North Harbor Drive, Fort Bragg, CA 95473, United States of America",
+          "address_line1": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory",
+          "address_line2": "32330 North Harbor Drive, Fort Bragg, CA 95473, United States of America",
+          "timezone": {
+            "name": "America/Los_Angeles",
+            "offset_STD": "-08:00",
+            "offset_STD_seconds": -28800,
+            "offset_DST": "-07:00",
+            "offset_DST_seconds": -25200,
+            "abbreviation_STD": "PST",
+            "abbreviation_DST": "PDT"
+          },
+          "plus_code": "84FRC5GW+64",
+          "plus_code_short": "C5GW+64, 95473 Fort Bragg, United States",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 0.8580074764734449,
+            "confidence": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "51f23a8d0180f35ec059bc4ed99f7ab64340f00102f9015e19444900000000c0020192035a5374617465206f662043616c69666f726e6961204465706172746d656e74206f66204669736820616e642057696c646c69666520466f7274204272616767204669656c64204f666669636520616e64204c61626f7261746f7279"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -123.8046878699495,
+            39.425617200000005
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://wildlife.ca.gov/Regions/Marine/Contact",
+                "name": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory",
+                "categories": [
+                  "building",
+                  "building.office",
+                  "office",
+                  "office.government",
+                  "office.government.environment"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory",
+                    "office": "government",
+                    "osm_id": 1229199710,
+                    "website": "https://wildlife.ca.gov/Regions/Marine/Contact",
+                    "building": "yes",
+                    "osm_type": "w",
+                    "addr:state": "CA",
+                    "government": "environment",
+                    "addr:street": "North Harbor Drive",
+                    "addr:housenumber": 32330
+                  }
+                },
+                "housenumber": "32330",
+                "street": "North Harbor Drive",
+                "city": "Fort Bragg",
+                "county": "Mendocino County",
+                "state": "California",
+                "postcode": "95473",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory, 32330 North Harbor Drive, Fort Bragg, CA 95473, United States of America",
+                "address_line1": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory",
+                "address_line2": "32330 North Harbor Drive, Fort Bragg, CA 95473, United States of America",
+                "lat": 39.425617200000005,
+                "lon": -123.8046878699495,
+                "iso3166_2": "US-CA",
+                "timezone": {
+                  "name": "America/Los_Angeles",
+                  "offset_STD": "-08:00",
+                  "offset_STD_seconds": -28800,
+                  "offset_DST": "-07:00",
+                  "offset_DST_seconds": -25200,
+                  "abbreviation_STD": "PST",
+                  "abbreviation_DST": "PDT"
+                },
+                "place_id": "51f13a8d0180f35ec059a6b5d99f7ab64340f00102f9015e1944490000000092035a5374617465206f662043616c69666f726e6961204465706172746d656e74206f66204669736820616e642057696c646c69666520466f7274204272616767204669656c64204f666669636520616e64204c61626f7261746f7279"
+              },
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -123.8048867,
+                      39.4255584
+                    ],
+                    [
+                      -123.8044655,
+                      39.4254998
+                    ],
+                    [
+                      -123.8044402,
+                      39.4256085
+                    ],
+                    [
+                      -123.8045653,
+                      39.4256259
+                    ],
+                    [
+                      -123.8045532,
+                      39.4256823
+                    ],
+                    [
+                      -123.8046446,
+                      39.4257047
+                    ],
+                    [
+                      -123.8048678,
+                      39.4257366
+                    ],
+                    [
+                      -123.8048809,
+                      39.4256802
+                    ],
+                    [
+                      -123.804859,
+                      39.4256772
+                    ],
+                    [
+                      -123.8048867,
+                      39.4255584
+                    ]
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 39.425617200000005,
+        "longitude": -123.8046878699495
+      },
+      "formattedAddress": "State of California Department of Fish and Wildlife Fort Bragg Field Office and Laboratory, 32330 North Harbor Drive, Fort Bragg, CA 95473, United States of America"
+    },
+    {
+      "id": "zaza_18",
+      "name": "Los Poblanos Historic Inn & Organic Farm",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 34.045001,
+      "lng": -84.079312,
+      "phone": "",
+      "website": "https://lospoblanos.com",
+      "google_maps_url": "https://www.google.com/maps/place/Los+Poblanos+Historic+Inn+%26+Organic+Farm/@35.147536,-106.6699682,17z/data=!4m10!3m9!1s0x872273af5c8627f1:0x934ceefd3d9daf9c!5m3!1s2026-01-20!4m1!1i2!8m2!3d35.1475317!4d-106.6650973!16s%2Fg%2F11bw8f86wg?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "country_code": "us",
+          "housenumber": "3786",
+          "street": "Organic Farm Road",
+          "country": "United States",
+          "county": "Gwinnett County",
+          "datasource": {
+            "sourcename": "openaddresses",
+            "attribution": "© OpenAddresses contributors",
+            "license": "BSD-3-Clause License"
+          },
+          "postcode": "30024",
+          "state": "Georgia",
+          "state_code": "GA",
+          "county_code": "GW",
+          "city": "Suwanee",
+          "lon": -84.079312,
+          "lat": 34.045001,
+          "result_type": "building",
+          "formatted": "3786 Organic Farm Road, Suwanee, GA 30024, United States of America",
+          "address_line1": "3786 Organic Farm Road",
+          "address_line2": "Suwanee, GA 30024, United States of America",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "866Q2WWC+27",
+          "plus_code_short": "WC+27 Suwanee, Gwinnett County, United States",
+          "iso3166_2": "US-GA",
+          "rank": {
+            "popularity": 4.102673884405805,
+            "confidence": 0,
+            "match_type": "full_match"
+          },
+          "place_id": "518b8ba372130555c059c6a4bf97c2054140c00203e203466f70656e6164647265737365733a616464726573733a75732f67612f6777696e6e6574742d6164647265737365732d636f756e74793a66343134653931663166306163336436"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.079312,
+            34.045001
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "country_code": "us",
+                "housenumber": "3786",
+                "street": "Organic Farm Road",
+                "country": "United States",
+                "county": "Gwinnett County",
+                "datasource": {
+                  "sourcename": "openaddresses",
+                  "pelias_gid": "openaddresses:address:us/ga/gwinnett-addresses-county:f414e91f1f0ac3d6",
+                  "pelias_layer": "address",
+                  "continent": "North America"
+                },
+                "postcode": "30024",
+                "rank": {
+                  "pelias_accuracy": "point"
+                },
+                "state": "Georgia",
+                "state_code": "GA",
+                "county_code": "GW",
+                "city": "Suwanee",
+                "lon": -84.079312,
+                "lat": 34.045001,
+                "feature_type": "details",
+                "formatted": "3786 Organic Farm Road, Suwanee, GA 30024, United States of America",
+                "address_line1": "3786 Organic Farm Road",
+                "address_line2": "Suwanee, GA 30024, United States of America",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "iso3166_2": "US-GA"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -84.079312,
+                  34.045001
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 34.045001,
+        "longitude": -84.079312
+      },
+      "formattedAddress": "3786 Organic Farm Road, Suwanee, GA 30024, United States of America"
+    },
+    {
+      "id": "zaza_19",
+      "name": "Golden Door",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 37.8910438,
+      "lng": 23.7487665,
+      "phone": "",
+      "website": "https://goldendoor.com",
+      "google_maps_url": "https://www.google.com/maps/place/Golden+Door/@33.1937541,-117.14528,17z/data=!4m10!3m9!1s0x80db8a4427440c7f:0x33a46a4c63c60949!5m3!1s2026-01-20!4m1!1i2!8m2!3d33.1937496!4d-117.1427051!16s%2Fg%2F1tgxjbn9?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Golden Door",
+          "country": "Greece",
+          "country_code": "gr",
+          "state": "Attica",
+          "county": "Regional Unit of South Athens",
+          "state_district": "Attica",
+          "city": "Municipal Unit of Elliniko",
+          "municipality": "Municipality of Elliniko - Argyroupoli",
+          "postcode": "167 77",
+          "district": "Σούρμενα",
+          "suburb": "Elliniko",
+          "street": "Παράδρομος Λεωφόρου Βουλιαγμένης",
+          "iso3166_2": "GR-I",
+          "lon": 23.7487665,
+          "lat": 37.8910438,
+          "result_type": "amenity",
+          "formatted": "Golden Door, Παράδρομος Λεωφόρου Βουλιαγμένης, 167 77 Municipal Unit of Elliniko, Greece",
+          "address_line1": "Golden Door",
+          "address_line2": "Παράδρομος Λεωφόρου Βουλιαγμένης, 167 77 Municipal Unit of Elliniko, Greece",
+          "category": "commercial.houseware_and_hardware.building_materials.doors",
+          "timezone": {
+            "name": "Europe/Athens",
+            "offset_STD": "+02:00",
+            "offset_STD_seconds": 7200,
+            "offset_DST": "+03:00",
+            "offset_DST_seconds": 10800,
+            "abbreviation_STD": "EET",
+            "abbreviation_DST": "EEST"
+          },
+          "plus_code": "8G95VPRX+CG",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 8.662642702426322,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "5123d74d29afbf374059db2626b90df24240f00103f90199f284ff02000000c0020192030b476f6c64656e20446f6f72"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            23.7487665,
+            37.8910438
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Golden Door",
+                "commercial": {
+                  "type": "doors"
+                },
+                "categories": [
+                  "commercial",
+                  "commercial.houseware_and_hardware",
+                  "commercial.houseware_and_hardware.building_materials",
+                  "commercial.houseware_and_hardware.building_materials.doors"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Golden Door",
+                    "shop": "doors",
+                    "osm_id": 12876837529,
+                    "osm_type": "n"
+                  }
+                },
+                "street": "Παράδρομος Λεωφόρου Βουλιαγμένης",
+                "city": "Municipal Unit of Elliniko",
+                "county": "Regional Unit of South Athens",
+                "state": "Attica",
+                "postcode": "167 77",
+                "country": "Greece",
+                "country_code": "gr",
+                "formatted": "Golden Door, Παράδρομος Λεωφόρου Βουλιαγμένης, 167 77 Municipal Unit of Elliniko, Greece",
+                "address_line1": "Golden Door",
+                "address_line2": "Παράδρομος Λεωφόρου Βουλιαγμένης, 167 77 Municipal Unit of Elliniko, Greece",
+                "lat": 37.8910438,
+                "lon": 23.7487665,
+                "iso3166_2": "GR-I",
+                "timezone": {
+                  "name": "Europe/Athens",
+                  "offset_STD": "+02:00",
+                  "offset_STD_seconds": 7200,
+                  "offset_DST": "+03:00",
+                  "offset_DST_seconds": 10800,
+                  "abbreviation_STD": "EET",
+                  "abbreviation_DST": "EEST"
+                },
+                "place_id": "5123d74d29afbf3740598d1426b90df24240f00103f90199f284ff0200000092030b476f6c64656e20446f6f72"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  23.7487665,
+                  37.8910438
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 37.8910438,
+        "longitude": 23.7487665
+      },
+      "formattedAddress": "Golden Door, Παράδρομος Λεωφόρου Βουλιαγμένης, 167 77 Municipal Unit of Elliniko, Greece"
+    },
+    {
+      "id": "zaza_20",
+      "name": "The Ned NoMad",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 40.744924600000004,
+      "lng": -73.98859595269975,
+      "phone": "",
+      "website": "https://www.thened.com/nomad/?gad_source=1&gad_campaignid=20083937677&gbraid=0AAAAApmJlgNKK0WlbC-7MDAut20Bc-hwi&gclid=CjwKCAiA7LzLBhAgEiwAjMWzCE60vDhWYfQSqZ5uL9AfoLkRInQ2RLXVwebBMitfDstPN5ugbDPV1BoCBQAQAvD_BwE",
+      "google_maps_url": "https://www.google.com/maps/place/The+Ned+NoMad/@40.7450029,-73.9911732,17z/data=!3m1!4b1!4m9!3m8!1s0x89c259623fc1115b:0xe4f8571ad9a60c00!5m2!4m1!1i2!8m2!3d40.7449989!4d-73.9885983!16s%2Fg%2F11t3yqgv2f?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "The Nomad",
+          "country": "United States",
+          "country_code": "us",
+          "state": "New York",
+          "county": "New York County",
+          "city": "New York",
+          "postcode": "10001",
+          "district": "NoMad",
+          "suburb": "Manhattan",
+          "street": "Broadway",
+          "housenumber": "1170",
+          "iso3166_2": "US-NY",
+          "lon": -73.98859595269975,
+          "lat": 40.744924600000004,
+          "state_code": "NY",
+          "result_type": "amenity",
+          "formatted": "The Nomad, 1170 Broadway, New York, NY 10001, United States of America",
+          "address_line1": "The Nomad",
+          "address_line2": "1170 Broadway, New York, NY 10001, United States of America",
+          "category": "accommodation.hotel",
+          "timezone": {
+            "name": "America/New_York",
+            "offset_STD": "-05:00",
+            "offset_STD_seconds": -18000,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400,
+            "abbreviation_STD": "EST",
+            "abbreviation_DST": "EDT"
+          },
+          "plus_code": "87G8P2V6+XH",
+          "plus_code_short": "P2V6+XH New York, New York County, United States",
+          "rank": {
+            "importance": 0.378340271665597,
+            "confidence": 0.6666666666666667,
+            "match_type": "full_match"
+          },
+          "place_id": "516b73f527457f52c059327e75b0595f4440f00102f901245fca0e00000000c00201920309546865204e6f6d6164"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -73.98859595269975,
+            40.744924600000004
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "website": "https://www.thenomadhotel.com",
+                "operator": "Sydell Group",
+                "name": "The Nomad",
+                "contact": {
+                  "phone": "+1-212-796-1500"
+                },
+                "wiki_and_media": {
+                  "wikidata": "Q55635426",
+                  "wikipedia": "en:The NoMad"
+                },
+                "building": {
+                  "height": 48.5
+                },
+                "categories": [
+                  "accommodation",
+                  "accommodation.hotel",
+                  "building",
+                  "building.accommodation"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "bar": "yes",
+                    "name": "The Nomad",
+                    "phone": "+1-212-796-1500",
+                    "height": 48.5,
+                    "osm_id": 248143652,
+                    "tourism": "hotel",
+                    "website": "https://www.thenomadhotel.com",
+                    "building": "yes",
+                    "operator": "Sydell Group",
+                    "osm_type": "w",
+                    "wikidata": "Q55635426",
+                    "wikipedia": "en:The NoMad",
+                    "addr:street": "Broadway",
+                    "addr:postcode": 10001,
+                    "addr:housenumber": 1170
+                  }
+                },
+                "housenumber": "1170",
+                "street": "Broadway",
+                "city": "New York",
+                "county": "New York County",
+                "state": "New York",
+                "postcode": "10001",
+                "country": "United States",
+                "country_code": "us",
+                "formatted": "The Nomad, 1170 Broadway, New York, NY 10001, United States of America",
+                "address_line1": "The Nomad",
+                "address_line2": "1170 Broadway, New York, NY 10001, United States of America",
+                "lat": 40.744924600000004,
+                "lon": -73.98859595269975,
+                "iso3166_2": "US-NY",
+                "timezone": {
+                  "name": "America/New_York",
+                  "offset_STD": "-05:00",
+                  "offset_STD_seconds": -18000,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400,
+                  "abbreviation_STD": "EST",
+                  "abbreviation_DST": "EDT"
+                },
+                "place_id": "516b73f527457f52c059934576b0595f4440f00102f901245fca0e00000000920309546865204e6f6d6164"
+              },
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -73.9886715,
+                      40.7448584
+                    ],
+                    [
+                      -73.988487,
+                      40.7447804
+                    ],
+                    [
+                      -73.9883975,
+                      40.7447426
+                    ],
+                    [
+                      -73.9883562,
+                      40.7447992
+                    ],
+                    [
+                      -73.9884341,
+                      40.7448321
+                    ],
+                    [
+                      -73.9885386,
+                      40.7448762
+                    ],
+                    [
+                      -73.9885249,
+                      40.7449536
+                    ],
+                    [
+                      -73.9883877,
+                      40.7448956
+                    ],
+                    [
+                      -73.9883005,
+                      40.7450151
+                    ],
+                    [
+                      -73.9885613,
+                      40.7451252
+                    ],
+                    [
+                      -73.9885653,
+                      40.7451283
+                    ],
+                    [
+                      -73.9885747,
+                      40.745133
+                    ],
+                    [
+                      -73.9885855,
+                      40.7451358
+                    ],
+                    [
+                      -73.9885911,
+                      40.7451363
+                    ],
+                    [
+                      -73.9886024,
+                      40.7451356
+                    ],
+                    [
+                      -73.988613,
+                      40.7451327
+                    ],
+                    [
+                      -73.9886223,
+                      40.7451278
+                    ],
+                    [
+                      -73.9886262,
+                      40.7451247
+                    ],
+                    [
+                      -73.9886296,
+                      40.7451213
+                    ],
+                    [
+                      -73.9886344,
+                      40.7451135
+                    ],
+                    [
+                      -73.9886715,
+                      40.7448584
+                    ]
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 40.744924600000004,
+        "longitude": -73.98859595269975
+      },
+      "formattedAddress": "The Nomad, 1170 Broadway, New York, NY 10001, United States of America"
+    },
+    {
+      "id": "zaza_21",
+      "name": "Mercado Laguna",
+      "address_line_1": "",
+      "city": "",
+      "state": "",
+      "postcode": "",
+      "country": "United States",
+      "lat": 10.51335865,
+      "lng": -66.94923007506904,
+      "phone": "",
+      "website": "https://www.visitmercado.com/mercadolaguna",
+      "google_maps_url": "https://www.google.com/maps/place/Mercado+Laguna/@33.5474316,-117.7994928,17z/data=!3m1!4b1!4m6!3m5!1s0x80dce54382a59451:0x2ac6a34410e2c7a8!8m2!3d33.5474272!4d-117.7969179!16s%2Fg%2F11t165xt_7?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D",
+      "geoapify": {
+        "geocoding": {
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "© OpenStreetMap contributors",
+            "license": "Open Database License",
+            "url": "https://www.openstreetmap.org/copyright"
+          },
+          "name": "Mercado Laguna de Catia",
+          "country": "Venezuela",
+          "country_code": "ve",
+          "state": "Capital District",
+          "county": "Municipio Libertador",
+          "state_district": "Caracas Metropolitan District",
+          "city": "Caracas",
+          "municipality": "Parroquia Sucre",
+          "postcode": "1030",
+          "suburb": "Catia",
+          "quarter": "Nueva Caracas",
+          "street": "Avenida Simón Bolívar",
+          "iso3166_2": "VE-A",
+          "lon": -66.94923007506904,
+          "lat": 10.51335865,
+          "state_code": "A",
+          "result_type": "amenity",
+          "formatted": "Mercado Laguna de Catia, Avenida Simón Bolívar, Caracas 1030, A, Venezuela",
+          "address_line1": "Mercado Laguna de Catia",
+          "address_line2": "Avenida Simón Bolívar, Caracas 1030, A, Venezuela",
+          "category": "commercial.marketplace",
+          "timezone": {
+            "name": "America/Caracas",
+            "offset_STD": "-04:00",
+            "offset_STD_seconds": -14400,
+            "offset_DST": "-04:00",
+            "offset_DST_seconds": -14400
+          },
+          "plus_code": "772MG372+88",
+          "plus_code_short": "G372+88 Caracas, Municipio Libertador, Venezuela",
+          "rank": {
+            "importance": 9.99999999995449e-06,
+            "popularity": 3.9072217605332975,
+            "confidence": 1,
+            "match_type": "full_match"
+          },
+          "place_id": "514633802fc0bc50c059c8bce9f1d6062540f00102f901847b8c3b00000000c002019203174d65726361646f204c6167756e61206465204361746961"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -66.94923007506904,
+            10.51335865
+          ]
+        },
+        "place_details": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {
+                "feature_type": "details",
+                "name": "Mercado Laguna de Catia",
+                "facilities": {
+                  "wheelchair": false
+                },
+                "wiki_and_media": {
+                  "wikidata": "Q109746558"
+                },
+                "building": {
+                  "levels": 1,
+                  "type": "retail"
+                },
+                "categories": [
+                  "building",
+                  "building.commercial",
+                  "commercial.marketplace"
+                ],
+                "datasource": {
+                  "sourcename": "openstreetmap",
+                  "attribution": "© OpenStreetMap contributors",
+                  "license": "Open Database License",
+                  "url": "https://www.openstreetmap.org/copyright",
+                  "raw": {
+                    "name": "Mercado Laguna de Catia",
+                    "osm_id": 999062404,
+                    "amenity": "marketplace",
+                    "organic": "yes",
+                    "building": "retail",
+                    "osm_type": "w",
+                    "wikidata": "Q109746558",
+                    "addr:city": "Caracas",
+                    "addr:state": "Distrito Capital",
+                    "wheelchair": "no",
+                    "addr:street": "Avenida Simón Bolívar",
+                    "addr:suburb": "Catia",
+                    "addr:country": "VE",
+                    "addr:district": "Municipio Libertador",
+                    "building:levels": 1
+                  }
+                },
+                "street": "Avenida Simón Bolívar",
+                "city": "Caracas",
+                "county": "Municipio Libertador",
+                "state": "Capital District",
+                "postcode": "1030",
+                "country": "Venezuela",
+                "country_code": "ve",
+                "formatted": "Mercado Laguna de Catia, Avenida Simón Bolívar, Caracas 1030, Capital District, Venezuela",
+                "address_line1": "Mercado Laguna de Catia",
+                "address_line2": "Avenida Simón Bolívar, Caracas 1030, Capital District, Venezuela",
+                "lat": 10.51335865,
+                "lon": -66.94923007506904,
+                "iso3166_2": "VE-A",
+                "timezone": {
+                  "name": "America/Caracas",
+                  "offset_STD": "-04:00",
+                  "offset_STD_seconds": -14400,
+                  "offset_DST": "-04:00",
+                  "offset_DST_seconds": -14400
+                },
+                "place_id": "514633802fc0bc50c0591a27e5f1d6062540f00102f901847b8c3b000000009203174d65726361646f204c6167756e61206465204361746961"
+              },
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      -66.9498655,
+                      10.513248599
+                    ],
+                    [
+                      -66.9497616,
+                      10.513201999
+                    ],
+                    [
+                      -66.9497102,
+                      10.513178899
+                    ],
+                    [
+                      -66.9496319,
+                      10.513143899
+                    ],
+                    [
+                      -66.9493948,
+                      10.513037499
+                    ],
+                    [
+                      -66.9491802,
+                      10.512941299
+                    ],
+                    [
+                      -66.9490464,
+                      10.513100199
+                    ],
+                    [
+                      -66.9489603,
+                      10.513202399
+                    ],
+                    [
+                      -66.9486398,
+                      10.513021799
+                    ],
+                    [
+                      -66.9486307,
+                      10.513268999
+                    ],
+                    [
+                      -66.9486277,
+                      10.513351399
+                    ],
+                    [
+                      -66.94949,
+                      10.513741699
+                    ],
+                    [
+                      -66.9495852,
+                      10.513785199
+                    ],
+                    [
+                      -66.9498132,
+                      10.513365899
+                    ],
+                    [
+                      -66.9498655,
+                      10.513248599
+                    ]
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "location": {
+        "latitude": 10.51335865,
+        "longitude": -66.94923007506904
+      },
+      "formattedAddress": "Mercado Laguna de Catia, Avenida Simón Bolívar, Caracas 1030, A, Venezuela"
+    }
+  ]
+}

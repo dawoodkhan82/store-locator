@@ -24,7 +24,16 @@
       "Bash(grep:*)",
       "Bash(head:*)",
       "Bash(# Check Date Better more thoroughly echo \"\"=== Date Better - detailed check ===\"\" curl -s \"\"https://datebettersnacks.com/pages/store-locator\"\")",
-      "Bash(node -c:*)"
+      "Bash(node -c:*)",
+      "Bash(md5:*)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"scrape_all_stores.py new_brands.csv\")",
+      "Bash(pkill -f \"scrape_.*_stores.py store_locator_url\")",
+      "Bash(pkill -f \"scrape_all_stores.py\")",
+      "Bash(pkill -f \"scrape_.*_stores.py\")",
+      "WebFetch(domain:www.munchrooms.com)",
+      "WebFetch(domain:zaza-snacks.com)",
+      "WebFetch(domain:www.rapsnacks.net)"
     ],
     "deny": [],
     "ask": []

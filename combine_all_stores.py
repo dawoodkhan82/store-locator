@@ -24,6 +24,63 @@ PLACES_ENRICHED_DIR = Path('all_stores/places_enriched')
 RAW_DIR = Path('all_stores/raw')
 OUTPUT_DIR = Path('all_stores/combined')
 OUTPUT_FILE = OUTPUT_DIR / 'combined.json'
+FULL_OUTPUT_FILE = OUTPUT_DIR / 'combined_full_fields.json'
+
+# ── Trimming config (fields to keep in combined.json for the frontend) ──
+KEEP_TOP_LEVEL = {
+    "id", "name", "displayName", "lat", "lng",
+    "phone", "internationalPhoneNumber", "email",
+    "url", "website", "websiteUri",
+    "address", "display_address", "address_line_1", "formattedAddress", "streetaddress",
+    "city", "state", "state_code", "postcode", "postal_code", "zip", "country",
+    "brand", "brands", "source", "scraped_at",
+    "rating", "userRatingCount", "googleMapsUri",
+    "instagram", "facebook", "x_twitter",
+    "enrichment",
+}
+KEEP_GEOAPIFY_GEOCODING = {"formatted", "state_code", "postcode", "city"}
+KEEP_GOOGLE_PLACES = {
+    "rating", "userRatingCount", "googleMapsUri",
+    "websiteUri", "internationalPhoneNumber", "nationalPhoneNumber",
+}
+
+
+def _trim_geoapify(geoapify):
+    if not isinstance(geoapify, dict):
+        return None
+    geocoding = geoapify.get("geocoding")
+    if not isinstance(geocoding, dict):
+        return None
+    trimmed = {k: v for k, v in geocoding.items() if k in KEEP_GEOAPIFY_GEOCODING}
+    return {"geocoding": trimmed} if trimmed else None
+
+
+def _trim_google_places(gp):
+    if not isinstance(gp, dict):
+        return None
+    trimmed = {k: v for k, v in gp.items() if k in KEEP_GOOGLE_PLACES}
+    return trimmed if trimmed else None
+
+
+def trim_store(store):
+    """Strip a store dict down to only the fields used by the frontend."""
+    result = {}
+    for key, value in store.items():
+        if key == "geoapify":
+            trimmed = _trim_geoapify(value)
+            if trimmed:
+                result["geoapify"] = trimmed
+        elif key == "google_places":
+            trimmed = _trim_google_places(value)
+            if trimmed:
+                result["google_places"] = trimmed
+        elif key == "locations" and isinstance(value, list):
+            trimmed_locs = [trim_store(loc) for loc in value if isinstance(loc, dict)]
+            if trimmed_locs:
+                result["locations"] = trimmed_locs
+        elif key in KEEP_TOP_LEVEL:
+            result[key] = value
+    return result
 
 # Wholesale CRM CSV file
 WHOLESALE_CRM_CSV = Path('Wholesale_CRM_1f5fc65a08aa80e6ac25db4424caaa0a_all.csv')
@@ -1145,36 +1202,40 @@ def main():
     print("\n5. Saving combined data...")
     print("-" * 80)
 
-    combined_data = {
-        'metadata': {
-            'combined_at': datetime.now().isoformat(),
-            'total_stores': stats['total'],
-            'usa_only': True,
-            'non_usa_filtered': stats['non_usa_filtered'],
-            'website_enriched_stores': stats['website_enriched'],
-            'places_enriched_stores': stats['places_enriched'],
-            'raw_stores': stats['raw'],
-            'files_processed': stats['files_processed'],
-            'files_skipped': stats['files_skipped'],
-            'enrichment_counts': enrichment_counts,
-            'sources': {
-                'website_enriched_dir': str(WEBSITE_ENRICHED_DIR),
-                'places_enriched_dir': str(PLACES_ENRICHED_DIR),
-                'raw_dir': str(RAW_DIR)
-            }
-        },
-        'stores': all_stores
+    metadata = {
+        'combined_at': datetime.now().isoformat(),
+        'total_stores': stats['total'],
+        'usa_only': True,
+        'non_usa_filtered': stats['non_usa_filtered'],
+        'website_enriched_stores': stats['website_enriched'],
+        'places_enriched_stores': stats['places_enriched'],
+        'raw_stores': stats['raw'],
+        'files_processed': stats['files_processed'],
+        'files_skipped': stats['files_skipped'],
+        'enrichment_counts': enrichment_counts,
+        'sources': {
+            'website_enriched_dir': str(WEBSITE_ENRICHED_DIR),
+            'places_enriched_dir': str(PLACES_ENRICHED_DIR),
+            'raw_dir': str(RAW_DIR)
+        }
     }
 
-    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(combined_data, f, indent=2, ensure_ascii=False)
+    # Save full version (all fields, for reference)
+    full_data = {'metadata': metadata, 'stores': all_stores}
+    with open(FULL_OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(full_data, f, indent=2, ensure_ascii=False)
+    full_size_mb = os.path.getsize(FULL_OUTPUT_FILE) / (1024 * 1024)
+    print(f"\n✓ Saved full version: {FULL_OUTPUT_FILE} ({full_size_mb:.1f} MB)")
 
-    print(f"\n✓ Saved to: {OUTPUT_FILE}")
+    # Save trimmed version (frontend fields only, compact)
+    trimmed_stores = [trim_store(s) for s in all_stores]
+    trimmed_data = {'metadata': metadata, 'stores': trimmed_stores}
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(trimmed_data, f, separators=(',', ':'))
 
     file_size = os.path.getsize(OUTPUT_FILE)
     file_size_mb = file_size / (1024 * 1024)
-
-    print(f"  File size: {file_size_mb:.2f} MB")
+    print(f"✓ Saved trimmed version: {OUTPUT_FILE} ({file_size_mb:.1f} MB)")
 
     # Summary
     print("\n" + "="*80)
