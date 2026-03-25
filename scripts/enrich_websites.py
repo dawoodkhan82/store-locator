@@ -21,7 +21,21 @@ import requests
 from bs4 import BeautifulSoup
 from openai import OpenAI
 from dotenv import load_dotenv
-from classify_store_type import classify_store
+from classify_store_type import classify_store, classify_by_chain_name
+
+# Store types that don't need OpenAI enrichment (large chains, non-grocery retailers)
+# We already know what these stores are — no point scraping their website with OpenAI
+SKIP_ENRICHMENT_TYPES = {
+    "Supermarket",
+    "Warehouse Club",
+    "Discount Grocery",
+    "Retail/Department Store",
+    "Outdoor/Sporting Goods",
+    "Delivery Service",
+    "Hotel/Hospitality",
+    "Gas Station/Travel Stop",
+    "Pharmacy/Drug Store",
+}
 
 # Load environment variables
 load_dotenv()
@@ -279,6 +293,7 @@ def enrich_stores(input_file, output_file, limit=None):
     # Enrich each store with a website
     enriched_count = 0
     skipped_count = 0
+    skipped_chain_count = 0
 
     for idx, place in enumerate(places, 1):
         # Get website URL using helper function
@@ -290,6 +305,16 @@ def enrich_stores(input_file, output_file, limit=None):
             place.get('google_places', {}).get('displayName', {}).get('text') or
             'Unknown'
         )
+
+        # Skip stores that are known chains — no need to spend $ on OpenAI
+        chain_type = classify_by_chain_name(store_name)
+        if chain_type and chain_type in SKIP_ENRICHMENT_TYPES:
+            # Still tag the store type, just skip the expensive enrichment
+            if 'enrichment' not in place:
+                place['enrichment'] = {}
+            place['enrichment']['storeType'] = chain_type
+            skipped_chain_count += 1
+            continue
 
         if website and (not limit or enriched_count < limit):
             print(f"\n[{enriched_count + 1}/{len(stores_with_websites) if limit else len(stores_with_websites)}] {store_name}")
@@ -324,6 +349,7 @@ def enrich_stores(input_file, output_file, limit=None):
     print(f"\n✓ Enrichment complete!")
     print(f"  Total stores: {total}")
     print(f"  Stores enriched: {enriched_count}")
+    print(f"  Stores skipped (known chain): {skipped_chain_count}")
     print(f"  Stores skipped (no website): {skipped_count}")
 
     # Calculate estimated cost (GPT-4o-mini pricing)
@@ -400,8 +426,26 @@ def main():
         data = json.load(f)
         # Support both 'places' and 'stores' keys
         items = data.get('places', []) or data.get('stores', [])
-        # Count stores with websites using helper function
-        stores_with_websites = len([p for p in items if get_store_website(p)])
+        # Count stores with websites, excluding known chains
+        chain_skip = 0
+        eligible = 0
+        for p in items:
+            store_name = (
+                p.get('displayName', {}).get('text') or
+                p.get('name') or
+                p.get('google_places', {}).get('displayName', {}).get('text') or
+                ''
+            )
+            chain_type = classify_by_chain_name(store_name)
+            if chain_type and chain_type in SKIP_ENRICHMENT_TYPES:
+                chain_skip += 1
+            elif get_store_website(p):
+                eligible += 1
+        stores_with_websites = eligible
+
+    if chain_skip > 0:
+        print(f"\n  Skipping {chain_skip:,} known chain stores (Supermarket, Warehouse Club, etc.)")
+        print(f"  Enriching {stores_with_websites:,} eligible stores")
 
     if limit:
         stores_to_process = min(limit, stores_with_websites)

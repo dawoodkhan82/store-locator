@@ -901,12 +901,16 @@
                                     1 location
                                 </label>
                                 <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
-                                    <input type="radio" name="sizeFilter" value="min5" onchange="filterStores()" style="margin-right: 8px;">
-                                    ≥5 locations
+                                    <input type="radio" name="sizeFilter" value="max5" onchange="filterStores()" style="margin-right: 8px;">
+                                    ≤5 locations
+                                </label>
+                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
+                                    <input type="radio" name="sizeFilter" value="max10" onchange="filterStores()" style="margin-right: 8px;">
+                                    ≤10 locations
                                 </label>
                                 <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
                                     <input type="radio" name="sizeFilter" value="min10" onchange="filterStores()" style="margin-right: 8px;">
-                                    ≥10 locations
+                                    10+ locations
                                 </label>
                             </div>
                         </div>
@@ -3519,10 +3523,12 @@
                 const locationCount = store.locationCount || 1;
                 if (selectedSize === 'single') {
                     matchesSize = locationCount === 1;
-                } else if (selectedSize === 'min5') {
-                    matchesSize = locationCount >= 5;
+                } else if (selectedSize === 'max5') {
+                    matchesSize = locationCount <= 5;
+                } else if (selectedSize === 'max10') {
+                    matchesSize = locationCount <= 10;
                 } else if (selectedSize === 'min10') {
-                    matchesSize = locationCount >= 10;
+                    matchesSize = locationCount > 10;
                 }
 
                 return matchesSearch && matchesLocation && matchesBrand && matchesStoreType && matchesSocial && matchesSize;
@@ -3595,8 +3601,9 @@
             const sizeLabels = {
                 'all': 'Store Size',
                 'single': '1 Location',
-                'min5': '≥5 Locations',
-                'min10': '≥10 Locations'
+                'max5': '≤5 Locations',
+                'max10': '≤10 Locations',
+                'min10': '10+ Locations'
             };
             if (selectedSize && selectedSize !== 'all') {
                 sizeLabel.textContent = sizeLabels[selectedSize] || 'Store Size';
@@ -3683,8 +3690,9 @@
             if (selectedSize && selectedSize !== 'all') {
                 const sizeLabels = {
                     'single': '1 Location',
-                    'min5': '≥5 Locations',
-                    'min10': '≥10 Locations'
+                    'max5': '≤5 Locations',
+                    'max10': '≤10 Locations',
+                    'min10': '10+ Locations'
                 };
                 const tag = createFilterTag(sizeLabels[selectedSize], () => {
                     const allRadio = document.querySelector('#sizeFilterDropdown input[value="all"]');
