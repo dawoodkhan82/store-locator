@@ -34,7 +34,8 @@
       "WebFetch(domain:www.munchrooms.com)",
       "WebFetch(domain:zaza-snacks.com)",
       "WebFetch(domain:www.rapsnacks.net)",
-      "Bash(xargs -I{} echo \"Process running: {}\")"
+      "Bash(xargs -I{} echo \"Process running: {}\")",
+      "Bash(git:*)"
     ],
     "deny": [],
     "ask": []

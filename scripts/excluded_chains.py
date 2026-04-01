@@ -109,6 +109,23 @@ EXCLUDED_CHAINS = [
     'HEB',
     'Go Puff',
     'GoPuff',
+
+    # Fast food / restaurants
+    'Subway',
+    "McDonald's",
+    'Burger King',
+    "Arby's",
+    'Sonic',
+    'Whataburger',
+    "Domino's",
+    'Wal-Mart',
+
+    # Other non-grocery
+    "claire's",
+    'FedEx',
+    'AT&T',
+    'Pet Supplies Plus',
+    'Redbox',
 ]
 
 
