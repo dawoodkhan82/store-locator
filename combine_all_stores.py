@@ -90,31 +90,27 @@ def trim_store(store):
 # Wholesale CRM CSV file
 WHOLESALE_CRM_CSV = Path('Wholesale_CRM_1f5fc65a08aa80e6ac25db4424caaa0a_all.csv')
 
-# Store names that should be combined (base name, then number or city)
-STORE_NAMES_TO_COMBINE = [
-    'Alfred coffee',
-    'Festival foods',
-    'Haggen',
-    'Harmons',
-    'Erewhon',
-    'Jewel',
-    "Balducci'S",
-    'Bel Air',
-    'Kowalskis',
-    'Mar-Val Foods',
-    "Mariano'S",
-    "Mccaffrey'S",
-    'Nob Hill Foods',
-    'Pcc Community Markets',
-    'Raleys',
-    'Rosauers',
-    'Sendiks',
-    'The Fresh Market',
-    'Union Market',
-    'Urm Stores',
-    "Woodman'S",
-    'ASG Met Fresh'
-]
+# ── Automatic chain-name detection ──
+# Generic single words that aren't distinctive enough to be a canonical chain
+# name on their own. Prevents over-merging unrelated stores like
+# "Fresh Market" + "Fresh Choice" or "Village Pantry" + "Village Market".
+GENERIC_NAME_WORDS = {
+    'the', 'a', 'an', 'and', 'of', 'at', 'in', 'on', 'for', 'to',
+    'fresh', 'local', 'natural', 'organic', 'health', 'whole',
+    'green', 'good', 'best', 'super', 'big', 'little', 'small', 'new',
+    'family', 'community', 'village', 'town', 'city', 'corner', 'main',
+    'market', 'markets', 'marketplace', 'mart', 'mkt', 'mkts',
+    'grocery', 'groceries', 'grocer', 'grocers',
+    'food', 'foods', 'foodstore',
+    'co', 'coop', 'cooperative',
+    'store', 'stores', 'shop', 'shops', 'shoppe',
+    'farm', 'farms', 'farmers',
+    'company', 'inc', 'llc', 'ltd', 'corp',
+    'deli', 'cafe', 'kitchen', 'pantry', 'house',
+    'hometown', 'neighborhood', 'downtown', 'uptown',
+    'east', 'west', 'north', 'south', 'central',
+    'st', 'street', 'ave', 'avenue', 'rd', 'road',
+}
 
 # Military keywords
 MILITARY_KEYWORDS = [
@@ -727,117 +723,349 @@ def is_military_site(store):
     return False
 
 
-def get_base_store_name(name):
+def get_store_display_name(store):
+    """Pull a single human-readable name out of a store dict."""
+    name = store.get('name')
+    if not name:
+        display = store.get('displayName')
+        if isinstance(display, dict):
+            name = display.get('text')
+        elif isinstance(display, str):
+            name = display
+    return (name or '').strip()
+
+
+def normalize_for_clustering(name):
     """
-    Extract base store name, removing numbers, city names, etc.
-    For example: "Alfred coffee #5" -> "Alfred coffee"
-                 "Alfred coffee Los Angeles" -> "Alfred coffee"
+    Aggressive normalization used to detect chains.
+
+    Collapses case, apostrophes, dashes, slashes, parenthetical content, and
+    other punctuation so that variants like "Bristol Farms", "BRISTOL FARMS",
+    "Bristol Farms - Hollywood", and "Bristol Farms: West Hollywood" all share
+    a common word-prefix.
     """
     if not name:
         return ""
-    
-    name_lower = name.lower().strip()
-    
-    # Check if name starts with any of the store names to combine
-    for store_base in STORE_NAMES_TO_COMBINE:
-        store_base_lower = store_base.lower()
-        if name_lower.startswith(store_base_lower):
-            # Extract the base name (preserve original case from STORE_NAMES_TO_COMBINE)
-            base_len = len(store_base)
-            if len(name) > base_len:
-                # Check if what follows is a number, city indicator, etc.
-                remainder = name[base_len:].strip()
-                # More strict matching - only combine if there's a clear pattern
-                if (re.match(r'^#\s*\d+', remainder) or
-                    re.match(r'^(No\.|Store)\s*\d+', remainder, re.IGNORECASE) or
-                    re.match(r'^\d+', remainder) or
-                    (len(remainder.split()) <= 2 and len(remainder) < 30 and 
-                     any(word[0].isupper() for word in remainder.split() if word))):
-                    return store_base
-            else:
-                # Exact match
-                return store_base
-    
-    return name
+    n = name.lower().strip()
+    # Drop parenthetical content like "Bristol Farms (Mulholland)"
+    n = re.sub(r"\([^)]*\)", " ", n)
+    # Strip apostrophe variants ('  '  `  ´) so "Lunardi's" == "Lunardis"
+    n = re.sub(r"['`´\u2018\u2019]", "", n)
+    # Treat dashes, slashes, colons as word separators
+    n = re.sub(r"[-\u2013\u2014/\\:]", " ", n)
+    # Drop trailing store-number tags like "#5" or "no. 12"
+    n = re.sub(r"#\s*\d+", " ", n)
+    n = re.sub(r"\bno\.?\s*\d+\b", " ", n)
+    # Anything else that isn't word/space becomes a space
+    n = re.sub(r"[^\w\s]", " ", n)
+    # Collapse whitespace
+    n = " ".join(n.split())
+    return n
 
 
-def combine_duplicate_stores(stores):
+def is_valid_canonical_prefix(prefix):
     """
-    Combine stores that have the same base name (e.g., "Alfred coffee #5", "Alfred coffee LA").
-    Keeps the store with the most complete data.
+    Whether a normalized word-prefix is distinctive enough to be a chain name.
+
+    Rules:
+      • At least 3 characters total.
+      • Cannot be purely numeric (filters out address-as-name junk like "321").
+      • Single-word prefixes must be ≥3 chars, not in the generic blocklist,
+        and not purely numeric — so acronym brands like "PCC", "REI", "IGA"
+        still qualify but generic words like "fresh" or "village" don't.
+      • Multi-word prefixes must contain at least one non-generic token.
     """
-    # Group stores by base name
-    stores_by_base = defaultdict(list)
-    
-    for store in stores:
-        name = store.get('name', '') or store.get('displayName', {}).get('text', '')
-        base_name = get_base_store_name(name)
-        
-        if base_name and base_name != name:  # Only combine if we found a base name
-            stores_by_base[base_name.lower()].append(store)
-        else:
-            # Store doesn't match any base name pattern, keep as-is
-            stores_by_base[f"__unique__{len(stores_by_base)}"].append(store)
-    
-    combined_stores = []
+    if not prefix or len(prefix) < 3:
+        return False
+    # Reject pure numbers (address fragments, ZIP codes, etc.)
+    if re.fullmatch(r"[\d\s]+", prefix):
+        return False
+    tokens = prefix.split()
+    if len(tokens) == 1:
+        token = tokens[0]
+        if token.isdigit():
+            return False
+        return len(token) >= 3 and token not in GENERIC_NAME_WORDS
+    return any(t not in GENERIC_NAME_WORDS for t in tokens)
+
+
+def _pick_display_name(store_indices, stores, canonical_norm):
+    """
+    Choose a display name for a detected chain group.
+
+    Strategy:
+      1. Bucket every original store name by its normalized form (same
+         normalizer used for grouping). Buckets collapse case and punctuation
+         variants like "Bristol Farms" / "BRISTOL FARMS" / "bristol farms".
+      2. If a bucket whose key matches the canonical EXACTLY exists, prefer
+         it — this is the bare brand form (e.g. "Bristol Farms", "PCC",
+         "Andronico's") rather than the longer absorbed variants.
+      3. Otherwise, if some bucket is dominant (≥40% of group, ahead of the
+         runner-up), use it. Handles "New Seasons Market" winning when most
+         originals have that exact form.
+      4. Otherwise synthesize a display name by taking the first N words of
+         each original (N = canonical word count) and picking the most common
+         result. This preserves apostrophes and hyphens in chains like
+         "Lunardi's" or "Bi-Rite Market" instead of stripping them via
+         title-case.
+      5. Final fallback: title-case the canonical normalized prefix.
+      6. Within any chosen bucket, prefer a properly cased original over an
+         all-caps or all-lowercase form.
+    """
+    originals = [get_store_display_name(stores[i]) for i in store_indices]
+    originals = [o for o in originals if o]
+    if not originals:
+        return canonical_norm.title()
+
+    buckets = defaultdict(list)
+    for o in originals:
+        buckets[normalize_for_clustering(o)].append(o)
+
+    def case_score(name):
+        if not name or name.isupper() or name.islower():
+            return 0
+        return 1
+
+    def best_in(bucket):
+        return max(bucket, key=lambda n: (case_score(n), -len(n)))
+
+    # 1. Exact canonical bucket wins (the bare brand name).
+    if canonical_norm in buckets:
+        return best_in(buckets[canonical_norm])
+
+    # 2. Dominant bucket: majority of the group share this exact form.
+    sorted_buckets = sorted(buckets.items(), key=lambda kv: -len(kv[1]))
+    _, top_bucket = sorted_buckets[0]
+    second_size = len(sorted_buckets[1][1]) if len(sorted_buckets) > 1 else 0
+    if len(top_bucket) >= max(2, 0.4 * len(originals)) and len(top_bucket) > second_size:
+        return best_in(top_bucket)
+
+    # 3. Synthesize from the first N words of each original. This preserves
+    # punctuation/apostrophes/hyphens that the normalized canonical strips.
+    canonical_word_count = len(canonical_norm.split())
+    leading_forms = []
+    for orig in originals:
+        words = orig.split()
+        if len(words) >= canonical_word_count:
+            leading = ' '.join(words[:canonical_word_count]).strip(' -:,;')
+            if leading:
+                leading_forms.append(leading)
+    if leading_forms:
+        # Bucket case-insensitively, pick the most populous bucket, then the
+        # best-cased member inside it.
+        ci_buckets = defaultdict(list)
+        for f in leading_forms:
+            ci_buckets[f.lower()].append(f)
+        best_key = max(ci_buckets, key=lambda k: (len(ci_buckets[k]), -len(k)))
+        return best_in(ci_buckets[best_key])
+
+    # 4. Final fallback.
+    return canonical_norm.title()
+
+
+def auto_assign_canonical_names(
+    stores,
+    min_group_size=2,
+    min_group_size_single_word=3,
+):
+    """
+    Detect chains automatically and rewrite each member store's `name` to a
+    canonical form so the frontend's name-based grouping merges them into a
+    single record with multiple locations.
+
+    Algorithm:
+      1. Normalize every store name (case, punctuation, apostrophes, dashes).
+      2. Build a frequency map: every word-level prefix → set of store indices
+         whose normalized name starts with that prefix.
+      3. For each store, pick the LONGEST prefix that (a) is shared by enough
+         other stores and (b) passes is_valid_canonical_prefix.
+            • Single-word canonicals require `min_group_size_single_word`
+              stores (default 3) since common single words like "kyle" or
+              "sarasota" are very prone to false positives. This threshold is
+              also what prevents tiny "world" / "stop" / "king" parent groups
+              from existing and accidentally swallowing much larger chains
+              like "World Market" / "Stop & Shop" / "King Soopers".
+            • Multi-word canonicals require `min_group_size` (default 2).
+      4. Iteratively absorb each longer canonical into the LONGEST existing
+         shorter-prefix canonical (closest ancestor wins), then re-run until
+         no more redirects. This rolls "Bristol Farms Hollywood",
+         "New Seasons Market - Williams", and "PCC Community Markets" into
+         their respective parent chain canonicals.
+      5. Group stores by their final canonical and rewrite each store's `name`
+         to a clean display form (most common original within the group).
+
+    Original names are preserved on each store under `originalName` so the UI
+    can still surface the per-location label if needed.
+
+    The store list is mutated in place. Returns a stats dict.
+    """
     stats = {
-        'combined_groups': 0,
-        'stores_combined': 0
+        'groups_detected': 0,
+        'stores_renamed': 0,
+        'largest_group': 0,
+        'examples': [],
     }
-    
-    for base_name, store_group in stores_by_base.items():
-        if base_name.startswith('__unique__'):
-            # Not a combinable store, keep all
-            combined_stores.extend(store_group)
-        elif len(store_group) > 1:
-            # Multiple stores with same base name - combine them
-            stats['combined_groups'] += 1
-            stats['stores_combined'] += len(store_group)
-            
-            # Find the store with most complete data
-            best_store = None
-            best_score = -1
-            
-            for store in store_group:
-                score = 0
-                # Score based on data completeness
-                if store.get('enrichment'):
-                    score += 10
-                if store.get('websiteUri') or store.get('url'):
-                    score += 5
-                if store.get('phone') or store.get('internationalPhoneNumber'):
-                    score += 3
-                if store.get('lat') and store.get('lng'):
-                    score += 2
-                if store.get('address') or store.get('formattedAddress'):
-                    score += 1
-                
-                if score > best_score:
-                    best_score = score
-                    best_store = store
-            
-            # Merge brands from all stores
-            if best_store:
-                all_brands = set()
-                for store in store_group:
-                    if store.get('brand'):
-                        all_brands.add(store['brand'])
-                    if store.get('brands'):
-                        all_brands.update(store['brands'])
-                    if store.get('source'):
-                        all_brands.add(store['source'])
-                
-                if all_brands:
-                    best_store['brands'] = sorted(list(all_brands))
-                    if not best_store.get('brand') and all_brands:
-                        best_store['brand'] = sorted(list(all_brands))[0]
-                
-                combined_stores.append(best_store)
-        else:
-            # Only one store with this base name, keep it
-            combined_stores.extend(store_group)
-    
-    return combined_stores, stats
+    if not stores:
+        return stats
+
+    # Step 1: normalize names
+    normalized_names = [normalize_for_clustering(get_store_display_name(s)) for s in stores]
+
+    # Step 2: build prefix → set of store indices
+    prefix_to_stores = defaultdict(set)
+    for i, norm in enumerate(normalized_names):
+        if not norm:
+            continue
+        words = norm.split()
+        for k in range(1, len(words) + 1):
+            prefix = ' '.join(words[:k])
+            prefix_to_stores[prefix].add(i)
+
+    # Pre-compute which single-word prefixes are "real" chain names. A
+    # single-word prefix is only a valid chain canonical if at least one of:
+    #   (a) The bare word appears as a complete normalized name on at least
+    #       `min_group_size_single_word` stores (strong "this is the brand"
+    #       signal — e.g. "PCC" appears bare 8 times).
+    #   (b) No multi-word sub-group of ≥2 stores exists at all (every
+    #       city/suffix variant is unique — common when only one source has
+    #       scraped this chain).
+    #   (c) The largest multi-word sub-group is small relative to the total
+    #       (< 20% of members) — characteristic of a real chain with many
+    #       city-suffixed locations where some cities happen to be duplicated
+    #       across sources, but no single city dominates. This catches
+    #       chains like "Alfred" with 30 stores fragmented into 14 cities,
+    #       each city having 2-3 duplicate scrapes.
+    #
+    # Without this guard, unrelated stores like "Aspen Lane", "Aspen Grove",
+    # and "Aspen Market Place" all get merged under a single "aspen" canonical
+    # because they share a first word and each Aspen-X variant has 2 stores —
+    # in their case the largest sub-group is 2/7 ≈ 29% of the total, failing
+    # the (c) check, while "Alfred Brentwood" is only 2/30 ≈ 7%, passing it.
+    valid_single_word = {}
+
+    def is_valid_single_word(prefix):
+        if prefix in valid_single_word:
+            return valid_single_word[prefix]
+        members = prefix_to_stores[prefix]
+        if not members:
+            valid_single_word[prefix] = False
+            return False
+
+        bare_count = sum(1 for sid in members if normalized_names[sid] == prefix)
+        if bare_count >= min_group_size_single_word:
+            valid_single_word[prefix] = True
+            return True
+
+        # Find the largest multi-word sub-group of ≥2 stores.
+        sub_group_sizes = defaultdict(int)
+        for sid in members:
+            words = normalized_names[sid].split()
+            for k in range(2, len(words) + 1):
+                sub_prefix = ' '.join(words[:k])
+                if (sub_prefix != prefix
+                        and is_valid_canonical_prefix(sub_prefix)
+                        and len(prefix_to_stores[sub_prefix]) >= min_group_size):
+                    sub_group_sizes[sub_prefix] += 1
+                    break  # Only count membership in the most-specific sub-group.
+
+        if not sub_group_sizes:
+            valid_single_word[prefix] = True
+            return True
+
+        max_sub = max(sub_group_sizes.values())
+        ok = (max_sub / len(members)) < 0.2
+        valid_single_word[prefix] = ok
+        return ok
+
+    # Step 3: longest valid shared prefix for each store
+    canonical_for: list = [None] * len(stores)
+    for i, norm in enumerate(normalized_names):
+        if not norm:
+            continue
+        words = norm.split()
+        for k in range(len(words), 0, -1):
+            prefix = ' '.join(words[:k])
+            if not is_valid_canonical_prefix(prefix):
+                continue
+            members = prefix_to_stores[prefix]
+            # Single-word prefixes need a higher bar — common words like "kyle"
+            # or "sarasota" produce false positives at the 2-store threshold.
+            if len(prefix.split()) == 1:
+                if len(members) < min_group_size_single_word:
+                    continue
+                if not is_valid_single_word(prefix):
+                    continue
+            else:
+                if len(members) < min_group_size:
+                    continue
+            canonical_for[i] = prefix
+            break
+
+    # Step 3b: roll longer canonicals up into their closest existing
+    # shorter-prefix ancestor.
+    #
+    # We walk LONGEST → shortest so the absorption target is the most
+    # specific ancestor that exists. Without this, sub-groups like
+    # "new seasons market williams" would skip past "new seasons market" and
+    # land on a smaller "new seasons" canonical, leaving "new seasons market"
+    # stranded as a separate group.
+    #
+    # The single-word `min_group_size_single_word` threshold (≥3 stores) is
+    # what protects against the over-merging case: a tiny "world" or "stop"
+    # canonical never gets created in the first place, so it can never
+    # absorb the much larger "World Market" / "Stop & Shop" chains.
+    #
+    # We iterate to a fixpoint so chains like
+    # "new seasons market williams → new seasons market → new seasons"
+    # collapse all the way down to the topmost ancestor in one pass.
+    while True:
+        distinct_canonicals = {c for c in canonical_for if c}
+        redirects = {}
+        for c in distinct_canonicals:
+            words = c.split()
+            # Walk longest → shortest so the closest existing ancestor wins.
+            for k in range(len(words) - 1, 0, -1):
+                parent = ' '.join(words[:k])
+                if parent != c and parent in distinct_canonicals:
+                    redirects[c] = parent
+                    break
+        if not redirects:
+            break
+        for i in range(len(canonical_for)):
+            if canonical_for[i] in redirects:
+                canonical_for[i] = redirects[canonical_for[i]]
+
+    # Step 4: group stores by chosen canonical and rewrite names
+    groups = defaultdict(list)
+    for i, prefix in enumerate(canonical_for):
+        if prefix is not None:
+            groups[prefix].append(i)
+
+    for canonical_norm, member_indices in groups.items():
+        if len(member_indices) < min_group_size:
+            continue
+
+        display_name = _pick_display_name(member_indices, stores, canonical_norm)
+        if not display_name:
+            continue
+
+        stats['groups_detected'] += 1
+        stats['largest_group'] = max(stats['largest_group'], len(member_indices))
+        if len(stats['examples']) < 10:
+            stats['examples'].append((display_name, len(member_indices)))
+
+        for i in member_indices:
+            original = get_store_display_name(stores[i])
+            if original and original != display_name:
+                # Preserve the original per-location name for UI display
+                if not stores[i].get('originalName'):
+                    stores[i]['originalName'] = original
+                stores[i]['name'] = display_name
+                stats['stores_renamed'] += 1
+            elif not original:
+                stores[i]['name'] = display_name
+
+    return stats
 
 
 def main():
@@ -1178,16 +1406,25 @@ def main():
         print(f"  Removed {military_count:,} military sites")
     print(f"  Keeping {len(all_stores):,} stores")
 
-    # Combine stores with same base name
-    print("\n4.7. Combining stores with same base name...")
+    # Auto-detect chains and assign canonical names so the frontend's
+    # name-based grouping merges them into a single record with multiple
+    # locations. Stores keep their individual records — only the `name` field
+    # is rewritten (originals preserved on `originalName`).
+    print("\n4.7. Auto-detecting store chains and assigning canonical names...")
     print("-" * 80)
-    all_stores, combine_stats = combine_duplicate_stores(all_stores)
-    stats['combined_groups'] = combine_stats['combined_groups']
-    stats['combined_stores'] = combine_stats['stores_combined'] - combine_stats['combined_groups']
-    if combine_stats['combined_groups'] > 0:
-        print(f"  Combined {combine_stats['combined_groups']:,} groups")
-        print(f"  → {combine_stats['stores_combined']:,} stores were combined into {combine_stats['combined_groups']:,} stores")
-    print(f"  Keeping {len(all_stores):,} stores")
+    chain_stats = auto_assign_canonical_names(all_stores, min_group_size=2)
+    stats['chain_groups_detected'] = chain_stats['groups_detected']
+    stats['chain_stores_renamed'] = chain_stats['stores_renamed']
+    stats['chain_largest_group'] = chain_stats['largest_group']
+    if chain_stats['groups_detected'] > 0:
+        print(f"  Detected {chain_stats['groups_detected']:,} chains "
+              f"({chain_stats['stores_renamed']:,} store names rewritten)")
+        print(f"  Largest chain: {chain_stats['largest_group']:,} locations")
+        if chain_stats['examples']:
+            print(f"  Examples:")
+            for canonical, count in chain_stats['examples']:
+                print(f"    - {canonical} ({count} locations)")
+    print(f"  Keeping {len(all_stores):,} store records (individual locations preserved)")
 
     stats['unique_locations'] = len(all_stores)
     stats['total'] = len(all_stores)
@@ -1265,8 +1502,10 @@ def main():
     print(f"Non-USA stores filtered:     {stats['non_usa_filtered']:,}")
     print(f"Instacart stores filtered:   {stats.get('instacart_filtered', 0):,}")
     print(f"Military sites filtered:     {stats.get('military_filtered', 0):,}")
-    if stats.get('combined_groups', 0) > 0:
-        print(f"Stores combined:             {stats.get('combined_stores', 0):,}")
+    if stats.get('chain_groups_detected', 0) > 0:
+        print(f"Auto-detected chains:        {stats.get('chain_groups_detected', 0):,} "
+              f"(renamed {stats.get('chain_stores_renamed', 0):,} store records)")
+        print(f"Largest chain:               {stats.get('chain_largest_group', 0):,} locations")
     print(f"{'─'*80}")
     print(f"Final USA stores:            {stats['unique_locations']:,}")
     print(f"\nWholesale CRM integration:")
