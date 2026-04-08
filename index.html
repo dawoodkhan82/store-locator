@@ -195,6 +195,185 @@
             line-height: 1.6;
         }
 
+        /* ===== Add Brand modal ===== */
+        #addBrandModal .modal-content {
+            max-width: 560px;
+            line-height: 1.5;
+        }
+
+        .add-brand-section {
+            margin-bottom: 18px;
+        }
+
+        .add-brand-section + .add-brand-section {
+            border-top: 1px solid rgba(55, 53, 47, 0.09);
+            padding-top: 16px;
+        }
+
+        .add-brand-section h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(55, 53, 47, 0.65);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0 0 10px 0;
+        }
+
+        .add-brand-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .add-brand-field label {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgb(55, 53, 47);
+        }
+
+        .add-brand-field input[type="text"] {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 3px;
+            background: white;
+            color: rgb(55, 53, 47);
+        }
+
+        .add-brand-field input[type="text"]:focus {
+            outline: none;
+            border-color: rgb(46, 170, 220);
+            box-shadow: rgba(46, 170, 220, 0.3) 0 0 0 1px;
+        }
+
+        .add-brand-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            background: rgba(46, 170, 220, 0.08);
+            border: 1px solid rgba(46, 170, 220, 0.25);
+            color: rgb(55, 53, 47);
+            margin-bottom: 12px;
+        }
+
+        .add-brand-status.success {
+            background: rgba(52, 168, 83, 0.10);
+            border-color: rgba(52, 168, 83, 0.30);
+        }
+
+        .add-brand-status.error {
+            background: rgba(220, 38, 38, 0.10);
+            border-color: rgba(220, 38, 38, 0.30);
+            color: rgb(180, 30, 30);
+        }
+
+        .add-brand-spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(46, 170, 220, 0.3);
+            border-top-color: rgb(46, 170, 220);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            flex-shrink: 0;
+        }
+
+        .enrich-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px;
+            border: 1px solid rgba(55, 53, 47, 0.12);
+            border-radius: 4px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: all 0.1s;
+        }
+
+        .enrich-option:hover {
+            background-color: rgba(46, 170, 220, 0.04);
+            border-color: rgba(46, 170, 220, 0.3);
+        }
+
+        .enrich-option input[type="checkbox"] {
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .enrich-option-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .enrich-option-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(55, 53, 47);
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 2px;
+        }
+
+        .enrich-option-cost {
+            font-size: 13px;
+            color: rgb(46, 130, 80);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        .enrich-option-cost.free {
+            color: rgb(46, 130, 80);
+        }
+
+        .enrich-option-desc {
+            font-size: 12px;
+            color: rgba(55, 53, 47, 0.65);
+            margin-bottom: 2px;
+        }
+
+        .enrich-option-notes {
+            font-size: 11px;
+            color: rgba(55, 53, 47, 0.45);
+            font-style: italic;
+        }
+
+        .add-brand-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            margin-top: 16px;
+        }
+
+        .add-brand-total {
+            font-size: 13px;
+            color: rgba(55, 53, 47, 0.85);
+            margin-top: 8px;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .add-brand-trigger {
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 3px;
+            background: white;
+            color: rgb(55, 53, 47);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.1s;
+        }
+
+        .add-brand-trigger:hover {
+            background-color: rgba(55, 53, 47, 0.04);
+            border-color: rgba(55, 53, 47, 0.3);
+        }
+
         #privacyModal .modal-content h2 {
             font-size: 20px;
             font-weight: 600;
@@ -1070,6 +1249,7 @@
                         >
                         <button id="brandMatchRunBtn" class="brand-match-btn" onclick="runBrandMatch()">Analyze &amp; Match</button>
                         <button id="brandMatchClearBtn" class="brand-match-secondary" onclick="clearBrandMatch()" style="display: none;">Clear</button>
+                        <button id="addBrandTrigger" class="add-brand-trigger" onclick="openAddBrandModal()" style="display: none;" title="Scrape a new brand's store locator into the CRM">+ Add Brand</button>
                     </div>
                     <div id="brandMatchError" class="brand-match-error" style="display: none;"></div>
                     <div id="brandMatchCard" style="display: none;"></div>
@@ -1478,6 +1658,76 @@
 
             <h3>Contact</h3>
             <p>For questions about this policy, please open an issue on our GitHub repository.</p>
+        </div>
+    </div>
+
+    <!-- Add Brand Modal -->
+    <div id="addBrandModal" class="modal" onclick="closeAddBrandModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeAddBrandModal()" style="position: absolute; top: 16px; right: 16px; background: transparent; border: none; font-size: 24px; color: rgba(55, 53, 47, 0.4); cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 3px;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.08)'; this.style.color='rgb(55, 53, 47)';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='rgba(55, 53, 47, 0.4)';">&times;</button>
+            <h2 style="font-size: 20px; font-weight: 600; color: rgb(55, 53, 47); margin: 0 0 4px 0;">Add a brand</h2>
+            <p style="font-size: 13px; color: rgba(55, 53, 47, 0.65); margin: 0 0 20px 0;">Paste a brand's store locator URL — we'll auto-detect the platform and scrape every location.</p>
+
+            <!-- Step 1: scrape inputs -->
+            <div id="addBrandStep1" class="add-brand-section">
+                <h3>1. Brand details</h3>
+                <div class="add-brand-field">
+                    <label for="addBrandName">Brand name</label>
+                    <input type="text" id="addBrandName" placeholder="e.g. Acme Snacks">
+                </div>
+                <div class="add-brand-field">
+                    <label for="addBrandUrl">Store locator URL</label>
+                    <input type="text" id="addBrandUrl" placeholder="https://acmesnacks.com/pages/store-locator">
+                </div>
+                <div class="add-brand-actions">
+                    <button class="brand-match-secondary" onclick="closeAddBrandModal()">Cancel</button>
+                    <button id="addBrandScrapeBtn" class="brand-match-btn" onclick="submitScrapeBrand()">Scrape stores</button>
+                </div>
+            </div>
+
+            <!-- Step 2: scraping in progress / result -->
+            <div id="addBrandStep2" class="add-brand-section" style="display: none;">
+                <h3>2. Scraping</h3>
+                <div id="addBrandScrapeStatus" class="add-brand-status">
+                    <div class="add-brand-spinner"></div>
+                    <span id="addBrandScrapeMessage">Detecting platform…</span>
+                </div>
+            </div>
+
+            <!-- Step 3: enrichment options (revealed after scrape succeeds) -->
+            <div id="addBrandStep3" class="add-brand-section" style="display: none;">
+                <h3>3. Enrich (optional)</h3>
+                <p style="font-size: 12px; color: rgba(55, 53, 47, 0.55); margin: -4px 0 10px 0;">Pick which enrichment APIs to run on the <span id="addBrandStoreCount">0</span> scraped stores.</p>
+                <div id="addBrandEnrichOptions">
+                    <!-- Populated by JS once /api/pricing returns -->
+                </div>
+                <div class="add-brand-total">Estimated total: <strong id="addBrandTotalCost">$0.00</strong></div>
+                <div class="add-brand-actions">
+                    <button class="brand-match-secondary" onclick="finishAddBrandWithoutEnrich()">Skip enrichment</button>
+                    <button id="addBrandEnrichBtn" class="brand-match-btn" onclick="submitEnrichBrand()">Run enrichment</button>
+                </div>
+            </div>
+
+            <!-- Step 4: enriching in progress / result -->
+            <div id="addBrandStep4" class="add-brand-section" style="display: none;">
+                <h3>4. Enriching</h3>
+                <div id="addBrandEnrichStatus" class="add-brand-status">
+                    <div class="add-brand-spinner"></div>
+                    <span id="addBrandEnrichMessage">Starting enrichment…</span>
+                </div>
+            </div>
+
+            <!-- Step 5: done — refresh combined.json -->
+            <div id="addBrandStep5" class="add-brand-section" style="display: none;">
+                <h3>5. All set</h3>
+                <div class="add-brand-status success">
+                    <span>✓</span>
+                    <span id="addBrandFinalMessage">Brand added.</span>
+                </div>
+                <div class="add-brand-actions">
+                    <button class="brand-match-btn" onclick="closeAddBrandModal(); reloadCombinedData();">Reload data &amp; close</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1947,6 +2197,10 @@
         // Initialize Supabase on page load
         document.addEventListener('DOMContentLoaded', function() {
             initializeSupabase();
+            // Probe serve.py /api/health — shows the "+ Add Brand" button if
+            // the local Python backend is running (it's the only thing that
+            // can drive the Selenium-based scrapers).
+            detectAddBrandBackend();
         });
 
         // ===== END SUPABASE & INSTAGRAM INTEGRATION =====
@@ -4379,6 +4633,330 @@
             document.getElementById('brandMatchClearBtn').style.display = 'none';
 
             if (!options.skipFilter) filterStores();
+        }
+
+        // ===== Add Brand feature =====
+        // Talks to serve.py's /api/scrape-brand and /api/enrich-brand endpoints,
+        // which run the same Python scrapers + enrichers as the CLI workflow.
+        // The button is only shown when serve.py is reachable on this origin —
+        // production GitHub Pages users won't see it because there's no Python
+        // backend to drive Selenium scrapers.
+
+        const ADD_BRAND_STATE = {
+            backendAvailable: false,
+            pricing: null,
+            brandSlug: null,
+            brandName: null,
+            storeCount: 0,
+            scraping: false,
+            enriching: false,
+        };
+
+        async function detectAddBrandBackend() {
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            if (!isLocal) return;
+            try {
+                const resp = await fetch(window.location.origin + '/api/health', { cache: 'no-store' });
+                if (!resp.ok) return;
+                const health = await resp.json();
+                if (!health.supportsAddBrand) return;
+                ADD_BRAND_STATE.backendAvailable = true;
+                document.getElementById('addBrandTrigger').style.display = 'inline-block';
+
+                // Pre-fetch pricing so the modal opens instantly with cost data.
+                try {
+                    const pricingResp = await fetch(window.location.origin + '/api/pricing', { cache: 'no-store' });
+                    if (pricingResp.ok) {
+                        const pricingJson = await pricingResp.json();
+                        ADD_BRAND_STATE.pricing = pricingJson.pricing || null;
+                    }
+                } catch (_) {}
+            } catch (_) {
+                // serve.py not running — leave the button hidden.
+            }
+        }
+
+        function openAddBrandModal() {
+            // Reset modal to step 1
+            ADD_BRAND_STATE.brandSlug = null;
+            ADD_BRAND_STATE.brandName = null;
+            ADD_BRAND_STATE.storeCount = 0;
+            ADD_BRAND_STATE.scraping = false;
+            ADD_BRAND_STATE.enriching = false;
+
+            document.getElementById('addBrandStep1').style.display = '';
+            document.getElementById('addBrandStep2').style.display = 'none';
+            document.getElementById('addBrandStep3').style.display = 'none';
+            document.getElementById('addBrandStep4').style.display = 'none';
+            document.getElementById('addBrandStep5').style.display = 'none';
+
+            document.getElementById('addBrandName').value = '';
+            document.getElementById('addBrandUrl').value = '';
+            document.getElementById('addBrandScrapeBtn').disabled = false;
+            document.getElementById('addBrandEnrichBtn').disabled = false;
+
+            document.getElementById('addBrandModal').classList.add('active');
+            setTimeout(() => document.getElementById('addBrandName').focus(), 50);
+        }
+
+        function closeAddBrandModal(event) {
+            // If invoked from a click handler, only close when the click was on
+            // the overlay itself (not on the modal content).
+            if (event && event.target && event.target.id !== 'addBrandModal') return;
+            // Don't allow closing while a job is running — easy to lose work.
+            if (ADD_BRAND_STATE.scraping || ADD_BRAND_STATE.enriching) {
+                if (!confirm('A job is currently running. Close anyway? (The job will keep running on the server.)')) return;
+            }
+            document.getElementById('addBrandModal').classList.remove('active');
+        }
+
+        function reloadCombinedData() {
+            // The simplest way to pick up the freshly-combined.json after adding
+            // a brand is to do a full page reload. The data is loaded once at
+            // DOMContentLoaded so a soft reload would mean re-implementing the
+            // entire load → group → filter pipeline.
+            window.location.reload();
+        }
+
+        async function pollJob(jobId, onProgress) {
+            // Polls /api/job-status until status is "done" or "failed".
+            // Returns the final job dict, or throws.
+            const POLL_INTERVAL_MS = 1500;
+            const MAX_WAIT_MS = 30 * 60 * 1000; // 30 minutes — scrapes can be slow
+            const start = Date.now();
+            while (true) {
+                if (Date.now() - start > MAX_WAIT_MS) {
+                    throw new Error('Job timed out after 30 minutes');
+                }
+                const resp = await fetch(window.location.origin + '/api/job-status?id=' + encodeURIComponent(jobId), { cache: 'no-store' });
+                if (!resp.ok) {
+                    throw new Error('Job status request failed: HTTP ' + resp.status);
+                }
+                const job = await resp.json();
+                if (typeof onProgress === 'function') onProgress(job);
+                if (job.status === 'done')   return job;
+                if (job.status === 'failed') throw new Error(job.error || 'Job failed');
+                await new Promise(r => setTimeout(r, POLL_INTERVAL_MS));
+            }
+        }
+
+        async function submitScrapeBrand() {
+            const nameInput = document.getElementById('addBrandName');
+            const urlInput  = document.getElementById('addBrandUrl');
+            const brandName = (nameInput.value || '').trim();
+            const url       = (urlInput.value || '').trim();
+
+            if (!brandName) { nameInput.focus(); return; }
+            if (!url)       { urlInput.focus(); return; }
+
+            ADD_BRAND_STATE.scraping = true;
+            ADD_BRAND_STATE.brandName = brandName;
+            document.getElementById('addBrandScrapeBtn').disabled = true;
+
+            // Reveal step 2 with the spinner
+            const step2 = document.getElementById('addBrandStep2');
+            const statusEl = document.getElementById('addBrandScrapeStatus');
+            const messageEl = document.getElementById('addBrandScrapeMessage');
+            step2.style.display = '';
+            statusEl.className = 'add-brand-status';
+            statusEl.innerHTML = '<div class="add-brand-spinner"></div><span id="addBrandScrapeMessage">Starting scraper…</span>';
+
+            try {
+                const resp = await fetch(window.location.origin + '/api/scrape-brand', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ brand_name: brandName, url }),
+                });
+                if (!resp.ok) {
+                    const err = await resp.json().catch(() => ({}));
+                    throw new Error(err.error || 'HTTP ' + resp.status);
+                }
+                const { job_id } = await resp.json();
+
+                const job = await pollJob(job_id, (j) => {
+                    const m = document.getElementById('addBrandScrapeMessage');
+                    if (m && j.message) m.textContent = j.message;
+                });
+
+                ADD_BRAND_STATE.scraping = false;
+                ADD_BRAND_STATE.brandSlug = job.result?.brand_slug;
+                ADD_BRAND_STATE.storeCount = job.result?.store_count || 0;
+
+                statusEl.className = 'add-brand-status success';
+                statusEl.innerHTML = `<span>✓</span><span>Scraped <strong>${ADD_BRAND_STATE.storeCount}</strong> stores via ${job.result?.scraper || 'auto-detected'} scraper.</span>`;
+
+                // Reveal step 3 with enrichment options
+                renderEnrichmentOptions();
+                document.getElementById('addBrandStep3').style.display = '';
+            } catch (e) {
+                ADD_BRAND_STATE.scraping = false;
+                document.getElementById('addBrandScrapeBtn').disabled = false;
+                statusEl.className = 'add-brand-status error';
+                statusEl.innerHTML = `<span>✗</span><span>${escapeHtml(e.message || String(e))}</span>`;
+            }
+        }
+
+        function formatCost(usd) {
+            if (usd === 0) return 'Free';
+            if (usd < 0.01) return '<$0.01';
+            if (usd < 1)    return '$' + usd.toFixed(2);
+            return '$' + usd.toFixed(2);
+        }
+
+        function renderEnrichmentOptions() {
+            const container = document.getElementById('addBrandEnrichOptions');
+            const countEl = document.getElementById('addBrandStoreCount');
+            const storeCount = ADD_BRAND_STATE.storeCount;
+            countEl.textContent = storeCount.toLocaleString();
+
+            const pricing = ADD_BRAND_STATE.pricing || {};
+            // Order: cheapest → most expensive so the user reads through the
+            // free option before the $32-per-1000 one.
+            const order = ['geoapify', 'website', 'google_places'];
+            const html = order
+                .filter(key => pricing[key])
+                .map(key => {
+                    const p = pricing[key];
+                    const totalUsd = (p.per_store_usd || 0) * storeCount;
+                    const isFreeWithinLimit = key === 'geoapify' && (p.free_per_day && storeCount * (p.per_store_credits || 0) <= p.free_per_day);
+                    const costLabel = isFreeWithinLimit ? 'Free' : formatCost(totalUsd);
+                    const costClass = isFreeWithinLimit || totalUsd === 0 ? 'free' : '';
+                    return `
+                        <label class="enrich-option">
+                            <input type="checkbox" value="${key}" data-cost-usd="${totalUsd}" data-free="${isFreeWithinLimit ? '1' : '0'}" onchange="updateAddBrandTotalCost()">
+                            <div class="enrich-option-body">
+                                <div class="enrich-option-title">
+                                    <span>${escapeHtml(p.label)}</span>
+                                    <span class="enrich-option-cost ${costClass}">${costLabel}</span>
+                                </div>
+                                <div class="enrich-option-desc">${escapeHtml(p.description || '')}</div>
+                                ${p.notes ? `<div class="enrich-option-notes">${escapeHtml(p.notes)}</div>` : ''}
+                            </div>
+                        </label>
+                    `;
+                })
+                .join('');
+            container.innerHTML = html || '<p style="font-size: 13px; color: rgba(55,53,47,0.55);">Pricing data unavailable.</p>';
+            updateAddBrandTotalCost();
+        }
+
+        function updateAddBrandTotalCost() {
+            const checked = document.querySelectorAll('#addBrandEnrichOptions input[type="checkbox"]:checked');
+            let total = 0;
+            let allFree = true;
+            checked.forEach(cb => {
+                const cost = parseFloat(cb.dataset.costUsd || '0');
+                const free = cb.dataset.free === '1';
+                if (!free) allFree = false;
+                if (!free) total += cost;
+            });
+            const totalEl = document.getElementById('addBrandTotalCost');
+            if (checked.length === 0) {
+                totalEl.textContent = '$0.00';
+            } else if (allFree) {
+                totalEl.textContent = 'Free';
+            } else {
+                totalEl.textContent = formatCost(total);
+            }
+        }
+
+        async function submitEnrichBrand() {
+            const checked = Array.from(
+                document.querySelectorAll('#addBrandEnrichOptions input[type="checkbox"]:checked')
+            ).map(cb => cb.value);
+
+            if (checked.length === 0) {
+                // Same as "Skip enrichment" — just go to the done step
+                finishAddBrandWithoutEnrich();
+                return;
+            }
+
+            ADD_BRAND_STATE.enriching = true;
+            document.getElementById('addBrandEnrichBtn').disabled = true;
+
+            const step4 = document.getElementById('addBrandStep4');
+            const statusEl = document.getElementById('addBrandEnrichStatus');
+            step4.style.display = '';
+            statusEl.className = 'add-brand-status';
+            statusEl.innerHTML = '<div class="add-brand-spinner"></div><span id="addBrandEnrichMessage">Starting enrichment…</span>';
+
+            try {
+                const resp = await fetch(window.location.origin + '/api/enrich-brand', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        brand_slug: ADD_BRAND_STATE.brandSlug,
+                        enrichments: checked,
+                    }),
+                });
+                if (!resp.ok) {
+                    const err = await resp.json().catch(() => ({}));
+                    throw new Error(err.error || 'HTTP ' + resp.status);
+                }
+                const { job_id } = await resp.json();
+
+                await pollJob(job_id, (j) => {
+                    const m = document.getElementById('addBrandEnrichMessage');
+                    if (m && j.message) m.textContent = j.message;
+                });
+
+                ADD_BRAND_STATE.enriching = false;
+                statusEl.className = 'add-brand-status success';
+                statusEl.innerHTML = `<span>✓</span><span>Enrichment complete (${checked.join(', ')}).</span>`;
+
+                document.getElementById('addBrandFinalMessage').textContent =
+                    `${ADD_BRAND_STATE.brandName} added with ${ADD_BRAND_STATE.storeCount} stores.`;
+                document.getElementById('addBrandStep5').style.display = '';
+            } catch (e) {
+                ADD_BRAND_STATE.enriching = false;
+                document.getElementById('addBrandEnrichBtn').disabled = false;
+                statusEl.className = 'add-brand-status error';
+                statusEl.innerHTML = `<span>✗</span><span>${escapeHtml(e.message || String(e))}</span>`;
+            }
+        }
+
+        async function finishAddBrandWithoutEnrich() {
+            // Skip enrichment but still re-run combine_all_stores so the new
+            // brand shows up in combined.json. Re-using the enrich endpoint
+            // with an empty enrichments array does exactly that.
+            ADD_BRAND_STATE.enriching = true;
+            document.getElementById('addBrandEnrichBtn').disabled = true;
+
+            const step4 = document.getElementById('addBrandStep4');
+            const statusEl = document.getElementById('addBrandEnrichStatus');
+            step4.style.display = '';
+            statusEl.className = 'add-brand-status';
+            statusEl.innerHTML = '<div class="add-brand-spinner"></div><span id="addBrandEnrichMessage">Skipping enrichment, re-combining…</span>';
+
+            try {
+                const resp = await fetch(window.location.origin + '/api/enrich-brand', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        brand_slug: ADD_BRAND_STATE.brandSlug,
+                        enrichments: [],
+                    }),
+                });
+                if (!resp.ok) {
+                    const err = await resp.json().catch(() => ({}));
+                    throw new Error(err.error || 'HTTP ' + resp.status);
+                }
+                const { job_id } = await resp.json();
+                await pollJob(job_id);
+
+                ADD_BRAND_STATE.enriching = false;
+                statusEl.className = 'add-brand-status success';
+                statusEl.innerHTML = '<span>✓</span><span>Combined data updated.</span>';
+
+                document.getElementById('addBrandFinalMessage').textContent =
+                    `${ADD_BRAND_STATE.brandName} added with ${ADD_BRAND_STATE.storeCount} stores (no enrichment).`;
+                document.getElementById('addBrandStep5').style.display = '';
+            } catch (e) {
+                ADD_BRAND_STATE.enriching = false;
+                document.getElementById('addBrandEnrichBtn').disabled = false;
+                statusEl.className = 'add-brand-status error';
+                statusEl.innerHTML = `<span>✗</span><span>${escapeHtml(e.message || String(e))}</span>`;
+            }
         }
 
         function buildNormalizedBrand(data) {

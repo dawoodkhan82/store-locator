@@ -1,24 +1,32 @@
 #!/usr/bin/env python3
 """
-Local viewer server with a brand-analysis endpoint.
+Local viewer server with brand-analysis + add-brand endpoints.
 
 Serves the CRM (index.html + combined.json) on port 8000 and exposes:
 
     POST /api/analyze-brand   body: {"url": "https://brand.example"}
+    POST /api/scrape-brand    body: {"brand_name": "...", "url": "..."}
+    POST /api/enrich-brand    body: {"brand_slug": "...", "enrichments": [...]}
+    GET  /api/job-status?id=<job_id>
+    GET  /api/pricing
+    GET  /api/health
 
-The endpoint fetches the brand site, extracts text + social links, and
-uses OpenAI (via .env OPENAI_API_KEY) to classify the brand into the same
-category/specialty/storeType taxonomy the CRM already uses, so we can match
-it against enriched store records.
+Long-running scraping/enrichment is dispatched to background threads and
+tracked via in-memory job ids that the frontend polls.
 """
+
+from __future__ import annotations
 
 import json
 import os
 import sys
 import re
+import time
+import uuid
+import threading
 import traceback
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import urlparse, urljoin
+from urllib.parse import urlparse, urljoin, parse_qs
 
 import requests
 from bs4 import BeautifulSoup
@@ -238,6 +246,219 @@ def analyze_brand(url: str) -> dict:
     }
 
 
+# ── Add-brand workflow: scrape → enrich → combine ────────────────────────────
+#
+# Long-running work (scraping a brand can take minutes) is dispatched to a
+# background thread and tracked through an in-memory JOBS dict. The frontend
+# starts a job via POST and then polls GET /api/job-status until status is
+# "done" or "failed".
+
+JOBS = {}            # job_id -> dict
+JOBS_LOCK = threading.Lock()
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+RAW_DIR              = os.path.join(PROJECT_ROOT, "all_stores", "raw")
+PLACES_ENRICHED_DIR  = os.path.join(PROJECT_ROOT, "all_stores", "places_enriched")
+WEBSITE_ENRICHED_DIR = os.path.join(PROJECT_ROOT, "all_stores", "website_enriched")
+
+# Per-store cost estimates surfaced in the UI. Numbers come from the inline
+# notes in the corresponding enrichment scripts:
+#   scripts/enrich_with_geoapify.py:255-260
+#   scripts/enrich_websites.py:355-361
+#   scripts/enrich_with_google_places.py:203-206
+PRICING = {
+    "geoapify": {
+        "label": "Geoapify",
+        "description": "Address, phone, hours, ratings",
+        "per_store_usd": 0.0,         # within free tier
+        "per_store_credits": 0.2,
+        "free_per_day": 3000,         # credits/day, ≈15K stores/day
+        "notes": "Free up to ~15,000 stores/day on the Geoapify free plan.",
+    },
+    "website": {
+        "label": "Website (OpenAI)",
+        "description": "Product categories, social links, about text",
+        "per_store_usd": 0.00225,     # 13K input + 500 output @ gpt-4o-mini
+        "notes": "Skips known major chains automatically — actual cost is usually lower.",
+    },
+    "google_places": {
+        "label": "Google Places",
+        "description": "Verified address, phone, ratings",
+        "per_store_usd": 0.032,       # Text Search New
+        "notes": "Most expensive — best for high-value lookups.",
+    },
+}
+
+
+def _slugify(text: str) -> str:
+    text = (text or "").lower()
+    text = re.sub(r"[\s-]+", "_", text)
+    text = re.sub(r"[^a-z0-9_]", "", text)
+    return text.strip("_")
+
+
+def _make_job(kind: str, **payload) -> str:
+    job_id = uuid.uuid4().hex
+    with JOBS_LOCK:
+        JOBS[job_id] = {
+            "id": job_id,
+            "kind": kind,
+            "status": "running",
+            "message": "Starting…",
+            "started_at": time.time(),
+            "finished_at": None,
+            "result": None,
+            "error": None,
+            **payload,
+        }
+    return job_id
+
+
+def _update_job(job_id: str, **changes) -> None:
+    with JOBS_LOCK:
+        job = JOBS.get(job_id)
+        if not job:
+            return
+        job.update(changes)
+
+
+def _get_job(job_id: str) -> dict | None:
+    with JOBS_LOCK:
+        job = JOBS.get(job_id)
+        return dict(job) if job else None
+
+
+def _finish_job(job_id: str, status: str, **changes) -> None:
+    _update_job(job_id, status=status, finished_at=time.time(), **changes)
+
+
+def _scrape_brand_worker(job_id: str, brand_name: str, url: str) -> None:
+    """Run the scraper in a background thread.
+
+    Imports `scrape_all_stores` lazily so the server starts fast and Selenium
+    isn't loaded until somebody actually triggers a scrape.
+    """
+    try:
+        _update_job(job_id, message=f"Detecting platform for {brand_name}…")
+        os.makedirs(RAW_DIR, exist_ok=True)
+
+        # Lazy import — avoids loading Selenium etc. at server startup.
+        sys.path.insert(0, PROJECT_ROOT)
+        import scrape_all_stores  # type: ignore[import-not-found]
+
+        result = scrape_all_stores.scrape_brand(brand_name, url, RAW_DIR)
+        if not result.get("success"):
+            _finish_job(
+                job_id, "failed",
+                message=f"All scrapers failed for {brand_name}",
+                error="No platform matched or all scrapers returned 0 stores.",
+            )
+            return
+
+        output_file = result["output_file"]
+        store_count = 0
+        try:
+            with open(output_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                stores = data.get("stores") or data.get("places") or []
+                store_count = len(stores) if isinstance(stores, list) else int(data.get("total_stores", 0))
+        except Exception:
+            pass
+
+        brand_slug = _slugify(brand_name)
+        _finish_job(
+            job_id, "done",
+            message=f"Scraped {store_count} stores for {brand_name}",
+            result={
+                "brand_name": brand_name,
+                "brand_slug": brand_slug,
+                "scraper": result.get("scraper"),
+                "output_file": output_file,
+                "store_count": store_count,
+            },
+        )
+    except Exception as e:
+        traceback.print_exc()
+        _finish_job(job_id, "failed", error=f"{type(e).__name__}: {e}")
+
+
+def _run_combine() -> None:
+    """Re-run combine_all_stores so the new brand shows up in combined.json."""
+    sys.path.insert(0, PROJECT_ROOT)
+    import combine_all_stores  # type: ignore[import-not-found]
+    # combine_all_stores.main() reads CWD-relative paths, so chdir first.
+    cwd = os.getcwd()
+    try:
+        os.chdir(PROJECT_ROOT)
+        combine_all_stores.main()
+    finally:
+        os.chdir(cwd)
+
+
+def _enrich_brand_worker(job_id: str, brand_slug: str, enrichments: list[str]) -> None:
+    """Run the requested enrichments on a single brand, then re-combine."""
+    try:
+        raw_file = os.path.join(RAW_DIR, f"{brand_slug}.json")
+        if not os.path.exists(raw_file):
+            _finish_job(job_id, "failed", error=f"Raw file not found: {raw_file}")
+            return
+
+        os.makedirs(PLACES_ENRICHED_DIR, exist_ok=True)
+        os.makedirs(WEBSITE_ENRICHED_DIR, exist_ok=True)
+
+        # Lazy import the enrichers — they pull in API clients that we'd
+        # rather not load until they're actually used.
+        sys.path.insert(0, os.path.join(PROJECT_ROOT, "scripts"))
+
+        ran = []
+
+        # Geoapify first (gives addresses + state for downstream enrichers).
+        if "geoapify" in enrichments:
+            _update_job(job_id, message="Enriching with Geoapify…")
+            from enrich_with_geoapify import enrich_stores as geoapify_enrich  # type: ignore
+            geoapify_out = os.path.join(PLACES_ENRICHED_DIR, f"{brand_slug}_geoapify.json")
+            geoapify_enrich(raw_file, geoapify_out)
+            ran.append("geoapify")
+
+        # Google Places next (also produces a places_enriched file).
+        if "google_places" in enrichments:
+            _update_job(job_id, message="Enriching with Google Places…")
+            from enrich_with_google_places import enrich_stores as google_enrich  # type: ignore
+            google_out = os.path.join(PLACES_ENRICHED_DIR, f"{brand_slug}_google.json")
+            google_enrich(raw_file, google_out)
+            ran.append("google_places")
+
+        # Website enrichment runs against the most-enriched input we have so
+        # far (it benefits from having website URLs filled in by Geoapify or
+        # Google Places).
+        if "website" in enrichments:
+            _update_job(job_id, message="Enriching websites with OpenAI…")
+            from enrich_websites import enrich_stores as website_enrich  # type: ignore
+            geoapify_out = os.path.join(PLACES_ENRICHED_DIR, f"{brand_slug}_geoapify.json")
+            google_out = os.path.join(PLACES_ENRICHED_DIR, f"{brand_slug}_google.json")
+            if "geoapify" in enrichments and os.path.exists(geoapify_out):
+                website_input = geoapify_out
+            elif "google_places" in enrichments and os.path.exists(google_out):
+                website_input = google_out
+            else:
+                website_input = raw_file
+            website_out = os.path.join(WEBSITE_ENRICHED_DIR, f"{brand_slug}_website_enriched.json")
+            website_enrich(website_input, website_out)
+            ran.append("website")
+
+        _update_job(job_id, message="Re-combining all stores…")
+        _run_combine()
+
+        _finish_job(
+            job_id, "done",
+            message=f"Enrichment complete: {', '.join(ran) if ran else 'no enrichments selected'}",
+            result={"brand_slug": brand_slug, "enrichments": ran},
+        )
+    except Exception as e:
+        traceback.print_exc()
+        _finish_job(job_id, "failed", error=f"{type(e).__name__}: {e}")
+
+
 class Handler(SimpleHTTPRequestHandler):
     def log_message(self, format, *args):
         sys.stderr.write("[viewer] " + (format % args) + "\n")
@@ -259,24 +480,46 @@ class Handler(SimpleHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Headers", "content-type")
         self.end_headers()
 
+    def _read_json_body(self) -> dict:
+        length = int(self.headers.get("Content-Length") or 0)
+        raw = self.rfile.read(length) if length else b"{}"
+        return json.loads(raw.decode("utf-8") or "{}")
+
     def do_GET(self):
-        if self.path == "/api/health":
+        parsed = urlparse(self.path)
+        path = parsed.path
+
+        if path == "/api/health":
             self._send_json(200, {
                 "ok": True,
                 "hasOpenAI": client is not None,
                 "service": "store-scraper viewer",
+                "supportsAddBrand": True,
             })
             return
+
+        if path == "/api/pricing":
+            self._send_json(200, {"pricing": PRICING})
+            return
+
+        if path == "/api/job-status":
+            qs = parse_qs(parsed.query)
+            job_id = (qs.get("id") or [""])[0]
+            if not job_id:
+                self._send_json(400, {"error": "Missing 'id' query parameter"})
+                return
+            job = _get_job(job_id)
+            if not job:
+                self._send_json(404, {"error": f"Job {job_id} not found"})
+                return
+            self._send_json(200, job)
+            return
+
         return super().do_GET()
 
-    def do_POST(self):
-        if self.path != "/api/analyze-brand":
-            self.send_error(404, "Not Found")
-            return
+    def _handle_analyze_brand(self):
         try:
-            length = int(self.headers.get("Content-Length") or 0)
-            raw = self.rfile.read(length) if length else b"{}"
-            body = json.loads(raw.decode("utf-8") or "{}")
+            body = self._read_json_body()
             url = (body.get("url") or "").strip()
             if not url:
                 self._send_json(400, {"error": "Missing 'url' in request body"})
@@ -295,12 +538,87 @@ class Handler(SimpleHTTPRequestHandler):
             traceback.print_exc()
             self._send_json(500, {"error": f"{type(e).__name__}: {e}"})
 
+    def _handle_scrape_brand(self):
+        try:
+            body = self._read_json_body()
+            brand_name = (body.get("brand_name") or body.get("brandName") or "").strip()
+            url = (body.get("url") or "").strip()
+            if not brand_name:
+                self._send_json(400, {"error": "Missing 'brand_name' in request body"})
+                return
+            if not url:
+                self._send_json(400, {"error": "Missing 'url' in request body"})
+                return
+
+            url = normalize_url(url)
+            job_id = _make_job("scrape", brand_name=brand_name, url=url)
+            t = threading.Thread(
+                target=_scrape_brand_worker,
+                args=(job_id, brand_name, url),
+                daemon=True,
+            )
+            t.start()
+            self._send_json(202, {"job_id": job_id})
+        except Exception as e:
+            traceback.print_exc()
+            self._send_json(500, {"error": f"{type(e).__name__}: {e}"})
+
+    def _handle_enrich_brand(self):
+        try:
+            body = self._read_json_body()
+            brand_slug = (body.get("brand_slug") or body.get("brandSlug") or "").strip()
+            enrichments = body.get("enrichments") or []
+            if not brand_slug:
+                self._send_json(400, {"error": "Missing 'brand_slug' in request body"})
+                return
+            if not isinstance(enrichments, list):
+                self._send_json(400, {"error": "'enrichments' must be a list"})
+                return
+            valid = {"geoapify", "website", "google_places"}
+            invalid = [e for e in enrichments if e not in valid]
+            if invalid:
+                self._send_json(400, {
+                    "error": f"Unknown enrichment(s): {invalid}. "
+                             f"Valid options: {sorted(valid)}",
+                })
+                return
+
+            job_id = _make_job(
+                "enrich",
+                brand_slug=brand_slug,
+                enrichments=enrichments,
+            )
+            t = threading.Thread(
+                target=_enrich_brand_worker,
+                args=(job_id, brand_slug, enrichments),
+                daemon=True,
+            )
+            t.start()
+            self._send_json(202, {"job_id": job_id})
+        except Exception as e:
+            traceback.print_exc()
+            self._send_json(500, {"error": f"{type(e).__name__}: {e}"})
+
+    def do_POST(self):
+        path = urlparse(self.path).path
+        if path == "/api/analyze-brand":
+            return self._handle_analyze_brand()
+        if path == "/api/scrape-brand":
+            return self._handle_scrape_brand()
+        if path == "/api/enrich-brand":
+            return self._handle_enrich_brand()
+        self.send_error(404, "Not Found")
+
 
 def main():
     if client is None:
         print("WARNING: OPENAI_API_KEY not found in .env — /api/analyze-brand will return 500.")
     print(f"Serving CRM on http://localhost:{PORT}")
-    print(f"Brand analysis:   POST http://localhost:{PORT}/api/analyze-brand")
+    print(f"  Brand analysis:   POST http://localhost:{PORT}/api/analyze-brand")
+    print(f"  Add brand:        POST http://localhost:{PORT}/api/scrape-brand")
+    print(f"  Enrich brand:     POST http://localhost:{PORT}/api/enrich-brand")
+    print(f"  Job status:       GET  http://localhost:{PORT}/api/job-status?id=<id>")
+    print(f"  Pricing:          GET  http://localhost:{PORT}/api/pricing")
     print("Press Ctrl+C to stop.")
     server = ThreadingHTTPServer(("", PORT), Handler)
     try:
