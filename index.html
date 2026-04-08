@@ -4475,8 +4475,13 @@
         }
 
         // Try the local Python server first (serve.py), then fall back to the
-        // Supabase edge function. This lets the same CRM work in local dev and
-        // on GitHub Pages without configuration.
+        // Supabase edge function. Inlined here (not read from supabase-config.js)
+        // so brand match still works on GitHub Pages where supabase-config.js is
+        // gitignored. The anon key is public-by-design; real access control lives
+        // in Supabase RLS policies.
+        const BRAND_MATCH_EDGE_URL = 'https://dmaqfovsgtehgtcutgmo.supabase.co/functions/v1/analyze-brand';
+        const BRAND_MATCH_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRtYXFmb3ZzZ3RlaGd0Y3V0Z21vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyODIzNzcsImV4cCI6MjA4ODg1ODM3N30.PODORzxbkM7lX1EBBO-i9HzGgx_UItEvMyjMIW6LMgM';
+
         function brandMatchEndpoints() {
             const endpoints = [];
             const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
@@ -4487,17 +4492,15 @@
                     headers: { 'Content-Type': 'application/json' },
                 });
             }
-            if (window.EDGE_FUNCTIONS_URL && window.SUPABASE_ANON_KEY) {
-                endpoints.push({
-                    name: 'edge',
-                    url: window.EDGE_FUNCTIONS_URL + '/analyze-brand',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + window.SUPABASE_ANON_KEY,
-                        'apikey': window.SUPABASE_ANON_KEY,
-                    },
-                });
-            }
+            endpoints.push({
+                name: 'edge',
+                url: BRAND_MATCH_EDGE_URL,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + BRAND_MATCH_ANON_KEY,
+                    'apikey': BRAND_MATCH_ANON_KEY,
+                },
+            });
             return endpoints;
         }
 
