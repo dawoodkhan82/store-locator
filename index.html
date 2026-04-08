@@ -760,6 +760,244 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* ===== Brand Match feature ===== */
+        .brand-match-panel {
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 6px;
+            padding: 10px 12px;
+            margin-bottom: 12px;
+            background-color: rgba(46, 170, 220, 0.04);
+            transition: all 0.2s;
+        }
+
+        .brand-match-panel.active {
+            background-color: rgba(46, 170, 220, 0.08);
+            border-color: rgba(46, 170, 220, 0.4);
+        }
+
+        .brand-match-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .brand-match-row label {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgb(55, 53, 47);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .brand-match-row input[type="text"] {
+            flex: 1;
+            min-width: 240px;
+            box-sizing: border-box;
+            padding: 6px 10px;
+            font-size: 14px;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 3px;
+            background-color: white;
+        }
+
+        .brand-match-row input[type="text"]:focus {
+            outline: none;
+            border-color: rgb(46, 170, 220);
+            box-shadow: rgba(46, 170, 220, 0.3) 0 0 0 1px;
+        }
+
+        .brand-match-btn {
+            padding: 6px 14px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            border-radius: 3px;
+            background: rgb(46, 170, 220);
+            color: white;
+            cursor: pointer;
+            transition: background 0.15s;
+            white-space: nowrap;
+        }
+
+        .brand-match-btn:hover:not(:disabled) {
+            background: rgb(36, 150, 200);
+        }
+
+        .brand-match-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .brand-match-secondary {
+            padding: 6px 12px;
+            font-size: 13px;
+            border: 1px solid rgba(55, 53, 47, 0.16);
+            border-radius: 3px;
+            background-color: white;
+            color: rgba(55, 53, 47, 0.65);
+            cursor: pointer;
+            transition: all 0.1s;
+        }
+
+        .brand-match-secondary:hover {
+            background-color: rgba(55, 53, 47, 0.03);
+        }
+
+        .brand-match-mini-spinner {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border: 2px solid rgba(255,255,255,0.35);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            vertical-align: -2px;
+            margin-right: 6px;
+        }
+
+        .brand-match-card {
+            margin-top: 10px;
+            padding: 12px 14px;
+            background: white;
+            border: 1px solid rgba(46, 170, 220, 0.3);
+            border-radius: 6px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .brand-match-card h3 {
+            margin: 0 0 4px 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: rgb(55, 53, 47);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-match-card .tagline {
+            font-size: 12px;
+            color: rgba(55, 53, 47, 0.55);
+            font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        .brand-match-card .description {
+            font-size: 13px;
+            color: rgba(55, 53, 47, 0.75);
+            line-height: 1.45;
+            margin-bottom: 8px;
+        }
+
+        .brand-match-card .chip-group-label {
+            display: inline-block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: rgba(55, 53, 47, 0.45);
+            margin-right: 6px;
+            min-width: 62px;
+        }
+
+        .brand-match-card .chip-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-bottom: 3px;
+        }
+
+        .brand-chip {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .brand-chip-category { background-color: rgba(46, 170, 220, 0.15); color: rgb(24, 51, 71); }
+        .brand-chip-specialty { background-color: rgba(52, 168, 83, 0.15); color: rgb(30, 90, 50); }
+        .brand-chip-storetype { background-color: rgba(120, 85, 195, 0.15); color: rgb(80, 50, 150); }
+        .brand-chip-keyword { background-color: rgba(251, 191, 36, 0.18); color: rgb(120, 80, 15); }
+
+        .brand-match-card .brand-socials {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .brand-match-card .brand-socials a {
+            font-size: 11px;
+            color: rgba(55, 53, 47, 0.55);
+            text-decoration: none;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background: rgba(55, 53, 47, 0.05);
+        }
+
+        .brand-match-card .brand-socials a:hover {
+            background: rgba(55, 53, 47, 0.1);
+            color: rgb(55, 53, 47);
+        }
+
+        .brand-match-card .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-end;
+        }
+
+        .brand-match-error {
+            margin-top: 10px;
+            padding: 10px 12px;
+            background: rgba(220, 38, 38, 0.06);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 4px;
+            color: rgb(180, 30, 30);
+            font-size: 13px;
+        }
+
+        .match-score-cell {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .match-score-high { background-color: rgba(52, 168, 83, 0.15); color: rgb(30, 120, 60); }
+        .match-score-med  { background-color: rgba(251, 191, 36, 0.2);  color: rgb(160, 120, 20); }
+        .match-score-low  { background-color: rgba(55, 53, 47, 0.08);   color: rgba(55, 53, 47, 0.55); }
+
+        /* Pulsing highlighted export button when a brand match is active */
+        @keyframes exportPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(46, 170, 220, 0.55); }
+            50%      { box-shadow: 0 0 0 8px rgba(46, 170, 220, 0); }
+        }
+
+        .export-btn-highlight {
+            animation: exportPulse 1.6s ease-out infinite;
+            background: linear-gradient(135deg, rgb(46, 170, 220), rgb(36, 140, 200)) !important;
+            transform: scale(1.02);
+            position: relative;
+        }
+
+        .export-btn-highlight::after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 6px;
+            border: 1.5px solid rgba(46, 170, 220, 0.5);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -817,6 +1055,26 @@
 
             <!-- Search and Filters (only for list view) -->
             <div id="listViewFilters" style="margin-bottom: 12px;">
+                <!-- Brand Match: paste a CPG brand URL and the CRM filters/scores stores by fit -->
+                <div id="brandMatchPanel" class="brand-match-panel">
+                    <div class="brand-match-row">
+                        <label for="brandMatchUrl">
+                            <span>Find stores for my brand</span>
+                            <span style="font-weight: 400; color: rgba(55, 53, 47, 0.45); font-size: 12px;">Paste a CPG brand website URL</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="brandMatchUrl"
+                            placeholder="https://yourbrand.com"
+                            onkeydown="if (event.key === 'Enter') runBrandMatch();"
+                        >
+                        <button id="brandMatchRunBtn" class="brand-match-btn" onclick="runBrandMatch()">Analyze &amp; Match</button>
+                        <button id="brandMatchClearBtn" class="brand-match-secondary" onclick="clearBrandMatch()" style="display: none;">Clear</button>
+                    </div>
+                    <div id="brandMatchError" class="brand-match-error" style="display: none;"></div>
+                    <div id="brandMatchCard" style="display: none;"></div>
+                </div>
+
                 <div class="filters-grid" style="display: grid; grid-template-columns: 1fr 200px; gap: 8px; margin-bottom: 8px;">
                     <input
                         type="text"
@@ -938,9 +1196,9 @@
 
                 <!-- Export Button -->
                 <div style="margin-top: 8px; display: flex; justify-content: flex-end;">
-                    <button onclick="exportFilteredStoresToCSV()" style="background: rgb(46, 170, 220); color: white; border: none; border-radius: 4px; padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background-color 0.2s;" onmouseover="this.style.backgroundColor='rgb(36, 150, 200)'" onmouseout="this.style.backgroundColor='rgb(46, 170, 220)'">
+                    <button id="exportCsvBtn" onclick="exportFilteredStoresToCSV()" style="background: rgb(46, 170, 220); color: white; border: none; border-radius: 4px; padding: 8px 16px; font-size: 14px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background-color 0.2s;" onmouseover="if(!this.classList.contains('export-btn-highlight')) this.style.backgroundColor='rgb(36, 150, 200)'" onmouseout="if(!this.classList.contains('export-btn-highlight')) this.style.backgroundColor='rgb(46, 170, 220)'">
                         <span>📊</span>
-                        Export to CSV
+                        <span id="exportCsvBtnLabel">Export to CSV</span>
                     </button>
                 </div>
             </div>
@@ -2348,7 +2606,12 @@
 
                 return `
                     <tr class="store-row" onclick="showStoreDetailsByIndex(${actualIndex})">
-                        <td data-column="name" style="font-weight: 500;">${name}</td>
+                        <td data-column="name" style="font-weight: 500;">
+                            <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                                <span>${name}</span>
+                                ${BRAND_MATCH.active ? renderBrandMatchBadge(store) : ''}
+                            </div>
+                        </td>
                         <td data-column="address" class="${hiddenColumns.has('address') ? 'column-hidden' : ''}" style="color: rgba(55, 53, 47, 0.65);">
                             <div style="display: flex; align-items: center; flex-wrap: wrap;">
                                 <span>${address.substring(0, 40)}${address.length > 40 ? '...' : ''}</span>
@@ -3477,6 +3740,12 @@
                 const storeTypeSearch = (enrichment.storeType || '').toLowerCase();
                 const socialLinks = enrichment.socialLinks || {};
 
+                let matchesBrandFit = true;
+                if (BRAND_MATCH.active) {
+                    const score = BRAND_MATCH_SCORES.get(store);
+                    matchesBrandFit = !!score && score.total >= brandMatchMinScore();
+                }
+
                 // Text search filter
                 const matchesSearch = !searchTerm ||
                     name.includes(searchTerm) ||
@@ -3536,7 +3805,7 @@
                     matchesSize = locationCount > 10;
                 }
 
-                return matchesSearch && matchesLocation && matchesBrand && matchesStoreType && matchesSocial && matchesSize;
+                return matchesSearch && matchesLocation && matchesBrand && matchesStoreType && matchesSocial && matchesSize && matchesBrandFit;
             });
 
             // Update button labels
@@ -3547,6 +3816,9 @@
 
             // Update filtered results count
             updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize, selectedStoreTypes);
+
+            // Highlight export button when brand match is active
+            updateExportButtonHighlight();
 
             currentPage = 1; // Reset to first page when filtering
             sortStores();
@@ -3766,24 +4038,32 @@
             const allSizeRadio = document.querySelector('#sizeFilterDropdown input[value="all"]');
             if (allSizeRadio) allSizeRadio.checked = true;
 
+            // Also clear brand match state
+            if (BRAND_MATCH.active) {
+                clearBrandMatch({ skipFilter: true });
+            }
+
             filterStores();
         }
 
         function sortStores() {
             const sortBy = document.getElementById('sortBy').value;
 
-            filteredStores.sort((a, b) => {
-                if (sortBy === 'name') {
-                    const nameA = a.displayName?.text || a.name || '';
-                    const nameB = b.displayName?.text || b.name || '';
-                    return nameA.localeCompare(nameB);
-                } else if (sortBy === 'address') {
-                    const addressA = a.formattedAddress || a.address_line_1 || '';
-                    const addressB = b.formattedAddress || b.address_line_1 || '';
-                    return addressA.localeCompare(addressB);
-                }
-                return 0;
-            });
+            const byName = (a, b) =>
+                (a.displayName?.text || a.name || '').localeCompare(b.displayName?.text || b.name || '');
+            const byAddress = (a, b) =>
+                (a.formattedAddress || a.address_line_1 || '').localeCompare(b.formattedAddress || b.address_line_1 || '');
+            const userCmp = sortBy === 'address' ? byAddress : byName;
+
+            if (BRAND_MATCH.active) {
+                filteredStores.sort((a, b) => {
+                    const scoreA = BRAND_MATCH_SCORES.get(a)?.total || 0;
+                    const scoreB = BRAND_MATCH_SCORES.get(b)?.total || 0;
+                    return (scoreB - scoreA) || userCmp(a, b);
+                });
+            } else {
+                filteredStores.sort(userCmp);
+            }
 
             renderStores(filteredStores);
         }
@@ -3794,25 +4074,41 @@
                 return;
             }
 
-            // CSV headers
-            const headers = [
-                'Store Name',
-                'Address',
-                'City',
-                'State',
-                'ZIP Code',
-                'Brands',
-                'Store Type',
-                'Categories',
-                'Specialties',
-                'Website',
-                'Phone',
-                'Instagram',
-                'Facebook',
-                'Twitter',
-                'Latitude',
-                'Longitude'
+            // Each CSV column maps to a TABLE_COLUMNS id so we can skip anything
+            // the user has hidden via the column "×" button. Multiple CSV columns
+            // can share an id (e.g. Address/City/State/ZIP hide together).
+            // A null columnId means "never export this column".
+            const csvColumnDefs = [
+                { header: 'Store Name',  columnId: 'name' },
+                { header: 'Address',     columnId: 'address' },
+                { header: 'City',        columnId: 'address' },
+                { header: 'State',       columnId: 'address' },
+                { header: 'ZIP Code',    columnId: 'address' },
+                { header: 'Brands',      columnId: 'brands' },
+                { header: 'Store Type',  columnId: 'storeType' },
+                { header: 'Categories',  columnId: 'categories' },
+                { header: 'Specialties', columnId: 'specialties' },
+                { header: 'Website',     columnId: 'website' },
+                { header: 'Phone',       columnId: 'phone' },
+                { header: 'Instagram',   columnId: 'social' },
+                { header: 'Facebook',    columnId: 'social' },
+                { header: 'Twitter',     columnId: 'social' },
+                { header: 'Latitude',    columnId: null },
+                { header: 'Longitude',   columnId: null }
             ];
+            if (BRAND_MATCH.active) {
+                csvColumnDefs.push(
+                    { header: 'Brand Match Score', columnId: 'brandMatch' },
+                    { header: 'Match Reasons',     columnId: 'brandMatch' },
+                    { header: 'Brand Analyzed',    columnId: 'brandMatch' }
+                );
+            }
+
+            const visibleIndices = csvColumnDefs
+                .map((def, i) => (def.columnId && !hiddenColumns.has(def.columnId)) ? i : -1)
+                .filter(i => i >= 0);
+
+            const headers = visibleIndices.map(i => csvColumnDefs[i].header);
 
             // Convert stores to CSV rows
             const csvRows = filteredStores.map(store => {
@@ -3855,7 +4151,7 @@
                 const lat = store.lat || (store.locations && store.locations[0] && store.locations[0].lat) || '';
                 const lng = store.lng || (store.locations && store.locations[0] && store.locations[0].lng) || '';
 
-                return [
+                const fullRow = [
                     store.displayName?.text || store.name || 'Unknown',
                     address,
                     city,
@@ -3873,6 +4169,16 @@
                     lat,
                     lng
                 ];
+                if (BRAND_MATCH.active) {
+                    const bd = BRAND_MATCH_SCORES.get(store);
+                    const reasons = [];
+                    if (bd?.categoryOverlap?.length) reasons.push('categories: ' + bd.categoryOverlap.join(', '));
+                    if (bd?.specialtyOverlap?.length) reasons.push('specialties: ' + bd.specialtyOverlap.join(', '));
+                    if (bd?.storeTypeMatch) reasons.push('store type: ' + bd.storeTypeMatch);
+                    if (bd?.keywordHits?.length) reasons.push('keywords: ' + bd.keywordHits.join(', '));
+                    fullRow.push(bd?.total || 0, reasons.join(' | '), BRAND_MATCH.data?.brandName || '');
+                }
+                return visibleIndices.map(i => fullRow[i]);
             });
 
             // Combine headers and rows - properly format CSV
@@ -3898,11 +4204,300 @@
             const link = document.createElement('a');
             const url = URL.createObjectURL(blob);
             link.setAttribute('href', url);
-            link.setAttribute('download', `filtered_stores_${new Date().toISOString().split('T')[0]}.csv`);
+            const today = new Date().toISOString().split('T')[0];
+            const brandSlug = BRAND_MATCH.active && BRAND_MATCH.data?.brandName
+                ? '_' + BRAND_MATCH.data.brandName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+                : '';
+            link.setAttribute('download', `filtered_stores${brandSlug}_${today}.csv`);
             link.style.visibility = 'hidden';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+        }
+
+        // ===== BRAND MATCH =====
+        // Paste a CPG brand URL → serve.py analyzes it with OpenAI → we score every store
+        // by fit (category / specialty / store-type / keyword overlap) and filter the CRM.
+
+        const BRAND_MATCH = {
+            active: false,
+            data: null,              // raw response from /api/analyze-brand
+            normalized: null,        // pre-lowercased brand vocab, see buildNormalizedBrand()
+            quality: 'balanced',
+            loading: false,
+        };
+
+        const BRAND_MATCH_QUALITY_THRESHOLDS = { broad: 3, balanced: 6, best: 10 };
+
+        const BRAND_MATCH_WEIGHTS = {
+            categoryPerOverlap: 3,
+            specialtyPerOverlap: 2,
+            storeTypePrimary: 5,
+            storeTypeSecondary: 2,
+            keywordHit: 1,
+        };
+
+        // store → { total, categoryOverlap, specialtyOverlap, storeTypeMatch, keywordHits }
+        // Scores only depend on immutable brand data + immutable store enrichment, so we
+        // compute once per analyzed brand and reuse across every filterStores/sortStores call.
+        const BRAND_MATCH_SCORES = new Map();
+
+        function brandMatchMinScore() {
+            return BRAND_MATCH_QUALITY_THRESHOLDS[BRAND_MATCH.quality] ?? BRAND_MATCH_QUALITY_THRESHOLDS.balanced;
+        }
+
+        function escapeHtml(s) {
+            return s == null ? '' : String(s).replace(/[&<>"']/g,
+                c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        }
+
+        async function runBrandMatch() {
+            if (BRAND_MATCH.loading) return;
+
+            const input = document.getElementById('brandMatchUrl');
+            const errEl = document.getElementById('brandMatchError');
+            const btn = document.getElementById('brandMatchRunBtn');
+
+            const url = (input.value || '').trim();
+            errEl.style.display = 'none';
+            errEl.textContent = '';
+
+            if (!url) {
+                errEl.textContent = 'Enter a brand website URL first.';
+                errEl.style.display = 'block';
+                return;
+            }
+
+            BRAND_MATCH.loading = true;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="brand-match-mini-spinner"></span>Analyzing…';
+
+            try {
+                const resp = await fetch(window.location.origin + '/api/analyze-brand', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url }),
+                });
+
+                if (!resp.ok) {
+                    let message = `Request failed (HTTP ${resp.status})`;
+                    if (resp.status === 404) {
+                        // Endpoint only exists when served from the local Python viewer (serve.py).
+                        message = 'Brand analysis endpoint not found. Run the CRM locally via `bash start_viewer.sh` so the Python backend (serve.py) is available.';
+                    } else {
+                        try {
+                            const err = await resp.json();
+                            if (err?.error) message = err.error;
+                        } catch (_) {}
+                    }
+                    throw new Error(message);
+                }
+
+                const data = await resp.json();
+                BRAND_MATCH.data = data;
+                BRAND_MATCH.normalized = buildNormalizedBrand(data);
+                BRAND_MATCH.active = true;
+                computeAllBrandScores();
+
+                document.getElementById('brandMatchPanel').classList.add('active');
+                document.getElementById('brandMatchClearBtn').style.display = 'inline-block';
+
+                renderBrandMatchCard(data);
+                filterStores();
+                showToast(`Matched ${filteredStores.length} stores for ${data.brandName || 'brand'}`);
+            } catch (e) {
+                console.error('Brand match failed:', e);
+                errEl.textContent = e.message || 'Something went wrong analyzing that brand.';
+                errEl.style.display = 'block';
+            } finally {
+                BRAND_MATCH.loading = false;
+                btn.disabled = false;
+                btn.textContent = 'Analyze & Match';
+            }
+        }
+
+        function clearBrandMatch(options = {}) {
+            BRAND_MATCH.active = false;
+            BRAND_MATCH.data = null;
+            BRAND_MATCH.normalized = null;
+            BRAND_MATCH_SCORES.clear();
+
+            document.getElementById('brandMatchUrl').value = '';
+            const cardEl = document.getElementById('brandMatchCard');
+            cardEl.style.display = 'none';
+            cardEl.innerHTML = '';
+            const errEl = document.getElementById('brandMatchError');
+            errEl.style.display = 'none';
+            errEl.textContent = '';
+            document.getElementById('brandMatchPanel').classList.remove('active');
+            document.getElementById('brandMatchClearBtn').style.display = 'none';
+
+            if (!options.skipFilter) filterStores();
+        }
+
+        function buildNormalizedBrand(data) {
+            const cats  = data.productCategories || [];
+            const specs = data.specialties || [];
+            const kws   = (data.keywords || []).filter(Boolean);
+            const types = data.idealStoreTypes || [];
+            return {
+                categoriesOrig:  cats,
+                specialtiesOrig: specs,
+                categoriesLower: cats.map(s => s.toLowerCase()),
+                specialtiesLower: specs.map(s => s.toLowerCase()),
+                keywordsLower:   kws.map(s => s.toLowerCase()),
+                storeTypeSet:    new Set(types),
+                primaryStoreType: types[0] || '',
+            };
+        }
+
+        function computeAllBrandScores() {
+            BRAND_MATCH_SCORES.clear();
+            if (!BRAND_MATCH.normalized) return;
+            for (const store of GROUPED_STORES) {
+                BRAND_MATCH_SCORES.set(store, scoreStoreForBrand(store, BRAND_MATCH.normalized));
+            }
+        }
+
+        function renderBrandMatchCard(data) {
+            const card = document.getElementById('brandMatchCard');
+            const chip = (text, cls) => `<span class="brand-chip ${cls}">${escapeHtml(text)}</span>`;
+            const chipGroup = (label, items, cls) => items && items.length
+                ? `<div class="chip-group"><span class="chip-group-label">${label}</span>${items.map(i => chip(i, cls)).join('')}</div>`
+                : '';
+
+            const socialEntries = Object.entries(data.socialLinks || {});
+            const socialsHtml = socialEntries.length
+                ? `<div class="brand-socials">${socialEntries.map(([k, v]) =>
+                    `<a href="${escapeHtml(v)}" target="_blank" rel="noopener">${escapeHtml(k)} ↗</a>`
+                  ).join('')}</div>`
+                : '';
+
+            const priceTierLabel = {
+                value: 'Value', mainstream: 'Mainstream', premium: 'Premium', luxury: 'Luxury',
+            }[data.priceTier] || data.priceTier;
+
+            card.className = 'brand-match-card';
+            card.style.display = 'grid';
+            card.innerHTML = `
+                <div>
+                    <h3>
+                        <span>${escapeHtml(data.brandName || 'Brand')}</span>
+                        ${priceTierLabel ? `<span style="font-size: 11px; font-weight: 400; color: rgba(55,53,47,0.45); padding: 1px 6px; background: rgba(55,53,47,0.06); border-radius: 3px;">${escapeHtml(priceTierLabel)}</span>` : ''}
+                        <a href="${escapeHtml(data.url)}" target="_blank" rel="noopener" style="font-size: 12px; color: rgb(46, 170, 220); text-decoration: none; font-weight: 400;">${escapeHtml((data.url || '').replace(/^https?:\/\//, '').replace(/\/$/, ''))} ↗</a>
+                    </h3>
+                    ${data.tagline ? `<div class="tagline">${escapeHtml(data.tagline)}</div>` : ''}
+                    ${data.description ? `<div class="description">${escapeHtml(data.description)}</div>` : ''}
+                    ${chipGroup('Categories', data.productCategories, 'brand-chip-category')}
+                    ${chipGroup('Specialties', data.specialties, 'brand-chip-specialty')}
+                    ${chipGroup('Store fit',  data.idealStoreTypes, 'brand-chip-storetype')}
+                    ${chipGroup('Keywords',   data.keywords,        'brand-chip-keyword')}
+                    ${data.targetCustomer ? `<div style="margin-top: 6px; font-size: 12px; color: rgba(55,53,47,0.55);"><strong style="color: rgba(55,53,47,0.7);">Target:</strong> ${escapeHtml(data.targetCustomer)}</div>` : ''}
+                    ${socialsHtml}
+                </div>
+                <div class="card-actions">
+                    <div style="display: inline-flex; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 4px; overflow: hidden;">
+                        ${['broad','balanced','best'].map(q => {
+                            const labels = { broad: 'Broad', balanced: 'Balanced', best: 'Best fit' };
+                            const isActive = BRAND_MATCH.quality === q;
+                            const bg = isActive ? 'rgb(46, 170, 220)' : 'white';
+                            const fg = isActive ? 'white' : 'rgba(55, 53, 47, 0.65)';
+                            return `<button onclick="setBrandMatchQuality('${q}')" style="padding: 4px 10px; border: none; border-left: 1px solid rgba(55, 53, 47, 0.1); background: ${bg}; color: ${fg}; font-size: 12px; cursor: pointer; font-weight: ${isActive ? '600' : '400'};">${labels[q]}</button>`;
+                        }).join('')}
+                    </div>
+                    <span id="brandMatchCount" style="font-size: 12px; color: rgba(55,53,47,0.55);"></span>
+                    <button class="brand-match-secondary" onclick="exportFilteredStoresToCSV()" style="background: rgb(46, 170, 220); color: white; border-color: rgb(46, 170, 220); font-weight: 500;">Export matches →</button>
+                </div>
+            `;
+        }
+
+        function setBrandMatchQuality(quality) {
+            if (!(quality in BRAND_MATCH_QUALITY_THRESHOLDS)) return;
+            BRAND_MATCH.quality = quality;
+            if (BRAND_MATCH.active && BRAND_MATCH.data) {
+                renderBrandMatchCard(BRAND_MATCH.data);
+                filterStores();
+            }
+        }
+
+        // Score a store against a pre-normalized brand vocabulary. Callers MUST pass
+        // BRAND_MATCH.normalized (from buildNormalizedBrand), not the raw API payload.
+        function scoreStoreForBrand(store, brand) {
+            if (!brand) return { total: 0 };
+            const enrichment = store.enrichment || {};
+
+            const storeCategoriesLower = (enrichment.productCategories || []).map(s => s.toLowerCase());
+            const storeSpecialtiesLower = (enrichment.specialties || []).map(s => s.toLowerCase());
+            const storeType = enrichment.storeType || '';
+
+            const categoryOverlap = brand.categoriesOrig.filter((_, i) =>
+                storeCategoriesLower.includes(brand.categoriesLower[i]));
+            const specialtyOverlap = brand.specialtiesOrig.filter((_, i) =>
+                storeSpecialtiesLower.includes(brand.specialtiesLower[i]));
+
+            let storeTypeScore = 0;
+            let storeTypeMatch = '';
+            if (storeType) {
+                if (brand.primaryStoreType === storeType) {
+                    storeTypeScore = BRAND_MATCH_WEIGHTS.storeTypePrimary;
+                    storeTypeMatch = storeType + ' (primary)';
+                } else if (brand.storeTypeSet.has(storeType)) {
+                    storeTypeScore = BRAND_MATCH_WEIGHTS.storeTypeSecondary;
+                    storeTypeMatch = storeType;
+                }
+            }
+
+            const haystack = [
+                (store.displayName?.text || store.name || ''),
+                (enrichment.aboutText || ''),
+                (enrichment.productCategories || []).join(' '),
+                (enrichment.specialties || []).join(' '),
+            ].join(' ').toLowerCase();
+            const keywordHits = brand.keywordsLower.filter(kw => haystack.includes(kw));
+
+            const total =
+                categoryOverlap.length  * BRAND_MATCH_WEIGHTS.categoryPerOverlap +
+                specialtyOverlap.length * BRAND_MATCH_WEIGHTS.specialtyPerOverlap +
+                storeTypeScore +
+                keywordHits.length      * BRAND_MATCH_WEIGHTS.keywordHit;
+
+            return { total, categoryOverlap, specialtyOverlap, storeTypeMatch, keywordHits };
+        }
+
+        function getBrandMatchScore(store) {
+            return BRAND_MATCH_SCORES.get(store) || null;
+        }
+
+        function renderBrandMatchBadge(store) {
+            const bd = getBrandMatchScore(store);
+            if (!bd) return '';
+            const score = bd.total;
+            // Badge tiers track the quality thresholds so "high" matches "best fit".
+            const { best, balanced } = BRAND_MATCH_QUALITY_THRESHOLDS;
+            const tier = score >= best ? 'high' : score >= balanced ? 'med' : 'low';
+            const tooltipParts = [];
+            if (bd.categoryOverlap?.length) tooltipParts.push('Categories: ' + bd.categoryOverlap.join(', '));
+            if (bd.specialtyOverlap?.length) tooltipParts.push('Specialties: ' + bd.specialtyOverlap.join(', '));
+            if (bd.storeTypeMatch) tooltipParts.push('Store type: ' + bd.storeTypeMatch);
+            if (bd.keywordHits?.length) tooltipParts.push('Keywords: ' + bd.keywordHits.join(', '));
+            const tooltip = tooltipParts.join(' | ') || 'Brand fit score';
+            return `<span class="match-score-cell match-score-${tier}" title="${escapeHtml(tooltip)}">★ ${score}</span>`;
+        }
+
+        function updateExportButtonHighlight() {
+            const btn = document.getElementById('exportCsvBtn');
+            const label = document.getElementById('exportCsvBtnLabel');
+            const countEl = document.getElementById('brandMatchCount');
+
+            if (BRAND_MATCH.active && filteredStores.length > 0) {
+                btn.classList.add('export-btn-highlight');
+                label.textContent = `Export ${filteredStores.length.toLocaleString()} matched stores`;
+                if (countEl) countEl.textContent = `${filteredStores.length.toLocaleString()} matching stores`;
+            } else {
+                btn.classList.remove('export-btn-highlight');
+                label.textContent = 'Export to CSV';
+                if (countEl) countEl.textContent = '';
+            }
         }
 
         // ===== DM OUTREACH TRACKING SYSTEM =====

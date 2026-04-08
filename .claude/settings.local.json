@@ -35,7 +35,11 @@
       "WebFetch(domain:zaza-snacks.com)",
       "WebFetch(domain:www.rapsnacks.net)",
       "Bash(xargs -I{} echo \"Process running: {}\")",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "Bash(VIEWER_PORT=8765 python3 serve.py)",
+      "Bash(lsof -ti:8765)",
+      "Bash(xargs kill:*)",
+      "Read(//tmp/**)"
     ],
     "deny": [],
     "ask": []

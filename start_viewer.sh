@@ -16,5 +16,5 @@ echo ""
 # Open browser after a short delay
 (sleep 2 && open http://localhost:8000) &
 
-# Start Python HTTP server
-python3 -m http.server 8000
+# Start viewer server (static files + /api/analyze-brand endpoint)
+python3 serve.py
