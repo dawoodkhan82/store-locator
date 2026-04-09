@@ -575,9 +575,19 @@ class Handler(SimpleHTTPRequestHandler):
     def _handle_analyze_brand(self):
         try:
             body = self._read_json_body()
+
+            # Adjust mode: modify existing tags via natural language
+            instruction = (body.get("instruction") or "").strip()
+            if instruction:
+                current_tags = body.get("currentTags") or {}
+                result = adjust_brand_tags(current_tags, instruction)
+                self._send_json(200, result)
+                return
+
+            # Analyze mode: classify a brand URL
             url = (body.get("url") or "").strip()
             if not url:
-                self._send_json(400, {"error": "Missing 'url' in request body"})
+                self._send_json(400, {"error": "Missing 'url' or 'instruction' in request body"})
                 return
             result = analyze_brand(url)
             self._send_json(200, result)
@@ -589,20 +599,6 @@ class Handler(SimpleHTTPRequestHandler):
             self._send_json(502, {"error": f"Failed to fetch brand site: {e}"})
         except ValueError as e:
             self._send_json(400, {"error": str(e)})
-        except Exception as e:
-            traceback.print_exc()
-            self._send_json(500, {"error": f"{type(e).__name__}: {e}"})
-
-    def _handle_adjust_brand(self):
-        try:
-            body = self._read_json_body()
-            instruction = (body.get("instruction") or "").strip()
-            current_tags = body.get("currentTags") or {}
-            if not instruction:
-                self._send_json(400, {"error": "Missing 'instruction' in request body"})
-                return
-            result = adjust_brand_tags(current_tags, instruction)
-            self._send_json(200, result)
         except Exception as e:
             traceback.print_exc()
             self._send_json(500, {"error": f"{type(e).__name__}: {e}"})
@@ -672,8 +668,6 @@ class Handler(SimpleHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == "/api/analyze-brand":
             return self._handle_analyze_brand()
-        if path == "/api/adjust-brand":
-            return self._handle_adjust_brand()
         if path == "/api/scrape-brand":
             return self._handle_scrape_brand()
         if path == "/api/enrich-brand":
