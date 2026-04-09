@@ -266,18 +266,26 @@ Current tags:
 User instruction: "${instruction}"
 
 Apply the user's instruction to modify the tags. You may add or remove items.
+If the user wants to REMOVE or EXCLUDE certain types of stores or tags, put them in the exclude arrays.
+If the user wants to remove specific stores by name, put those names in "excludeStoreNames".
 
 For productCategories, pick ONLY from: ${JSON.stringify(CATEGORY_VOCAB)}
 For specialties, pick ONLY from: ${JSON.stringify(SPECIALTY_VOCAB)}
 For idealStoreTypes, pick ONLY from: ${JSON.stringify(STORE_TYPES)}
 For keywords, use freeform strings (up to 10).
 
-Return a JSON object with exactly these four fields:
-- "productCategories": updated array
-- "specialties": updated array
-- "idealStoreTypes": updated array (ordered best-fit first)
-- "keywords": updated array
+Return a JSON object with these fields:
+- "productCategories": updated array of tags to INCLUDE
+- "specialties": updated array of tags to INCLUDE
+- "idealStoreTypes": updated array (ordered best-fit first) to INCLUDE
+- "keywords": updated array to INCLUDE
+- "excludeCategories": array of productCategories to EXCLUDE (stores matching these are hidden)
+- "excludeSpecialties": array of specialties to EXCLUDE
+- "excludeStoreTypes": array of idealStoreTypes to EXCLUDE
+- "excludeKeywords": array of keywords to EXCLUDE
+- "excludeStoreNames": array of store name substrings to EXCLUDE (e.g. ["Whole Foods", "Trader Joe"])
 
+Use empty arrays for exclude fields if nothing should be excluded.
 Return ONLY the JSON object.`;
 
   const completion = await openai.chat.completions.create({
@@ -313,6 +321,21 @@ Return ONLY the JSON object.`;
       : [],
     keywords: Array.isArray(data.keywords)
       ? data.keywords.filter((k: unknown) => typeof k === "string" && k.trim()).slice(0, 10)
+      : [],
+    excludeCategories: Array.isArray(data.excludeCategories)
+      ? data.excludeCategories.filter((c: unknown) => typeof c === "string" && categorySet.has(c))
+      : [],
+    excludeSpecialties: Array.isArray(data.excludeSpecialties)
+      ? data.excludeSpecialties.filter((s: unknown) => typeof s === "string" && specialtySet.has(s))
+      : [],
+    excludeStoreTypes: Array.isArray(data.excludeStoreTypes)
+      ? data.excludeStoreTypes.filter((t: unknown) => typeof t === "string" && storeTypeSet.has(t))
+      : [],
+    excludeKeywords: Array.isArray(data.excludeKeywords)
+      ? data.excludeKeywords.filter((k: unknown) => typeof k === "string" && k.trim())
+      : [],
+    excludeStoreNames: Array.isArray(data.excludeStoreNames)
+      ? data.excludeStoreNames.filter((n: unknown) => typeof n === "string" && n.trim())
       : [],
   };
 }

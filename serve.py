@@ -237,18 +237,26 @@ Current tags:
 User instruction: "{instruction}"
 
 Apply the user's instruction to modify the tags. You may add or remove items.
+If the user wants to REMOVE or EXCLUDE certain types of stores or tags, put them in the exclude arrays.
+If the user wants to remove specific stores by name, put those names in "excludeStoreNames".
 
 For productCategories, pick ONLY from: {json.dumps(CATEGORY_VOCAB)}
 For specialties, pick ONLY from: {json.dumps(SPECIALTY_VOCAB)}
 For idealStoreTypes, pick ONLY from: {json.dumps(STORE_TYPES)}
 For keywords, use freeform strings (up to 10).
 
-Return a JSON object with exactly these four fields:
-- "productCategories": updated array
-- "specialties": updated array
-- "idealStoreTypes": updated array (ordered best-fit first)
-- "keywords": updated array
+Return a JSON object with these fields:
+- "productCategories": updated array of tags to INCLUDE
+- "specialties": updated array of tags to INCLUDE
+- "idealStoreTypes": updated array (ordered best-fit first) to INCLUDE
+- "keywords": updated array to INCLUDE
+- "excludeCategories": array of productCategories to EXCLUDE (stores matching these are hidden)
+- "excludeSpecialties": array of specialties to EXCLUDE
+- "excludeStoreTypes": array of idealStoreTypes to EXCLUDE
+- "excludeKeywords": array of keywords to EXCLUDE
+- "excludeStoreNames": array of store name substrings to EXCLUDE (e.g. ["Whole Foods", "Trader Joe"])
 
+Use empty arrays for exclude fields if nothing should be excluded.
 Return ONLY the JSON object."""
 
     response = client.chat.completions.create(
@@ -272,6 +280,12 @@ Return ONLY the JSON object."""
     data["specialties"] = [s for s in data.get("specialties", []) if s in SPECIALTY_VOCAB]
     data["idealStoreTypes"] = [t for t in data.get("idealStoreTypes", []) if t in STORE_TYPES]
     data["keywords"] = [k for k in data.get("keywords", []) if isinstance(k, str) and k.strip()][:10]
+
+    data["excludeCategories"] = [c for c in data.get("excludeCategories", []) if c in CATEGORY_VOCAB]
+    data["excludeSpecialties"] = [s for s in data.get("excludeSpecialties", []) if s in SPECIALTY_VOCAB]
+    data["excludeStoreTypes"] = [t for t in data.get("excludeStoreTypes", []) if t in STORE_TYPES]
+    data["excludeKeywords"] = [k for k in data.get("excludeKeywords", []) if isinstance(k, str) and k.strip()]
+    data["excludeStoreNames"] = [n for n in data.get("excludeStoreNames", []) if isinstance(n, str) and n.strip()]
 
     return data
 
