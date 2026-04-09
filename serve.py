@@ -221,6 +221,61 @@ Return ONLY the JSON object. If a field can't be determined, use an empty string
     return data
 
 
+def adjust_brand_tags(current_tags: dict, instruction: str) -> dict:
+    """Use OpenAI to adjust brand tags based on a natural language instruction."""
+    if client is None:
+        raise RuntimeError("OPENAI_API_KEY is not set in .env")
+
+    prompt = f"""You are adjusting the classification tags for a CPG brand based on a user instruction.
+
+Current tags:
+- productCategories: {json.dumps(current_tags.get('productCategories', []))}
+- specialties: {json.dumps(current_tags.get('specialties', []))}
+- idealStoreTypes: {json.dumps(current_tags.get('idealStoreTypes', []))}
+- keywords: {json.dumps(current_tags.get('keywords', []))}
+
+User instruction: "{instruction}"
+
+Apply the user's instruction to modify the tags. You may add or remove items.
+
+For productCategories, pick ONLY from: {json.dumps(CATEGORY_VOCAB)}
+For specialties, pick ONLY from: {json.dumps(SPECIALTY_VOCAB)}
+For idealStoreTypes, pick ONLY from: {json.dumps(STORE_TYPES)}
+For keywords, use freeform strings (up to 10).
+
+Return a JSON object with exactly these four fields:
+- "productCategories": updated array
+- "specialties": updated array
+- "idealStoreTypes": updated array (ordered best-fit first)
+- "keywords": updated array
+
+Return ONLY the JSON object."""
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "You adjust brand classification tags based on user instructions. Respond with valid JSON only.",
+            },
+            {"role": "user", "content": prompt},
+        ],
+        response_format={"type": "json_object"},
+        temperature=0,
+        max_tokens=800,
+    )
+
+    raw = response.choices[0].message.content or "{}"
+    data = json.loads(raw)
+
+    data["productCategories"] = [c for c in data.get("productCategories", []) if c in CATEGORY_VOCAB]
+    data["specialties"] = [s for s in data.get("specialties", []) if s in SPECIALTY_VOCAB]
+    data["idealStoreTypes"] = [t for t in data.get("idealStoreTypes", []) if t in STORE_TYPES]
+    data["keywords"] = [k for k in data.get("keywords", []) if isinstance(k, str) and k.strip()][:10]
+
+    return data
+
+
 def analyze_brand(url: str) -> dict:
     url = normalize_url(url)
     if not url:
@@ -538,6 +593,20 @@ class Handler(SimpleHTTPRequestHandler):
             traceback.print_exc()
             self._send_json(500, {"error": f"{type(e).__name__}: {e}"})
 
+    def _handle_adjust_brand(self):
+        try:
+            body = self._read_json_body()
+            instruction = (body.get("instruction") or "").strip()
+            current_tags = body.get("currentTags") or {}
+            if not instruction:
+                self._send_json(400, {"error": "Missing 'instruction' in request body"})
+                return
+            result = adjust_brand_tags(current_tags, instruction)
+            self._send_json(200, result)
+        except Exception as e:
+            traceback.print_exc()
+            self._send_json(500, {"error": f"{type(e).__name__}: {e}"})
+
     def _handle_scrape_brand(self):
         try:
             body = self._read_json_body()
@@ -603,6 +672,8 @@ class Handler(SimpleHTTPRequestHandler):
         path = urlparse(self.path).path
         if path == "/api/analyze-brand":
             return self._handle_analyze_brand()
+        if path == "/api/adjust-brand":
+            return self._handle_adjust_brand()
         if path == "/api/scrape-brand":
             return self._handle_scrape_brand()
         if path == "/api/enrich-brand":

@@ -5025,6 +5025,13 @@
                     ${data.targetCustomer ? `<div style="margin-top: 6px; font-size: 12px; color: rgba(55,53,47,0.55);"><strong style="color: rgba(55,53,47,0.7);">Target:</strong> ${escapeHtml(data.targetCustomer)}</div>` : ''}
                     ${socialsHtml}
                 </div>
+                <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px;">
+                    <input id="brandAdjustInput" type="text" placeholder="Adjust tags, e.g. &quot;add tea shops&quot; or &quot;remove bakery&quot;"
+                        style="flex: 1; padding: 5px 8px; border: 1px solid rgba(55,53,47,0.16); border-radius: 4px; font-size: 12px; outline: none;"
+                        onkeydown="if(event.key==='Enter')adjustBrandTags()">
+                    <button onclick="adjustBrandTags()" id="brandAdjustBtn"
+                        style="padding: 5px 10px; border: 1px solid rgba(55,53,47,0.16); border-radius: 4px; background: white; font-size: 12px; cursor: pointer; white-space: nowrap;">Adjust</button>
+                </div>
                 <div class="card-actions">
                     <div style="display: inline-flex; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 4px; overflow: hidden;">
                         ${['broad','balanced','best'].map(q => {
@@ -5057,6 +5064,62 @@
             computeAllBrandScores();
             renderBrandMatchCard(BRAND_MATCH.data);
             filterStores();
+        }
+
+        async function adjustBrandTags() {
+            const input = document.getElementById('brandAdjustInput');
+            const btn = document.getElementById('brandAdjustBtn');
+            const instruction = (input?.value || '').trim();
+            if (!instruction || !BRAND_MATCH.data) return;
+
+            btn.textContent = 'Adjusting…';
+            btn.disabled = true;
+            input.disabled = true;
+
+            const currentTags = {
+                productCategories: BRAND_MATCH.data.productCategories,
+                specialties: BRAND_MATCH.data.specialties,
+                idealStoreTypes: BRAND_MATCH.data.idealStoreTypes,
+                keywords: BRAND_MATCH.data.keywords,
+            };
+
+            try {
+                const endpoints = brandMatchEndpoints();
+                let result = null;
+                for (const ep of endpoints) {
+                    try {
+                        const resp = await fetch(ep.url, {
+                            method: 'POST',
+                            headers: ep.headers,
+                            body: JSON.stringify({ instruction, currentTags }),
+                        });
+                        if (!resp.ok) continue;
+                        result = await resp.json();
+                        break;
+                    } catch (_) { continue; }
+                }
+                if (!result) throw new Error('All endpoints failed');
+
+                // Merge adjusted tags into brand data
+                if (result.productCategories) BRAND_MATCH.data.productCategories = result.productCategories;
+                if (result.specialties) BRAND_MATCH.data.specialties = result.specialties;
+                if (result.idealStoreTypes) BRAND_MATCH.data.idealStoreTypes = result.idealStoreTypes;
+                if (result.keywords) BRAND_MATCH.data.keywords = result.keywords;
+
+                BRAND_MATCH.normalized = buildNormalizedBrand(BRAND_MATCH.data);
+                computeAllBrandScores();
+                renderBrandMatchCard(BRAND_MATCH.data);
+                filterStores();
+            } catch (e) {
+                console.error('adjustBrandTags error:', e);
+                alert('Failed to adjust tags: ' + e.message);
+            } finally {
+                // Re-query elements since renderBrandMatchCard may have re-rendered
+                const newInput = document.getElementById('brandAdjustInput');
+                const newBtn = document.getElementById('brandAdjustBtn');
+                if (newBtn) { newBtn.textContent = 'Adjust'; newBtn.disabled = false; }
+                if (newInput) { newInput.value = ''; newInput.disabled = false; }
+            }
         }
 
         // Score a store against a pre-normalized brand vocabulary. Callers MUST pass

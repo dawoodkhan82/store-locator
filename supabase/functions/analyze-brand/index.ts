@@ -250,6 +250,73 @@ Return ONLY the JSON object. If a field can't be determined, use an empty string
   };
 }
 
+async function adjustBrandTags(
+  openai: OpenAI,
+  currentTags: Record<string, unknown>,
+  instruction: string,
+): Promise<Pick<Brand, "productCategories" | "specialties" | "idealStoreTypes" | "keywords">> {
+  const prompt = `You are adjusting the classification tags for a CPG brand based on a user instruction.
+
+Current tags:
+- productCategories: ${JSON.stringify(currentTags.productCategories || [])}
+- specialties: ${JSON.stringify(currentTags.specialties || [])}
+- idealStoreTypes: ${JSON.stringify(currentTags.idealStoreTypes || [])}
+- keywords: ${JSON.stringify(currentTags.keywords || [])}
+
+User instruction: "${instruction}"
+
+Apply the user's instruction to modify the tags. You may add or remove items.
+
+For productCategories, pick ONLY from: ${JSON.stringify(CATEGORY_VOCAB)}
+For specialties, pick ONLY from: ${JSON.stringify(SPECIALTY_VOCAB)}
+For idealStoreTypes, pick ONLY from: ${JSON.stringify(STORE_TYPES)}
+For keywords, use freeform strings (up to 10).
+
+Return a JSON object with exactly these four fields:
+- "productCategories": updated array
+- "specialties": updated array
+- "idealStoreTypes": updated array (ordered best-fit first)
+- "keywords": updated array
+
+Return ONLY the JSON object.`;
+
+  const completion = await openai.chat.completions.create({
+    model: "gpt-4o-mini",
+    messages: [
+      {
+        role: "system",
+        content: "You adjust brand classification tags based on user instructions. Respond with valid JSON only.",
+      },
+      { role: "user", content: prompt },
+    ],
+    response_format: { type: "json_object" },
+    temperature: 0,
+    max_tokens: 800,
+  });
+
+  const raw = completion.choices[0]?.message?.content || "{}";
+  const data = JSON.parse(raw);
+
+  const categorySet = new Set(CATEGORY_VOCAB);
+  const specialtySet = new Set(SPECIALTY_VOCAB);
+  const storeTypeSet = new Set(STORE_TYPES);
+
+  return {
+    productCategories: Array.isArray(data.productCategories)
+      ? data.productCategories.filter((c: unknown) => typeof c === "string" && categorySet.has(c))
+      : [],
+    specialties: Array.isArray(data.specialties)
+      ? data.specialties.filter((s: unknown) => typeof s === "string" && specialtySet.has(s))
+      : [],
+    idealStoreTypes: Array.isArray(data.idealStoreTypes)
+      ? data.idealStoreTypes.filter((t: unknown) => typeof t === "string" && storeTypeSet.has(t))
+      : [],
+    keywords: Array.isArray(data.keywords)
+      ? data.keywords.filter((k: unknown) => typeof k === "string" && k.trim()).slice(0, 10)
+      : [],
+  };
+}
+
 class HttpError extends Error {
   constructor(message: string, public status: number) {
     super(message);
@@ -278,10 +345,21 @@ serve(async (req) => {
 
   try {
     const body = await req.json().catch(() => ({}));
+
+    // Adjust-brand mode: modify existing tags via natural language
+    const instruction = (body?.instruction ?? "").toString().trim();
+    if (instruction) {
+      const currentTags = body?.currentTags ?? {};
+      const openai = new OpenAI({ apiKey });
+      const adjusted = await adjustBrandTags(openai, currentTags, instruction);
+      return jsonResponse(adjusted);
+    }
+
+    // Analyze-brand mode: classify a brand URL
     const rawUrl = (body?.url ?? "").toString();
     const url = normalizeUrl(rawUrl);
     if (!url) {
-      return jsonResponse({ error: "Missing 'url' in request body" }, 400);
+      return jsonResponse({ error: "Missing 'url' or 'instruction' in request body" }, 400);
     }
 
     let parsed: URL;
