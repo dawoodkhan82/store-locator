@@ -1037,10 +1037,9 @@
             background: white;
             border: 1px solid rgba(46, 170, 220, 0.3);
             border-radius: 6px;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 12px;
-            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .brand-match-card h3 {
@@ -1131,9 +1130,9 @@
 
         .brand-match-card .card-actions {
             display: flex;
-            flex-direction: column;
-            gap: 6px;
-            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
         }
 
         .brand-match-error {
@@ -5025,9 +5024,9 @@
                     ${data.targetCustomer ? `<div style="margin-top: 6px; font-size: 12px; color: rgba(55,53,47,0.55);"><strong style="color: rgba(55,53,47,0.7);">Target:</strong> ${escapeHtml(data.targetCustomer)}</div>` : ''}
                     ${socialsHtml}
                 </div>
-                <div style="display: flex; align-items: center; gap: 6px; margin-top: 4px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
                     <input id="brandAdjustInput" type="text" placeholder="Adjust tags, e.g. &quot;add tea shops&quot; or &quot;remove bakery&quot;"
-                        style="flex: 1; padding: 5px 8px; border: 1px solid rgba(55,53,47,0.16); border-radius: 4px; font-size: 12px; outline: none;"
+                        style="flex: 1; min-width: 0; padding: 5px 8px; border: 1px solid rgba(55,53,47,0.16); border-radius: 4px; font-size: 12px; outline: none;"
                         onkeydown="if(event.key==='Enter')adjustBrandTags()">
                     <button onclick="adjustBrandTags()" id="brandAdjustBtn"
                         style="padding: 5px 10px; border: 1px solid rgba(55,53,47,0.16); border-radius: 4px; background: white; font-size: 12px; cursor: pointer; white-space: nowrap;">Adjust</button>
