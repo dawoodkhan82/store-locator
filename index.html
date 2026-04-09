@@ -4805,7 +4805,7 @@
                     const costClass = isFreeWithinLimit || totalUsd === 0 ? 'free' : '';
                     return `
                         <label class="enrich-option">
-                            <input type="checkbox" value="${key}" data-cost-usd="${totalUsd}" data-free="${isFreeWithinLimit ? '1' : '0'}" onchange="updateAddBrandTotalCost()">
+                            <input type="checkbox" value="${key}" data-cost-usd="${totalUsd}" data-free="${isFreeWithinLimit ? '1' : '0'}" onchange="updateAddBrandTotalCost(event)">
                             <div class="enrich-option-body">
                                 <div class="enrich-option-title">
                                     <span>${escapeHtml(p.label)}</span>
