@@ -4991,7 +4991,7 @@
                 'brand-chip-storetype': 'idealStoreTypes',
                 'brand-chip-keyword': 'keywords',
             };
-            const chip = (text, cls) => `<span class="brand-chip ${cls}">${escapeHtml(text)}<span class="brand-chip-close" onclick="removeBrandTag('${chipFieldMap[cls]}', ${JSON.stringify(text)})">&times;</span></span>`;
+            const chip = (text, cls) => `<span class="brand-chip ${cls}">${escapeHtml(text)}<span class="brand-chip-close" onclick="removeBrandTag('${chipFieldMap[cls]}', ${escapeHtml(JSON.stringify(text))})">&times;</span></span>`;
             const chipGroup = (label, items, cls) => items && items.length
                 ? `<div class="chip-group"><span class="chip-group-label">${label}</span>${items.map(i => chip(i, cls)).join('')}</div>`
                 : '';
