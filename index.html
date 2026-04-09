@@ -1086,13 +1086,23 @@
         }
 
         .brand-chip {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
             padding: 2px 8px;
             border-radius: 3px;
             font-size: 11px;
             font-weight: 400;
             white-space: nowrap;
         }
+        .brand-chip-close {
+            cursor: pointer;
+            opacity: 0.45;
+            font-size: 13px;
+            line-height: 1;
+            margin-left: 1px;
+        }
+        .brand-chip-close:hover { opacity: 0.9; }
 
         .brand-chip-category { background-color: rgba(46, 170, 220, 0.15); color: rgb(24, 51, 71); }
         .brand-chip-specialty { background-color: rgba(52, 168, 83, 0.15); color: rgb(30, 90, 50); }
@@ -4455,7 +4465,7 @@
         const BRAND_MATCH_WEIGHTS = {
             categoryPerOverlap: 3,
             specialtyPerOverlap: 2,
-            storeTypePrimary: 5,
+            storeTypePrimary: 2,
             storeTypeSecondary: 2,
             keywordHit: 1,
         };
@@ -4812,8 +4822,26 @@
             updateAddBrandTotalCost();
         }
 
-        function updateAddBrandTotalCost() {
-            const checked = document.querySelectorAll('#addBrandEnrichOptions input[type="checkbox"]:checked');
+        function updateAddBrandTotalCost(evt) {
+            const container = document.getElementById('addBrandEnrichOptions');
+            const websiteCb = container.querySelector('input[value="website"]');
+            const geoapifyCb = container.querySelector('input[value="geoapify"]');
+            const placesCb = container.querySelector('input[value="google_places"]');
+
+            if (websiteCb && websiteCb.checked) {
+                const hasAddress = (geoapifyCb && geoapifyCb.checked) || (placesCb && placesCb.checked);
+                // User just checked website — auto-check geoapify (free) if neither is on
+                if (!hasAddress && evt && evt.target === websiteCb) {
+                    if (geoapifyCb) geoapifyCb.checked = true;
+                }
+                // User tried to uncheck the last address enricher — block it
+                if (!hasAddress && evt && evt.target !== websiteCb) {
+                    evt.target.checked = true;
+                    alert('Website enrichment requires at least one address enricher (Geoapify or Google Places) to be selected.');
+                }
+            }
+
+            const checked = container.querySelectorAll('input[type="checkbox"]:checked');
             let total = 0;
             let allFree = true;
             checked.forEach(cb => {
@@ -4957,7 +4985,13 @@
 
         function renderBrandMatchCard(data) {
             const card = document.getElementById('brandMatchCard');
-            const chip = (text, cls) => `<span class="brand-chip ${cls}">${escapeHtml(text)}</span>`;
+            const chipFieldMap = {
+                'brand-chip-category': 'productCategories',
+                'brand-chip-specialty': 'specialties',
+                'brand-chip-storetype': 'idealStoreTypes',
+                'brand-chip-keyword': 'keywords',
+            };
+            const chip = (text, cls) => `<span class="brand-chip ${cls}">${escapeHtml(text)}<span class="brand-chip-close" onclick="removeBrandTag('${chipFieldMap[cls]}', ${JSON.stringify(text)})">&times;</span></span>`;
             const chipGroup = (label, items, cls) => items && items.length
                 ? `<div class="chip-group"><span class="chip-group-label">${label}</span>${items.map(i => chip(i, cls)).join('')}</div>`
                 : '';
@@ -5014,6 +5048,15 @@
                 renderBrandMatchCard(BRAND_MATCH.data);
                 filterStores();
             }
+        }
+
+        function removeBrandTag(field, value) {
+            if (!BRAND_MATCH.data || !BRAND_MATCH.data[field]) return;
+            BRAND_MATCH.data[field] = BRAND_MATCH.data[field].filter(v => v !== value);
+            BRAND_MATCH.normalized = buildNormalizedBrand(BRAND_MATCH.data);
+            computeAllBrandScores();
+            renderBrandMatchCard(BRAND_MATCH.data);
+            filterStores();
         }
 
         // Score a store against a pre-normalized brand vocabulary. Callers MUST pass
