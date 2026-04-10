@@ -279,11 +279,11 @@ Return a JSON object with these fields:
 - "specialties": updated array of tags to INCLUDE
 - "idealStoreTypes": updated array (ordered best-fit first) to INCLUDE
 - "keywords": updated array to INCLUDE
-- "excludeCategories": array of productCategories to EXCLUDE (stores matching these are hidden)
-- "excludeSpecialties": array of specialties to EXCLUDE
-- "excludeStoreTypes": array of idealStoreTypes to EXCLUDE
-- "excludeKeywords": array of keywords to EXCLUDE
-- "excludeStoreNames": array of store name substrings to EXCLUDE (e.g. ["Whole Foods", "Trader Joe"])
+- "excludeTerms": array of freeform strings to EXCLUDE — any store whose name, categories,
+  specialties, store type, or description contains any of these terms will be hidden.
+  Use this for any removal request (e.g. "remove bakery" → ["Bakery"], "remove dried beans" → ["dried beans"])
+- "excludeStoreNames": array of store name substrings to EXCLUDE — use this ONLY when the user
+  specifically names a store to remove (e.g. "remove Whole Foods" → ["Whole Foods"])
 
 Use empty arrays for exclude fields if nothing should be excluded.
 Return ONLY the JSON object.`;
@@ -322,17 +322,8 @@ Return ONLY the JSON object.`;
     keywords: Array.isArray(data.keywords)
       ? data.keywords.filter((k: unknown) => typeof k === "string" && k.trim()).slice(0, 10)
       : [],
-    excludeCategories: Array.isArray(data.excludeCategories)
-      ? data.excludeCategories.filter((c: unknown) => typeof c === "string" && categorySet.has(c))
-      : [],
-    excludeSpecialties: Array.isArray(data.excludeSpecialties)
-      ? data.excludeSpecialties.filter((s: unknown) => typeof s === "string" && specialtySet.has(s))
-      : [],
-    excludeStoreTypes: Array.isArray(data.excludeStoreTypes)
-      ? data.excludeStoreTypes.filter((t: unknown) => typeof t === "string" && storeTypeSet.has(t))
-      : [],
-    excludeKeywords: Array.isArray(data.excludeKeywords)
-      ? data.excludeKeywords.filter((k: unknown) => typeof k === "string" && k.trim())
+    excludeTerms: Array.isArray(data.excludeTerms)
+      ? data.excludeTerms.filter((t: unknown) => typeof t === "string" && t.trim())
       : [],
     excludeStoreNames: Array.isArray(data.excludeStoreNames)
       ? data.excludeStoreNames.filter((n: unknown) => typeof n === "string" && n.trim())

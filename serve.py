@@ -250,11 +250,11 @@ Return a JSON object with these fields:
 - "specialties": updated array of tags to INCLUDE
 - "idealStoreTypes": updated array (ordered best-fit first) to INCLUDE
 - "keywords": updated array to INCLUDE
-- "excludeCategories": array of productCategories to EXCLUDE (stores matching these are hidden)
-- "excludeSpecialties": array of specialties to EXCLUDE
-- "excludeStoreTypes": array of idealStoreTypes to EXCLUDE
-- "excludeKeywords": array of keywords to EXCLUDE
-- "excludeStoreNames": array of store name substrings to EXCLUDE (e.g. ["Whole Foods", "Trader Joe"])
+- "excludeTerms": array of freeform strings to EXCLUDE — any store whose name, categories,
+  specialties, store type, or description contains any of these terms will be hidden.
+  Use this for any removal request (e.g. "remove bakery" → ["Bakery"], "remove dried beans" → ["dried beans"])
+- "excludeStoreNames": array of store name substrings to EXCLUDE — use this ONLY when the user
+  specifically names a store to remove (e.g. "remove Whole Foods" → ["Whole Foods"])
 
 Use empty arrays for exclude fields if nothing should be excluded.
 Return ONLY the JSON object."""
@@ -281,10 +281,7 @@ Return ONLY the JSON object."""
     data["idealStoreTypes"] = [t for t in data.get("idealStoreTypes", []) if t in STORE_TYPES]
     data["keywords"] = [k for k in data.get("keywords", []) if isinstance(k, str) and k.strip()][:10]
 
-    data["excludeCategories"] = [c for c in data.get("excludeCategories", []) if c in CATEGORY_VOCAB]
-    data["excludeSpecialties"] = [s for s in data.get("excludeSpecialties", []) if s in SPECIALTY_VOCAB]
-    data["excludeStoreTypes"] = [t for t in data.get("excludeStoreTypes", []) if t in STORE_TYPES]
-    data["excludeKeywords"] = [k for k in data.get("excludeKeywords", []) if isinstance(k, str) and k.strip()]
+    data["excludeTerms"] = [t for t in data.get("excludeTerms", []) if isinstance(t, str) and t.strip()]
     data["excludeStoreNames"] = [n for n in data.get("excludeStoreNames", []) if isinstance(n, str) and n.strip()]
 
     return data

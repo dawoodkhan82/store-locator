@@ -3977,21 +3977,12 @@
                     const score = BRAND_MATCH_SCORES.get(store);
                     matchesBrandFit = !!score && score.total >= brandMatchMinScore();
 
-                    // Exclusion filters
+                    // Exclusion filters — match excluded terms against all store text
                     if (matchesBrandFit) {
                         const ex = BRAND_MATCH.exclusions;
-                        const storeCats = (enrichment.productCategories || []).map(s => s.toLowerCase());
-                        const storeSpecs = (enrichment.specialties || []).map(s => s.toLowerCase());
-                        const storeType = (enrichment.storeType || '').toLowerCase();
-
-                        if (ex.productCategories.some(c => storeCats.includes(c.toLowerCase()))) matchesBrandFit = false;
-                        if (ex.specialties.some(s => storeSpecs.includes(s.toLowerCase()))) matchesBrandFit = false;
-                        if (ex.idealStoreTypes.some(t => t.toLowerCase() === storeType)) matchesBrandFit = false;
-                        if (ex.keywords.length > 0) {
-                            const storeText = [name, enrichment.aboutText || '', categories, specialties].join(' ').toLowerCase();
-                            if (ex.keywords.some(k => storeText.includes(k.toLowerCase()))) matchesBrandFit = false;
-                        }
-                        if (ex.storeNames.length > 0) {
+                        if (ex.terms.length > 0 || ex.storeNames.length > 0) {
+                            const storeText = [name, enrichment.aboutText || '', categories, specialties, (enrichment.storeType || '').toLowerCase()].join(' ');
+                            if (ex.terms.some(t => storeText.includes(t.toLowerCase()))) matchesBrandFit = false;
                             if (ex.storeNames.some(n => name.includes(n.toLowerCase()))) matchesBrandFit = false;
                         }
                     }
@@ -4476,12 +4467,9 @@
             normalized: null,        // pre-lowercased brand vocab, see buildNormalizedBrand()
             quality: 'balanced',
             loading: false,
-            exclusions: {            // tags/names removed by user → stores matching these are hidden
-                productCategories: [],
-                specialties: [],
-                idealStoreTypes: [],
-                keywords: [],
-                storeNames: [],
+            exclusions: {            // removed by user → stores matching these are hidden
+                terms: [],           // matched against all store text (name, categories, specialties, type, about)
+                storeNames: [],      // matched against store name only
             },
         };
 
@@ -4627,7 +4615,7 @@
             BRAND_MATCH.active = false;
             BRAND_MATCH.data = null;
             BRAND_MATCH.normalized = null;
-            BRAND_MATCH.exclusions = { productCategories: [], specialties: [], idealStoreTypes: [], keywords: [], storeNames: [] };
+            BRAND_MATCH.exclusions = { terms: [], storeNames: [] };
             BRAND_MATCH_SCORES.clear();
 
             document.getElementById('brandMatchUrl').value = '';
@@ -5014,11 +5002,8 @@
             const items = [];
             const excludedChip = (label, field, value) =>
                 `<span class="brand-chip" style="background: rgba(235,87,87,0.12); color: rgb(180,50,50); text-decoration: line-through;">${escapeHtml(label)}<span class="brand-chip-close" onclick="undoBrandExclusion('${field}', ${escapeHtml(JSON.stringify(value))})" title="Undo exclusion" style="text-decoration: none;">+</span></span>`;
-            for (const v of ex.productCategories) items.push(excludedChip(v, 'productCategories', v));
-            for (const v of ex.specialties) items.push(excludedChip(v, 'specialties', v));
-            for (const v of ex.idealStoreTypes) items.push(excludedChip(v, 'idealStoreTypes', v));
-            for (const v of ex.keywords) items.push(excludedChip(v, 'keywords', v));
-            for (const v of ex.storeNames) items.push(excludedChip(v, 'storeNames', v));
+            for (const v of ex.terms) items.push(excludedChip(v, 'terms', v));
+            for (const v of ex.storeNames) items.push(excludedChip('Store: ' + v, 'storeNames', v));
             if (!items.length) return '';
             return `<div class="chip-group"><span class="chip-group-label" style="color: rgb(180,50,50);">Excluded</span>${items.join('')}</div>`;
         }
@@ -5101,8 +5086,9 @@
         function removeBrandTag(field, value) {
             if (!BRAND_MATCH.data || !BRAND_MATCH.data[field]) return;
             BRAND_MATCH.data[field] = BRAND_MATCH.data[field].filter(v => v !== value);
-            if (BRAND_MATCH.exclusions[field] && !BRAND_MATCH.exclusions[field].includes(value)) {
-                BRAND_MATCH.exclusions[field].push(value);
+            const lv = value.toLowerCase();
+            if (!BRAND_MATCH.exclusions.terms.some(t => t.toLowerCase() === lv)) {
+                BRAND_MATCH.exclusions.terms.push(value);
             }
             BRAND_MATCH.normalized = buildNormalizedBrand(BRAND_MATCH.data);
             computeAllBrandScores();
@@ -5111,8 +5097,9 @@
         }
 
         function undoBrandExclusion(field, value) {
-            if (!BRAND_MATCH.exclusions[field]) return;
-            BRAND_MATCH.exclusions[field] = BRAND_MATCH.exclusions[field].filter(v => v !== value);
+            const list = BRAND_MATCH.exclusions[field];
+            if (!list) return;
+            BRAND_MATCH.exclusions[field] = list.filter(v => v !== value);
             renderBrandMatchCard(BRAND_MATCH.data);
             filterStores();
         }
@@ -5159,11 +5146,12 @@
 
                 // Merge exclusions
                 const ex = BRAND_MATCH.exclusions;
-                for (const c of (result.excludeCategories || [])) { if (!ex.productCategories.includes(c)) ex.productCategories.push(c); }
-                for (const s of (result.excludeSpecialties || [])) { if (!ex.specialties.includes(s)) ex.specialties.push(s); }
-                for (const t of (result.excludeStoreTypes || [])) { if (!ex.idealStoreTypes.includes(t)) ex.idealStoreTypes.push(t); }
-                for (const k of (result.excludeKeywords || [])) { if (!ex.keywords.includes(k)) ex.keywords.push(k); }
-                for (const n of (result.excludeStoreNames || [])) { if (!ex.storeNames.includes(n)) ex.storeNames.push(n); }
+                for (const t of (result.excludeTerms || [])) {
+                    if (!ex.terms.some(e => e.toLowerCase() === t.toLowerCase())) ex.terms.push(t);
+                }
+                for (const n of (result.excludeStoreNames || [])) {
+                    if (!ex.storeNames.some(e => e.toLowerCase() === n.toLowerCase())) ex.storeNames.push(n);
+                }
 
                 BRAND_MATCH.normalized = buildNormalizedBrand(BRAND_MATCH.data);
                 computeAllBrandScores();
