@@ -4322,6 +4322,7 @@
             // A null columnId means "never export this column".
             const csvColumnDefs = [
                 { header: 'Store Name',  columnId: 'name' },
+                { header: '# of Stores', columnId: 'storeCount' },
                 { header: 'Address',     columnId: 'address' },
                 { header: 'City',        columnId: 'address' },
                 { header: 'State',       columnId: 'address' },
@@ -4356,6 +4357,7 @@
             const csvRows = filteredStores.map(store => {
                 const enrichment = store.enrichment || {};
                 const socialLinks = enrichment.socialLinks || {};
+                const storeCount = store.locations?.length || store.locationCount || 1;
 
                 // Extract address components
                 const address = getStoreAddress(store);
@@ -4395,6 +4397,7 @@
 
                 const fullRow = [
                     store.displayName?.text || store.name || 'Unknown',
+                    storeCount,
                     address,
                     city,
                     state,
