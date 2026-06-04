@@ -33,12 +33,12 @@ FULL_OUTPUT_FILE = OUTPUT_DIR / 'combined_full_fields.json'
 
 # ── Trimming config (fields to keep in combined.json for the frontend) ──
 KEEP_TOP_LEVEL = {
-    "id", "name", "displayName", "lat", "lng",
+    "id", "name", "originalName", "displayName", "lat", "lng",
     "phone", "internationalPhoneNumber", "email",
     "url", "website", "websiteUri",
     "address", "display_address", "address_line_1", "formattedAddress", "streetaddress",
     "city", "state", "state_code", "postcode", "postal_code", "zip", "country",
-    "brand", "brands", "source", "scraped_at",
+    "brand", "brands", "customers", "source", "scraped_at",
     "rating", "userRatingCount", "googleMapsUri",
     "instagram", "facebook", "x_twitter",
     "enrichment",
@@ -110,6 +110,17 @@ GENERIC_NAME_WORDS = {
     'hometown', 'neighborhood', 'downtown', 'uptown',
     'east', 'west', 'north', 'south', 'central',
     'st', 'street', 'ave', 'avenue', 'rd', 'road',
+}
+
+CHAIN_CANONICAL_OVERRIDES = {
+    "central market": "Central Market",
+    "central markets": "Central Market",
+    "sendiks": "Sendiks",
+}
+
+CUSTOMER_REACHED_LISTS = {
+    "KCC": Path("/Users/dawoodkhan/Documents/Master List of Stores Reached Out to By Brands - KCC.csv"),
+    "Zuva": Path("/Users/dawoodkhan/Documents/Master List of Stores Reached Out to By Brands - Zuva.csv"),
 }
 
 # Military keywords
@@ -649,6 +660,11 @@ def merge_stores(existing_store, new_store):
 
     base_store = existing_store.copy()
 
+    existing_customers = set(existing_store.get('customers') or [])
+    new_customers = set(new_store.get('customers') or [])
+    if existing_customers or new_customers:
+        base_store['customers'] = sorted(existing_customers | new_customers)
+
     # Update with better data if new store has it
     if not base_store.get('websiteUri') and new_store.get('websiteUri'):
         base_store['websiteUri'] = new_store['websiteUri']
@@ -761,6 +777,14 @@ def normalize_for_clustering(name):
     # Collapse whitespace
     n = " ".join(n.split())
     return n
+
+
+def apply_chain_canonical_override(normalized_name):
+    """Return a known chain canonical for noisy location names when available."""
+    for canonical in CHAIN_CANONICAL_OVERRIDES:
+        if normalized_name == canonical or normalized_name.startswith(canonical + " "):
+            return canonical
+    return normalized_name
 
 
 def is_valid_canonical_prefix(prefix):
@@ -909,7 +933,10 @@ def auto_assign_canonical_names(
         return stats
 
     # Step 1: normalize names
-    normalized_names = [normalize_for_clustering(get_store_display_name(s)) for s in stores]
+    normalized_names = [
+        apply_chain_canonical_override(normalize_for_clustering(get_store_display_name(s)))
+        for s in stores
+    ]
 
     # Step 2: build prefix → set of store indices
     prefix_to_stores = defaultdict(set)
@@ -1045,7 +1072,7 @@ def auto_assign_canonical_names(
         if len(member_indices) < min_group_size:
             continue
 
-        display_name = _pick_display_name(member_indices, stores, canonical_norm)
+        display_name = CHAIN_CANONICAL_OVERRIDES.get(canonical_norm) or _pick_display_name(member_indices, stores, canonical_norm)
         if not display_name:
             continue
 
@@ -1064,6 +1091,59 @@ def auto_assign_canonical_names(
                 stats['stores_renamed'] += 1
             elif not original:
                 stores[i]['name'] = display_name
+
+    return stats
+
+
+def _compact_customer_match_name(name):
+    """Normalize a store name for customer reached-list matching."""
+    n = normalize_for_clustering(name)
+    n = apply_chain_canonical_override(n)
+    return n
+
+
+def load_reached_store_names(csv_path):
+    """Load normalized reached-store names from a one-column customer CSV."""
+    if not csv_path.exists():
+        return set()
+
+    names = set()
+    with open(csv_path, newline='', encoding='utf-8-sig') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            raw = row.get('Store Name') or row.get('store_name') or row.get('name') or ''
+            normalized = _compact_customer_match_name(raw.strip().strip('"'))
+            if normalized:
+                names.add(normalized)
+    return names
+
+
+def assign_customer_tags(stores):
+    """Tag stores that appear in customer reached-list CSVs."""
+    stats = {}
+    reached_by_customer = {
+        customer: load_reached_store_names(path)
+        for customer, path in CUSTOMER_REACHED_LISTS.items()
+    }
+
+    for customer in CUSTOMER_REACHED_LISTS:
+        stats[customer] = 0
+
+    for store in stores:
+        raw_name = get_store_display_name(store)
+        candidates = {
+            _compact_customer_match_name(raw_name),
+            _compact_customer_match_name(store.get('originalName') or ''),
+        }
+        for customer, reached_names in reached_by_customer.items():
+            if reached_names and any(candidate in reached_names for candidate in candidates if candidate):
+                customers = store.get('customers')
+                if not isinstance(customers, list):
+                    customers = []
+                if customer not in customers:
+                    customers.append(customer)
+                    store['customers'] = sorted(set(customers))
+                    stats[customer] += 1
 
     return stats
 
@@ -1426,6 +1506,13 @@ def main():
                 print(f"    - {canonical} ({count} locations)")
     print(f"  Keeping {len(all_stores):,} store records (individual locations preserved)")
 
+    print("\n4.75. Tagging customer reached lists...")
+    print("-" * 80)
+    customer_tag_counts = assign_customer_tags(all_stores)
+    stats['customer_tag_counts'] = customer_tag_counts
+    for customer, count in customer_tag_counts.items():
+        print(f"  {customer}: tagged {count:,} stores")
+
     stats['unique_locations'] = len(all_stores)
     stats['total'] = len(all_stores)
 
@@ -1464,6 +1551,7 @@ def main():
         'raw_stores': stats['raw'],
         'files_processed': stats['files_processed'],
         'files_skipped': stats['files_skipped'],
+        'customer_tag_counts': stats.get('customer_tag_counts', {}),
         'enrichment_counts': enrichment_counts,
         'sources': {
             'website_enriched_dir': str(WEBSITE_ENRICHED_DIR),
@@ -1506,6 +1594,9 @@ def main():
         print(f"Auto-detected chains:        {stats.get('chain_groups_detected', 0):,} "
               f"(renamed {stats.get('chain_stores_renamed', 0):,} store records)")
         print(f"Largest chain:               {stats.get('chain_largest_group', 0):,} locations")
+    if stats.get('customer_tag_counts'):
+        for customer, count in stats['customer_tag_counts'].items():
+            print(f"{customer} reached tags:          {count:,}")
     print(f"{'─'*80}")
     print(f"Final USA stores:            {stats['unique_locations']:,}")
     print(f"\nWholesale CRM integration:")

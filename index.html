@@ -1277,6 +1277,17 @@
                         </div>
                     </div>
 
+                    <!-- Customer Filter (multi-select with checkboxes) -->
+                    <div style="position: relative;">
+                        <button id="customerFilterButton" onclick="toggleCustomerFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
+                            <span id="customerFilterLabel">Customers</span>
+                            <span style="margin-left: 8px;">▼</span>
+                        </button>
+                        <div id="customerFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 180px; z-index: 1000;">
+                            <div id="customerCheckboxes" style="padding: 8px;"></div>
+                        </div>
+                    </div>
+
                     <!-- Store Type Filter (multi-select with checkboxes) -->
                     <div style="position: relative;">
                         <button id="storeTypeFilterButton" onclick="toggleStoreTypeFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
@@ -1376,6 +1387,7 @@
                         <tr id="tableHeaderRow">
                             <th data-column="name">Store Name</th>
                             <th data-column="address"><span class="th-content">Address<button class="hide-col-btn" onclick="hideColumn('address')" title="Hide column">×</button></span></th>
+                            <th data-column="customers"><span class="th-content">Customers<button class="hide-col-btn" onclick="hideColumn('customers')" title="Hide column">×</button></span></th>
                             <th data-column="brands"><span class="th-content">Brands<button class="hide-col-btn" onclick="hideColumn('brands')" title="Hide column">×</button></span></th>
                             <th data-column="categories"><span class="th-content">Categories<button class="hide-col-btn" onclick="hideColumn('categories')" title="Hide column">×</button></span></th>
                             <th data-column="storeType"><span class="th-content">Store Type<button class="hide-col-btn" onclick="hideColumn('storeType')" title="Hide column">×</button></span></th>
@@ -1387,7 +1399,7 @@
                             <th data-column="scraped"><span class="th-content">Scraped<button class="hide-col-btn" onclick="hideColumn('scraped')" title="Hide column">×</button></span></th>
                         </tr>
                         <tr id="hiddenColumnsRow" style="display: none;">
-                            <td colspan="10" style="background-color: rgba(46, 170, 220, 0.08); padding: 4px 8px; border-bottom: 1px solid rgba(55, 53, 47, 0.09);">
+                            <td colspan="11" style="background-color: rgba(46, 170, 220, 0.08); padding: 4px 8px; border-bottom: 1px solid rgba(55, 53, 47, 0.09);">
                                 <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                                     <span style="font-size: 12px; color: rgba(55, 53, 47, 0.65);">Hidden columns:</span>
                                     <div id="hiddenColumnsTags" style="display: flex; gap: 4px; flex-wrap: wrap;"></div>
@@ -2199,6 +2211,7 @@
         const TABLE_COLUMNS = [
             { id: 'name', label: 'Store Name', hideable: false },
             { id: 'address', label: 'Address', hideable: true },
+            { id: 'customers', label: 'Customers', hideable: true },
             { id: 'brands', label: 'Brands', hideable: true },
             { id: 'categories', label: 'Categories', hideable: true },
             { id: 'storeType', label: 'Store Type', hideable: true },
@@ -2210,15 +2223,31 @@
             { id: 'scraped', label: 'Scraped', hideable: true }
         ];
         let hiddenColumns = new Set();
+        const CUSTOMER_OPTIONS = ['KCC', 'Zuva'];
+
+        const CHAIN_NAME_OVERRIDES = [
+            { pattern: /^central\s+markets?\b/, display: 'Central Market' },
+            { pattern: /^sendiks?\b/, display: 'Sendiks' },
+        ];
 
         // Normalize store name for grouping - removes location-specific suffixes
         function normalizeStoreName(name) {
             if (!name) return 'Unknown';
 
-            let normalized = name.trim();
+            let normalized = name.trim().replace(/[’']/g, '');
+            const lowercase = normalized.toLowerCase();
+            const normalizedForOverride = lowercase
+                .replace(/\([^)]*\)/g, ' ')
+                .replace(/[#.,:;–—\-_/\\]+/g, ' ')
+                .replace(/\s+/g, ' ')
+                .trim();
+
+            const override = CHAIN_NAME_OVERRIDES.find(({ pattern }) => pattern.test(normalizedForOverride));
+            if (override) return override.display;
 
             // Remove store numbers like "#3011", "# 123", "#123"
-            normalized = normalized.replace(/\s*#\s*\d+\s*$/, '');
+            normalized = normalized.replace(/\s*#\s*\d+(?:\s+(?:grocery|market|store|location))?\s*$/i, '');
+            normalized = normalized.replace(/\s+#?\d+\s+(?:[A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,3})\s*$/, '');
 
             // Remove location suffixes after dash/hyphen: "Store – Location" or "Store - Location"
             // But keep if the dash is in the middle of a compound name
@@ -2266,11 +2295,20 @@
                     group.locationCount = group.locations.length;
 
                     // Merge brands from all locations
+                    const existingBrands = new Set(group.brands || [group.brand, group.source].filter(Boolean));
                     if (store.brands && Array.isArray(store.brands)) {
-                        const existingBrands = new Set(group.brands || []);
                         store.brands.forEach(b => existingBrands.add(b));
-                        group.brands = [...existingBrands];
+                    } else {
+                        [store.brand, store.source].filter(Boolean).forEach(b => existingBrands.add(b));
                     }
+                    group.brands = [...existingBrands];
+
+                    // Merge customer outreach tags from all locations
+                    const existingCustomers = new Set(group.customers || []);
+                    if (store.customers && Array.isArray(store.customers)) {
+                        store.customers.forEach(c => existingCustomers.add(c));
+                    }
+                    group.customers = [...existingCustomers];
 
                     // Merge enrichment data
                     if (store.enrichment) {
@@ -2780,6 +2818,7 @@
                 const phone = getStorePhone(store);
                 const website = getStoreWebsite(store);
                 const locationCount = store.locationCount || 1;
+                const customerTags = Array.isArray(store.customers) ? store.customers : [];
 
                 const enrichment = store.enrichment || {};
                 const productCategories = enrichment.productCategories || [];
@@ -2848,6 +2887,11 @@
                             <div style="display: flex; align-items: center; flex-wrap: wrap;">
                                 <span>${address.substring(0, 40)}${address.length > 40 ? '...' : ''}</span>
                                 ${locationBadge}
+                            </div>
+                        </td>
+                        <td data-column="customers" class="${hiddenColumns.has('customers') ? 'column-hidden' : ''}">
+                            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                                ${customerTags.length > 0 ? customerTags.map(c => `<span class="tag" style="background-color: rgba(120, 85, 195, 0.15); color: rgb(80, 50, 150); padding: 1px 6px; border-radius: 3px; font-size: 12px; font-weight: 400; display: inline-block; white-space: nowrap;">${c}</span>`).join('') : '-'}
                             </div>
                         </td>
                         <td data-column="brands" class="${hiddenColumns.has('brands') ? 'column-hidden' : ''}">
@@ -3583,6 +3627,44 @@
                 brandCheckboxes.appendChild(uncatContainer);
             }
 
+            // Populate customer checkboxes from the fixed customer vocabulary.
+            const customerCheckboxes = document.getElementById('customerCheckboxes');
+            customerCheckboxes.innerHTML = '';
+            const customerCounts = {};
+            CUSTOMER_OPTIONS.forEach(customer => customerCounts[customer] = 0);
+            GROUPED_STORES.forEach(store => {
+                const customers = Array.isArray(store.customers) ? store.customers : [];
+                customers.forEach(customer => {
+                    if (customer in customerCounts) customerCounts[customer]++;
+                });
+            });
+
+            CUSTOMER_OPTIONS.forEach(customer => {
+                const label = document.createElement('label');
+                label.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
+                label.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                label.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = customer;
+                checkbox.style.cssText = 'margin-right: 8px; cursor: pointer;';
+                checkbox.onchange = function() { filterStores(); };
+
+                const text = document.createElement('span');
+                text.style.cssText = 'flex: 1;';
+                text.textContent = customer;
+
+                const count = document.createElement('span');
+                count.style.cssText = 'color: rgba(55, 53, 47, 0.4); font-size: 12px; margin-left: 4px;';
+                count.textContent = (customerCounts[customer] || 0).toLocaleString();
+
+                label.appendChild(checkbox);
+                label.appendChild(text);
+                label.appendChild(count);
+                customerCheckboxes.appendChild(label);
+            });
+
             // Populate location (regions) checkboxes
             populateLocationFilter(storeTypeCounts);
         }
@@ -3821,7 +3903,7 @@
         }
 
         function closeAllFilterDropdowns(except) {
-            const ids = ['locationFilterDropdown', 'brandFilterDropdown', 'storeTypeFilterDropdown', 'socialFilterDropdown', 'sizeFilterDropdown'];
+            const ids = ['locationFilterDropdown', 'brandFilterDropdown', 'customerFilterDropdown', 'storeTypeFilterDropdown', 'socialFilterDropdown', 'sizeFilterDropdown'];
             ids.forEach(id => {
                 if (id !== except) document.getElementById(id).style.display = 'none';
             });
@@ -3836,6 +3918,12 @@
         function toggleBrandFilter() {
             closeAllFilterDropdowns('brandFilterDropdown');
             const dropdown = document.getElementById('brandFilterDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleCustomerFilter() {
+            closeAllFilterDropdowns('customerFilterDropdown');
+            const dropdown = document.getElementById('customerFilterDropdown');
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
@@ -3925,6 +4013,7 @@
         document.addEventListener('click', function(event) {
             const filters = [
                 { btn: 'brandFilterButton', dd: 'brandFilterDropdown' },
+                { btn: 'customerFilterButton', dd: 'customerFilterDropdown' },
                 { btn: 'storeTypeFilterButton', dd: 'storeTypeFilterDropdown' },
                 { btn: 'socialFilterButton', dd: 'socialFilterDropdown' },
                 { btn: 'locationFilterButton', dd: 'locationFilterDropdown' },
@@ -3948,6 +4037,10 @@
 
             // Get selected brands (only brand checkboxes, not category checkboxes)
             const selectedBrands = Array.from(document.querySelectorAll('#brandCheckboxes input[data-type="brand"]:checked'))
+                .map(cb => cb.value);
+
+            // Get selected customers
+            const selectedCustomers = Array.from(document.querySelectorAll('#customerCheckboxes input:checked'))
                 .map(cb => cb.value);
 
             // Get selected store types
@@ -4016,6 +4109,15 @@
                     );
                 }
 
+                // Customer filter (OR logic - match ANY selected customer)
+                let matchesCustomer = true;
+                if (selectedCustomers.length > 0) {
+                    const storeCustomers = Array.isArray(store.customers) ? store.customers : [];
+                    matchesCustomer = selectedCustomers.some(selectedCustomer =>
+                        storeCustomers.includes(selectedCustomer)
+                    );
+                }
+
                 // Store type filter (OR logic)
                 let matchesStoreType = true;
                 if (selectedStoreTypes.length > 0) {
@@ -4047,17 +4149,17 @@
                     matchesSize = locationCount > 10;
                 }
 
-                return matchesSearch && matchesLocation && matchesBrand && matchesStoreType && matchesSocial && matchesSize && matchesBrandFit;
+                return matchesSearch && matchesLocation && matchesBrand && matchesCustomer && matchesStoreType && matchesSocial && matchesSize && matchesBrandFit;
             });
 
             // Update button labels
-            updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
+            updateFilterLabels(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
 
             // Update active filter tags
-            updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
+            updateActiveFilterTags(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
 
             // Update filtered results count
-            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize, selectedStoreTypes);
+            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes);
 
             // Highlight export button when brand match is active
             updateExportButtonHighlight();
@@ -4066,10 +4168,10 @@
             sortStores();
         }
 
-        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedSocial, selectedSize, selectedStoreTypes) {
+        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes) {
             const countEl = document.getElementById('filteredResultsCount');
             const hasFilters = searchTerm || selectedStates.length > 0 ||
-                              selectedBrands.length > 0 || selectedSocial.length > 0 ||
+                              selectedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 ||
                               (selectedSize && selectedSize !== 'all') ||
                               (selectedStoreTypes && selectedStoreTypes.length > 0);
 
@@ -4082,8 +4184,9 @@
             }
         }
 
-        function updateFilterLabels(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
+        function updateFilterLabels(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
             const brandLabel = document.getElementById('brandFilterLabel');
+            const customerLabel = document.getElementById('customerFilterLabel');
             const socialLabel = document.getElementById('socialFilterLabel');
             const locationLabel = document.getElementById('locationFilterLabel');
             const sizeLabel = document.getElementById('sizeFilterLabel');
@@ -4105,6 +4208,15 @@
             } else {
                 brandLabel.textContent = 'Brands';
                 brandLabel.style.fontWeight = 'normal';
+            }
+
+            // Update customer label
+            if (selectedCustomers.length > 0) {
+                customerLabel.textContent = `Customers (${selectedCustomers.length})`;
+                customerLabel.style.fontWeight = '600';
+            } else {
+                customerLabel.textContent = 'Customers';
+                customerLabel.style.fontWeight = 'normal';
             }
 
             // Update social label
@@ -4142,12 +4254,12 @@
             }
         }
 
-        function updateActiveFilterTags(selectedBrands, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
+        function updateActiveFilterTags(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
             const container = document.getElementById('activeFiltersContainer');
             const tagsDiv = document.getElementById('activeFilterTags');
             tagsDiv.innerHTML = '';
 
-            const hasFilters = selectedBrands.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
+            const hasFilters = selectedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
                               (selectedSize && selectedSize !== 'all') ||
                               (selectedStoreTypes && selectedStoreTypes.length > 0);
 
@@ -4177,6 +4289,16 @@
                         const category = checkbox.dataset.category;
                         if (category) updateCategoryCheckbox(category);
                     }
+                    filterStores();
+                });
+                tagsDiv.appendChild(tag);
+            });
+
+            // Add customer tags
+            selectedCustomers.forEach(customer => {
+                const tag = createFilterTag(customer, () => {
+                    const checkbox = document.querySelector(`#customerCheckboxes input[value="${customer}"]`);
+                    if (checkbox) checkbox.checked = false;
                     filterStores();
                 });
                 tagsDiv.appendChild(tag);
@@ -4270,6 +4392,9 @@
                 if (btn) btn.textContent = '▶';
             });
 
+            // Uncheck all customer checkboxes
+            document.querySelectorAll('#customerCheckboxes input').forEach(cb => cb.checked = false);
+
             // Uncheck all store type checkboxes
             document.querySelectorAll('#storeTypeCheckboxes input').forEach(cb => cb.checked = false);
 
@@ -4327,6 +4452,7 @@
                 { header: 'City',        columnId: 'address' },
                 { header: 'State',       columnId: 'address' },
                 { header: 'ZIP Code',    columnId: 'address' },
+                { header: 'Customers',   columnId: 'customers' },
                 { header: 'Brands',      columnId: 'brands' },
                 { header: 'Store Type',  columnId: 'storeType' },
                 { header: 'Categories',  columnId: 'categories' },
@@ -4376,6 +4502,7 @@
                     const brandList = [store.brand, store.source].filter(b => b);
                     brands = brandList.join('; ');
                 }
+                const customers = Array.isArray(store.customers) ? store.customers.join('; ') : '';
 
                 // Extract categories and specialties
                 const storeType = enrichment.storeType || 'Other';
@@ -4402,6 +4529,7 @@
                     city,
                     state,
                     zip,
+                    customers,
                     brands,
                     storeType,
                     categories,
