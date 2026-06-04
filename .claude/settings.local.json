@@ -39,7 +39,15 @@
       "Bash(VIEWER_PORT=8765 python3 serve.py)",
       "Bash(lsof -ti:8765)",
       "Bash(xargs kill:*)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(bash upload_data_release.sh)",
+      "Bash(supabase --version)",
+      "Bash(supabase functions:*)",
+      "Skill(update-config)",
+      "Bash(awk 'NR==4290')",
+      "Bash(awk 'NR==4544')",
+      "Bash(nslookup dmaqfovsgtehgtcutgmo.supabase.co)",
+      "Bash(nslookup supabase.co)"
     ],
     "deny": [],
     "ask": []
