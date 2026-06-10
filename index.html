@@ -1180,6 +1180,69 @@
             border: 1.5px solid rgba(46, 170, 220, 0.5);
             pointer-events: none;
         }
+
+        /* Store size dual-handle range slider */
+        .size-slider {
+            position: relative;
+            height: 24px;
+        }
+        .size-slider input[type="range"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 24px;
+            margin: 0;
+            background: none;
+            pointer-events: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .size-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            pointer-events: auto;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: white;
+            border: 1.5px solid rgb(46, 170, 220);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            cursor: pointer;
+            margin-top: 4px;
+        }
+        .size-slider input[type="range"]::-moz-range-thumb {
+            pointer-events: auto;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: white;
+            border: 1.5px solid rgb(46, 170, 220);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        .size-slider input[type="range"]::-webkit-slider-runnable-track {
+            background: none;
+        }
+        .size-slider input[type="range"]::-moz-range-track {
+            background: none;
+        }
+        .size-slider-track {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            border-radius: 2px;
+            background: rgba(55, 53, 47, 0.16);
+        }
+        .size-slider-fill {
+            position: absolute;
+            top: 10px;
+            height: 4px;
+            border-radius: 2px;
+            background: rgb(46, 170, 220);
+        }
     </style>
 </head>
 <body>
@@ -1346,28 +1409,25 @@
                             <span id="sizeFilterLabel">Store Size</span>
                             <span style="margin-left: 8px;">▼</span>
                         </button>
-                        <div id="sizeFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 200px; z-index: 1000;">
-                            <div style="padding: 8px;">
-                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
-                                    <input type="radio" name="sizeFilter" value="all" onchange="filterStores()" style="margin-right: 8px;" checked>
-                                    All stores
-                                </label>
-                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
-                                    <input type="radio" name="sizeFilter" value="single" onchange="filterStores()" style="margin-right: 8px;">
-                                    1 location
-                                </label>
-                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
-                                    <input type="radio" name="sizeFilter" value="max5" onchange="filterStores()" style="margin-right: 8px;">
-                                    ≤5 locations
-                                </label>
-                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
-                                    <input type="radio" name="sizeFilter" value="max10" onchange="filterStores()" style="margin-right: 8px;">
-                                    ≤10 locations
-                                </label>
-                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
-                                    <input type="radio" name="sizeFilter" value="min10" onchange="filterStores()" style="margin-right: 8px;">
-                                    10+ locations
-                                </label>
+                        <div id="sizeFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 240px; z-index: 1000;">
+                            <div style="padding: 12px;">
+                                <div style="font-size: 13px; color: rgba(55, 53, 47, 0.65); margin-bottom: 10px;">Number of locations</div>
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                    <input type="number" id="sizeMinInput" min="1" max="101" value="1" onchange="onSizeInputChange()" style="width: 64px; font-size: 14px; padding: 4px 6px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-sizing: border-box;">
+                                    <span style="font-size: 13px; color: rgba(55, 53, 47, 0.65);">to</span>
+                                    <input type="number" id="sizeMaxInput" min="1" max="101" value="101" onchange="onSizeInputChange()" style="width: 64px; font-size: 14px; padding: 4px 6px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-sizing: border-box;">
+                                    <span id="sizeMaxPlus" style="font-size: 13px; color: rgba(55, 53, 47, 0.65);">(100+)</span>
+                                </div>
+                                <div class="size-slider">
+                                    <div class="size-slider-track"></div>
+                                    <div id="sizeSliderFill" class="size-slider-fill" style="left: 0%; right: 0%;"></div>
+                                    <input type="range" id="sizeMinRange" min="1" max="101" value="1" oninput="onSizeRangeInput('min')">
+                                    <input type="range" id="sizeMaxRange" min="1" max="101" value="101" oninput="onSizeRangeInput('max')">
+                                </div>
+                                <div style="display: flex; justify-content: space-between; font-size: 11px; color: rgba(55, 53, 47, 0.5); margin-top: 2px;">
+                                    <span>1</span>
+                                    <span>100+</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -3986,6 +4046,67 @@
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
+        // Store size slider: 1 to 101, where 101 means "100+" (no upper bound)
+        const SIZE_SLIDER_MIN = 1;
+        const SIZE_SLIDER_MAX = 101;
+
+        function getSizeRange() {
+            const min = parseInt(document.getElementById('sizeMinInput')?.value, 10);
+            const max = parseInt(document.getElementById('sizeMaxInput')?.value, 10);
+            return {
+                min: isNaN(min) ? SIZE_SLIDER_MIN : Math.max(SIZE_SLIDER_MIN, Math.min(min, SIZE_SLIDER_MAX)),
+                max: isNaN(max) ? SIZE_SLIDER_MAX : Math.max(SIZE_SLIDER_MIN, Math.min(max, SIZE_SLIDER_MAX))
+            };
+        }
+
+        function isSizeFilterActive(range) {
+            return !!range && (range.min > SIZE_SLIDER_MIN || range.max < SIZE_SLIDER_MAX);
+        }
+
+        function formatSizeRange(range) {
+            const maxLabel = range.max >= SIZE_SLIDER_MAX ? '100+' : range.max;
+            if (range.min === range.max) {
+                return `${range.min} Location${range.min === 1 ? '' : 's'}`;
+            }
+            return `${range.min}–${maxLabel} Locations`;
+        }
+
+        function setSizeControls(min, max) {
+            document.getElementById('sizeMinInput').value = min;
+            document.getElementById('sizeMaxInput').value = max;
+            document.getElementById('sizeMinRange').value = min;
+            document.getElementById('sizeMaxRange').value = max;
+            document.getElementById('sizeMaxPlus').style.visibility = max >= SIZE_SLIDER_MAX ? 'visible' : 'hidden';
+
+            const fill = document.getElementById('sizeSliderFill');
+            const span = SIZE_SLIDER_MAX - SIZE_SLIDER_MIN;
+            fill.style.left = `${((min - SIZE_SLIDER_MIN) / span) * 100}%`;
+            fill.style.right = `${((SIZE_SLIDER_MAX - max) / span) * 100}%`;
+        }
+
+        function onSizeRangeInput(which) {
+            let min = parseInt(document.getElementById('sizeMinRange').value, 10);
+            let max = parseInt(document.getElementById('sizeMaxRange').value, 10);
+            // Keep handles from crossing: the dragged handle pushes the other's limit
+            if (min > max) {
+                if (which === 'min') max = min; else min = max;
+            }
+            setSizeControls(min, max);
+            filterStores();
+        }
+
+        function onSizeInputChange() {
+            const range = getSizeRange();
+            let { min, max } = range;
+            if (min > max) max = min;
+            setSizeControls(min, max);
+            filterStores();
+        }
+
+        function resetSizeFilter() {
+            setSizeControls(SIZE_SLIDER_MIN, SIZE_SLIDER_MAX);
+        }
+
         function toggleSizeFilter() {
             closeAllFilterDropdowns('sizeFilterDropdown');
             const dropdown = document.getElementById('sizeFilterDropdown');
@@ -4104,8 +4225,8 @@
             const selectedSocial = Array.from(document.querySelectorAll('#socialFilterDropdown input:checked'))
                 .map(cb => cb.value);
 
-            // Get selected size filter
-            const selectedSize = document.querySelector('#sizeFilterDropdown input[name="sizeFilter"]:checked')?.value || 'all';
+            // Get selected size range (max of 101 means "100+", i.e. no upper bound)
+            const sizeRange = getSizeRange();
 
             filteredStores = GROUPED_STORES.filter(store => {
                 const name = (store.displayName?.text || store.name || '').toLowerCase();
@@ -4198,30 +4319,22 @@
                     });
                 }
 
-                // Size filter (number of locations)
-                let matchesSize = true;
+                // Size filter (number of locations within selected range)
                 const locationCount = store.locationCount || 1;
-                if (selectedSize === 'single') {
-                    matchesSize = locationCount === 1;
-                } else if (selectedSize === 'max5') {
-                    matchesSize = locationCount <= 5;
-                } else if (selectedSize === 'max10') {
-                    matchesSize = locationCount <= 10;
-                } else if (selectedSize === 'min10') {
-                    matchesSize = locationCount > 10;
-                }
+                const matchesSize = locationCount >= sizeRange.min &&
+                    (sizeRange.max >= SIZE_SLIDER_MAX || locationCount <= sizeRange.max);
 
                 return matchesSearch && matchesLocation && matchesBrand && matchesExcludedBrands && matchesCustomer && matchesStoreType && matchesSocial && matchesSize && matchesBrandFit;
             });
 
             // Update button labels
-            updateFilterLabels(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
+            updateFilterLabels(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, sizeRange, selectedStoreTypes);
 
             // Update active filter tags
-            updateActiveFilterTags(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
+            updateActiveFilterTags(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, sizeRange, selectedStoreTypes);
 
             // Update filtered results count
-            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, excludedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes);
+            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, excludedBrands, selectedCustomers, selectedSocial, sizeRange, selectedStoreTypes);
 
             // Highlight export button when brand match is active
             updateExportButtonHighlight();
@@ -4230,11 +4343,11 @@
             sortStores();
         }
 
-        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, excludedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes) {
+        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, excludedBrands, selectedCustomers, selectedSocial, sizeRange, selectedStoreTypes) {
             const countEl = document.getElementById('filteredResultsCount');
             const hasFilters = searchTerm || selectedStates.length > 0 ||
                               selectedBrands.length > 0 || excludedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 ||
-                              (selectedSize && selectedSize !== 'all') ||
+                              isSizeFilterActive(sizeRange) ||
                               (selectedStoreTypes && selectedStoreTypes.length > 0);
 
             if (hasFilters) {
@@ -4246,7 +4359,7 @@
             }
         }
 
-        function updateFilterLabels(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
+        function updateFilterLabels(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, sizeRange, selectedStoreTypes) {
             const brandLabel = document.getElementById('brandFilterLabel');
             const excludeBrandLabel = document.getElementById('excludeBrandFilterLabel');
             const customerLabel = document.getElementById('customerFilterLabel');
@@ -4301,15 +4414,8 @@
             }
 
             // Update size label
-            const sizeLabels = {
-                'all': 'Store Size',
-                'single': '1 Location',
-                'max5': '≤5 Locations',
-                'max10': '≤10 Locations',
-                'min10': '10+ Locations'
-            };
-            if (selectedSize && selectedSize !== 'all') {
-                sizeLabel.textContent = sizeLabels[selectedSize] || 'Store Size';
+            if (isSizeFilterActive(sizeRange)) {
+                sizeLabel.textContent = formatSizeRange(sizeRange);
                 sizeLabel.style.fontWeight = '600';
             } else {
                 sizeLabel.textContent = 'Store Size';
@@ -4326,13 +4432,13 @@
             }
         }
 
-        function updateActiveFilterTags(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
+        function updateActiveFilterTags(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, sizeRange, selectedStoreTypes) {
             const container = document.getElementById('activeFiltersContainer');
             const tagsDiv = document.getElementById('activeFilterTags');
             tagsDiv.innerHTML = '';
 
             const hasFilters = selectedBrands.length > 0 || excludedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
-                              (selectedSize && selectedSize !== 'all') ||
+                              isSizeFilterActive(sizeRange) ||
                               (selectedStoreTypes && selectedStoreTypes.length > 0);
 
             if (!hasFilters) {
@@ -4410,16 +4516,9 @@
             }
 
             // Add size tag
-            if (selectedSize && selectedSize !== 'all') {
-                const sizeLabels = {
-                    'single': '1 Location',
-                    'max5': '≤5 Locations',
-                    'max10': '≤10 Locations',
-                    'min10': '10+ Locations'
-                };
-                const tag = createFilterTag(sizeLabels[selectedSize], () => {
-                    const allRadio = document.querySelector('#sizeFilterDropdown input[value="all"]');
-                    if (allRadio) allRadio.checked = true;
+            if (isSizeFilterActive(sizeRange)) {
+                const tag = createFilterTag(formatSizeRange(sizeRange), () => {
+                    resetSizeFilter();
                     filterStores();
                 });
                 tagsDiv.appendChild(tag);
@@ -4486,9 +4585,8 @@
             // Uncheck all social checkboxes
             document.querySelectorAll('#socialFilterDropdown input').forEach(cb => cb.checked = false);
 
-            // Reset size filter to 'all'
-            const allSizeRadio = document.querySelector('#sizeFilterDropdown input[value="all"]');
-            if (allSizeRadio) allSizeRadio.checked = true;
+            // Reset size filter to full range
+            resetSizeFilter();
 
             // Also clear brand match state
             if (BRAND_MATCH.active) {
