@@ -1277,6 +1277,17 @@
                         </div>
                     </div>
 
+                    <!-- Exclude Brand Filter -->
+                    <div style="position: relative;">
+                        <button id="excludeBrandFilterButton" onclick="toggleExcludeBrandFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
+                            <span id="excludeBrandFilterLabel">Exclude Brands</span>
+                            <span style="margin-left: 8px;">▼</span>
+                        </button>
+                        <div id="excludeBrandFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); max-height: 400px; overflow-y: auto; min-width: 240px; z-index: 1000;">
+                            <div id="excludedBrandCheckboxes" style="padding: 8px;"></div>
+                        </div>
+                    </div>
+
                     <!-- Customer Filter (multi-select with checkboxes) -->
                     <div style="position: relative;">
                         <button id="customerFilterButton" onclick="toggleCustomerFilter()" style="min-width: 150px; box-sizing: border-box; font-size: 14px; padding: 6px 10px; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; background-color: rgba(242, 241, 238, 0.6); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.1s;" onmouseover="this.style.backgroundColor='rgba(242, 241, 238, 1)'" onmouseout="this.style.backgroundColor='rgba(242, 241, 238, 0.6)'">
@@ -1284,7 +1295,13 @@
                             <span style="margin-left: 8px;">▼</span>
                         </button>
                         <div id="customerFilterDropdown" style="display: none; position: absolute; top: 100%; left: 0; margin-top: 4px; background: white; border: 1px solid rgba(55, 53, 47, 0.16); border-radius: 3px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); min-width: 180px; z-index: 1000;">
-                            <div id="customerCheckboxes" style="padding: 8px;"></div>
+                            <div style="padding: 8px 8px 0 8px;">
+                                <label style="display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s; border-bottom: 1px solid rgba(55, 53, 47, 0.09);" onmouseover="this.style.backgroundColor='rgba(55, 53, 47, 0.03)'" onmouseout="this.style.backgroundColor='transparent'">
+                                    <input id="excludeCustomersToggle" type="checkbox" onchange="filterStores()" style="margin-right: 8px; cursor: pointer;">
+                                    Exclude selected
+                                </label>
+                            </div>
+                            <div id="customerCheckboxes" style="padding: 4px 8px 8px 8px;"></div>
                         </div>
                     </div>
 
@@ -3627,6 +3644,30 @@
                 brandCheckboxes.appendChild(uncatContainer);
             }
 
+            // Populate excluded brand checkboxes as a separate flat list.
+            const excludedBrandCheckboxes = document.getElementById('excludedBrandCheckboxes');
+            excludedBrandCheckboxes.innerHTML = '';
+            Array.from(availableBrands).sort().forEach(brand => {
+                const brandLabel = document.createElement('label');
+                brandLabel.style.cssText = 'display: flex; align-items: center; padding: 6px; cursor: pointer; font-size: 14px; border-radius: 3px; transition: background 0.1s;';
+                brandLabel.onmouseover = function() { this.style.backgroundColor = 'rgba(55, 53, 47, 0.03)'; };
+                brandLabel.onmouseout = function() { this.style.backgroundColor = 'transparent'; };
+
+                const brandCheckbox = document.createElement('input');
+                brandCheckbox.type = 'checkbox';
+                brandCheckbox.value = brand;
+                brandCheckbox.style.cssText = 'margin-right: 8px; cursor: pointer;';
+                brandCheckbox.onchange = function() { filterStores(); };
+
+                const brandText = document.createElement('span');
+                brandText.style.cssText = 'flex: 1;';
+                brandText.textContent = brand.replace(/_/g, ' ');
+
+                brandLabel.appendChild(brandCheckbox);
+                brandLabel.appendChild(brandText);
+                excludedBrandCheckboxes.appendChild(brandLabel);
+            });
+
             // Populate customer checkboxes from the fixed customer vocabulary.
             const customerCheckboxes = document.getElementById('customerCheckboxes');
             customerCheckboxes.innerHTML = '';
@@ -3903,7 +3944,7 @@
         }
 
         function closeAllFilterDropdowns(except) {
-            const ids = ['locationFilterDropdown', 'brandFilterDropdown', 'customerFilterDropdown', 'storeTypeFilterDropdown', 'socialFilterDropdown', 'sizeFilterDropdown'];
+            const ids = ['locationFilterDropdown', 'brandFilterDropdown', 'excludeBrandFilterDropdown', 'customerFilterDropdown', 'storeTypeFilterDropdown', 'socialFilterDropdown', 'sizeFilterDropdown'];
             ids.forEach(id => {
                 if (id !== except) document.getElementById(id).style.display = 'none';
             });
@@ -3918,6 +3959,12 @@
         function toggleBrandFilter() {
             closeAllFilterDropdowns('brandFilterDropdown');
             const dropdown = document.getElementById('brandFilterDropdown');
+            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function toggleExcludeBrandFilter() {
+            closeAllFilterDropdowns('excludeBrandFilterDropdown');
+            const dropdown = document.getElementById('excludeBrandFilterDropdown');
             dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
         }
 
@@ -4013,6 +4060,7 @@
         document.addEventListener('click', function(event) {
             const filters = [
                 { btn: 'brandFilterButton', dd: 'brandFilterDropdown' },
+                { btn: 'excludeBrandFilterButton', dd: 'excludeBrandFilterDropdown' },
                 { btn: 'customerFilterButton', dd: 'customerFilterDropdown' },
                 { btn: 'storeTypeFilterButton', dd: 'storeTypeFilterDropdown' },
                 { btn: 'socialFilterButton', dd: 'socialFilterDropdown' },
@@ -4039,9 +4087,14 @@
             const selectedBrands = Array.from(document.querySelectorAll('#brandCheckboxes input[data-type="brand"]:checked'))
                 .map(cb => cb.value);
 
+            // Get excluded brands
+            const excludedBrands = Array.from(document.querySelectorAll('#excludedBrandCheckboxes input:checked'))
+                .map(cb => cb.value);
+
             // Get selected customers
             const selectedCustomers = Array.from(document.querySelectorAll('#customerCheckboxes input:checked'))
                 .map(cb => cb.value);
+            const excludeSelectedCustomers = document.getElementById('excludeCustomersToggle')?.checked || false;
 
             // Get selected store types
             const selectedStoreTypes = Array.from(document.querySelectorAll('#storeTypeCheckboxes input:checked'))
@@ -4064,6 +4117,7 @@
                 const specialties = (enrichment.specialties || []).join(' ').toLowerCase();
                 const storeTypeSearch = (enrichment.storeType || '').toLowerCase();
                 const socialLinks = enrichment.socialLinks || {};
+                const storeBrands = store.brands || [store.brand, store.source].filter(Boolean);
 
                 let matchesBrandFit = true;
                 if (BRAND_MATCH.active) {
@@ -4103,9 +4157,16 @@
                 // Brand filter (OR logic - match ANY selected brand)
                 let matchesBrand = true;
                 if (selectedBrands.length > 0) {
-                    const storeBrands = store.brands || [store.brand, store.source].filter(Boolean);
                     matchesBrand = selectedBrands.some(selectedBrand =>
                         storeBrands.includes(selectedBrand)
+                    );
+                }
+
+                // Exclude brand filter (hide stores carrying ANY excluded brand)
+                let matchesExcludedBrands = true;
+                if (excludedBrands.length > 0) {
+                    matchesExcludedBrands = !excludedBrands.some(excludedBrand =>
+                        storeBrands.includes(excludedBrand)
                     );
                 }
 
@@ -4113,9 +4174,10 @@
                 let matchesCustomer = true;
                 if (selectedCustomers.length > 0) {
                     const storeCustomers = Array.isArray(store.customers) ? store.customers : [];
-                    matchesCustomer = selectedCustomers.some(selectedCustomer =>
+                    const hasSelectedCustomer = selectedCustomers.some(selectedCustomer =>
                         storeCustomers.includes(selectedCustomer)
                     );
+                    matchesCustomer = excludeSelectedCustomers ? !hasSelectedCustomer : hasSelectedCustomer;
                 }
 
                 // Store type filter (OR logic)
@@ -4149,17 +4211,17 @@
                     matchesSize = locationCount > 10;
                 }
 
-                return matchesSearch && matchesLocation && matchesBrand && matchesCustomer && matchesStoreType && matchesSocial && matchesSize && matchesBrandFit;
+                return matchesSearch && matchesLocation && matchesBrand && matchesExcludedBrands && matchesCustomer && matchesStoreType && matchesSocial && matchesSize && matchesBrandFit;
             });
 
             // Update button labels
-            updateFilterLabels(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
+            updateFilterLabels(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
 
             // Update active filter tags
-            updateActiveFilterTags(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
+            updateActiveFilterTags(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes);
 
             // Update filtered results count
-            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes);
+            updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, excludedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes);
 
             // Highlight export button when brand match is active
             updateExportButtonHighlight();
@@ -4168,10 +4230,10 @@
             sortStores();
         }
 
-        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes) {
+        function updateFilteredResultsCount(searchTerm, selectedStates, selectedBrands, excludedBrands, selectedCustomers, selectedSocial, selectedSize, selectedStoreTypes) {
             const countEl = document.getElementById('filteredResultsCount');
             const hasFilters = searchTerm || selectedStates.length > 0 ||
-                              selectedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 ||
+                              selectedBrands.length > 0 || excludedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 ||
                               (selectedSize && selectedSize !== 'all') ||
                               (selectedStoreTypes && selectedStoreTypes.length > 0);
 
@@ -4184,8 +4246,9 @@
             }
         }
 
-        function updateFilterLabels(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
+        function updateFilterLabels(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
             const brandLabel = document.getElementById('brandFilterLabel');
+            const excludeBrandLabel = document.getElementById('excludeBrandFilterLabel');
             const customerLabel = document.getElementById('customerFilterLabel');
             const socialLabel = document.getElementById('socialFilterLabel');
             const locationLabel = document.getElementById('locationFilterLabel');
@@ -4210,9 +4273,18 @@
                 brandLabel.style.fontWeight = 'normal';
             }
 
+            // Update excluded brand label
+            if (excludedBrands.length > 0) {
+                excludeBrandLabel.textContent = `Exclude Brands (${excludedBrands.length})`;
+                excludeBrandLabel.style.fontWeight = '600';
+            } else {
+                excludeBrandLabel.textContent = 'Exclude Brands';
+                excludeBrandLabel.style.fontWeight = 'normal';
+            }
+
             // Update customer label
             if (selectedCustomers.length > 0) {
-                customerLabel.textContent = `Customers (${selectedCustomers.length})`;
+                customerLabel.textContent = `${excludeSelectedCustomers ? 'Exclude ' : ''}Customers (${selectedCustomers.length})`;
                 customerLabel.style.fontWeight = '600';
             } else {
                 customerLabel.textContent = 'Customers';
@@ -4254,12 +4326,12 @@
             }
         }
 
-        function updateActiveFilterTags(selectedBrands, selectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
+        function updateActiveFilterTags(selectedBrands, excludedBrands, selectedCustomers, excludeSelectedCustomers, selectedSocial, selectedStates, selectedSize, selectedStoreTypes) {
             const container = document.getElementById('activeFiltersContainer');
             const tagsDiv = document.getElementById('activeFilterTags');
             tagsDiv.innerHTML = '';
 
-            const hasFilters = selectedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
+            const hasFilters = selectedBrands.length > 0 || excludedBrands.length > 0 || selectedCustomers.length > 0 || selectedSocial.length > 0 || selectedStates.length > 0 ||
                               (selectedSize && selectedSize !== 'all') ||
                               (selectedStoreTypes && selectedStoreTypes.length > 0);
 
@@ -4294,9 +4366,19 @@
                 tagsDiv.appendChild(tag);
             });
 
+            // Add excluded brand tags
+            excludedBrands.forEach(brand => {
+                const tag = createFilterTag(`Exclude: ${brand.replace(/_/g, ' ')}`, () => {
+                    const checkbox = document.querySelector(`#excludedBrandCheckboxes input[value="${brand}"]`);
+                    if (checkbox) checkbox.checked = false;
+                    filterStores();
+                });
+                tagsDiv.appendChild(tag);
+            });
+
             // Add customer tags
             selectedCustomers.forEach(customer => {
-                const tag = createFilterTag(customer, () => {
+                const tag = createFilterTag(`${excludeSelectedCustomers ? 'Exclude: ' : ''}${customer}`, () => {
                     const checkbox = document.querySelector(`#customerCheckboxes input[value="${customer}"]`);
                     if (checkbox) checkbox.checked = false;
                     filterStores();
@@ -4384,6 +4466,7 @@
                 cb.checked = false;
                 cb.indeterminate = false;
             });
+            document.querySelectorAll('#excludedBrandCheckboxes input').forEach(cb => cb.checked = false);
 
             // Collapse all brand categories
             document.querySelectorAll('.category-brands-container').forEach(container => {
@@ -4394,6 +4477,8 @@
 
             // Uncheck all customer checkboxes
             document.querySelectorAll('#customerCheckboxes input').forEach(cb => cb.checked = false);
+            const excludeCustomersToggle = document.getElementById('excludeCustomersToggle');
+            if (excludeCustomersToggle) excludeCustomersToggle.checked = false;
 
             // Uncheck all store type checkboxes
             document.querySelectorAll('#storeTypeCheckboxes input').forEach(cb => cb.checked = false);
