@@ -119,7 +119,7 @@ CHAIN_CANONICAL_OVERRIDES = {
 }
 
 CUSTOMER_REACHED_LISTS = {
-    "KCC": Path("/Users/dawoodkhan/Documents/Master List of Stores Reached Out to By Brands - KCC.csv"),
+    "KCC": Path("customer_lists/kcc_store_list_2026-06-17.csv"),
     "Zuva": Path("/Users/dawoodkhan/Documents/Master List of Stores Reached Out to By Brands - Zuva.csv"),
 }
 
